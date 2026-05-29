@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure File Download | Panchayat Sahayak Portal</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body { background: #f8fafc; margin:0; font-family: 'Poppins', 'Hind', sans-serif;}
+    
+    .download-page { padding: 30px 16px; max-width: 1200px; margin: 0 auto; min-height: 60vh;}
+    .ad-grid { display: grid; grid-template-columns: 250px 1fr 250px; gap: 24px; align-items: start; }
+    
+    @media (max-width: 1000px) {
+       .ad-grid { grid-template-columns: 1fr; }
+       .ad-space.desktop-only { display: none; }
+    }
+
+    .ad-space { background: #f1f5f9; width: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 2px dashed #cbd5e1; color: #94a3b8; font-weight: 600; font-size: 14px; text-align: center; padding: 20px; box-sizing: border-box;}
+    
+    .ad-space.mobile { display: none; min-height: 250px; margin-bottom: 24px;}
+    @media (max-width: 1000px) { .ad-space.mobile { display: flex; } }
+
+    .dl-card { background: #fff; padding: 30px 24px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 1px solid #e2e8f0; max-width: 500px; margin: 0 auto; }
+    .file-icon { font-size: 48px; margin-bottom: 12px; color: #ef4444; display: inline-block;}
+    .file-name { font-size: 20px; font-weight: 700; color: #0f172a; margin: 0 0 6px 0; word-break: break-word; font-family:'Montserrat', sans-serif; line-height: 1.3;}
+    .file-meta { color: #64748b; font-size: 13px; margin: 0 0 24px 0; font-weight: 500;}
+
+    .captcha-box { background: #f8fafc; padding: 24px; border-radius: 12px; margin-bottom: 24px; display: inline-block; width: 100%; max-width: 350px; border: 1px solid #e2e8f0; }
+    .c-label { font-size: 13px; font-weight: 700; color: #475569; margin-bottom: 12px; display: block; text-transform: uppercase; letter-spacing: 0.5px;}
+    
+    .c-display-area { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px; }
+    .c-text-display { background: #fff; border: 2px solid #cbd5e1; padding: 10px 24px; font-size: 28px; font-weight: 800; letter-spacing: 6px; color: #1e293b; border-radius: 8px; font-family: 'Courier New', monospace; user-select: none; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.02) 10px, rgba(0,0,0,0.02) 20px);}
+    .c-refresh { background: #e2e8f0; border: none; width: 44px; height: 44px; border-radius: 8px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s;}
+    .c-refresh:hover { background: #cbd5e1; transform: rotate(90deg);}
+
+    .c-input { width: 100%; padding: 14px 16px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 18px; text-align: center; font-weight: 700; outline: none; transition: 0.2s; box-sizing: border-box; letter-spacing: 2px; text-transform: uppercase; color: #0f172a;}
+    .c-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 4px rgba(59,130,246,0.1); }
+    .c-input.valid { border-color: #10b981; background: #ecfdf5; color: #047857;}
+    
+    /* Subtle invalid state so it's not jarring on initial type */
+    .c-input.invalid:not(:placeholder-shown) { border-color: #ef4444; }
+
+    .btn-dl { background: #94a3b8; color: #fff; border: none; padding: 16px 32px; font-size: 18px; font-weight: 700; border-radius: 8px; width: 100%; max-width: 350px; cursor: not-allowed; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 auto;}
+    .btn-dl.active { background: #2563eb; cursor: pointer; box-shadow: 0 8px 25px rgba(37,99,235,0.3); animation: pulse 2s infinite;}
+    .btn-dl.active:hover { transform: translateY(-3px); background: #1d4ed8;}
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,99,235, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(37,99,235, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,99,235, 0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Re-using Standard Header -->
+  <header class="nic-header">
+    <div class="nic-header-container"
+      style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+      <div class="nic-logo-left" style="display: flex; align-items: center;">
+        <!-- Modern Premium Logo -->
+        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो"
+          style="height: 64px; margin-right: 15px; filter: drop-shadow(0 10px 15px rgba(79, 70, 229, 0.4));">
+        <div class="nic-titles">
+          <h1 style="font-size: 28px; line-height: 1.2;">Panchayat Sahayak Portal</h1>
+          <h2 style="font-size: 14px; font-weight: normal; color: #555; margin-top: 3px;">Independent Informational &
+            Tool Portal</h2>
+        </div>
+      </div>
+      <div class="header-utils" style="display: flex; gap: 14px; align-items: center;">
+        <div onclick="document.body.classList.toggle('dark-theme')" style="cursor:pointer;" title="Dark / Light Mode">
+          <button
+            style="background: var(--accent); border: none; color: #fff; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 600;">🌓
+            Night Mode</button>
+        </div>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="download-page">
+     <div class="ad-grid">
+         
+         <!-- Left Ad Space (Desktop Only) -->
+         <div class="ad-space desktop-only">
+             <div class="ad-placeholder">
+                 <div style="font-size:24px; margin-bottom:8px;">📢</div>
+                 Advertisement Space<br>
+                 <span style="font-size:12px; font-weight:500;">(160x600 or 300x600)</span><br><br>
+                 <span style="font-size:11px; opacity:0.6;">Paste AdSense/Adsterra code here</span>
+             </div>
+         </div>
+
+         <!-- Center Main Content -->
+         <div>
+             <!-- Top Mobile Ad (Visible only on mobile before download) -->
+             <div class="ad-space mobile">
+                 <div class="ad-placeholder">
+                     <div style="font-size:20px; margin-bottom:4px;">📢</div>
+                     Top Mobile Ad<br>
+                     <span style="font-size:12px; font-weight:500;">(300x250)</span>
+                 </div>
+             </div>
+
+             <div class="dl-card">
+                 <div class="file-icon" id="fileIcon">📄</div>
+                 <h2 class="file-name" id="fileName">Loading File Info...</h2>
+                 <p class="file-meta" id="fileMeta">कृपया डाउनलोड करने के लिए कैप्चा (Captcha) दर्ज करें</p>
+                 
+                 <!-- Error state -->
+                 <p id="errorMsg" style="color:#ef4444; font-weight:600; display:none;">⚠️ Invalid Download Link. No file specified.</p>
+
+                 <div class="captcha-box" id="captchaBox" style="display:none;">
+                     <label class="c-label">Verify to Unlock Download</label>
+                     <div class="c-display-area">
+                         <div class="c-text-display" id="captchaRef">X2P8N</div>
+                         <button class="c-refresh" onclick="generateCaptcha()" title="Change Captcha">↻</button>
+                     </div>
+                     <input type="text" id="captchaInput" class="c-input" placeholder="ENTER CAPTCHA HERE" autocomplete="off" onkeyup="verifyCaptcha()">
+                 </div>
+
+                 <button class="btn-dl" id="dlBtn" disabled onclick="executeDownload()">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                     <span id="dlText">Captcha Required</span>
+                 </button>
+                 
+                 <p style="font-size:12px; color:#94a3b8; margin-top:16px;">SECURE DOWNLOAD PORTAL</p>
+             </div>
+             
+             <!-- Bottom Mobile Ad (Visible only on mobile after download) -->
+             <div class="ad-space mobile" style="margin-top:24px; margin-bottom:0;">
+                 <div class="ad-placeholder">
+                     <div style="font-size:20px; margin-bottom:4px;">📢</div>
+                     Bottom Mobile Ad<br>
+                     <span style="font-size:12px; font-weight:500;">(300x250)</span>
+                 </div>
+             </div>
+         </div>
+
+         <!-- Right Ad Space (Desktop Only) -->
+         <div class="ad-space desktop-only">
+             <div class="ad-placeholder">
+                 <div style="font-size:24px; margin-bottom:8px;">📢</div>
+                 Advertisement Space<br>
+                 <span style="font-size:12px; font-weight:500;">(160x600 or 300x600)</span><br><br>
+                 <span style="font-size:11px; opacity:0.6;">Paste AdSense/Adsterra code here</span>
+             </div>
+         </div>
+
+     </div>
+  </main>
+
+  <footer style="background: #232f3e; color: #fff; padding: 30px 20px; text-align: center; margin-top: 50px;">
+    <p style="font-size: 13px; color: #aaa; margin:0;">&copy; 2026 Panchayat Sahayak Portal. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+      let currentCaptcha = "";
+      let targetFileUrl = "";
+
+      // 1. Parse URL to get file and title
+      const params = new URLSearchParams(window.location.search);
+      const fileUrlParam = params.get('file');
+      const fileTitleParam = params.get('title');
+      const fileTypeParam = params.get('type') || 'PDF Document';
+
+      if(!fileUrlParam) {
+          document.getElementById('fileName').innerText = "File Not Found";
+          document.getElementById('fileMeta').innerText = "";
+          document.getElementById('errorMsg').style.display = "block";
+      } else {
+          document.getElementById('fileName').innerText = fileTitleParam || "Download File";
+          document.getElementById('fileMeta').innerText = fileTypeParam + " • Secure Download";
+          targetFileUrl = decodeURIComponent(fileUrlParam);
+          document.getElementById('captchaBox').style.display = "inline-block";
+          
+          if(fileTypeParam.toLowerCase() === 'excel' || fileTypeParam.toLowerCase() === 'xls') {
+              document.getElementById('fileIcon').innerText = "📊";
+              document.getElementById('fileIcon').style.color = "#10b981";
+          } else if(fileTypeParam.toLowerCase() === 'doc' || fileTypeParam.toLowerCase() === 'word') {
+              document.getElementById('fileIcon').innerText = "📝";
+              document.getElementById('fileIcon').style.color = "#2563eb";
+          }
+          
+          generateCaptcha();
+      }
+
+      function generateCaptcha() {
+          const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // Removed ambiguous chars like O, 0, 1, I
+          let captcha = "";
+          for(let i=0; i<5; i++) {
+              captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+          }
+          currentCaptcha = captcha;
+          document.getElementById('captchaRef').innerText = currentCaptcha;
+          
+          // Reset UI
+          const input = document.getElementById('captchaInput');
+          input.value = "";
+          input.classList.remove('valid', 'invalid');
+          
+          const btn = document.getElementById('dlBtn');
+          btn.disabled = true;
+          btn.classList.remove('active');
+          document.getElementById('dlText').innerText = "Captcha Required";
+      }
+
+      function verifyCaptcha() {
+          const inputNode = document.getElementById('captchaInput');
+          const val = inputNode.value.trim().toUpperCase();
+          const btn = document.getElementById('dlBtn');
+          
+          if(val === currentCaptcha) {
+              inputNode.classList.remove('invalid');
+              inputNode.classList.add('valid');
+              btn.disabled = false;
+              btn.classList.add('active');
+              document.getElementById('dlText').innerText = "Download Now!";
+          } else {
+              inputNode.classList.remove('valid');
+              if(val.length >= currentCaptcha.length) {
+                  inputNode.classList.add('invalid');
+              } else {
+                  inputNode.classList.remove('invalid');
+              }
+              btn.disabled = true;
+              btn.classList.remove('active');
+              document.getElementById('dlText').innerText = "Verify Captcha...";
+          }
+      }
+
+      function executeDownload() {
+          if(!document.getElementById('dlBtn').disabled && targetFileUrl) {
+              window.location.href = targetFileUrl;
+          }
+      }
+  </script>
+  <script src="auth-nav.js" defer></script>
+</body>
+</html>
