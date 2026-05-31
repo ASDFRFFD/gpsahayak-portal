@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="hi">
 <head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3320237271717237"
+    crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1T48Y2LMSJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -293,7 +296,7 @@
     const container = document.getElementById('blog-container');
 
     if (!blogId) {
-       container.innerHTML = '<div style="color:red; text-align:center; font-size:18px;">Error: No Blog ID provided in URL.</div>';
+       container.innerHTML = '<div style="text-align:center; padding: 40px; color:#475569;"><h3>ताज़ा ब्लॉग आर्टिकल्स पढ़ने के लिए कृपया मुख्य ब्लॉग पेज पर जाएं।</h3><br><a href="blog.html" class="card-h-btn" style="float:none; display:inline-block; text-decoration:none;">ब्लॉग मुख्य पेज ➔</a></div>';
     } else {
        db.collection("blogs").doc(blogId).get().then((doc) => {
          if (doc.exists) {
