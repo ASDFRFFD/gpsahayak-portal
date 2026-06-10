@@ -18,11 +18,18 @@ priorities = {
     'disclaimer.html': '0.4',
 }
 
+# Files to exclude from indexing in the sitemap
+exclude_files = {
+    'panchayat-sahayak-dashboard.html',
+    'blog-post.html',
+    'download.html'
+}
+
 xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
 xml_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 
 for f in html_files:
-    if f.startswith('admin-'):
+    if f.startswith('admin-') or f in exclude_files:
         continue
     
     loc = f"{base_url}/" if f == 'index.html' else f"{base_url}/{f}"
@@ -42,4 +49,4 @@ xml_content += '</urlset>\n'
 with open('sitemap.xml', 'w', encoding='utf-8') as sitemap:
     sitemap.write(xml_content)
 
-print(f"Sitemap updated with {len([f for f in html_files if not f.startswith('admin-')])} URLs.")
+print(f"Sitemap updated with {len([f for f in html_files if not f.startswith('admin-') and f not in exclude_files])} URLs.")

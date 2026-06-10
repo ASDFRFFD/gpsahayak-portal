@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="hi">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UP Panchayat Village Profile & Data Tools | पंचायत सहायक</title>
+    <title>UP Panchayat Village Profile & Data Tools | Panchayat Sahayak</title>
   <meta name="description" content="ग्राम पंचायत का प्रोफाइल, जनसंख्या, और अन्य आंकड़े आसानी से देखने और मैनेज करने के लिए पंचायत सहायक टूल्स।">
   
     
@@ -21,7 +21,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
-
+        
         .header-section {
             display: flex;
             align-items: center;
@@ -30,10 +30,10 @@
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
-
+        
         .header-title { margin: 0; font-size: 24px; font-weight: 700; color: #1e3a8a; }
         .header-sub { margin: 4px 0 0 0; color: #64748b; font-size: 15px; }
-
+        
         /* FORM MODE */
         .form-grid {
             display: grid;
@@ -41,7 +41,7 @@
             gap: 24px;
             margin-bottom: 32px;
         }
-
+        
         .section-title {
             grid-column: 1 / -1;
             font-size: 18px;
@@ -52,7 +52,7 @@
             margin-top: 10px;
             display: flex; align-items: center; gap: 8px;
         }
-
+        
         .input-group { display: flex; flex-direction: column; gap: 6px; }
         .input-group label { font-size: 13px; font-weight: 600; color: #475569; }
         .input-group input {
@@ -62,7 +62,7 @@
             transition: all 0.2s; background: #f8fafc;
         }
         .input-group input:focus { border-color: #2563eb; outline: none; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); background: #fff; }
-
+        
         .btn-action {
             background: #2563eb; color: #fff; border: none; padding: 14px 24px;
             border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;
@@ -72,7 +72,7 @@
         .btn-action:hover { background: #1d4ed8; transform: translateY(-2px); }
         .btn-secondary { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; box-shadow: none; }
         .btn-secondary:hover { background: #e2e8f0; color: #0f172a; }
-
+        
         /* PROFESSIONAL DASHBOARD VIEW MODE */
         #view-mode { display: none; }
         .dashboard-header {
@@ -83,7 +83,7 @@
         }
         .dashboard-header h2 { font-size: 24px; margin: 0 0 8px 0; font-weight: 800; display:flex; align-items:center; gap:12px; color: #0369a1; }
         .dashboard-header p { margin: 0; font-size: 16px; opacity: 0.9; color: #334155; }
-
+        
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -108,17 +108,17 @@
         .stat-card.orange::before { background: #f59e0b; }
         .stat-card.red::before { background: #ef4444; }
         .stat-card.cyan::before { background: #06b6d4; }
-
+        
         .stat-title { font-size: 13px; font-weight: 600; color: #64748b; text-transform: uppercase; margin-bottom: 8px; }
         .stat-value { font-size: 32px; font-weight: 700; color: #0f172a; margin: 0; }
-
+        
         .toast {
             position: fixed; top: 20px; right: 20px; background: #10b981; color: #fff;
             padding: 12px 24px; border-radius: 8px; font-weight: 600; opacity: 0;
             transform: translateY(-20px); transition: 0.3s; z-index: 1000;
         }
         .toast.show { opacity: 1; transform: translateY(0); }
-
+        
         /* RESPONSIVE LAYOUT ENGINE */
         @media (max-width: 1000px) {
             .form-grid { grid-template-columns: repeat(2, 1fr); }
@@ -145,7 +145,7 @@
   <!-- SCHEMA_INJECTED_V2 -->
 </head>
 <body>
-
+  
     <nav class="main-nav" style="box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
         <div class="nav-inner">
             <div class="nav-item"><a href="index.html" class="nav-link" style="text-decoration:none;">← 🏠 होम (Home)</a></div>
@@ -173,14 +173,13 @@
                 <div>
                     <h1 class="header-title">📊 ग्राम पंचायत प्रोफाइल रजिस्टर</h1>
                     <p class="header-sub">एक बार डेटा भरें, और हमेशा के लिए सुरक्षित रखें।</p>
-
                 </div>
                 <div>
                     <button class="btn-action btn-secondary" onclick="toggleMode('view')">👁️ व्यू (View)</button>
                     <button class="btn-action" onclick="saveProfile()">💾 सेव करें</button>
                 </div>
             </div>
-
+            
             <div class="form-grid" id="profile-form">
                 <!-- 1. पंचायत की बेसिक जानकारी -->
                 <div class="section-title">🏛️ सामान्य जानकारी (General Info)</div>
@@ -191,7 +190,7 @@
                 <div class="input-group"><label>पंचायत सचिव का नाम व नंबर</label><input type="text" id="vp-sachiv" placeholder="नाम - 9876543210"></div>
                 <div class="input-group"><label>पंचायत सहायक (Sahayak)</label><input type="text" id="vp-sahayak" placeholder="नाम - 9876543210"></div>
                 <div class="input-group"><label>कुल वार्ड (Total Wards)</label><input type="number" id="vp-wards" placeholder="उदा० 11"></div>
-
+                
                 <!-- 2. जनसांख्यिकी (Demographics) -->
                 <div class="section-title">👥 जनसांख्यिकी डेटा (Census Data)</div>
                 <div class="input-group"><label>कुल जनसंख्या (Total Population)</label><input type="number" id="vp-pop" placeholder="उदा० 2500"></div>
@@ -200,7 +199,7 @@
                 <div class="input-group"><label>कुल परिवार (Total Households)</label><input type="number" id="vp-households" placeholder="उदा० 450"></div>
                 <div class="input-group"><label>कुल मतदाता (Total Voters)</label><input type="number" id="vp-voters" placeholder="उदा० 1800"></div>
                 <div class="input-group"><label>BPL परिवार (BPL Families)</label><input type="number" id="vp-bpl" placeholder="उदा० 85"></div>
-
+                
                 <!-- 3. सरकारी योजना डेटा (Scheme Beneficiaries) -->
                 <div class="section-title">📝 लाभार्थी व बुनियादी ढांचा (Beneficiaries & Infra)</div>
                 <div class="input-group"><label>अंत्योदय राशन कार्ड (Antyodaya)</label><input type="number" id="vp-antyodaya" placeholder="संख्या"></div>
@@ -210,20 +209,19 @@
                 <div class="input-group"><label>प्राथमिक विद्यालय (Schools)</label><input type="number" id="vp-schools" placeholder="संख्या"></div>
                 <div class="input-group"><label>आंगनवाड़ी केंद्र (Anganwadi)</label><input type="number" id="vp-anganwadi" placeholder="संख्या"></div>
             </div>
-
+            
             <button class="btn-action" style="width:100%" onclick="saveProfile()">डेटा सुरक्षित करें (Save Profile Data)</button>
         </div>
-
+        
         <!-- ================= VIEW MODE (DASHBOARD) ================= -->
         <div id="view-mode">
             <div class="header-section" style="border-bottom:none; margin-bottom:0;">
                 <h1 class="header-title"></h1>
                 <button class="btn-action btn-secondary" onclick="toggleMode('edit')">✏️ डेटा एडिट करें</button>
             </div>
-
+            
             <div class="dashboard-header">
                 <h2>🏛️ ग्राम पंचायत: <span id="v-gpName">अज्ञात</span></h2>
-
                 <p><strong>विकास खंड:</strong> <span id="v-block">-</span> &nbsp;|&nbsp; <strong>जनपद:</strong> <span id="v-district">-</span></p>
                 <div style="margin-top:16px; background: rgba(56,189,248,0.15); padding:12px; border-radius:8px; display:inline-block; border: 1px solid #bae6fd;">
                     <strong>सुशासन संपर्क (Keys):</strong>
@@ -232,7 +230,7 @@
                     <span style="margin-left:12px; color:#0369a1; font-weight:600;">सहायक: <span id="v-sahayak">-</span></span>
                 </div>
             </div>
-
+            
             <h3 style="color:#334155; margin-bottom:16px;">👥 जनसांख्यिकी प्रोफाइल (Demographics)</h3>
             <div class="stats-grid">
                 <div class="stat-card">  <div class="stat-title">कुल जनसंख्या</div> <div class="stat-value" id="v-pop">0</div> </div>
@@ -242,7 +240,7 @@
                 <div class="stat-card red">   <div class="stat-title">कुल मतदाता</div> <div class="stat-value" id="v-voters">0</div> </div>
                 <div class="stat-card cyan">  <div class="stat-title">कुल वार्ड</div> <div class="stat-value" id="v-wards">0</div> </div>
             </div>
-
+            
             <h3 style="color:#334155; margin-bottom:16px;">📋 योजना व आधारभूत ढांचा (Schemes)</h3>
             <div class="stats-grid">
                 <div class="stat-card orange"> <div class="stat-title">BPL परिवार</div> <div class="stat-value" id="v-bpl">0</div> </div>
@@ -253,8 +251,35 @@
                 <div class="stat-card cyan">   <div class="stat-title">विद्यालय / आंगनवाड़ी</div> <div class="stat-value" id="v-infra">0</div> </div>
             </div>
         </div>
-
     </div>
+    
+    <!-- SEO / Informational Content Section -->
+    <section class="seo-article">
+      <h2>UP Gram Panchayat Village Profile Register - Complete Guide (ग्राम पंचायत प्रोफाइल)</h2>
+      
+      <p>
+        उत्तर प्रदेश के ग्रामीण विकास और पंचायती राज व्यवस्था में प्रत्येक ग्राम पंचायत का एक व्यवस्थित और सटीक डेटाबेस होना अत्यंत आवश्यक है। <strong>ग्राम पंचायत प्रोफाइल (Village Profile Register)</strong> में गाँव की बुनियादी जनसांख्यिकी (Demographics), भौगोलिक सीमाएं, और सरकारी योजनाओं के लाभार्थियों की संख्या दर्ज की जाती है। यह डेटाबेस ग्राम पंचायत विकास योजना (GPDP - Gram Panchayat Development Plan) तैयार करते समय मुख्य आधार बनता है। पंचायत सहायकों (Panchayat Sahayaks) के लिए गाँव की सभी बुनियादी जानकारियों को एक ही स्थान पर संकलित करने के लिए यह <strong>UP Village Profile Data Tool</strong> बनाया गया है।
+      </p>
+
+      <h3>1. ग्राम पंचायत प्रोफाइल डेटा का महत्व (Importance of Demographics Data)</h3>
+      <p>
+        गाँव में प्राथमिक विद्यालय (Primary Schools), आंगनवाड़ी केंद्र (Anganwadi Centres), पेयजल की उपलब्धता, और सामुदायिक शौचालयों की स्थिति का विवरण प्रोफाइल में दर्ज होता है। जब भी 15वें वित्त आयोग (15th Finance Commission) या राज्य वित्त आयोग (State Finance Commission) का फंड गाँव के विकास कार्यों के लिए आता है, तो आबादी और जरूरत के हिसाब से बजट आवंटित किया जाता है। कुल जनसंख्या, पुरुष-महिला अनुपात और कुल परिवारों की संख्या (Households) का सही डेटा विकास कार्यों को सही दिशा देने में मदद करता है।
+      </p>
+
+      <h3>2. राशन कार्ड और सामाजिक सुरक्षा पेंशन लाभार्थी (Ration Cards & Pension Statistics)</h3>
+      <p>
+        गाँव की बीपीएल (BPL) आबादी, अंत्योदय राशन कार्ड (AAY) और पात्र गृहस्थी राशन कार्ड (PHH) धारकों की संख्या ग्रामीण खाद्य सुरक्षा का पैमाना है। इसके साथ ही वृद्धावस्था, दिव्यांग और निराश्रित पेंशनरों की संख्या का सही हिसाब होने से पंचायत सहायक गाँव के उन पात्र लोगों को चिन्हित कर सकते हैं जो इन योजनाओं से अभी तक वंचित हैं।
+      </p>
+
+      <h3>3. सुरक्षित लोकल डेटा स्टोरेज (Secure Offline Storage via IndexedDB)</h3>
+      <p>
+        इस टूल में आपके द्वारा दर्ज किया गया समस्त ग्राम पंचायत प्रोफाइल डेटा आपके कंप्यूटर या मोबाइल के लोकल स्टोरेज में <strong>IndexedDB</strong> तकनीक के माध्यम से 100% सुरक्षित रहता है। इसका अर्थ यह है कि बिना इंटरनेट (Offline) भी आप अपनी ग्राम पंचायत का विवरण देख और संपादित कर सकते हैं। यह डेटा किसी भी बाहरी सर्वर पर अपलोड नहीं होता है, जिससे प्रशासनिक डेटा की सुरक्षा सुनिश्चित होती है।
+      </p>
+
+      <p>
+        <strong>निर्देश:</strong> यदि आप पहली बार इस पेज पर आए हैं, तो 'डेटा एडिट करें' बटन पर क्लिक करके अपनी ग्राम पंचायत की पूरी जानकारी भरें और सुरक्षित (Save) करें। डेटा सुरक्षित होते ही यह एक सुंदर डैशबोर्ड के रूप में प्रस्तुत हो जाएगा जिसे आप प्रिंट भी कर सकते हैं।
+      </p>
+    </section>
 
     <div id="toast" class="toast">✅ जानकारी सफलतापूर्वक सुरक्षित कर ली गई है! (Saved)</div>
 

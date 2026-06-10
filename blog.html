@@ -575,6 +575,13 @@
     const colorClasses = ['thumb-green', 'thumb-blue', 'thumb-orange', 'thumb-purple'];
     const iconsMap = ['💡', '📱', '🖥️', '💼', '📌', '📈'];
 
+    const slugMap = {
+      'YbmGK3RI9Q01jOC0y2Ay': 'blog-census-self-enumeration-2026.html',
+      'ftj7BE8QtjVjJ1HANX9W': 'blog-attendance-boycott-2026.html',
+      'gv38B0AwKTr9OvAAO7B8': 'blog-panchayat-sahayak-strike-2026.html',
+      'nk8YKjv9IidHjlsp5cKa': 'blog-what-is-panchayat-sahayak.html'
+    };
+
     function renderFeed(blogs) {
       const container = document.getElementById('blog-feed-container');
       container.innerHTML = '';
@@ -587,7 +594,7 @@
         const colorClass = colorClasses[index % colorClasses.length];
         const randomIcon = iconsMap[index % iconsMap.length];
         // Render Card
-        const postLink = data.content ? `blog-post.html?id=${data.id}` : (data.pageUrl || `blog-post.html?id=${data.id}`);
+        const postLink = slugMap[data.id] || (data.content ? `blog-post.html?id=${data.id}` : (data.pageUrl || `blog-post.html?id=${data.id}`));
         const html = `
           <a href="${postLink}" class="card-h" style="margin-bottom: 20px;">
             <div class="card-h-thumb ${colorClass}">
@@ -652,7 +659,7 @@
             shortCat = words.length > 1 ? words[0] + '<br>' + words[1].substring(0,4) : words[0].substring(0,8);
           }
           
-          const postLink = data.content ? `blog-post.html?id=${data.id}` : (data.pageUrl || `blog-post.html?id=${data.id}`);
+          const postLink = slugMap[data.id] || (data.content ? `blog-post.html?id=${data.id}` : (data.pageUrl || `blog-post.html?id=${data.id}`));
           html += `
             <a href="${postLink}" class="pop-post">
               <div class="pop-thumb ${colorClass}">

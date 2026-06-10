@@ -5,6 +5,9 @@ Allow: /
 Disallow: /admin-login.html
 Disallow: /admin-dashboard.html
 Disallow: /admin-setup.html
+Disallow: /panchayat-sahayak-dashboard.html
+Disallow: /blog-post.html
+Disallow: /download.html
 Disallow: /images/private/
 
 # Sitemap location for Googlebot & Bing & all crawlers

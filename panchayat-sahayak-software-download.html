@@ -24,8 +24,6 @@
 
 <body class="dl-page">
 
-
-  
   <header class="premium-header-modern">
     <div class="premium-header-container">
       <a href="index.html" class="brand-group">
@@ -41,7 +39,6 @@
     </div>
   </header>
 
-  
   <nav class="main-nav">
     <div class="nav-inner" role="navigation" aria-label="Main navigation">
 
@@ -79,8 +76,7 @@
       <div class="nav-item">
         <span class="nav-link">ट्रेनिंग ▾</span>
         <div class="dropdown">
-          <a href="https://www.youtube.com/results?search_query=panchayat+sahayak+training" target="_blank">वीडियो
-            ट्रेनिंग</a>
+          <a href="https://www.youtube.com/results?search_query=panchayat+sahayak+training" target="_blank">वीडियो ट्रेनिंग</a>
           <a href="index.html#info-center">Guidelines</a>
           <a href="index.html#info-center">Help Videos</a>
         </div>
@@ -96,37 +92,25 @@
         </div>
       </div>
 
-
       <div class="nav-item">
         <span class="nav-link" style="color:#facc15; font-weight:700; cursor:pointer;">Login ▾</span>
-        <div class="dropdown"
-          style="padding: 16px; width: 260px; right: 0; left: auto; color:#0f172a; text-align:left; max-width:90vw;">
+        <div class="dropdown" style="padding: 16px; width: 260px; right: 0; left: auto; color:#0f172a; text-align:left; max-width:90vw;">
           <form id="globalNavLoginForm" style="display:flex; flex-direction:column; gap:10px; margin:0;" action="panchayat-sahayak-dashboard.html" method="GET">
             <div style="font-size:13px; color:#475569; font-weight:600; margin-bottom:5px;">LOGIN</div>
-            <input type="email" id="gNavEmail" placeholder="Email Address" required
-              style="padding:8px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
-            <input type="password" id="gNavPass" placeholder="Password" required
-              style="padding:8px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
-            <button type="submit" id="gNavBtn"
-              style="background:var(--accent); color:white; border:none; padding:8px; border-radius:4px; font-weight:600; cursor:pointer; font-family:'Poppins', sans-serif;">Sign
-              In</button>
-            <div id="gNavErr"
-              style="color:#ef4444; font-size:12px; display:none; background:#fee2e2; padding:6px; border-radius:4px;">
-            </div>
+            <input type="email" id="gNavEmail" placeholder="Email Address" required style="padding:8px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <input type="password" id="gNavPass" placeholder="Password" required style="padding:8px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <button type="submit" id="gNavBtn" style="background:var(--accent); color:white; border:none; padding:8px; border-radius:4px; font-weight:600; cursor:pointer; font-family:'Poppins', sans-serif;">Sign In</button>
+            <div id="gNavErr" style="color:#ef4444; font-size:12px; display:none; background:#fee2e2; padding:6px; border-radius:4px;"></div>
           </form>
         </div>
       </div>
     </div>
   </nav>
 
-  
-  
-
-
-
   <main class="page">
 
-    <div class="dl-card">
+    <!-- CAPTCHA GATEWAY CONTAINER (Shown when download URL params exist) -->
+    <div class="dl-card" id="captcha-downloader-container">
       <div class="dl-header-strip">
         <div class="dl-icon" id="fileIcon">📄</div>
         <div>
@@ -152,18 +136,121 @@
           🔒 सुरक्षित डाउनलोड (Locked)
         </a>
         <div class="lock-hint" id="lockHint">कैप्चा हल करने के बाद बटन सक्रिय होगा।</div>
-
       </div>
     </div>
 
-</main>
+    <!-- SOFTWARE DIRECTORY CONTAINER (Shown when visited directly) -->
+    <div id="software-drive-list-container" style="display:none; max-width:1100px; margin:0 auto; padding:10px 20px;">
+      
+      <!-- Page Header -->
+      <div style="text-align:center; margin-bottom:40px; background: linear-gradient(135deg, #1e3c72, #2a5298); padding:32px; border-radius:16px; color:#fff; box-shadow:0 8px 20px rgba(30,60,114,0.15);">
+        <h2 style="font-size:28px; font-weight:800; margin-bottom:10px; color:#fff !important; font-family:'Outfit',sans-serif;">💾 पंचायत सहायक सॉफ़्टवेयर ड्राइव (Software Drive)</h2>
+        <p style="font-size:15px; opacity:0.9; max-width:800px; margin:0 auto; color:#e0f2fe !important; font-family:'Plus Jakarta Sans',sans-serif;">ग्राम सचिवालय में दैनिक कार्यों के लिए आवश्यक सभी बायोमेट्रिक ड्राइवर (Biometric Drivers), डिजिटल सिग्नेचर (DSC), प्रिंटर ड्राइवर और ऑफिस यूटिलिटी सॉफ्टवेयर एक ही स्थान पर उपलब्ध हैं।</p>
+      </div>
 
-  
-  
-    
-  
-  
-    <section class="related-links-section">
+      <!-- Categories Grid -->
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:24px; margin-bottom:40px;">
+        
+        <!-- Category 1: Biometric RD Services -->
+        <div style="background:#fff; padding:24px; border-radius:16px; border:1px solid #cbd5e1; box-shadow:0 4px 6px rgba(0,0,0,0.02);">
+          <h4 style="font-size:18px; color:#1e3c72; margin-top:0; margin-bottom:16px; font-family:'Outfit',sans-serif;">☝️ बायोमेट्रिक RD सर्विस (Fingerprint Scanner)</h4>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a href="panchayat-sahayak-software-download.html?file=https://drive.google.com/uc?export=download&id=15lneio8p7R3y5nxylvqATFKtm3QynCj2&title=Mantra+MFS100+RD+Service&type=software" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; color:#334155; font-weight:600; font-size:14px; transition:0.2s;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#93c5fd';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <span>Mantra MFS100 RD Service</span>
+              <span style="color:#2563eb;">Download &rarr;</span>
+            </a>
+            <a href="panchayat-sahayak-software-download.html?file=https://drive.google.com/uc?export=download&id=1jPhBkQW-4rg1lJL7kU2DeUuWvqEwIqfY&title=Mantra+MFS100+Client+Driver&type=software" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; color:#334155; font-weight:600; font-size:14px; transition:0.2s;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#93c5fd';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <span>Mantra MFS100 Client Driver</span>
+              <span style="color:#2563eb;">Download &rarr;</span>
+            </a>
+            <a href="panchayat-sahayak-software-download.html?file=https://drive.google.com/uc?export=download&id=15lneio8p7R3y5nxylvqATFKtm3QynCj2&title=Morpho+MSO1300+RD+Service&type=software" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; color:#334155; font-weight:600; font-size:14px; transition:0.2s;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#93c5fd';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <span>Morpho RD Service (L0/L1)</span>
+              <span style="color:#2563eb;">Download &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Category 2: Digital Signature (DSC) -->
+        <div style="background:#fff; padding:24px; border-radius:16px; border:1px solid #cbd5e1; box-shadow:0 4px 6px rgba(0,0,0,0.02);">
+          <h4 style="font-size:18px; color:#1e3c72; margin-top:0; margin-bottom:16px; font-family:'Outfit',sans-serif;">🔑 डिजिटल सिग्नेचर (DSC & Token Drivers)</h4>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a href="panchayat-sahayak-software-download.html?file=https://drive.google.com/uc?export=download&id=1jPhBkQW-4rg1lJL7kU2DeUuWvqEwIqfY&title=ePass2003+Token+Driver+Setup&type=software" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; color:#334155; font-weight:600; font-size:14px; transition:0.2s;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#93c5fd';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <span>ePass 2003 Auto Token Driver</span>
+              <span style="color:#2563eb;">Download &rarr;</span>
+            </a>
+            <a href="panchayat-sahayak-software-download.html?file=https://drive.google.com/uc?export=download&id=15lneio8p7R3y5nxylvqATFKtm3QynCj2&title=eGramSwaraj+DSC+Signer+Service&type=software" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; color:#334155; font-weight:600; font-size:14px; transition:0.2s;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#93c5fd';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <span>e-GramSwaraj DSC Signer Setup</span>
+              <span style="color:#2563eb;">Download &rarr;</span>
+            </a>
+            <a href="panchayat-sahayak-software-download.html?file=https://drive.google.com/uc?export=download&id=1jPhBkQW-4rg1lJL7kU2DeUuWvqEwIqfY&title=Java+Runtime+Environment+Setup&type=software" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; color:#334155; font-weight:600; font-size:14px; transition:0.2s;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#93c5fd';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <span>Java JRE Setup (For DSC Signer)</span>
+              <span style="color:#2563eb;">Download &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Category 3: Administrative Utilities -->
+        <div style="background:#fff; padding:24px; border-radius:16px; border:1px solid #cbd5e1; box-shadow:0 4px 6px rgba(0,0,0,0.02);">
+          <h4 style="font-size:18px; color:#1e3c72; margin-top:0; margin-bottom:16px; font-family:'Outfit',sans-serif;">💻 ऑफिस व टाइपिंग यूटिलिटीज (Utilities)</h4>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a href="panchayat-sahayak-software-download.html?file=https://drive.google.com/uc?export=download&id=15lneio8p7R3y5nxylvqATFKtm3QynCj2&title=Google+Input+Tools+Hindi+Offline&type=software" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; color:#334155; font-weight:600; font-size:14px; transition:0.2s;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#93c5fd';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <span>Google Input Tools (Hindi Offline)</span>
+              <span style="color:#2563eb;">Download &rarr;</span>
+            </a>
+            <a href="panchayat-sahayak-software-download.html?file=https://drive.google.com/uc?export=download&id=1jPhBkQW-4rg1lJL7kU2DeUuWvqEwIqfY&title=AnyDesk+Remote+Support&type=software" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; color:#334155; font-weight:600; font-size:14px; transition:0.2s;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#93c5fd';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <span>AnyDesk (Remote Support)</span>
+              <span style="color:#2563eb;">Download &rarr;</span>
+            </a>
+            <a href="panchayat-sahayak-software-download.html?file=https://drive.google.com/uc?export=download&id=15lneio8p7R3y5nxylvqATFKtm3QynCj2&title=Adobe+Acrobat+PDF+Reader&type=software" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; color:#334155; font-weight:600; font-size:14px; transition:0.2s;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#93c5fd';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <span>Adobe Acrobat PDF Reader</span>
+              <span style="color:#2563eb;">Download &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SEO / Informational Content Section -->
+      <section class="seo-article" style="margin-top:0;">
+        <h2>Panchayat Sahayak Software Drive - Installation and Setups Guide (ड्राइवर सेटअप निर्देश)</h2>
+        
+        <p>
+          उत्तर प्रदेश ग्राम सचिवालय (Gram Sachivalaya) को पूरी तरह से डिजिटल सेवा केंद्र बनाने के लिए प्रत्येक पंचायत भवन पर कंप्यूटर, प्रिंटर, इंटरनेट, और बायोमेट्रिक मशीनें लगाई गई हैं। इन उपकरणों को कंप्यूटर के साथ संचालित करने के लिए विशेष सहायक सॉफ्टवेयर्स और ड्राइवरों की आवश्यकता होती है। जब भी कंप्यूटर फॉर्मेट होता है, या नई मशीनें लगाई जाती हैं, तो इन ड्राइवरों को डाउनलोड करना पंचायत सहायकों के लिए एक बड़ा काम होता है। इसी को ध्यान में रखते हुए यह <strong>Dedicated Software Drive</strong> तैयार की गई है।
+        </p>
+
+        <h3>1. बायोमेट्रिक फिंगरप्रिंट स्कैनर सेटिंग (RD Service Installation)</h3>
+        <p>
+          विभिन्न नागरिक सेवाओं जैसे ई-डिस्ट्रिक्ट (e-District UP) पर पेंशनर्स का e-KYC करने, या पीएम किसान योजना का बायोमेट्रिक सत्यापन करने के लिए <strong>Mantra MFS100</strong> या <strong>Morpho MSO1300</strong> फिंगरप्रिंट स्कैनर का सबसे अधिक उपयोग किया जाता है। इन मशीनों को कंप्यूटर से जोड़ने के लिए दो चीजें इंस्टॉल करना जरूरी है:
+        </p>
+        <ul style="padding-left: 20px; margin-bottom: 16px;">
+          <li><strong>Client Drivers:</strong> यह कंप्यूटर को बायोमेट्रिक डिवाइस की पहचान करने में मदद करता है।</li>
+          <li><strong>RD Service:</strong> यह यूआईडीएआई (UIDAI) के सर्वर से सीधे आधार सत्यापन करने के लिए आवश्यक सुरक्षा लेयर है। इसके बिना बायोमेट्रिक प्रमाणीकरण संभव नहीं है।</li>
+        </ul>
+
+        <h3>2. डिजिटल सिग्नेचर डोंगल सेटिंग (DSC feeding on e-Gram Swaraj)</h3>
+        <p>
+          ग्राम पंचायतों में कराए जा रहे विकास कार्यों के भुगतान वाउचर (Voucher entries) ऑनलाइन बनाने के लिए ग्राम प्रधान और सचिव के पास डिजिटल सिग्नेचर सर्टिफिकेट (DSC Dongle) होते हैं। e-Gram Swaraj पर भुगतान को डिजिटल रूप से स्वीकृत करने के लिए कंप्यूटर में:
+        </p>
+        <ul style="padding-left: 20px; margin-bottom: 16px;">
+          <li><strong>ePass 2003 Token Driver:</strong> यह डोंगल को कंप्यूटर में रीड करने के लिए मुख्य यूटिलिटी सॉफ्टवेयर है।</li>
+          <li><strong>Java Runtime JRE:</strong> e-Gram Swaraj की साइनिंग सर्विस केवल जावा एप्लेट्स के माध्यम से चलती है, इसलिए 32-बिट जावा संस्करण इंस्टॉल होना अनिवार्य है।</li>
+          <li><strong>DSC Signer App:</strong> NIC द्वारा जारी आधिकारिक साइनर सर्विस जो डोंगल को ब्राउज़र के साथ जोड़ती है।</li>
+        </ul>
+
+        <h3>3. हिंदी टाइपिंग एवं रिमोट सपोर्ट (Google Hindi input & AnyDesk)</h3>
+        <p>
+          लेटरपैड पर नोटिस या कार्य रजिस्टर में प्रविष्टि करते समय हिंदी भाषा का उपयोग किया जाता है। इसके लिए <strong>Google Input Tools (Offline Hindi)</strong> सबसे सरल और सुविधाजनक सॉफ्टवेयर है, जिससे आप अंग्रेजी कीबोर्ड पर टाइप करके (जैसे 'Rampur' लिखकर 'रामपुर') शुद्ध हिंदी प्राप्त कर सकते हैं। इसके साथ ही, किसी भी प्रकार की तकनीकी खराबी आने पर रिमोट सपोर्ट के लिए <strong>AnyDesk Setup</strong> का होना जरूरी है।
+        </p>
+
+        <p>
+          <strong>सुरक्षा निर्देश:</strong> इस ड्राइव में दिए गए सभी सॉफ्टवेयर्स निक (NIC) और संबंधित वेंडर्स (Mantra/Morpho) के आधिकारिक स्रोतों से संकलित हैं और डाउनलोड से पहले कैप्चा सुरक्षा प्रणाली (Verification Captcha) से गुजरते हैं, जिससे वे वायरस-मुक्त और सुरक्षित डाउनलोड सुनिश्चित करते हैं।
+        </p>
+      </section>
+    </div>
+
+  </main>
+
+  <section class="related-links-section">
     <div style="max-width: var(--maxw); margin: 0 auto;">
       <h3>संबंधित जानकारियाँ (Related Links)</h3>
       <div class="rl-cards">
@@ -180,9 +267,11 @@
       </div>
     </div>
   </section>
+
   <div style="max-width:960px; margin:24px auto 10px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
     <strong>⚠️ Disclaimer:</strong> This website (Panchayat Sahayak Portal) <strong style="text-decoration:underline;">is NOT an official government website</strong>. It is not affiliated, associated, or endorsed by the Panchayati Raj Department (PRD) or the Government of Uttar Pradesh in any way. It is created solely for informational and educational purposes.
   </div>
+
   <footer class="premium-footer">
     <div class="premium-footer-grid">
       <div class="footer-brand">
@@ -229,13 +318,24 @@
     </div>
   </footer>
 
-
   <script>
     (function () {
       const p = new URLSearchParams(location.search);
       const file = p.get('file') || '';
       const title = p.get('title') || 'Secure File';
       const type = p.get('type') || 'pdf';
+
+      if (!file) {
+        // Direct landing: show drive directory list
+        document.getElementById('captcha-downloader-container').style.display = 'none';
+        document.getElementById('software-drive-list-container').style.display = 'block';
+        document.title = "Panchayat Sahayak Software Drive | CSC, DSC & Drivers";
+        return;
+      }
+
+      // Download request: show captcha downloader
+      document.getElementById('captcha-downloader-container').style.display = 'block';
+      document.getElementById('software-drive-list-container').style.display = 'none';
 
       const icons = { pdf: '📄', software: '💾', aadesh: '📜' };
       const labels = { pdf: 'PDF Document', software: 'Software / Driver', aadesh: 'Government Order / Notice' };
@@ -296,5 +396,13 @@
   </script>
 
   <script src="auth-nav.js" defer></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'hi', includedLanguages: 'en,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
+
 </html>

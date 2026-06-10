@@ -13,6 +13,7 @@
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>Loading Blog... | Panchayat Sahayak Portal</title>
   <meta name="description" id="meta-desc" content="Panchayat Sahayak Blog">
   
@@ -292,6 +293,17 @@
     // Get ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const blogId = urlParams.get('id');
+
+    const slugMap = {
+      'YbmGK3RI9Q01jOC0y2Ay': 'blog-census-self-enumeration-2026.html',
+      'ftj7BE8QtjVjJ1HANX9W': 'blog-attendance-boycott-2026.html',
+      'gv38B0AwKTr9OvAAO7B8': 'blog-panchayat-sahayak-strike-2026.html',
+      'nk8YKjv9IidHjlsp5cKa': 'blog-what-is-panchayat-sahayak.html'
+    };
+
+    if (blogId && slugMap[blogId]) {
+      window.location.replace(slugMap[blogId]);
+    }
 
     const container = document.getElementById('blog-container');
 

@@ -1238,3 +1238,69 @@ body { height: auto !important; min-height: 100vh !important; }
   .premium-page-title { font-size: 24px; }
   .brand-text h1 { font-size: 20px; }
 }
+
+/* SEO Article Section - Theme Aware */
+.seo-article {
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  margin-top: 24px;
+}
+.seo-article h2 {
+  color: var(--primary);
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.seo-article h3 {
+  color: var(--primary-light);
+  font-size: 18px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+.seo-article p {
+  color: #475569;
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+.seo-article ul {
+  color: #475569;
+  line-height: 1.7;
+  font-size: 15px;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.seo-article li {
+  margin-bottom: 8px;
+}
+.seo-article strong {
+  color: #0f172a;
+}
+
+body.dark-theme .seo-article {
+  background: #1e293b;
+  border-color: #334155;
+}
+body.dark-theme .seo-article h2 {
+  color: #93c5fd;
+}
+body.dark-theme .seo-article h3 {
+  color: #60a5fa;
+}
+body.dark-theme .seo-article p, body.dark-theme .seo-article ul {
+  color: #cbd5e1;
+}
+body.dark-theme .seo-article strong {
+  color: #ffffff;
+}
+body.dark-theme .seo-article a {
+  color: #60a5fa;
+}
+body.dark-theme .seo-article a:hover {
+  text-decoration: underline !important;
+}
