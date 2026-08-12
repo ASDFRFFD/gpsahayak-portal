@@ -77,7 +77,7 @@
       { name: "परिवार रजिस्टर नकल फॉर्म (Family Register Form)", type: "Form", url: "download.html?file=https://drive.google.com/uc?export%3Ddownload%26id%3D15lneio8p7R3y5nxylvqATFKtm3QynCj2&title=परिवार+रजिस्टर&type=pdf" },
       { name: "स्वघोषित प्रमाण पत्र फॉर्म (Self Declaration Form)", type: "Form", url: "download.html?file=https://drive.google.com/uc?export%3Ddownload%26id%3D1jPhBkQW-4rg1lJL7kU2DeUuWvqEwIqfY&title=स्वघोषित+प्रमाण+पत्र&type=pdf" },
       { name: "जन्म / मृत्यु प्रमाण पत्र फॉर्म (Birth & Death Form)", type: "Form", url: "panchayat-sahayak-forms-pdfs.html" },
-      { name: "पंचायत सहायक अनुबंध प्रारूप (Agreement Form)", type: "Form", url: "panchayat-sahayak-forms-pdfs.html" },
+      { name: "पंचायत सहायक अनुबंध प्रारूप (Agreement Form)", type: "Form", url: "download.html?file=https://drive.google.com/uc?export%3Ddownload%26id%3D1Ljt6LW4b-sL9eGVBsHEScyN0obtTfC6H&title=पंचायत+सहायक+अनुबंध&type=pdf" },
       
       { name: "Panchayat Sahayak Salary Guide 2026", type: "Blog", url: "blog-panchayat-sahayak-salary-2026.html" },
       { name: "Attendance Boycott Protest 2026", type: "Blog", url: "blog-attendance-boycott-2026.html" },
@@ -312,7 +312,22 @@
   };
 
   window.openForm = function (btn) {
-    alert("फ़ॉर्म डाउनलोड शुरू हो रहा है... (Demo)");
+    if (btn) {
+      const container = btn.closest('.form-item') || btn.parentElement;
+      const nameEl = container ? container.querySelector('.name, div') : null;
+      const name = nameEl ? nameEl.textContent.trim() : '';
+      if (name.includes('परिवार')) {
+        window.location.href = 'download.html?file=https://drive.google.com/uc?export%3Ddownload%26id%3D15lneio8p7R3y5nxylvqATFKtm3QynCj2&title=' + encodeURIComponent(name) + '&type=pdf';
+        return;
+      } else if (name.includes('स्वघोषित')) {
+        window.location.href = 'download.html?file=https://drive.google.com/uc?export%3Ddownload%26id%3D1jPhBkQW-4rg1lJL7kU2DeUuWvqEwIqfY&title=' + encodeURIComponent(name) + '&type=pdf';
+        return;
+      } else if (name.includes('अनुबंध')) {
+        window.location.href = 'download.html?file=https://drive.google.com/uc?export%3Ddownload%26id%3D1Ljt6LW4b-sL9eGVBsHEScyN0obtTfC6H&title=' + encodeURIComponent(name) + '&type=pdf';
+        return;
+      }
+    }
+    window.location.href = 'panchayat-sahayak-forms-pdfs.html';
   };
 
   // PDF Modal Close

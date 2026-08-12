@@ -453,6 +453,11 @@
        overflow-x: hidden !important;
     }
 
+    .form-control, select {
+       max-width: 100%;
+       box-sizing: border-box;
+    }
+
     @media (max-width: 992px) {
        .csc-workspace { padding: 0 10px; margin-bottom: 24px; }
        .tool-navbar { gap: 4px; padding: 6px; }
@@ -460,6 +465,23 @@
        .top-status-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
        .calc-layout { grid-template-columns: 1fr; gap: 20px; }
        .tool-body { padding: 14px; }
+    }
+
+    @media (max-width: 768px) {
+       .csc-workspace { padding: 0 6px !important; margin-bottom: 20px; width: 100% !important; box-sizing: border-box !important; }
+       .csc-main-content { border-radius: 12px; width: 100% !important; box-sizing: border-box !important; }
+       .tool-body { padding: 12px 8px !important; width: 100% !important; box-sizing: border-box !important; }
+       .calc-layout { grid-template-columns: 1fr !important; gap: 14px !important; width: 100% !important; box-sizing: border-box !important; }
+       .calc-inputs-card, .breakdown-card { padding: 14px 10px !important; border-radius: 12px !important; width: 100% !important; box-sizing: border-box !important; }
+       .quick-chips { gap: 4px !important; }
+       .chip-btn { padding: 5px 8px !important; font-size: 11.5px !important; }
+       .breakdown-header { padding-bottom: 10px; margin-bottom: 12px; }
+       .fee-row { flex-wrap: wrap; gap: 4px; padding: 8px 0; }
+       .fee-label { font-size: 13px; max-width: 100%; word-break: break-word; }
+       .fee-val { font-size: 14px; margin-left: auto; }
+       .fee-row.highlight-row { padding: 8px 10px !important; }
+       .sub-tree { padding-left: 8px; margin-left: 4px; border-left-width: 2px; }
+       #custom-rate-box > div { grid-template-columns: 1fr !important; }
     }
 
     @media (max-width: 480px) {
@@ -693,7 +715,7 @@
 
             <div class="input-group" style="margin-top:20px; background:#fff; padding:14px; border-radius:10px; border:1px solid #e2e8f0;">
               <label style="font-size:13px; color:#64748b;">सक्रिय दर विन्यास (Active Rate Settings):</label>
-              <div style="display:flex; justify-content:space-between; font-size:13px; color:#334155; margin-top:6px;">
+              <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 12px; font-size:13px; color:#334155; margin-top:6px;">
                 <span>कुल शुल्क: <strong id="lbl-fee-rate">₹30.00</strong></span>
                 <span>कम्पनी कटौती: <strong id="lbl-company-rate">₹17.79</strong></span>
                 <span>GP OSR: <strong id="lbl-osr-rate">₹5.99</strong></span>
