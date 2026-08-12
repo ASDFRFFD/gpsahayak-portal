@@ -2,9 +2,6 @@
 <html lang="hi">
 
 <head>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3320237271717237"
-    crossorigin="anonymous"></script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1T48Y2LMSJ"></script>
   <script>
@@ -18,7 +15,7 @@
   <meta name="geo.region" content="IN-UP">
   <meta name="geo.placename" content="Uttar Pradesh, India">
   <meta name="DC.language" content="hi">
-  <meta name="theme-color" content="#1e3c72">
+  <meta name="theme-color" content="#0f766e">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="rating" content="general">
@@ -194,44 +191,32 @@
 </head>
 
 <body>
-
   <header class="nic-header">
-    <div class="nic-header-container"
-      style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
-      <div class="nic-logo-left" style="display: flex; align-items: center;">
-        <!-- Modern Premium Logo -->
-        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो"
-          style="height: 64px; margin-right: 15px; filter: drop-shadow(0 10px 15px rgba(79, 70, 229, 0.4));">
+    <div class="nic-header-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+      <a href="index.html" class="nic-logo-left" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो" style="height: 52px; margin-right: 12px;">
         <div class="nic-titles">
-          <h1 style="font-size: 28px; line-height: 1.2;">Panchayat Sahayak Portal</h1>
-          <h2 style="font-size: 14px; font-weight: normal; color: #555; margin-top: 3px;">Independent Informational &
-            Tool Portal</h2>
+          <div style="font-size: 24px; line-height: 1.2; font-weight: 800; color: var(--primary); font-family: 'Poppins', sans-serif;">Panchayat Sahayak Portal</div>
+          <h2 style="font-size: 12px; font-weight: 600; color: var(--primary); margin-top: 3px; text-transform: none; letter-spacing: normal;">उत्तर प्रदेश ग्राम सचिवालय एवं पंचायत सहायक पोर्टल</h2>
         </div>
-      </div>
-      <div class="header-utils" style="display: flex; gap: 14px; align-items: center;">
-        <div onclick="document.body.classList.toggle('dark-theme')" style="cursor:pointer;" title="Dark / Light Mode">
-          <button
-            style="background: var(--accent); border: none; color: #fff; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 600;">🌓
-            Night Mode</button>
-        </div>
+      </a>
+      <div class="header-utils" style="display: flex; gap: 18px; align-items: center;">
         <div id="google_translate_element"></div>
+        <div class="theme-switch" onclick="document.body.classList.toggle('dark-theme')" style="cursor:pointer; display:flex; align-items:center;">
+          <button title="Toggle Dark/Light Mode" style="border:1px solid var(--border); background:var(--white); cursor:pointer; color:var(--text-main); font-weight:700; padding: 6px 12px; border-radius: 6px; font-size:12px; font-family:'Poppins',sans-serif; display:flex; align-items:center; gap:6px; box-shadow: var(--shadow-sm); transition: var(--transition);">🌓 Night Mode</button>
+        </div>
       </div>
     </div>
   </header>
-
-
-
-
   <nav class="main-nav">
     <div class="nav-inner" role="navigation" aria-label="Main navigation">
-
       <!-- HOME -->
       <div class="nav-item">
         <span class="nav-link">होम ▾</span>
         <div class="dropdown">
-          <a href="index.html">होम</a>
+          <a href="index.html">होम (Home)</a>
           <a href="about.html">About Portal</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact.html">Contact Us</a>
         </div>
       </div>
 
@@ -242,6 +227,7 @@
           <a href="index.html#services">सभी सेवाएँ</a>
           <a href="panchayat-sahayak-software-download.html">Software Drive</a>
           <a href="panchayat-sahayak-all-portals.html">सभी वेबसाइट</a>
+          <a href="forum.html">पंचायत फोरम (Forum)</a>
         </div>
       </div>
 
@@ -249,20 +235,28 @@
       <div class="nav-item">
         <span class="nav-link">आदेश ▾</span>
         <div class="dropdown">
-          <a href="index.html#info-center">शासनादेश</a>
+          <a href="panchayat-sahayak-notices.html">सभी शासनादेश</a>
           <a href="panchayat-sahayak-forms-pdfs.html">सभी फ़ॉर्म व PDF</a>
-          <a href="index.html#info-center">ट्रेनिंग आदेश</a>
         </div>
       </div>
 
-      <!-- TRAINING -->
+      <!-- TOOLS -->
       <div class="nav-item">
-        <span class="nav-link">ट्रेनिंग ▾</span>
+        <span class="nav-link">टूल्स ▾</span>
         <div class="dropdown">
-          <a href="https://www.youtube.com/results?search_query=panchayat+sahayak+training" target="_blank">वीडियो
-            ट्रेनिंग</a>
-          <a href="index.html#info-center">Guidelines</a>
-          <a href="index.html#info-center">Help Videos</a>
+          <a href="panchayat-sahayak-image-tools.html">इमेज टूल्स</a>
+          <a href="panchayat-sahayak-pdf-tools.html">पीडीऍफ़ टूल्स</a>
+          <a href="panchayat-sahayak-notices.html">आदेश व नोटिस</a>
+          <a href="panchayat-sahayak-forms-pdfs.html">फ़ॉर्म व PDF</a>
+          <a href="panchayat-sahayak-letterhead-generator.html">Notice Pad (लेटरपैड)</a>
+          <a href="panchayat-sahayak-csc-calculator.html">CSC शुल्क कैलकुलेटर</a>
+          <a href="panchayat-sahayak-work-register.html">कार्य रजिस्टर</a>
+          <a href="panchayat-sahayak-salary-calculator.html">सैलरी कैलकुलेटर</a>
+          <a href="hindi-office-editor.html">ऑफिस हिंदी एडिटर</a>
+          <a href="panchayat-list-builder.html">List Builder</a>
+          <a href="panchayat-sahayak-village-profile.html">Village Profile</a>
+          <a href="panchayat-sahayak-letter-generator.html">Auto-Letter</a>
+          <a href="farmer-id-card-generator.html">Farmer ID Card</a>
         </div>
       </div>
 
@@ -270,29 +264,21 @@
       <div class="nav-item">
         <span class="nav-link">संपर्क ▾</span>
         <div class="dropdown">
-          <a href="contact.html">Helpdesk</a>
-          <a href="panchayat-sahayak-salary-status.html">Status Check</a>
-          <a href="contact.html">Email Support</a>
+          <a href="contact.html">Helpdesk & Support</a>
+          <a href="panchayat-sahayak-salary-status.html">Salary Status Check</a>
         </div>
       </div>
 
-
+      <!-- LOGIN -->
       <div class="nav-item">
         <span class="nav-link" style="color:#facc15; font-weight:700; cursor:pointer;">Login ▾</span>
-        <div class="dropdown"
-          style="padding: 16px; width: 260px; right: 0; left: auto; color:#0f172a; text-align:left; max-width:90vw;">
+        <div class="dropdown" style="padding: 16px; width: 260px; right: 0; left: auto; color:var(--text-main); text-align:left; max-width:90vw;">
           <form id="globalNavLoginForm" style="display:flex; flex-direction:column; gap:10px; margin:0;" action="panchayat-sahayak-dashboard.html" method="GET">
-            <div style="font-size:13px; color:#475569; font-weight:600; margin-bottom:5px;">LOGIN</div>
-            <input type="email" id="gNavEmail" placeholder="Email Address" required
-              style="padding:8px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
-            <input type="password" id="gNavPass" placeholder="Password" required
-              style="padding:8px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
-            <button type="submit" id="gNavBtn"
-              style="background:var(--accent); color:white; border:none; padding:8px; border-radius:4px; font-weight:600; cursor:pointer; font-family:'Poppins', sans-serif;">Sign
-              In</button>
-            <div id="gNavErr"
-              style="color:#ef4444; font-size:12px; display:none; background:#fee2e2; padding:6px; border-radius:4px;">
-            </div>
+            <div style="font-size:13px; color:var(--text-muted); font-weight:600; margin-bottom:5px;">LOGIN</div>
+            <input type="email" id="gNavEmail" placeholder="Email Address" required style="padding:8px; border:1px solid var(--border); border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <input type="password" id="gNavPass" placeholder="Password" required style="padding:8px; border:1px solid var(--border); border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <button type="submit" id="gNavBtn" style="background:var(--accent); color:white; border:none; padding:8px; border-radius:4px; font-weight:600; cursor:pointer; font-family:'Poppins', sans-serif;">Sign In</button>
+            <div id="gNavErr" style="color:#ef4444; font-size:12px; display:none; background:#fee2e2; padding:6px; border-radius:4px;"></div>
           </form>
         </div>
       </div>
@@ -306,44 +292,51 @@
 
   <main class="page" id="home" role="main">
 
-    <section class="hero" aria-labelledby="hero-title" style="padding: 12px 20px; display: flex; align-items: center; gap: 20px;">
-      <div style="flex-shrink: 0;">
-        <img src="https://gpsahayak.in/images/panchayat_logo.png" alt="Hero Logo" style="height: 80px; object-fit: contain;">
+    <section class="welcome-widget" aria-labelledby="hero-title">
+      <div class="welcome-main">
+        <div class="welcome-header">
+          <img src="https://gpsahayak.in/images/panchayat_logo.png" alt="Logo" class="welcome-logo">
+          <div>
+            <h2 id="hero-title" style="font-size: 18px; font-weight: 700; margin: 0; color: var(--text-main);">नमस्ते <span id="home-ps-name" style="color: var(--accent); font-weight: 800;"></span>!</h2>
+            <p style="font-size: 12px; color: var(--text-muted); margin: 2px 0 0 0;">ग्राम सचिवालय डिजिटल सेवा एवं सूचना पोर्टल</p>
+          </div>
+        </div>
+        
+        <div class="welcome-info-grid">
+          <div class="info-item">
+            <span class="info-label">📅 Last Updated</span>
+            <span class="info-val">15 July 2026</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">🔔 Latest Order</span>
+            <span class="info-val"><a id="widget-latest-order" href="panchayat-sahayak-notices.html" style="color: var(--accent); text-decoration: none; font-weight: 700;">लोड हो रहा है...</a></span>
+          </div>
+        </div>
       </div>
-      <div class="hero-left">
-        <h2 id="hero-title" style="font-size:18px; margin:0 0 4px 0;">नमस्ते <span id="home-ps-name" style="color:var(--accent);"></span>— पंचायत सहायक पोर्टल पर आपका स्वागत है!
-        </h2>
-        <p style="font-size:13px; color:#555; margin:0;">रोज़मर्रा की डिजिटल सेवाएँ और आवश्यक आदेश नीचे पाएँ।</p>
+      
+      <div class="welcome-search-bar" id="search-container" style="position: relative;">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="site-search" placeholder="सेवाएँ, टूल्स, फॉर्म या ब्लॉग खोजें (जैसे- e-District, Salary)..." autocomplete="off">
+        <button id="search-clear" style="display: none;">✕</button>
+        <div id="search-suggestions" class="search-suggestions-dropdown"></div>
       </div>
     </section>
     <section class="hero seo-hero">
-
       <div class="hero-left">
-
-        <h2>Panchayat Sahayak Portal | पंचायत सहायक Salary, Login & Services</h2>
-
+        <h2>UP Panchayat Sahayak Portal 2026 | पंचायत सहायक भर्ती, सैलरी, लॉगिन व डिजिटल सेवाएँ</h2>
         <p>
-          उत्तर प्रदेश पंचायत सहायक (Panchayat Sahayak UP) ग्राम पंचायत सचिवालय में Data Entry Operator (DEO) के रूप में
-          कार्य करने वाला कर्मचारी होता है। पंचायत सहायक की वर्तमान सैलरी (Panchayat Sahayak Salary 2026 update) ₹6,000
-          प्रति माह है। इस पोर्टल पर आप Panchayat Sahayak Vacancy (भर्ती), Eligibility (12th Pass), UP Panchayat Sahayak
-          Login, e-Gram Swaraj, UP e-District, और CSC Digital Seva से जुड़े सभी महत्वपूर्ण लिंक एक ही सुरक्षित
-          प्लेटफार्म से एक्सेस कर सकते हैं।
-        </p>
-
-        <p>
-          The UP Panchayat Sahayak portal helps rural professionals manage CSC logistics, access UP e-District services,
-          and check Panchayat Sahayak Salary and vacancy updates quickly.
+          उत्तर प्रदेश पंचायती राज विभाग के अंतर्गत ग्राम पंचायत सचिवालय (Gram Sachivalaya) में कार्यरत पंचायत सहायकों (Panchayat Sahayak UP / DEO) के लिए यह एक स्वतंत्र एवं सुरक्षित डिजिटल सहायता पोर्टल है। यहाँ आप Panchayat Sahayak Salary (मानदेय ₹6,000), PFMS स्टेटस, e-Gram Swaraj Portal Data Entry, UP e-District, और CSC Digital Seva Portal की आधिकारिक लिंक्स और स्मार्ट टूल्स एक ही स्थान पर प्राप्त कर सकते हैं।
         </p>
         <p>
-          Hinglish searches ke liye: panchayat sahayak ki salary kitni hai — UP mein ₹6,000 hai. Panchayat sahayak kaise
-          bante hain — 12th pass hona chahiye aur usi gram panchayat ka niwasi hona chahiye. Panchayat sahayak ka kaam
-          kya hota hai — e-Gram Swaraj portal par data entry, CSC seva, parivaar register update aur sarkari yojanaon
-          mein madad karna. Panchayat sahayak login kaise kare — iss portal par CSC, GPSAHA aur e-District UP ke direct
-          links hain. Panchayat sahayak vacancy 2026 kab aayegi — GPSAHA portal par latest notification dekhen.
+          Panchayat Sahayak Salary & Mandey: पंचायत सहायक का वर्तमान मानदेय ₹6,000 प्रति माह है। अपनी हाजिरी और PFMS भुगतान स्थिति Salary Status Check से देखें।
         </p>
-
+        <p>
+          Panchayat Sahayak Login & CSC: e-District, CSC Digital Seva, Gateway, और e-Gram Swaraj पोर्टल पर तुरंत लॉगिन करने के लिए सभी वेबसाइट डायरेक्ट लिंक का प्रयोग करें।
+        </p>
+        <p>
+          Smart Tools & Farmer ID Card: ग्राम सचिवालय में किसान कार्ड, PDF फ़ॉर्म, ऑटो-लेटर जनरेटर और कार्य रजिस्टर बनाने के लिए किसान कार्ड जनरेटर एवं टूल्स का प्रयोग करें।
+        </p>
       </div>
-
     </section>
 
 
@@ -537,39 +530,61 @@
         </div>
       </a>
 
+      <a href="https://mksy.up.gov.in/" target="_blank" class="service-link">
+        <div class="service-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Kanya Sumangala">
+          <span>Sumangala</span>
+        </div>
+      </a>
+
+      <a href="https://uppolice.gov.in/" target="_blank" class="service-link">
+        <div class="service-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2554/2554988.png" alt="UP Police">
+          <span>UP Police (FIR)</span>
+        </div>
+      </a>
+
+      <a href="https://bor.up.nic.in/" target="_blank" class="service-link">
+        <div class="service-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/5166/5166014.png" alt="BOR UP">
+          <span>Revenue (BOR)</span>
+        </div>
+      </a>
+
+      <a href="https://udyamregistration.gov.in/" target="_blank" class="service-link">
+        <div class="service-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3281/3281323.png" alt="Udyam">
+          <span>Udyam (MSME)</span>
+        </div>
+      </a>
+
+      <a href="https://abha.abdm.gov.in/" target="_blank" class="service-link">
+        <div class="service-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" alt="ABHA ID">
+          <span>ABHA Health ID</span>
+        </div>
+      </a>
+
+      <a href="https://www.passportindia.gov.in/" target="_blank" class="service-link">
+        <div class="service-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3063/3063255.png" alt="Passport">
+          <span>Passport Seva</span>
+        </div>
+      </a>
+
     </section>
 
     <section class="panel" aria-labelledby="tools-title" style="padding:28px 32px;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
         <div>
-          <h3 id="tools-title" style="margin:0; font-size:20px; font-weight:800; color:#1e1b4b; font-family:'Outfit',sans-serif;">🔧 पंचायत टूल्स</h3>
-          <p style="margin:4px 0 0; font-size:13px; color:#94a3b8;">Panchayat Sahayak Smart Tools</p>
+          <h3 id="tools-title" style="margin:0; font-size:20px; font-weight:800; color:#0f172a; font-family:'Outfit',sans-serif;">🛠️ पंचायत सहायक स्मार्ट टूल्स</h3>
+          <p style="margin:4px 0 0; font-size:13px; color:#64748b;">ग्राम सचिवालय दैनिक कार्य टूल्स एवं फ़ॉर्म्स</p>
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap:14px;">
+      <div class="ptools-grid">
 
-        <!-- PDF Forms -->
-        <a href="panchayat-sahayak-forms-pdfs.html" style="text-decoration:none;">
-          <div class="ptool-card" style="--tc:#4f46e5; --tl:#818cf8; --bg:#ede9fe;">
-            <div class="ptool-bar"></div>
-            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/3143/3143460.png" alt="PDF Forms" class="ptool-img"></div>
-            <div class="ptool-label">PDF Forms</div>
-            <div class="ptool-sub">फ़ॉर्म & PDF</div>
-          </div>
-        </a>
-
-        <!-- Orders / Notices -->
-        <a href="panchayat-sahayak-notices.html" style="text-decoration:none;">
-          <div class="ptool-card" style="--tc:#f43f5e; --tl:#fb7185; --bg:#ffe4e6;">
-            <div class="ptool-bar"></div>
-            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png" alt="Orders" class="ptool-img"></div>
-            <div class="ptool-label">Orders / Notices</div>
-            <div class="ptool-sub">आदेश & नोटिस</div>
-          </div>
-        </a>
-
-        <!-- Image Tools -->
+        <!-- 1. Image Tools -->
         <a href="panchayat-sahayak-image-tools.html" style="text-decoration:none;">
           <div class="ptool-card" style="--tc:#0284c7; --tl:#38bdf8; --bg:#e0f2fe;">
             <div class="ptool-bar"></div>
@@ -579,7 +594,7 @@
           </div>
         </a>
 
-        <!-- PDF Tools -->
+        <!-- 2. PDF Tools -->
         <a href="panchayat-sahayak-pdf-tools.html" style="text-decoration:none;">
           <div class="ptool-card" style="--tc:#dc2626; --tl:#f87171; --bg:#fee2e2;">
             <div class="ptool-bar"></div>
@@ -589,37 +604,27 @@
           </div>
         </a>
 
-        <!-- Work Register -->
-        <a href="panchayat-sahayak-work-register.html" style="text-decoration:none;">
-          <div class="ptool-card" style="--tc:#f26a21; --tl:#fb923c; --bg:#ffedd5;">
+        <!-- 3. Orders / Notices -->
+        <a href="panchayat-sahayak-notices.html" style="text-decoration:none;">
+          <div class="ptool-card" style="--tc:#f43f5e; --tl:#fb7185; --bg:#ffe4e6;">
             <div class="ptool-bar"></div>
-            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/2838/2838618.png" alt="Work Register" class="ptool-img"></div>
-            <div class="ptool-label">Work Register</div>
-            <div class="ptool-sub">कार्य रजिस्टर</div>
+            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png" alt="Orders" class="ptool-img"></div>
+            <div class="ptool-label">Orders / Notices</div>
+            <div class="ptool-sub">आदेश & नोटिस</div>
           </div>
         </a>
 
-        <!-- Village Profile -->
-        <a href="panchayat-sahayak-village-profile.html" style="text-decoration:none;">
-          <div class="ptool-card" style="--tc:#2563eb; --tl:#60a5fa; --bg:#dbeafe;">
+        <!-- 4. PDF Forms -->
+        <a href="panchayat-sahayak-forms-pdfs.html" style="text-decoration:none;">
+          <div class="ptool-card" style="--tc:#0f766e; --tl:#14b8a6; --bg:#f0fdfa;">
             <div class="ptool-bar"></div>
-            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Village Profile" class="ptool-img"></div>
-            <div class="ptool-label">Village Profile</div>
-            <div class="ptool-sub">ग्राम प्रोफाइल</div>
+            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/3143/3143460.png" alt="PDF Forms" class="ptool-img"></div>
+            <div class="ptool-label">PDF Forms</div>
+            <div class="ptool-sub">फ़ॉर्म & PDF</div>
           </div>
         </a>
 
-        <!-- Auto Letter -->
-        <a href="panchayat-sahayak-letter-generator.html" style="text-decoration:none;">
-          <div class="ptool-card" style="--tc:#16a34a; --tl:#4ade80; --bg:#dcfce7;">
-            <div class="ptool-bar"></div>
-            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/803/803024.png" alt="Auto Letter" class="ptool-img"></div>
-            <div class="ptool-label">Auto-Letter</div>
-            <div class="ptool-sub">पत्र जनरेटर</div>
-          </div>
-        </a>
-
-        <!-- Notice Pad -->
+        <!-- 5. Notice Pad -->
         <a href="panchayat-sahayak-letterhead-generator.html" style="text-decoration:none;">
           <div class="ptool-card" style="--tc:#ea580c; --tl:#fdba74; --bg:#fff7ed;">
             <div class="ptool-bar"></div>
@@ -629,9 +634,29 @@
           </div>
         </a>
 
-        <!-- Salary Calculator -->
+        <!-- 6. CSC Fee Calculator -->
+        <a href="panchayat-sahayak-csc-calculator.html" style="text-decoration:none;">
+          <div class="ptool-card" style="--tc:#2563eb; --tl:#3b82f6; --bg:#eff6ff;">
+            <div class="ptool-bar"></div>
+            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="CSC Fee Calculator" class="ptool-img"></div>
+            <div class="ptool-label">CSC Fee Calc</div>
+            <div class="ptool-sub">CSC शुल्क कैलकुलेटर</div>
+          </div>
+        </a>
+
+        <!-- 7. Work Register -->
+        <a href="panchayat-sahayak-work-register.html" style="text-decoration:none;">
+          <div class="ptool-card" style="--tc:#f97316; --tl:#fb923c; --bg:#ffedd5;">
+            <div class="ptool-bar"></div>
+            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/2838/2838618.png" alt="Work Register" class="ptool-img"></div>
+            <div class="ptool-label">Work Register</div>
+            <div class="ptool-sub">कार्य रजिस्टर</div>
+          </div>
+        </a>
+
+        <!-- 8. Master Calculator (Salary) -->
         <a href="panchayat-sahayak-salary-calculator.html" style="text-decoration:none;">
-          <div class="ptool-card" style="--tc:#7c3aed; --tl:#a78bfa; --bg:#f5f3ff;">
+          <div class="ptool-card" style="--tc:#7c3aed; --tl:#14b8a6; --bg:#f0fdfa;">
             <div class="ptool-bar"></div>
             <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Salary Calculator" class="ptool-img"></div>
             <div class="ptool-label">Master Calc</div>
@@ -639,7 +664,17 @@
           </div>
         </a>
 
-        <!-- Quick List Builder -->
+        <!-- 9. Hindi Office Editor -->
+        <a href="hindi-office-editor.html" style="text-decoration:none;">
+          <div class="ptool-card" style="--tc:#2b579a; --tl:#4b7ec7; --bg:#e8f0fe;">
+            <div class="ptool-bar"></div>
+            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/803/803024.png" alt="Hindi Office Editor" class="ptool-img" style="filter: hue-rotate(140deg);"></div>
+            <div class="ptool-label" style="font-weight: bold;">Hindi Editor</div>
+            <div class="ptool-sub">ऑफिस हिंदी एडिटर</div>
+          </div>
+        </a>
+
+        <!-- 10. List Builder -->
         <a href="panchayat-list-builder.html" style="text-decoration:none;">
           <div class="ptool-card" style="--tc:#ca8a04; --tl:#fcd34d; --bg:#fefce8;">
             <div class="ptool-bar"></div>
@@ -649,49 +684,86 @@
           </div>
         </a>
 
+        <!-- 11. Village Profile -->
+        <a href="panchayat-sahayak-village-profile.html" style="text-decoration:none;">
+          <div class="ptool-card" style="--tc:#2563eb; --tl:#60a5fa; --bg:#dbeafe;">
+            <div class="ptool-bar"></div>
+            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Village Profile" class="ptool-img"></div>
+            <div class="ptool-label">Village Profile</div>
+            <div class="ptool-sub">ग्राम प्रोफाइल</div>
+          </div>
+        </a>
+
+        <!-- 12. Auto Letter -->
+        <a href="panchayat-sahayak-letter-generator.html" style="text-decoration:none;">
+          <div class="ptool-card" style="--tc:#16a34a; --tl:#4ade80; --bg:#dcfce7;">
+            <div class="ptool-bar"></div>
+            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/803/803024.png" alt="Auto Letter" class="ptool-img"></div>
+            <div class="ptool-label">Auto-Letter</div>
+            <div class="ptool-sub">पत्र जनरेटर</div>
+          </div>
+        </a>
+
+        <!-- 13. Farmer ID Card Generator -->
+        <a href="farmer-id-card-generator.html" style="text-decoration:none;">
+          <div class="ptool-card" style="--tc:#15803d; --tl:#22c55e; --bg:#dcfce7;">
+            <div class="ptool-bar"></div>
+            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/1892/1892751.png" alt="Farmer ID Card" class="ptool-img"></div>
+            <div class="ptool-label">Farmer ID Card</div>
+            <div class="ptool-sub">किसान कार्ड बनाएं</div>
+          </div>
+        </a>
+
       </div>
 
 
     </section>
 
     <!-- Latest Blog Section -->
-    <section class="panel" aria-labelledby="blog-section-title" style="padding: 28px 32px;">
-      <div class="section-head" style="margin-bottom:20px;">
-        <h3 id="blog-section-title" style="margin:0; display:flex; align-items:center; gap:8px;">📚 ताज़े ब्लॉग आर्टिकल्स</h3>
-        <a href="blog.html" class="see-all-btn">सभी देखें &rarr;</a>
+    <section class="panel" aria-labelledby="blog-section-title" style="padding: 28px 32px; background: #ffffff; border-radius: 24px; border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 10px 40px rgba(0,0,0,0.04); position: relative; overflow: hidden;">
+      <div class="section-head" style="margin-bottom:24px; position:relative; z-index:2; border: none; padding-bottom: 0;">
+        <h3 id="blog-section-title" style="margin:0; display:flex; align-items:center; gap:12px; font-size: 20px; font-weight:800;">
+          <span style="background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%); color: #ffffff; width: 40px; height: 40px; border-radius: 12px; font-size: 20px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(15,118,110,0.25);">📰</span>
+          पंचायत सहायक गाइड व आर्टिकल्स (Featured Articles)
+        </h3>
+        <a href="blog.html" class="see-all-btn" style="background: #f8fafc; color: #0f172a; border-color: #e2e8f0; border-radius: 999px;">View All &rarr;</a>
       </div>
-      <div id="home-latest-blogs">
+      <style>
+        .home-blogs-scroll::-webkit-scrollbar { display: none; }
+        .home-blogs-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+      </style>
+      <div id="home-latest-blogs" class="home-blogs-scroll" style="position:relative; z-index:2; margin: 0 -32px; padding: 0 32px;">
         <div style="text-align:center; padding:20px; color:#94a3b8; font-size:14px;">लोड हो रहा है...</div>
       </div>
     </section>
 
     <!-- Premium Notices Ticker -->
-    <section id="notices" aria-labelledby="notices-title" style="background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(15,23,42,0.06); position: relative; border: 1px solid var(--border);">
+    <section id="notices" aria-labelledby="notices-title" style="background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(238,242,255,0.6)); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border-radius: 24px; overflow: hidden; box-shadow: 0 10px 40px rgba(15,118,110,0.08); position: relative; border: 1px solid rgba(255,255,255,0.9);">
 
       <!-- Decorative bg circles -->
-      <div style="position:absolute; top:-40px; right:-40px; width:180px; height:180px; background:rgba(15,23,42,0.02); border-radius:50%; pointer-events:none;"></div>
-      <div style="position:absolute; bottom:-60px; left:-30px; width:220px; height:220px; background:rgba(15,23,42,0.02); border-radius:50%; pointer-events:none;"></div>
+      <div style="position:absolute; top:-40px; right:-40px; width:200px; height:200px; background:radial-gradient(circle, rgba(15,118,110,0.12) 0%, transparent 70%); border-radius:50%; pointer-events:none;"></div>
+      <div style="position:absolute; bottom:-60px; left:-30px; width:250px; height:250px; background:radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%); border-radius:50%; pointer-events:none;"></div>
 
       <!-- Header -->
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:20px 28px 16px; position:relative; flex-wrap:wrap; gap:10px;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:40px; height:40px; background:linear-gradient(135deg,#1e3c72,#2a5298); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:18px; box-shadow:0 4px 12px rgba(30,60,114,0.25);">📋</div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:24px 28px 16px; position:relative; flex-wrap:wrap; gap:10px;">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <div style="width:48px; height:48px; background:linear-gradient(135deg, #f97316 0%, #dc2626 100%); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:22px; box-shadow:0 8px 16px rgba(249,115,22,0.3); color:white;">📢</div>
           <div>
-            <h3 id="notices-title" style="margin:0; color:#1e1b4b; font-size:18px; font-weight:800; font-family:'Outfit',sans-serif; letter-spacing:-0.02em;">नवीनतम आदेश / नोटिस</h3>
-            <div style="font-size:12px; color:#6b7280; margin-top:2px;">Latest Orders &amp; Notices</div>
+            <h3 id="notices-title" style="margin:0; color:#0f172a; font-size:20px; font-weight:800; font-family:'Outfit',sans-serif; letter-spacing:-0.02em;">नवीनतम शासनादेश & नोटिस</h3>
+            <div style="font-size:13px; color:#64748b; margin-top:2px; font-weight:500;">Panchayat Sahayak Orders & Notices 2026</div>
           </div>
         </div>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <div style="display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.7); padding:5px 12px; border-radius:999px; border:1px solid rgba(30,60,114,0.15);">
-            <span style="width:7px; height:7px; background:#16a34a; border-radius:50%; display:inline-block; animation: liveBlinkGreen 1.2s ease-in-out infinite;"></span>
-            <span style="font-size:11px; color:#1e1b4b; font-weight:700; letter-spacing:0.5px;">LIVE</span>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.9); padding:6px 14px; border-radius:999px; border:1px solid rgba(15,118,110,0.2); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+            <span style="width:8px; height:8px; background:#10b981; border-radius:50%; display:inline-block; animation: liveBlinkGreen 1.2s ease-in-out infinite;"></span>
+            <span style="font-size:12px; color:#0f172a; font-weight:800; letter-spacing:0.5px;">LIVE</span>
           </div>
-          <a href="panchayat-sahayak-notices.html" style="background:linear-gradient(135deg,#f26a21,#e85d0a); color:#fff; padding:7px 16px; border-radius:999px; text-decoration:none; font-size:13px; font-weight:700; box-shadow:0 4px 12px rgba(242,106,33,0.25); white-space:nowrap;">सभी देखें →</a>
+          <a href="panchayat-sahayak-notices.html" style="background:var(--accent); color:#fff; padding:8px 20px; border-radius:999px; text-decoration:none; font-size:13px; font-weight:700; box-shadow:0 6px 15px rgba(15,118,110,0.3); white-space:nowrap; transition: all 0.3s;">सभी देखें →</a>
         </div>
       </div>
 
       <!-- Divider -->
-      <div style="height:1px; background:#e2e8f0; margin:0 28px;"></div>
+      <div style="height:1px; background:rgba(15,118,110,0.1); margin:0 28px;"></div>
 
       <!-- Ticker Track -->
       <div style="height:220px; overflow:hidden; position:relative; padding:0 28px 20px;">
@@ -704,62 +776,75 @@
           }
         </style>
         <div id="home-ticker-inner" style="animation: scrollUp 15s linear infinite; padding-top:12px;">
-          <div style="display:flex; align-items:center; gap:10px; padding:14px 0; border-bottom:1px solid rgba(79,70,229,0.1);">
-            <div style="width:6px; height:6px; background:#a78bfa; border-radius:50%; flex-shrink:0;"></div>
-            <span style="color:#6b7280; font-size:13px;">डेटाबेस से आदेश लोड हो रहे हैं...</span>
+          <div style="display:flex; align-items:center; gap:10px; padding:14px 0; border-bottom:1px solid rgba(15,118,110,0.1);">
+            <div style="width:6px; height:6px; background:#14b8a6; border-radius:50%; flex-shrink:0;"></        <!-- Form 2 -->
+        <div style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.02);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)'; this.style.borderColor='rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.02)'; this.style.borderColor='rgba(0,0,0,0.06)';">
+          <div style="display:flex; align-items:center; gap:14px;">
+            <div style="width:40px; height:40px; background:#fef2f2; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#ef4444; font-size:14px; font-weight:800; font-family:'Outfit',sans-serif; letter-spacing:0.5px;">PDF</div>
+            <div>
+              <div style="font-size:15px; font-weight:800; color:#1e293b; font-family:'Outfit',sans-serif;">स्वघोषित प्रमाण पत्र</div>
+              <div style="font-size:12px; color:#64748b; font-weight:600; margin-top:2px;">PDF Document</div>
+            </div>
           </div>
+          <button style="background: #2563eb; color: #fff; border:none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; transition: background 0.2s; box-shadow: 0 2px 8px rgba(37,99,235,0.3);" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'" onclick="window.location.href='download.html?file=https://drive.google.com/uc?export%3Ddownload%26id%3D1XnF7aI40z8vQnK91V_6w84aO8aLw1bJv&title=स्वघोषित+प्रमाण+पत्र&type=pdf'">Download</button>
         </div>
+
+        <!-- Form 3 -->
+        <div style="background: #ffffff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.02);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)'; this.style.borderColor='rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.02)'; this.style.borderColor='rgba(0,0,0,0.06)';">
+          <div style="display:flex; align-items:center; gap:14px;">
+            <div style="width:40px; height:40px; background:#fef2f2; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#ef4444; font-size:14px; font-weight:800; font-family:'Outfit',sans-serif; letter-spacing:0.5px;">PDF</div>
+            <div>
+              <div style="font-size:15px; font-weight:800; color:#1e293b; font-family:'Outfit',sans-serif;">पंचायत सहायक अनुबंध</div>
+              <div style="font-size:12px; color:#64748b; font-weight:600; margin-top:2px;">PDF Document</div>
+            </div>
+          </div>
+          <button style="background: #f1f5f9; color: #334155; border:1px solid #cbd5e1; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f1f5f9'" onclick="openForm(this)">Open</button>
+        </div>
+
       </div>
-
-
     </section>
 
     <!-- Forms Section -->
     <section id="forms" class="panel" aria-labelledby="forms-title">
-
       <div class="section-head">
-        <h3 id="forms-title" style="margin:0">मुख्य फ़ॉर्म — Offline PDFs</h3>
-        <a href="panchayat-sahayak-forms-pdfs.html" class="see-all-btn">सभी 50+ फॉर्म देखें &rarr;</a>
+        <h3 id="forms-title" style="margin:0">महत्वपूर्ण फॉर्म्स (Important Forms)</h3>
+        <span style="font-size:12px; color:var(--muted)">Download &amp; Print</span>
       </div>
-
-      <div class="forms-grid" id="formsGrid">
-
+      <div class="forms-grid">
         <div class="form-item">
-          <div>
-            <div class="name">परिवार रजिस्टर</div>
-            <div class="meta" style="color:var(--muted)">PDF</div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="background:#fee2e2; color:#ef4444; width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:12px;">PDF</div>
+            <div>
+              <div class="name">परिवार रजिस्टर फॉर्म</div>
+              <div class="meta">PDF Document</div>
+            </div>
           </div>
-          <div><button class="btn" style="background-color: #2563eb; color: #fff;" onclick="window.location.href='download.html?file=https://drive.google.com/uc?export%3Ddownload%26id%3D15lneio8p7R3y5nxylvqATFKtm3QynCj2&title=परिवार+रजिस्टर&type=pdf'">Download</button></div>
+          <button class="btn" onclick="openForm(this)">Open</button>
         </div>
-
         <div class="form-item">
-          <div>
-            <div class="name">स्वघोषित प्रमाण पत्र</div>
-            <div class="meta" style="color:var(--muted)">PDF</div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="background:#fee2e2; color:#ef4444; width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:12px;">PDF</div>
+            <div>
+              <div class="name">स्वघोषित प्रमाण पत्र</div>
+              <div class="meta">PDF Document</div>
+            </div>
           </div>
-          <div><button class="btn" style="background-color: #2563eb; color: #fff;"
-              onclick="window.location.href='download.html?file=https://drive.google.com/uc?export%3Ddownload%26id%3D1jPhBkQW-4rg1lJL7kU2DeUuWvqEwIqfY&title=स्वघोषित+प्रमाण+पत्र&type=pdf'">Download</button>
-          </div>
+          <button class="btn" onclick="openForm(this)">Open</button>
         </div>
-
         <div class="form-item">
-          <div>
-            <div class="name">जन्म / मृत्यु प्रमाण पत्र</div>
-            <div class="meta" style="color:var(--muted)">PDF</div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="background:#fee2e2; color:#ef4444; width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:12px;">PDF</div>
+            <div>
+              <div class="name">पंचायत सहायक अनुबंध</div>
+              <div class="meta">PDF Document</div>
+            </div>
           </div>
-          <div><button class="btn" onclick="openForm(this)">Open</button></div>
+          <button class="btn" onclick="openForm(this)">Open</button>
         </div>
-
-        <div class="form-item">
-          <div>
-            <div class="name">पंचायत सहायक अनुबंध</div>
-            <div class="meta" style="color:var(--muted)">PDF</div>
-          </div>
-          <div><button class="btn" onclick="openForm(this)">Open</button></div>
-        </div>
-
       </div>
     </section>
+
+    <!-- Quick Actions Section -->
     <section id="quick-actions" class="panel" aria-labelledby="qa-title">
       <div class="section-head">
         <h3 id="qa-title" style="margin:0">महत्वपूर्ण लिंक (Quick Actions)</h3>
@@ -767,52 +852,47 @@
       </div>
 
       <div class="action-grid-8">
-
+        <a href="current-affairs-news.html" class="action-box" style="text-decoration:none; position:relative; overflow:hidden;">
+          <div style="position:absolute; top:5px; right:-15px; background:linear-gradient(135deg, #ef4444, #dc2626); color:white; font-size:9px; font-weight:800; padding:2px 16px; transform:rotate(45deg); z-index:2; box-shadow:0 2px 4px rgba(0,0,0,0.2);">NEW</div>
+          <div class="ab-icon" style="background:#fefce8; color:#eab308; font-size:22px;">📍</div>
+          <div class="ab-text">Current Affairs News</div>
+        </a>
         <a href="gram-panchayat-yojana-list.html" class="action-box" style="text-decoration:none;">
-          <div class="ab-icon" style="background:#e0f2fe; color:#0284c7; font-size:22px;">📃</div>
+          <div class="ab-icon" style="background:#e0f2fe; color:#0284c7; font-size:22px;">📍</div>
           <div class="ab-text">सभी योजनाओं की लिस्ट</div>
         </a>
-
         <a href="panchayat-sahayak-salary-status.html" class="action-box" style="text-decoration:none;">
           <div class="ab-icon" style="background:#dcfce7; color:#16a34a; font-size:22px;">✔️</div>
           <div class="ab-text">आवेदनों की स्थिति</div>
         </a>
-
         <a href="panchayat-sahayak-all-portals.html" class="action-box" style="text-decoration:none;">
-          <div class="ab-icon" style="background:#e0f0ff; color:#1e3c72; font-size:22px;">🌐</div>
+          <div class="ab-icon" style="background:#e0f0ff; color:#0f766e; font-size:22px;">📍</div>
           <div class="ab-text">सभी सरकारी पोर्टल</div>
         </a>
-
         <div class="action-box">
-          <div class="ab-icon" style="background:#fef3c7; color:#b45309; font-size:22px;">💻</div>
+          <div class="ab-icon" style="background:#fef3c7; color:#b45309; font-size:22px;">📍</div>
           <div class="ab-text">ई-ग्राम स्वराज एंट्री</div>
         </div>
-
         <div class="action-box">
-          <div class="ab-icon" style="background:#f0fdf4; color:#15803d; font-size:22px;">📊</div>
+          <div class="ab-icon" style="background:#f0fdf4; color:#15803d; font-size:22px;">📍</div>
           <div class="ab-text">ग्राम पंचायत कार्य रिपोर्ट</div>
         </div>
-
         <div class="action-box">
-          <div class="ab-icon" style="background:#fff7ed; color:#c2410c; font-size:22px;">👴</div>
+          <div class="ab-icon" style="background:#fff7ed; color:#c2410c; font-size:22px;">📍</div>
           <div class="ab-text">पेंशन लाभार्थियों की सूची</div>
         </div>
-
         <div class="action-box">
-          <div class="ab-icon" style="background:#ecfccb; color:#4d7c0f; font-size:22px;">👨‍👩‍👦</div>
+          <div class="ab-icon" style="background:#ecfccb; color:#4d7c0f; font-size:22px;">👨‍👩‍📍</div>
           <div class="ab-text">परिवार रजिस्टर नकल</div>
         </div>
-
         <div class="action-box">
-          <div class="ab-icon" style="background:#fef2f2; color:#b91c1c; font-size:22px;">📜</div>
+          <div class="ab-icon" style="background:#fef2f2; color:#b91c1c; font-size:22px;">📍</div>
           <div class="ab-text">खतौनी / भूलेख देखें</div>
         </div>
-
       </div>
-
     </section>
 
-    <!-- Quick Actions Section -->
+    <!-- Software Drivers Section -->
     <section class="panel" aria-labelledby="drivers-title">
       <h3 id="drivers-title">Software Drivers</h3>
       <div class="nic-grid-4" id="home-drivers">
@@ -821,71 +901,80 @@
       </div>
     </section>
 
-    <section id="about" aria-labelledby="about-title" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); border-radius: var(--radius-lg); overflow: hidden; position: relative; padding: 40px;">
+    <section id="about" aria-labelledby="about-title" style="background: linear-gradient(135deg, #0f766e 0%, #115e59 100%); border-radius: var(--radius-lg); overflow: hidden; position: relative; padding: 40px;">
 
       <!-- Background watermark -->
       <div style="position:absolute; right:-20px; top:50%; transform:translateY(-50%); font-size:180px; font-weight:900; color:rgba(255,255,255,0.04); font-family:'Outfit',sans-serif; line-height:1; pointer-events:none; user-select:none;">PS</div>
 
       <!-- Header -->
       <div style="display:flex; align-items:flex-start; gap:16px; margin-bottom:28px; position:relative;">
-        <div style="width:48px; height:48px; background:rgba(242,106,33,0.2); border:1px solid rgba(242,106,33,0.4); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0;">🏛️</div>
+        <div style="width:48px; height:48px; background:rgba(249,115,22,0.2); border:1px solid rgba(249,115,22,0.4); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0;">📍</div>
         <div>
           <h3 id="about-title" style="font-size:20px; color:#fff; font-weight:800; margin:0 0 6px 0; font-family:'Outfit',sans-serif;">डिजिटल पंचायत मिशन के बारे में</h3>
-          <p style="font-size:14px; color:#c8d8f0; line-height:1.7; margin:0;">यह पोर्टल उत्तर प्रदेश के पंचायत सहायकों को सशक्त बनाने के लिए डिज़ाइन किया गया है। हमारा उद्�  <!-- SEO CONTENT BLOCK (ENHANCED FOR ADSENSE) -->
-  <section style="background: #f4f7fb; padding: 60px 40px; margin: 0; border-top: 1px solid #dde6f0; border-bottom: 1px solid #dde6f0;">
-    <div style="max-width: 1100px; margin: 0 auto;">
-
-      <div style="text-align:center; margin-bottom:40px;">
-        <div style="display:inline-flex; align-items:center; gap:8px; background:#fff4eb; border:1px solid #f26a21; padding:6px 16px; border-radius:999px; margin-bottom:12px;">
-          <span style="width:7px;height:7px;background:#f26a21;border-radius:50%;display:inline-block;"></span>
-          <span style="font-size:12px; font-weight:800; color:#f26a21; letter-spacing:1px; text-transform:uppercase;">Informational Guide</span>
-        </div>
-        <h2 style="color:#1e3c72; font-size:28px; font-weight:800; margin:0; font-family:'Outfit',sans-serif;">Panchayat Sahayak Portal UP: Complete Information Guide</h2>
-        <p style="color:#5a6a7e; font-size:15px; max-width:700px; margin: 12px auto 0; line-height: 1.6;">
-          उत्तर प्रदेश (UP) के ग्राम पंचायतों में 'पंचायत सहायक' (Data Entry Operator) एक महत्वपूर्ण पद है। इस पोर्टल का उद्देश्य राज्य के 58,000+ पंचायत सहायकों को उनके दैनिक कार्यों जैसे e-Gram Swaraj एंट्री, CSC सेवाएं और रिकॉर्ड कीपिंग में मदद करना है।
-        </p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
-
-        <div style="background:#fff; border:1px solid #dde6f0; border-radius:14px; padding:24px; border-top:4px solid #1e3c72; box-shadow:0 4px 15px rgba(30,60,114,0.05);">
-          <h3 style="color:#1e3c72; font-size:18px; font-weight:700; margin-bottom:12px;">1. Panchayat Sahayak Eligibility & Recruitment (भर्ती)</h3>
-          <p style="font-size:14px; color:#5a6a7e; line-height:1.7; margin:0;">
-            उत्तर प्रदेश पंचायत राज विभाग द्वारा पंचायत सहायक / Account-cum-Data Entry Operator की भर्ती मेरिट के आधार पर की जाती है। इसके लिए उम्मीदवार का 12वीं (Intermediate) पास होना और उसी ग्राम पंचायत का निवासी होना अनिवार्य है। चयन प्रक्रिया में हाई स्कूल और इंटरमीडिएट के अंकों का औसत निकाला जाता है। नई रिक्तियों (Vacancy 2026) की जानकारी आधिकारिक वेबसाइट पर जारी की जाती है।
-          </p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #dde6f0; border-radius:14px; padding:24px; border-top:4px solid #16a34a; box-shadow:0 4px 15px rgba(30,60,114,0.05);">
-          <h3 style="color:#1e3c72; font-size:18px; font-weight:700; margin-bottom:12px;">2. Panchayat Sahayak Salary Kitni Hai? (मानदेय)</h3>
-          <p style="font-size:14px; color:#5a6a7e; line-height:1.7; margin:0;">
-            वर्तमान में, एक पंचायत सहायक की सैलरी <strong style="color:#16a34a;">₹6,000 प्रति माह</strong> निर्धारित है। यह मानदेय ग्राम पंचायत के खाते (Gram Nidhi) से सीधे पंचायत सहायक के व्यक्तिगत बैंक खाते में PFMS के माध्यम से हस्तांतरित किया जाता है। पंचायत सहायकों को UP PRD Attendance App पर प्रतिदिन अपनी उपस्थिति (Attendance) दर्ज करनी होती है, जिसके आधार पर ही मानदेय का भुगतान होता है।
-          </p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #dde6f0; border-radius:14px; padding:24px; border-top:4px solid #f26a21; box-shadow:0 4px 15px rgba(30,60,114,0.05);">
-          <h3 style="color:#1e3c72; font-size:18px; font-weight:700; margin-bottom:12px;">3. पंचायत सहायक के मुख्य कार्य (Job Profile)</h3>
-          <p style="font-size:14px; color:#5a6a7e; line-height:1.7; margin:0;">
-            ग्राम सचिवालय (Gram Sachivalaya) का संचालन मुख्य रूप से इन्ही के जिम्मे होता है। प्रमुख कार्यों में शामिल हैं: 
-            <strong>(i)</strong> e-Gram Swaraj पोर्टल पर विकास कार्यों की ऑनलाइन फीडिंग। 
-            <strong>(ii)</strong> CSC (Common Service Center) के माध्यम से ग्रामीणों को आय, जाति, निवास प्रमाण पत्र उपलब्ध कराना। 
-            <strong>(iii)</strong> जन्म-मृत्यु रजिस्टर और परिवार रजिस्टर (Parivar Register) का अद्यतीकरण।
-          </p>
-        </div>
-
-      </div>
-
-      <div style="background:#fff; border:1px solid #2563eb; border-left:5px solid #2563eb; border-radius:12px; padding:24px; margin-top:24px; display:flex; align-items:flex-start; gap:16px; box-shadow:0 4px 15px rgba(37,99,235,0.08);">
-        <span style="font-size:28px; flex-shrink:0;">💻</span>
-        <div>
-          <h4 style="color:#1e3c72; font-size:18px; font-weight:700; margin-bottom:8px;">पोर्टल के मुख्य ऑनलाइन टूल्स (Useful Tools)</h4>
-          <p style="color:#5a6a7e; font-size:14px; line-height:1.7; margin:0;">
-            हमने पंचायत सहायकों के कार्य को डिजिटल और आसान बनाने के लिए कई उपयोगी टूल बनाए हैं। आप हमारे <a href="panchayat-sahayak-salary-calculator.html" style="color:#2563eb; font-weight:600;">Panchayat Sahayak Salary Calculator</a> का उपयोग करके अपने मानदेय और मनरेगा मजदूरी की गणना कर सकते हैं। इसके अलावा, <a href="panchayat-sahayak-letter-generator.html" style="color:#2563eb; font-weight:600;">Letter Generator</a> से आप अधिकारियों को लिखे जाने वाले आधिकारिक पत्र आसानी से तैयार कर सकते हैं। यह एक स्वतंत्र शैक्षणिक मंच (Independent Educational Portal) है जो तकनीकी सहायता प्रदान करता है।
-          </p>
+          <p style="font-size:14px; color:#cbd5e1; line-height:1.7; margin:0;">यह पोर्टल उत्तर प्रदेश के पंचायत सहायकों को सशक्त बनाने के लिए डिज़ाइन किया गया है। हमारा उद्देश्य ग्राम सचिवालय के कार्यों को <strong style="color:#f97316;">पेपरलेस, पारदर्शी और तेज़</strong> बनाना है।</p>
         </div>
       </div>
 
-    </div>
-  </section>��जिरी कैसे लगाएं?</summary>
+      <!-- Stats Row -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px,1fr)); gap:12px; position:relative;">
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px; text-align:center;">
+          <div style="font-size:26px; font-weight:800; color:#f97316; font-family:'Outfit',sans-serif;">58K+</div>
+          <div style="font-size:12px; color:#cbd5e1; font-weight:600; margin-top:4px;">पंचायत सहायक</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px; text-align:center;">
+          <div style="font-size:26px; font-weight:800; color:#f97316; font-family:'Outfit',sans-serif;">50+</div>
+          <div style="font-size:12px; color:#cbd5e1; font-weight:600; margin-top:4px;">फॉर्म & PDFs</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px; text-align:center;">
+          <div style="font-size:26px; font-weight:800; color:#f97316; font-family:'Outfit',sans-serif;">10+</div>
+          <div style="font-size:12px; color:#cbd5e1; font-weight:600; margin-top:4px;">Free Tools</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px; text-align:center;">
+          <div style="font-size:26px; font-weight:800; color:#f97316; font-family:'Outfit',sans-serif;">75</div>
+          <div style="font-size:12px; color:#cbd5e1; font-weight:600; margin-top:4px;">जिले कवर</div>
+        </div>
+      </div>
+
+    </section>
+
+
+  </main>
+  <section class="faq-section">
+    <div class="faq-container">
+
+      <div class="faq-header">
+        <h2>अक्सर पूछे जाने वाले सवाल (FAQs)</h2>
+        <p>UP Panchayat Sahayak Portal व कार्यों से जुड़ी जानकारी</p>
+      </div>
+
+      <div class="faq-grid-wrapper">
+
+        <details class="faq-item">
+          <summary>Panchayat Sahayak Salary (मानदेय) कैसे चेक करें?</summary>
+          <div class="faq-content">
+            <p>पोर्टल पर लॉग इन करके 'Manadey Status' डैशबोर्ड में देखें। मानदेय ग्राम निधि (Gram Nidhi) से डोंगल द्वारा
+              लगाया जाता है।</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>UP Panchayat Sahayak New Bharti / Vacancy 2025?</summary>
+          <div class="faq-content">
+            <p>नई भर्ती और रिक्त पदों (Vacancy) की सूचना समय-समय पर 'Form' सेक्शन में PDF के रूप में उपलब्ध कराई जाती
+              है।</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Merit List UP कैसे डाउनलोड करें?</summary>
+          <div class="faq-content">
+            <p>जिलेवार मेरिट लिस्ट और रिजल्ट आप 'Orders & Notice' सेक्शन में चेक कर सकते हैं। यह DPPRO ऑफिस से जारी होती
+              है।</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Attendance App पर हाजिरी कैसे लगाएं?</summary>
           <div class="faq-content">
             <p>UP PRD Attendance App का उपयोग करें। पंचायत भवन (Sachivalaya) की लोकेशन पर रहकर ही सुबह-शाम फोटो अपलोड
               करें।</p>
@@ -895,7 +984,7 @@
         <details class="faq-item">
           <summary>e-Gram Swaraj Login नहीं हो रहा, क्या करें?</summary>
           <div class="faq-content">
-            <p>अपना यूजर आईडी पासवर्ड चेक करें। अगर 'User Locked' आ रहा है, तो ब्लॉक ऑफिस से संपर्क करके पासवर्ड रिसेट
+            <p>अपना यूज़र आईडी पासवर्ड चेक करें। अगर 'User Locked' आ रहा है, तो ब्लॉक ऑफिस से संपर्क करके पासवर्ड रिसेट
               कराएं।</p>
           </div>
         </details>
@@ -914,41 +1003,41 @@
 
 
   <!-- SEO CONTENT BLOCK -->
-  <section style="background: #f4f7fb; padding: 50px 40px; margin: 0; border-top: 1px solid #dde6f0; border-bottom: 1px solid #dde6f0;">
+  <section style="background: #f4f7fb; padding: 50px 40px; margin: 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
     <div style="max-width: 1100px; margin: 0 auto;">
 
       <div style="text-align:center; margin-bottom:36px;">
-        <div style="display:inline-flex; align-items:center; gap:8px; background:#fff4eb; border:1px solid #f26a21; padding:6px 16px; border-radius:999px; margin-bottom:12px;">
-          <span style="width:7px;height:7px;background:#f26a21;border-radius:50%;display:inline-block;"></span>
-          <span style="font-size:12px; font-weight:800; color:#f26a21; letter-spacing:1px; text-transform:uppercase;">Important Information</span>
+        <div style="display:inline-flex; align-items:center; gap:8px; background:#fff4eb; border:1px solid #f97316; padding:6px 16px; border-radius:999px; margin-bottom:12px;">
+          <span style="width:7px;height:7px;background:#f97316;border-radius:50%;display:inline-block;"></span>
+          <span style="font-size:12px; font-weight:800; color:#f97316; letter-spacing:1px; text-transform:uppercase;">Important Information</span>
         </div>
-        <h2 style="color:#1e3c72; font-size:24px; font-weight:800; margin:0; font-family:'Outfit',sans-serif;">पंचायत सहायक (Panchayat Sahayak) की पूरी जानकारी</h2>
+        <h2 style="color:#0f766e; font-size:24px; font-weight:800; margin:0; font-family:'Outfit',sans-serif;">पंचायत सहायक (Panchayat Sahayak) की पूरी जानकारी</h2>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
 
-        <div style="background:#fff; border:1px solid #dde6f0; border-radius:14px; padding:22px; border-top:3px solid #f26a21; box-shadow:0 2px 8px rgba(30,60,114,0.05);">
-          <h3 style="color:#1e3c72; font-size:16px; font-weight:700; margin-bottom:10px;">1. पंचायत सहायक कौन होते हैं?</h3>
-          <p style="font-size:14px; color:#5a6a7e; line-height:1.8; margin:0;">UP सरकार द्वारा हर ग्राम पंचायत में <strong style="color:#1e3c72;">पंचायत सहायक कम DEO</strong> की भर्ती की गई है। इनका काम e-Gram Swaraj डेटा एंट्री, CSC सेवाएं और प्रमाण पत्र बनाना है।</p>
+        <div style="background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:22px; border-top:3px solid #f97316; box-shadow:0 2px 8px rgba(15,118,110,0.05);">
+          <h3 style="color:#0f766e; font-size:16px; font-weight:700; margin-bottom:10px;">1. पंचायत सहायक कौन होते हैं?</h3>
+          <p style="font-size:14px; color:#5a6a7e; line-height:1.8; margin:0;">UP सरकार द्वारा हर ग्राम पंचायत में <strong style="color:#0f766e;">पंचायत सहायक कम DEO</strong> की भर्ती की गई है। इनका काम e-Gram Swaraj डेटा एंट्री, CSC सेवाएं और प्रमाण पत्र बनाना है।</p>
         </div>
 
-        <div style="background:#fff; border:1px solid #dde6f0; border-radius:14px; padding:22px; border-top:3px solid #f26a21; box-shadow:0 2px 8px rgba(30,60,114,0.05);">
-          <h3 style="color:#1e3c72; font-size:16px; font-weight:700; margin-bottom:10px;">2. सैलरी (Manadey) कितनी है?</h3>
-          <p style="font-size:14px; color:#5a6a7e; line-height:1.8; margin:0;">2026 में मानदेय <strong style="color:#1e3c72;">₹6,000 प्रति माह</strong> है। PFMS द्वारा Gram Nidhi से सीधे बैंक खाते में भेजी जाती है। Daily Attendance App अनिवार्य है।</p>
+        <div style="background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:22px; border-top:3px solid #f97316; box-shadow:0 2px 8px rgba(15,118,110,0.05);">
+          <h3 style="color:#0f766e; font-size:16px; font-weight:700; margin-bottom:10px;">2. सैलरी (Manadey) कितनी है?</h3>
+          <p style="font-size:14px; color:#5a6a7e; line-height:1.8; margin:0;">2026 में मानदेय <strong style="color:#0f766e;">₹6,000 प्रति माह</strong> है। PFMS द्वारा Gram Nidhi से सीधे बैंक खाते में भेजी जाती है। Daily Attendance App अनिवार्य है।</p>
         </div>
 
-        <div style="background:#fff; border:1px solid #dde6f0; border-radius:14px; padding:22px; border-top:3px solid #f26a21; box-shadow:0 2px 8px rgba(30,60,114,0.05);">
-          <h3 style="color:#1e3c72; font-size:16px; font-weight:700; margin-bottom:10px;">3. भर्ती 2026 (Upcoming Vacancy)</h3>
-          <p style="font-size:14px; color:#5a6a7e; line-height:1.8; margin:0;">नई भर्ती Merit Basis पर होती है। 10वीं/12वीं के नंबरों पर चयन, ग्राम पंचायत निवासी होना अनिवार्य। <a href="panchayat-sahayak-forms-pdfs.html" style="color:#f26a21; font-weight:600;">PDF Forms सेक्शन</a> देखें।</p>
+        <div style="background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:22px; border-top:3px solid #f97316; box-shadow:0 2px 8px rgba(15,118,110,0.05);">
+          <h3 style="color:#0f766e; font-size:16px; font-weight:700; margin-bottom:10px;">3. भर्ती 2026 (Upcoming Vacancy)</h3>
+          <p style="font-size:14px; color:#5a6a7e; line-height:1.8; margin:0;">नई भर्ती Merit Basis पर होती है। 10वीं/12वीं के नंबरों पर चयन, ग्राम पंचायत निवासी होना अनिवार्य। <a href="panchayat-sahayak-forms-pdfs.html" style="color:#f97316; font-weight:600;">PDF Forms सेक्शन</a> देखें।</p>
         </div>
 
       </div>
 
-      <div style="background:#fff; border:1px solid #f26a21; border-left:4px solid #f26a21; border-radius:12px; padding:18px 22px; margin-top:20px; display:flex; align-items:flex-start; gap:14px; box-shadow:0 2px 8px rgba(242,106,33,0.08);">
+      <div style="background:#fff; border:1px solid #f97316; border-left:4px solid #f97316; border-radius:12px; padding:18px 22px; margin-top:20px; display:flex; align-items:flex-start; gap:14px; box-shadow:0 2px 8px rgba(249,115,22,0.08);">
         <span style="font-size:22px; flex-shrink:0;">💡</span>
         <div>
-          <h4 style="color:#1e3c72; font-size:15px; font-weight:700; margin-bottom:6px;">मुख्य टूल्स — Free Online Tools</h4>
-          <p style="color:#5a6a7e; font-size:13px; line-height:1.7; margin:0;">इस पोर्टल पर <a href="panchayat-sahayak-salary-calculator.html" style="color:#f26a21; font-weight:600;">Salary Calculator</a>, <a href="panchayat-sahayak-village-profile.html" style="color:#f26a21; font-weight:600;">Village Profile</a>, <a href="panchayat-sahayak-work-register.html" style="color:#f26a21; font-weight:600;">Work Register</a>, और <a href="panchayat-sahayak-image-tools.html" style="color:#f26a21; font-weight:600;">Image Tools</a> उपलब्ध हैं। यूपी के 58,000+ पंचायत सहायकों के लिए <strong style="color:#1e3c72;">100% Independent Educational Website</strong>।</p>
+          <h4 style="color:#0f766e; font-size:15px; font-weight:700; margin-bottom:6px;">मुख्य टूल्स — Free Online Tools</h4>
+          <p style="color:#5a6a7e; font-size:13px; line-height:1.7; margin:0;">इस पोर्टल पर <a href="panchayat-sahayak-salary-calculator.html" style="color:#f97316; font-weight:600;">Salary Calculator</a>, <a href="panchayat-sahayak-village-profile.html" style="color:#f97316; font-weight:600;">Village Profile</a>, <a href="panchayat-sahayak-work-register.html" style="color:#f97316; font-weight:600;">Work Register</a>, और <a href="panchayat-sahayak-image-tools.html" style="color:#f97316; font-weight:600;">Image Tools</a> उपलब्ध हैं। यूपी के 58,000+ पंचायत सहायकों के लिए <strong style="color:#0f766e;">100% Independent Educational Website</strong>।</p>
         </div>
       </div>
 
@@ -971,7 +1060,7 @@
           style="display:flex; align-items:center; gap:12px; background:white; padding:16px 22px; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow-sm); min-width:220px;">
           <div
             style="background:var(--bg-main); width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;">
-            📧</div>
+            📍</div>
           <div style="text-align:left;">
             <div style="font-size:12px; color:var(--text-muted); font-weight:600; margin-bottom:2px;">Email</div>
             <div style="font-size:13px; font-weight:700; color:var(--text-main);">psportalup@gmail.com</div>
@@ -981,7 +1070,7 @@
           style="display:flex; align-items:center; gap:12px; background:white; padding:16px 22px; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow-sm); min-width:220px;">
           <div
             style="background:var(--bg-main); width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;">
-            📞</div>
+            📍</div>
           <div style="text-align:left;">
             <div style="font-size:12px; color:var(--text-muted); font-weight:600; margin-bottom:2px;">Helpline</div>
             <div style="font-size:13px; font-weight:700; color:var(--text-main);">7310230xxx</div>
@@ -1025,76 +1114,112 @@
     </div>
   </section>
 
-  <!-- DISCLAIMER -->
-  <div style="max-width:var(--maxw); margin: 30px auto 0; padding: 14px 24px; background:#fff4eb; border: 1px solid #f26a21; border-radius: 10px; color: #c2410c; text-align:center; font-size: 13px; line-height:1.6;">
-    <strong>⚠️ Disclaimer:</strong> यह वेबसाइट (Panchayat Sahayak Portal) <strong>किसी भी सरकारी संस्था की आधिकारिक वेबसाइट नहीं है।</strong> This is an independent educational/informational portal, NOT affiliated with PRD or Govt. of UP.
-  </div>
-
   <!-- PREMIUM FOOTER -->
-  <footer style="background: linear-gradient(135deg, #0a1f44 0%, #1e3c72 100%); color: #fff; padding: 50px 20px 30px; margin-top: 0;">
+  <footer style="background: #0f172a; color: #ffffff; padding: 60px 24px 30px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
+    <!-- Disclaimer Banner at Top of Footer -->
+    <div style="max-width: 1200px; margin: 0 auto 50px auto; padding: 16px 24px; background: rgba(255,255,255,0.02); border-left: 3px solid #f97316; border-radius: 8px; color: rgba(255,255,255,0.6); font-size: 13px; line-height: 1.6; display: flex; gap: 12px; align-items: flex-start;">
+      <span style="font-size: 18px; line-height: 1;">⚠️�</span>
+      <div>
+        <strong style="color: #ffffff;">Disclaimer:</strong> यह वेबसाइट (Panchayat Sahayak Portal) किसी भी सरकारी संस्था की आधिकारिक वेबसाइट नहीं है। This is an independent educational portal, NOT affiliated with PRD or Govt. of UP.
+      </div>
+    </div>
+
     <div style="max-width: 1200px; margin: 0 auto;">
-
       <!-- Top row: Logo + Nav columns -->
-      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;">
+      <style>
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+        @media (max-width: 768px) {
+          .footer-grid { grid-template-columns: 1fr 1fr; }
+          .footer-brand { grid-column: 1 / -1; margin-bottom: 20px; }
+        }
+        @media (max-width: 480px) {
+          .footer-grid { grid-template-columns: 1fr; }
+        }
+        .footer-link { color: #94a3b8; font-size: 14px; font-weight: 500; text-decoration: none; transition: color 0.2s; padding: 4px 0; display: block; }
+        .footer-link:hover { color: #ffffff; }
+        .footer-heading { font-size: 12px; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; margin-top: 0; }
+      </style>
 
+      <div class="footer-grid">
         <!-- Brand -->
-        <div>
-          <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-            <img src="https://cdn-icons-png.flaticon.com/512/5556/5556468.png" alt="Logo" style="height:48px; opacity:0.95;">
+        <div class="footer-brand">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/5556/5556468.png" alt="Logo" style="height:44px; opacity:0.9;">
             <div>
-              <div style="font-size:18px; font-weight:800; font-family:'Outfit',sans-serif; color:#fff;">Panchayat Sahayak</div>
-              <div style="font-size:12px; color:#93c5fd; font-weight:500;">Independent Information Portal</div>
+              <div style="font-size:18px; font-weight:800; font-family:'Outfit',sans-serif; color:#ffffff; letter-spacing: 0.5px;">Panchayat Sahayak</div>
+              <div style="font-size:11px; color:#94a3b8; font-weight:700; text-transform: uppercase; letter-spacing: 1px;">Information Portal</div>
             </div>
           </div>
-          <p style="font-size:13px; color:#93c5fd; line-height:1.8; max-width:260px;">यूपी के 58,000+ पंचायत सहायकों को सशक्त बनाने का प्रयास। सभी सरकारी लिंक, फॉर्म और टूल्स एक जगह।</p>
-          <div style="display:flex; gap:12px; margin-top:16px;">
-            <a href="https://whatsapp.com" target="_blank" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; transition:0.3s;" onmouseover="this.style.background='rgba(37,211,102,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">💬</a>
-            <a href="https://t.me" target="_blank" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; transition:0.3s;" onmouseover="this.style.background='rgba(34,158,217,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">✈️</a>
-            <a href="https://youtube.com" target="_blank" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; transition:0.3s;" onmouseover="this.style.background='rgba(255,0,0,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">▶️</a>
+          <p style="font-size:13px; color:#94a3b8; line-height:1.7; max-width: 320px;">यूपी के पंचायत सहायकों को सशक्त बनाने का प्रयास। सभी महत्वपूर्ण लिंक, फॉर्म और टूल्स एक ही स्थान पर उपलब्ध हैं।</p>
+          <div style="display:flex; gap:12px; margin-top:24px;">
+            <a href="https://whatsapp.com" target="_blank" style="background:rgba(255,255,255,0.05); color: #94a3b8; border:1px solid rgba(255,255,255,0.1); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px; text-decoration:none; transition:all 0.3s;" onmouseover="this.style.background='#25D366'; this.style.color='#fff'; this.style.borderColor='#25D366';" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.color='#94a3b8'; this.style.borderColor='rgba(255,255,255,0.1)';">💬</a>
+            <a href="https://t.me" target="_blank" style="background:rgba(255,255,255,0.05); color: #94a3b8; border:1px solid rgba(255,255,255,0.1); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px; text-decoration:none; transition:all 0.3s;" onmouseover="this.style.background='#0088cc'; this.style.color='#fff'; this.style.borderColor='#0088cc';" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.color='#94a3b8'; this.style.borderColor='rgba(255,255,255,0.1)';">✈️</a>
+            <a href="https://youtube.com" target="_blank" style="background:rgba(255,255,255,0.05); color: #94a3b8; border:1px solid rgba(255,255,255,0.1); width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px; text-decoration:none; transition:all 0.3s;" onmouseover="this.style.background='#ff0000'; this.style.color='#fff'; this.style.borderColor='#ff0000';" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.color='#94a3b8'; this.style.borderColor='rgba(255,255,255,0.1)';">▶️</a>
           </div>
         </div>
 
-        <!-- Quick Links -->
+        <!-- Links -->
         <div>
-          <h4 style="font-size:13px; font-weight:800; color:#f26a21; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Quick Links</h4>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <a href="index.html" style="color:#93c5fd; font-size:13px; font-weight:600; transition:0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">🏠 Home</a>
-            <a href="blog.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">📝 Blog</a>
-            <a href="panchayat-sahayak-notices.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">📋 आदेश / Notices</a>
-            <a href="panchayat-sahayak-forms-pdfs.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">📄 PDF Forms</a>
-            <a href="contact.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">📞 Contact</a>
+          <h4 class="footer-heading">Navigation</h4>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="blog.html" class="footer-link">Latest Blog</a>
+            <a href="panchayat-sahayak-notices.html" class="footer-link">Official Notices</a>
+            <a href="panchayat-sahayak-forms-pdfs.html" class="footer-link">PDF Forms</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
           </div>
         </div>
 
-        <!-- Tools -->
         <div>
-          <h4 style="font-size:13px; font-weight:800; color:#f26a21; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Tools</h4>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <a href="panchayat-sahayak-salary-calculator.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">💰 Salary Calculator</a>
-            <a href="panchayat-sahayak-image-tools.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">🖼️ Image Tools</a>
-            <a href="panchayat-sahayak-work-register.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">📊 Work Register</a>
-            <a href="panchayat-sahayak-letter-generator.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">✉️ Letter Generator</a>
-            <a href="panchayat-list-builder.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">⚡ List Builder</a>
+          <h4 class="footer-heading">Panchayat Tools</h4>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <a href="panchayat-sahayak-salary-calculator.html" class="footer-link">Salary Calculator</a>
+            <a href="panchayat-sahayak-image-tools.html" class="footer-link">Image Resizer</a>
+            <a href="panchayat-sahayak-work-register.html" class="footer-link">Work Register</a>
+            <a href="panchayat-sahayak-letter-generator.html" class="footer-link">Letter Generator</a>
+            <a href="panchayat-list-builder.html" class="footer-link">List Builder</a>
           </div>
         </div>
 
-        <!-- Legal -->
         <div>
-          <h4 style="font-size:13px; font-weight:800; color:#f26a21; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Legal</h4>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <a href="about.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">ℹ️ About Us</a>
-            <a href="privacy.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">🔒 Privacy Policy</a>
-            <a href="disclaimer.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">⚠️ Disclaimer</a>
-            <a href="admin-login.html" style="color:#93c5fd; font-size:13px; font-weight:600;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#93c5fd'">🔐 Admin Login</a>
+          <h4 class="footer-heading">Legal</h4>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+            <a href="admin-login.html" class="footer-link" style="color:#f97316; font-weight:700;">Admin Login</a>
           </div>
         </div>
       </div>
 
       <!-- Bottom bar -->
-      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-        <p style="font-size: 13px; color: #64748b; margin:0;">© 2026 <span style="color:#93c5fd; font-weight:700;">gpsahayak.in</span> — Panchayat Sahayak Portal. All Rights Reserved.</p>
-        <p style="font-size: 12px; color: #475569; margin:0;">Independent Educational Portal | Not affiliated with Govt. of UP</p>
+      <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:16px;">
+          <p style="font-size: 13px; color: #64748b; margin:0;">© 2026 <span style="color:#ffffff; font-weight:700;">gpsahayak.in</span></p>
+          <div style="width:4px; height:4px; border-radius:50%; background:#334155;"></div>
+          <p style="font-size: 13px; color: #64748b; margin:0;">All Rights Reserved.</p>
+        </div>
+        
+        <div style="display:flex; align-items:center; gap:10px; background:rgba(0,0,0,0.3); padding:6px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.03);">
+          <span style="width:6px; height:6px; background:#10b981; border-radius:50%; box-shadow:0 0 8px #10b981; animation: liveBlinkGreen 1.5s infinite;"></span>
+          <span style="font-size:11px; color:#94a3b8; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Live Visitors</span>
+          <span id="realtime-visitors" style="font-size:13px; color:#ffffff; font-weight:800; font-family:'Outfit',sans-serif; letter-spacing:0.5px;">...</span>
+        </div>
       </div>
+
+      <script>
+        // Realtime Visitor Counter API (Free)
+        fetch('https://api.counterapi.dev/v1/panchayat_sahayak_portal/home_hits/up')
+          .then(res => res.json())
+          .then(data => {
+            const el = document.getElementById('realtime-visitors');
+            if(el && data.count) {
+              // Showing 100% real hits
+              el.innerText = parseInt(data.count).toLocaleString('en-IN');
+            }
+          })
+          .catch(e => console.log('Counter error:', e));
+      </script>
     </div>
   </footer>
 
@@ -1162,51 +1287,80 @@
 
           html += `
             <div style="display:flex; align-items:center; gap:14px; padding:13px 0; border-bottom:1px solid #e2e8f0; cursor:default;">
-              <div style="width:8px; height:8px; background:${isNew ? '#f26a21' : '#1e3c72'}; border-radius:50%; flex-shrink:0;${isNew ? ' box-shadow:0 0 6px rgba(242,106,33,0.5);' : ''}"></div>
+              <div style="width:8px; height:8px; background:${isNew ? '#f97316' : '#0f766e'}; border-radius:50%; flex-shrink:0;${isNew ? ' box-shadow:0 0 6px rgba(249,115,22,0.5);' : ''}"></div>
               <div style="flex:1; min-width:0;">
                 <div style="font-size:13px; font-weight:600; color:#1e293b; line-height:1.4; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-                  ${isNew ? '<span style="font-size:10px; background:#f26a21; color:#fff; padding:1px 7px; border-radius:4px; font-weight:800; margin-right:6px; vertical-align:middle;">NEW</span>' : ''}${data.title}
+                  ${isNew ? '<span style="font-size:10px; background:#f97316; color:#fff; padding:1px 7px; border-radius:4px; font-weight:800; margin-right:6px; vertical-align:middle;">NEW</span>' : ''}${data.title}
                 </div>
                 <div style="font-size:11px; color:#9ca3af; margin-top:3px;">${data.date || ''} · ${levelInfo}</div>
               </div>
-              <a href="${safeUrl}" style="background:#1e3c72; color:#fff; padding:5px 12px; border-radius:6px; text-decoration:none; font-size:12px; font-weight:700; flex-shrink:0; box-shadow:0 2px 8px rgba(30,60,114,0.2); white-space:nowrap;">देखें</a>
+              <a href="${safeUrl}" style="background:#0f766e; color:#fff; padding:5px 12px; border-radius:6px; text-decoration:none; font-size:12px; font-weight:700; flex-shrink:0; box-shadow:0 2px 8px rgba(15,118,110,0.2); white-space:nowrap;">देखें</a>
             </div>`;
         });
 
         // Remove duplication to avoid showing the same order twice
         ticker.innerHTML = html;
+
+        // Also update Welcome Widget "Latest Order" dynamically
+        const latestOrderEl = document.getElementById('widget-latest-order');
+        if (latestOrderEl && !snapshot.empty) {
+          const firstDoc = snapshot.docs[0].data();
+          const safeUrl = `download.html?file=${encodeURIComponent(firstDoc.fileUrl)}&title=${encodeURIComponent(firstDoc.title)}&type=pdf`;
+          latestOrderEl.textContent = firstDoc.title.length > 30 ? firstDoc.title.substring(0, 30) + '…' : firstDoc.title;
+          latestOrderEl.href = safeUrl;
+        }
       });
 
       // Fetch Latest 5 Blogs for Homepage
       db.collection("blogs").orderBy("createdAt", "desc").limit(5).onSnapshot((snapshot) => {
         const blogsDiv = document.getElementById('home-latest-blogs');
         if (!blogsDiv) return;
-        blogsDiv.innerHTML = '';
 
         if (snapshot.empty) {
           blogsDiv.innerHTML = '<div style="text-align:center; padding:20px; color:#94a3b8; font-size:14px;">कोई ब्लॉग उपलब्ध नहीं है।</div>';
           return;
         }
 
-        const colors = ['#e0f2fe','#dcfce7','#fef3c7','#fae8ff','#ffedd5'];
-        const textColors = ['#0284c7','#16a34a','#d97706','#a21caf','#ea580c'];
-        let html = '<div style="display:flex; flex-direction:column; gap:0;">';
+        const accentColors = ['#f97316', '#0f766e', '#10b981', '#14b8a6', '#eab308'];
+        
+        let html = '<div style="display:flex; gap:16px; overflow-x:auto; padding: 10px 0 20px 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">';
+        
         let i = 0;
         snapshot.forEach(doc => {
           const d = doc.data();
           const postLink = d.content ? `blog-post.html?id=${doc.id}` : (d.pageUrl || `blog-post.html?id=${doc.id}`);
-          const bg = colors[i % colors.length];
-          const tc = textColors[i % textColors.length];
+          const accent = accentColors[i % accentColors.length];
+          const hasImage = d.imageUrl && d.imageUrl.trim() !== '';
+          const cardBg = hasImage ? `linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%), url('${d.imageUrl}') center/cover` : '#ffffff';
+          const tc = hasImage ? '#ffffff' : '#0f172a';
+          const subTc = hasImage ? 'rgba(255,255,255,0.7)' : '#64748b';
+          
+          let badgeBg = hasImage ? 'rgba(255,255,255,0.2)' : 'rgba(249,115,22,0.1)';
+          if (!hasImage) {
+            if (accent === '#0f766e') badgeBg = 'rgba(15,118,110,0.1)';
+            else if (accent === '#10b981') badgeBg = 'rgba(16,185,129,0.1)';
+            else if (accent === '#14b8a6') badgeBg = 'rgba(99,102,241,0.1)';
+            else if (accent === '#eab308') badgeBg = 'rgba(234,179,8,0.1)';
+          }
+          const badgeTc = hasImage ? '#ffffff' : accent;
+          
           html += `
-            <a href="${postLink}" style="display:flex; align-items:center; gap:14px; padding:14px 0; text-decoration:none; color:inherit; border-bottom:1px solid #f1f5f9; transition:background 0.2s;">
-              <div style="width:40px; height:40px; border-radius:10px; background:${bg}; color:${tc}; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">📝</div>
-              <div style="flex:1; min-width:0;">
-                <div style="font-size:14px; font-weight:700; color:var(--primary); line-height:1.4; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${d.title || 'Blog Post'}</div>
-                <div style="font-size:12px; color:#94a3b8; margin-top:2px; display:flex; gap:8px;">
-                  <span>${d.category || 'General'}</span> <span>·</span> <span>${d.date || ''}</span>
-                </div>
+            <a href="${postLink}" style="min-width: 230px; max-width: 250px; height: 180px; background: ${cardBg}; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-start; text-decoration: none; scroll-snap-align: start; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: all 0.3s ease; position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 25px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.06)';">
+              
+              ${!hasImage ? `<div style="position:absolute; top:0; left:0; right:0; height:4px; background:${accent};"></div>` : ''}
+              
+              <div style="background: ${badgeBg}; backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; color: ${badgeTc}; align-self: flex-start; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
+                ${d.category || 'UPDATE'}
               </div>
-              <span style="font-size:13px; color:var(--accent); font-weight:700; flex-shrink:0;">पढ़ें →</span>
+              
+              <h4 style="font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; color: ${tc}; margin: 0 0 auto 0; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-shadow: ${hasImage ? '0 2px 4px rgba(0,0,0,0.6)' : 'none'};">
+                ${d.title || 'Blog Post'}
+              </h4>
+              
+              <div style="font-size: 12px; color: ${subTc}; font-weight: 600; margin-top:12px; display:flex; align-items:center; justify-content:space-between; text-shadow: ${hasImage ? '0 1px 2px rgba(0,0,0,0.6)' : 'none'};">
+                <span>${d.date || 'Recent'}</span>
+                <span style="color:${hasImage ? '#fff' : accent}; font-weight:800; font-size:16px;">&rarr;</span>
+              </div>
             </a>`;
           i++;
         });
@@ -1255,6 +1409,17 @@
     src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script src="auth-nav.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((reg) => console.log('Service Worker registered successfully!', reg.scope))
+          .catch((err) => console.error('Service Worker registration failed:', err));
+      });
+    }
+  </script>
+  <script src="notifications.js?v=2" defer></script>
+  <script src="script.js?v=4" defer></script>
 </body>
 
 </html>

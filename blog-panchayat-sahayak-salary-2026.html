@@ -87,145 +87,155 @@
   </script>
 
   <link rel="icon" type="image/png" href="images/panchayat_favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <style>
     .article-layout {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 40px auto;
-      padding: 0 16px;
+      padding: 0 24px;
+      box-sizing: border-box;
     }
     .article-body {
       background: #ffffff;
-      padding: 40px;
-      border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      padding: 48px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
     .article-header {
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 2px solid #f8fafc;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--border);
     }
     .breadcrumb {
       font-size: 13px;
-      color: #64748b;
-      font-weight: 500;
+      color: var(--text-muted);
+      font-weight: 600;
       margin-bottom: 16px;
     }
-    .breadcrumb a { color: #2563eb; text-decoration: none; font-weight: 600;}
-    .breadcrumb a:hover { text-decoration: underline; color: #1d4ed8;}
+    .breadcrumb a { color: var(--primary); text-decoration: none; font-weight: 700;}
+    .breadcrumb a:hover { text-decoration: underline; color: var(--accent);}
     
     .article-header h1 {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 800;
-      margin: 0 0 12px 0;
+      margin: 0 0 16px 0;
       line-height: 1.4;
-      font-family: 'Montserrat', sans-serif;
-      color: #0f172a;
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
     }
     .article-meta {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
-      font-size: 14px;
-      color: #475569;
+      font-size: 13px;
+      color: var(--text-muted);
       font-weight: 600;
     }
     @media (max-width: 768px) {
       .article-layout { margin: 20px auto; }
-      .article-body { padding: 20px; }
+      .article-body { padding: 24px; }
       .article-header h1 { font-size: 22px; }
     }
     .article-body h2 {
       font-size: 22px;
-      font-weight: 700;
-      color: #1e3c72;
-      border-left: 4px solid #16a34a;
-      padding-left: 14px;
-      margin: 36px 0 16px;
-      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      color: var(--primary);
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+      margin: 40px 0 18px;
+      font-family: 'Outfit', sans-serif;
     }
     .article-body h3 {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
-      color: #374151;
-      margin: 24px 0 10px;
+      color: var(--text-main);
+      margin: 28px 0 12px;
+      font-family: 'Outfit', sans-serif;
     }
     .article-body p {
       font-size: 15px;
-      color: #374151;
+      color: var(--text-muted);
       line-height: 1.8;
-      margin: 0 0 16px;
+      margin: 0 0 18px;
     }
     .article-body ul, .article-body ol {
       padding-left: 22px;
-      margin: 0 0 16px;
+      margin: 0 0 18px;
     }
     .article-body li {
       font-size: 15px;
-      color: #374151;
+      color: var(--text-muted);
       line-height: 1.8;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .info-box {
-      background: #f0fdf4;
-      border: 1px solid #86efac;
-      border-left: 4px solid #16a34a;
-      border-radius: 10px;
-      padding: 18px 20px;
-      margin: 20px 0;
+      background: var(--accent-light);
+      border: 1px solid rgba(15,118,110,0.15);
+      border-left: 4px solid var(--primary);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0;
     }
     .info-box.warning {
       background: #fff7ed;
-      border-color: #fdba74;
-      border-left-color: #f26a21;
+      border-color: rgba(249,115,22,0.15);
+      border-left-color: var(--accent);
     }
     .info-box.blue {
-      background: #eff6ff;
-      border-color: #93c5fd;
-      border-left-color: #2563eb;
+      background: #f0fdfa;
+      border-color: rgba(15,118,110,0.15);
+      border-left-color: var(--primary);
     }
-    .info-box strong { color: #15803d; }
-    .info-box.warning strong { color: #c2410c; }
-    .info-box.blue strong { color: #1d4ed8; }
+    .info-box strong { color: var(--primary); }
+    .info-box.warning strong { color: var(--accent); }
+    .info-box.blue strong { color: var(--primary); }
     .salary-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
-      border-radius: 10px;
+      margin: 24px 0;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
     }
     .salary-table th {
-      background: #1e3c72;
+      background: var(--primary);
       color: white;
-      padding: 12px 16px;
+      padding: 14px 18px;
       text-align: left;
       font-size: 14px;
+      font-weight: 700;
     }
     .salary-table td {
-      padding: 12px 16px;
+      padding: 14px 18px;
       font-size: 14px;
-      border-bottom: 1px solid #e2e8f0;
-      color: #374151;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
     }
-    .salary-table tr:nth-child(even) td { background: #f8fafc; }
+    .salary-table tr:nth-child(even) td { background: var(--accent-light); }
     .salary-table tr:last-child td { border-bottom: none; }
     .step-box {
       background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
       padding: 20px;
-      margin: 16px 0;
+      margin: 20px 0;
       display: flex;
       gap: 16px;
       align-items: flex-start;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s;
+    }
+    .step-box:hover {
+      border-color: rgba(15,118,110,0.2);
     }
     .step-number {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
       width: 36px;
       height: 36px;
@@ -236,66 +246,76 @@
       font-weight: 800;
       font-size: 14px;
       flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(15,118,110,0.2);
     }
-    .step-content strong { display: block; font-size: 15px; color: #1e293b; margin-bottom: 4px; }
-    .step-content span { font-size: 13px; color: #64748b; line-height: 1.6; }
+    .step-content strong { display: block; font-size: 15px; color: var(--text-main); margin-bottom: 4px; }
+    .step-content span { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
     .faq-section { margin: 40px 0; }
     .faq-item {
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 14px;
       overflow: hidden;
+      background: white;
     }
     .faq-item summary {
-      padding: 16px 20px;
-      font-weight: 600;
+      padding: 18px 22px;
+      font-weight: 700;
       font-size: 15px;
       cursor: pointer;
-      background: #f8fafc;
-      color: #1e293b;
+      background: var(--white);
+      color: var(--text-main);
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .faq-item summary::after { content: '▾'; font-size: 16px; color: #f26a21; }
+    .faq-item summary::after { content: '▾'; font-size: 16px; color: var(--accent); }
     .faq-item[open] summary::after { content: '▴'; }
     .faq-item .faq-ans {
-      padding: 16px 20px;
+      padding: 18px 22px;
       font-size: 14px;
-      color: #374151;
+      color: var(--text-muted);
       line-height: 1.7;
-      border-top: 1px solid #e2e8f0;
+      border-top: 1px solid var(--border);
+      background: var(--accent-light);
     }
     .related-articles {
-      background: #f8fafc;
-      border-radius: 14px;
-      padding: 24px;
+      background: var(--accent-light);
+      border-radius: 20px;
+      padding: 28px;
       margin: 40px 0;
+      border: 1px solid rgba(15,118,110,0.1);
     }
     .related-articles h3 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #1e3c72;
-      margin: 0 0 16px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0 0 20px;
+      font-family: 'Outfit', sans-serif;
     }
     .related-link {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 12px;
+      gap: 16px;
+      padding: 14px;
       background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
       text-decoration: none;
-      color: #1e293b;
-      margin-bottom: 10px;
-      transition: border-color 0.2s;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
     }
-    .related-link:hover { border-color: #f26a21; }
+    .related-link:hover { 
+      border-color: var(--accent); 
+      transform: translateX(4px);
+      box-shadow: var(--shadow-md);
+    }
     .related-link .icon { font-size: 24px; }
-    .related-link .title { font-size: 14px; font-weight: 600; }
-    .related-link .sub { font-size: 12px; color: #64748b; }
+    .related-link .title { font-size: 14px; font-weight: 700; color: var(--text-main); }
+    .related-link .sub { font-size: 12px; color: var(--text-muted); }
     @media (max-width: 600px) {
       .article-hero h1 { font-size: 20px; }
       .article-body h2 { font-size: 18px; }
@@ -305,39 +325,31 @@
 
 <body>
   <header class="nic-header">
-    <div class="nic-header-container"
-      style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
-      <div class="nic-logo-left" style="display: flex; align-items: center;">
-        <!-- Modern Premium Logo -->
-        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो"
-          style="height: 64px; margin-right: 15px; filter: drop-shadow(0 10px 15px rgba(79, 70, 229, 0.4));">
+    <div class="nic-header-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+      <a href="index.html" class="nic-logo-left" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो" style="height: 52px; margin-right: 12px;">
         <div class="nic-titles">
-          <h1 style="font-size: 28px; line-height: 1.2;">Panchayat Sahayak Portal</h1>
-          <h2 style="font-size: 14px; font-weight: normal; color: #555; margin-top: 3px;">Independent Informational &
-            Tool Portal</h2>
+          <div style="font-size: 24px; line-height: 1.2; font-weight: 800; color: var(--primary); font-family: 'Poppins', sans-serif;">Panchayat Sahayak Portal</div>
+          <h2 style="font-size: 12px; font-weight: normal; color: var(--text-muted); margin-top: 3px; text-transform: none; letter-spacing: normal;">Independent Informational & Tool Portal</h2>
         </div>
-      </div>
-      <div class="header-utils" style="display: flex; gap: 14px; align-items: center;">
-        <div onclick="document.body.classList.toggle('dark-theme')" style="cursor:pointer;" title="Dark / Light Mode">
-          <button
-            style="background: var(--accent); border: none; color: #fff; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 600;">🌓
-            Night Mode</button>
-        </div>
+      </a>
+      <div class="header-utils" style="display: flex; gap: 18px; align-items: center;">
         <div id="google_translate_element"></div>
+        <div class="theme-switch" onclick="document.body.classList.toggle('dark-theme')" style="cursor:pointer; display:flex; align-items:center;">
+          <button title="Toggle Dark/Light Mode" style="border:1px solid var(--border); background:var(--white); cursor:pointer; color:var(--text-main); font-weight:700; padding: 6px 12px; border-radius: 6px; font-size:12px; font-family:'Poppins',sans-serif; display:flex; align-items:center; gap:6px; box-shadow: var(--shadow-sm); transition: var(--transition);">🌓 Night Mode</button>
+        </div>
       </div>
     </div>
   </header>
-
   <nav class="main-nav">
     <div class="nav-inner" role="navigation" aria-label="Main navigation">
-
       <!-- HOME -->
       <div class="nav-item">
         <span class="nav-link">होम ▾</span>
         <div class="dropdown">
-          <a href="index.html">होम</a>
+          <a href="index.html">होम (Home)</a>
           <a href="about.html">About Portal</a>
-          <a href="contact.html">Contact</a>
+          <a href="contact.html">Contact Us</a>
         </div>
       </div>
 
@@ -348,6 +360,7 @@
           <a href="index.html#services">सभी सेवाएँ</a>
           <a href="panchayat-sahayak-software-download.html">Software Drive</a>
           <a href="panchayat-sahayak-all-portals.html">सभी वेबसाइट</a>
+          <a href="forum.html">पंचायत फोरम (Forum)</a>
         </div>
       </div>
 
@@ -355,20 +368,24 @@
       <div class="nav-item">
         <span class="nav-link">आदेश ▾</span>
         <div class="dropdown">
-          <a href="index.html#info-center">शासनादेश</a>
+          <a href="panchayat-sahayak-notices.html">सभी शासनादेश</a>
           <a href="panchayat-sahayak-forms-pdfs.html">सभी फ़ॉर्म व PDF</a>
-          <a href="index.html#info-center">ट्रेनिंग आदेश</a>
         </div>
       </div>
 
-      <!-- TRAINING -->
+      <!-- TOOLS -->
       <div class="nav-item">
-        <span class="nav-link">ट्रेनिंग ▾</span>
+        <span class="nav-link">टूल्स ▾</span>
         <div class="dropdown">
-          <a href="https://www.youtube.com/results?search_query=panchayat+sahayak+training" target="_blank">वीडियो
-            ट्रेनिंग</a>
-          <a href="index.html#info-center">Guidelines</a>
-          <a href="index.html#info-center">Help Videos</a>
+          <a href="panchayat-sahayak-salary-calculator.html">सैलरी कैलकुलेटर</a>
+          <a href="panchayat-sahayak-csc-calculator.html">CSC शुल्क कैलकुलेटर</a>
+          <a href="panchayat-sahayak-image-tools.html">इमेज टूल्स</a>
+          <a href="panchayat-sahayak-pdf-tools.html">पीडीऍफ़ टूल्स</a>
+          <a href="panchayat-sahayak-work-register.html">कार्य रजिस्टर</a>
+          <a href="panchayat-sahayak-letter-generator.html">Auto-Letter</a>
+          <a href="panchayat-sahayak-letterhead-generator.html">Notice Pad</a>
+          <a href="panchayat-list-builder.html">List Builder</a>
+          <a href="panchayat-sahayak-village-profile.html">Village Profile</a>
         </div>
       </div>
 
@@ -376,29 +393,21 @@
       <div class="nav-item">
         <span class="nav-link">संपर्क ▾</span>
         <div class="dropdown">
-          <a href="contact.html">Helpdesk</a>
-          <a href="panchayat-sahayak-salary-status.html">Status Check</a>
-          <a href="contact.html">Email Support</a>
+          <a href="contact.html">Helpdesk & Support</a>
+          <a href="panchayat-sahayak-salary-status.html">Salary Status Check</a>
         </div>
       </div>
 
-
+      <!-- LOGIN -->
       <div class="nav-item">
         <span class="nav-link" style="color:#facc15; font-weight:700; cursor:pointer;">Login ▾</span>
-        <div class="dropdown"
-          style="padding: 16px; width: 260px; right: 0; left: auto; color:#0f172a; text-align:left; max-width:90vw;">
+        <div class="dropdown" style="padding: 16px; width: 260px; right: 0; left: auto; color:var(--text-main); text-align:left; max-width:90vw;">
           <form id="globalNavLoginForm" style="display:flex; flex-direction:column; gap:10px; margin:0;" action="panchayat-sahayak-dashboard.html" method="GET">
-            <div style="font-size:13px; color:#475569; font-weight:600; margin-bottom:5px;">LOGIN</div>
-            <input type="email" id="gNavEmail" placeholder="Email Address" required
-              style="padding:8px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
-            <input type="password" id="gNavPass" placeholder="Password" required
-              style="padding:8px; border:1px solid #cbd5e1; border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
-            <button type="submit" id="gNavBtn"
-              style="background:var(--accent); color:white; border:none; padding:8px; border-radius:4px; font-weight:600; cursor:pointer; font-family:'Poppins', sans-serif;">Sign
-              In</button>
-            <div id="gNavErr"
-              style="color:#ef4444; font-size:12px; display:none; background:#fee2e2; padding:6px; border-radius:4px;">
-            </div>
+            <div style="font-size:13px; color:var(--text-muted); font-weight:600; margin-bottom:5px;">LOGIN</div>
+            <input type="email" id="gNavEmail" placeholder="Email Address" required style="padding:8px; border:1px solid var(--border); border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <input type="password" id="gNavPass" placeholder="Password" required style="padding:8px; border:1px solid var(--border); border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <button type="submit" id="gNavBtn" style="background:var(--accent); color:white; border:none; padding:8px; border-radius:4px; font-weight:600; cursor:pointer; font-family:'Poppins', sans-serif;">Sign In</button>
+            <div id="gNavErr" style="color:#ef4444; font-size:12px; display:none; background:#fee2e2; padding:6px; border-radius:4px;"></div>
           </form>
         </div>
       </div>
@@ -485,7 +494,7 @@
 
       <h2>5. Salary Badhegi? Kya Upcoming Update Hai?</h2>
       <p>Kai Panchayat Sahayak associations ne salary badhakar <strong>₹10,000–₹15,000</strong> karne ki maang ki hai. Abhi tak koi official order nahi aaya, lekin 2026 mein UP government ki review committee is mudde par vichar kar rahi hai.</p>
-      <p>Latest orders ke liye hamesha <a href="panchayat-sahayak-notices.html" style="color:#f26a21; font-weight:600;">is portal ke Notices section</a> ko check karte rahein.</p>
+      <p>Latest orders ke liye hamesha <a href="panchayat-sahayak-notices.html" style="color:#f97316; font-weight:600;">is portal ke Notices section</a> ko check karte rahein.</p>
 
       <!-- FAQ Section -->
       <section class="faq-section">
@@ -547,23 +556,65 @@
     <strong>⚠️ Disclaimer:</strong> यह एक स्वतंत्र शैक्षणिक पोर्टल है। यह जानकारी सामान्य मार्गदर्शन के लिए है — official figures ke liye Panchayati Raj Department UP ki website dekhein।
   </div>
 
-  <footer class="site-footer"
-    style="background: #232f3e; color: #fff; padding: 30px 20px; text-align: center; margin-top: 50px;">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
-      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-        <a href="index.html" style="color: #fff; text-decoration: none;">Home</a> |
-        <a href="index.html#info-center" style="color: #fff; text-decoration: none;">Blog</a> |
-        <a href="about.html" style="color: #fff; text-decoration: none;">About Us</a> |
-        <a href="contact.html" style="color: #fff; text-decoration: none;">Contact Us</a> |
-        <a href="privacy.html" style="color: #fff; text-decoration: none;">Privacy Policy</a> |
-        <a href="disclaimer.html" style="color: #fff; text-decoration: none;">Disclaimer</a>
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+    <!-- PREMIUM FOOTER -->
+  <footer class="premium-footer">
+    <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+      <div class="footer-brand">
+        <div class="f-logo-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="Logo" class="f-logo" style="height: 40px;">
+          <span class="f-title" style="font-size: 16px; font-weight: 700; color: var(--white);">Panchayat Sahayak</span>
+        </div>
+        <p class="f-desc" style="font-size: 12px; color: var(--gray-300); line-height: 1.6;">उत्तर प्रदेश के 58,000+ पंचायत सहायकों को सशक्त बनाने का प्रयास। सभी सरकारी लिंक, फॉर्म और टूल्स एक जगह।</p>
+        <div class="footer-socials" style="display: flex; gap: 8px; margin-top: 16px;">
+          <a href="https://whatsapp.com" class="social-btn" target="_blank" style="background: rgba(255,255,255,0.06); width: 34px; height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition); color: var(--white); text-decoration: none;">💬</a>
+          <a href="https://t.me" class="social-btn" target="_blank" style="background: rgba(255,255,255,0.06); width: 34px; height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition); color: var(--white); text-decoration: none;">✈️</a>
+          <a href="https://youtube.com" class="social-btn" target="_blank" style="background: rgba(255,255,255,0.06); width: 34px; height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition); color: var(--white); text-decoration: none;">▶️</a>
+        </div>
       </div>
-      <p style="font-size: 14px; color: #ccc; max-width: 800px; margin: 0 auto; line-height: 1.5;">This is an
-        independent informational website and not affiliated with any government organization. All information provided
-        is for educational and guidance purposes only.</p>
-      <p style="font-size: 13px; color: #aaa;">&copy; 2026 Panchayat Sahayak Portal. All Rights Reserved.</p>
-
-
+      <div class="footer-col">
+        <h4 style="font-size: 11px; font-weight: 800; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Quick Links</h4>
+        <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="index.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🏠 Home</a>
+          <a href="blog.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📝 Blog</a>
+          <a href="panchayat-sahayak-notices.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📋 शासनादेश</a>
+          <a href="panchayat-sahayak-forms-pdfs.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📄 PDF Forms</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 style="font-size: 11px; font-weight: 800; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Tools</h4>
+        <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="panchayat-sahayak-salary-calculator.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">💰 Salary Calc</a>
+          <a href="panchayat-sahayak-csc-calculator.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🏬 CSC Calc</a>
+          <a href="panchayat-sahayak-image-tools.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🖼️ Image Tools</a>
+          <a href="panchayat-sahayak-pdf-tools.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📄 PDF Tools</a>
+          <a href="panchayat-sahayak-work-register.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📋 Work Register</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 style="font-size: 11px; font-weight: 800; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Legal & Trust</h4>
+        <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="about.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">ℹ️ About Us</a>
+          <a href="editorial-policy.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📋 Editorial Policy</a>
+          <a href="privacy.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🔒 Privacy Policy</a>
+          <a href="disclaimer.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">⚠️ Disclaimer</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; max-width: var(--maxw); margin: 20px auto 0 auto;">
+      <p style="font-size: 12px; color: var(--gray-500); margin:0;">© 2026 <strong>gpsahayak.in</strong>. All Rights Reserved.</p>
+      <p style="font-size: 11px; margin:0; color: var(--gray-500);">Independent Educational Portal | Not affiliated with Govt. of UP</p>
     </div>
   </footer>
 

@@ -234,14 +234,95 @@
 </head>
 
 <body>
-
-    <nav class="main-nav" style="box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <div class="nav-inner">
-            <div class="nav-item"><a href="index.html" class="nav-link" style="text-decoration:none;">← 🏠 होम
-                    (Home)</a></div>
-            <div class="nav-item"><span class="nav-link">ग्राम पंचायत लेटरपैड (Notice Generator)</span></div>
+  <header class="nic-header">
+    <div class="nic-header-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+      <a href="index.html" class="nic-logo-left" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो" style="height: 52px; margin-right: 12px;">
+        <div class="nic-titles">
+          <div style="font-size: 24px; line-height: 1.2; font-weight: 800; color: var(--primary); font-family: 'Poppins', sans-serif;">Panchayat Sahayak Portal</div>
+          <h2 style="font-size: 12px; font-weight: normal; color: var(--text-muted); margin-top: 3px; text-transform: none; letter-spacing: normal;">Independent Informational & Tool Portal</h2>
         </div>
-    </nav>
+      </a>
+      <div class="header-utils" style="display: flex; gap: 18px; align-items: center;">
+        <div id="google_translate_element"></div>
+        <div class="theme-switch" onclick="document.body.classList.toggle('dark-theme')" style="cursor:pointer; display:flex; align-items:center;">
+          <button title="Toggle Dark/Light Mode" style="border:1px solid var(--border); background:var(--white); cursor:pointer; color:var(--text-main); font-weight:700; padding: 6px 12px; border-radius: 6px; font-size:12px; font-family:'Poppins',sans-serif; display:flex; align-items:center; gap:6px; box-shadow: var(--shadow-sm); transition: var(--transition);">🌓 Night Mode</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="main-nav">
+    <div class="nav-inner" role="navigation" aria-label="Main navigation">
+      <!-- HOME -->
+      <div class="nav-item">
+        <span class="nav-link">होम ▾</span>
+        <div class="dropdown">
+          <a href="index.html">होम (Home)</a>
+          <a href="about.html">About Portal</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <div class="nav-item">
+        <span class="nav-link">सेवाएँ ▾</span>
+        <div class="dropdown">
+          <a href="index.html#services">सभी सेवाएँ</a>
+          <a href="panchayat-sahayak-software-download.html">Software Drive</a>
+          <a href="panchayat-sahayak-all-portals.html">सभी वेबसाइट</a>
+          <a href="forum.html">पंचायत फोरम (Forum)</a>
+        </div>
+      </div>
+
+      <!-- ORDERS -->
+      <div class="nav-item">
+        <span class="nav-link">आदेश ▾</span>
+        <div class="dropdown">
+          <a href="panchayat-sahayak-notices.html">सभी शासनादेश</a>
+          <a href="panchayat-sahayak-forms-pdfs.html">सभी फ़ॉर्म व PDF</a>
+        </div>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="nav-item">
+        <span class="nav-link">टूल्स ▾</span>
+        <div class="dropdown">
+          <a href="panchayat-sahayak-salary-calculator.html">सैलरी कैलकुलेटर</a>
+          <a href="panchayat-sahayak-csc-calculator.html">CSC शुल्क कैलकुलेटर</a>
+          <a href="panchayat-sahayak-image-tools.html">इमेज टूल्स</a>
+          <a href="panchayat-sahayak-pdf-tools.html">पीडीऍफ़ टूल्स</a>
+          <a href="panchayat-sahayak-work-register.html">कार्य रजिस्टर</a>
+          <a href="panchayat-sahayak-letter-generator.html">Auto-Letter</a>
+          <a href="panchayat-sahayak-letterhead-generator.html">Notice Pad</a>
+          <a href="panchayat-list-builder.html">List Builder</a>
+          <a href="panchayat-sahayak-village-profile.html">Village Profile</a>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="nav-item">
+        <span class="nav-link">संपर्क ▾</span>
+        <div class="dropdown">
+          <a href="contact.html">Helpdesk & Support</a>
+          <a href="panchayat-sahayak-salary-status.html">Salary Status Check</a>
+        </div>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="nav-item">
+        <span class="nav-link" style="color:#facc15; font-weight:700; cursor:pointer;">Login ▾</span>
+        <div class="dropdown" style="padding: 16px; width: 260px; right: 0; left: auto; color:var(--text-main); text-align:left; max-width:90vw;">
+          <form id="globalNavLoginForm" style="display:flex; flex-direction:column; gap:10px; margin:0;" action="panchayat-sahayak-dashboard.html" method="GET">
+            <div style="font-size:13px; color:var(--text-muted); font-weight:600; margin-bottom:5px;">LOGIN</div>
+            <input type="email" id="gNavEmail" placeholder="Email Address" required style="padding:8px; border:1px solid var(--border); border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <input type="password" id="gNavPass" placeholder="Password" required style="padding:8px; border:1px solid var(--border); border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <button type="submit" id="gNavBtn" style="background:var(--accent); color:white; border:none; padding:8px; border-radius:4px; font-weight:600; cursor:pointer; font-family:'Poppins', sans-serif;">Sign In</button>
+            <div id="gNavErr" style="color:#ef4444; font-size:12px; display:none; background:#fee2e2; padding:6px; border-radius:4px;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
 
     <div class="layout-grid">
         <!-- CONTROLS PANEL -->
@@ -417,36 +498,6 @@
         </div>
     </div>
 
-    <!-- SEO / Informational Content Section -->
-    <section class="seo-article" style="max-width: 1300px; margin: 40px auto 60px auto;">
-      <h2>Gram Panchayat Letterhead & Notice Generator - Guide (ग्राम पंचायत लेटरपैड गाइड)</h2>
-      
-      <p>
-        स्थानीय स्वशासन में पारदर्शिता और बेहतर संवाद स्थापित करने के लिए ग्राम पंचायतों को समय-समय पर विभिन्न प्रकार की सूचनाएं (Notices), अपील (Appeals), और कार्यालय आदेश (Office Orders) जारी करने पड़ते हैं। उत्तर प्रदेश में ग्राम पंचायत के सभी नीतिगत निर्णय <strong>ग्राम प्रधान (Gram Pradhan)</strong> और <strong>ग्राम पंचायत सचिव (Secretary)</strong> द्वारा लिए जाते हैं। इन सूचनाओं को गाँव के सार्वजनिक स्थलों पर चस्पा करने या डिजिटल माध्यमों से प्रसारित करने के लिए एक औपचारिक और आधिकारिक स्वरूप (Format) की आवश्यकता होती है। हमारा यह <strong>Gram Panchayat Letterpad Tool</strong> पंचायत सहायकों को मिनटों में प्रोफेशनल लेटरहेड तैयार करने की सुविधा प्रदान करता है।
-      </p>
-
-      <h3>1. ग्राम पंचायत लेटरहेड का प्रारूप (Structure of Official Letterhead)</h3>
-      <p>
-        एक प्रामाणिक और आधिकारिक लेटरपैड के शीर्ष (Header) पर ग्राम पंचायत का नाम, विकास खंड (Block), जनपद (District), और राज्य का नाम स्पष्ट अक्षरों में अंकित होता है। इसके साथ ही पत्र व्यवहार की रिकॉर्डिंग के लिए <strong>पत्रांक संख्या (Dispatch Number)</strong> और <strong>दिनांक (Date)</strong> का होना अनिवार्य है। पत्रांक संख्या का प्रारूप जैसे 'पत्रांक: 45/ग्रा०पं०/2026-27' होता है, जो भविष्य के संदर्भ और रिकॉर्ड कीपिंग के लिए आवश्यक है।
-      </p>
-
-      <h3>2. विभिन्न प्रकार के नोटिस और अपील (Types of Village Notices & Template Guides)</h3>
-      <ul style="padding-left: 20px; margin-bottom: 16px;">
-        <li><strong>ग्राम सभा की बैठक (Gram Sabha Meeting):</strong> वित्तीय वर्ष में कई बार खुली बैठक (Open Meeting) बुलाई जाती है, जिसमें विकास कार्यों, राशन कार्ड, पेंशन, और आवास के लाभार्थियों की पात्रता सूची पर विचार किया जाता है। इसके लिए जारी नोटिस में बैठक की तिथि, समय, स्थान, और एजेंडा स्पष्ट होना चाहिए।</li>
-        <li><strong>अतिक्रमण हटाने की चेतावनी (Encroachment Notice):</strong> ग्राम पंचायत संज्ञान में यह आया है कि सड़कों या नालियों पर कब्ज़ा होने से आवागमन प्रभावित होता है। अतिक्रमण हटाने के लिए ग्राम पंचायत की तरफ से लिखित चेतावनी दी जाती है।</li>
-        <li><strong>स्वच्छता की अपील (Sanitation Appeal):</strong> स्वच्छ भारत मिशन (मिशन ग्रामीण) के अंतर्गत गाँव के रास्तों पर कूड़ा न फेंकने और व्यक्तिगत स्वच्छता बनाए रखने के लिए नागरिकों से अपील जारी की जाती है।</li>
-        <li><strong>पेंशन कैंप की सूचना (Pension Camp Notice):</strong> समाज कल्याण विभाग द्वारा आयोजित e-KYC या नए आवेदन कैंप के संबंध में ग्रामीणों को सूचित किया जाता है।</li>
-      </ul>
-
-      <h3>3. हस्ताक्षर और डिजिटल प्रिंटिंग (Official Signatures & Print Support)</h3>
-      <p>
-        लेटरहेड का कानूनी महत्व तभी होता है जब उस पर ग्राम प्रधान या ग्राम पंचायत सचिव के हस्ताक्षर और आधिकारिक मोहर (Stamp) लगी हो। इस टूल में आप दो अलग-अलग हस्ताक्षर बॉक्स सेट कर सकते हैं। पत्र पूरा तैयार होने के बाद, आप 'प्रिंट' बटन दबाकर सीधे A4 साइज के पेपर पर इसका प्रिंट आउट निकाल सकते हैं या इसे सुरक्षित PDF फॉर्मेट में सेव करके व्हाट्सएप ग्रुपों में शेयर कर सकते हैं।
-      </p>
-
-      <p>
-        <strong>डाटा की गोपनीयता (Data Privacy):</strong> इस टूल में आपके द्वारा टाइप किया गया कोई भी डेटा सर्वर पर स्टोर नहीं होता। यह आपकी ग्राम पंचायत की गोपनीयता बनाए रखने के लिए पूरी तरह से क्लाइंट-साइड (Local Browser) पर काम करता है।
-      </p>
-    </section>
 
     <script>
         // --- LIVE DATA BINDING ENGINE ---

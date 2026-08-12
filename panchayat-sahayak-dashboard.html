@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
   <title>Panchayat Sahayak Dashboard | Secure Login</title>
   <link rel="icon" type="image/png" href="images/panchayat_favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +18,7 @@
     /* Sidebar */
     .sidebar { width: 280px; background: rgba(255, 255, 255, 0.95); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border-radius: 24px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); padding: 32px 24px; display: flex; flex-direction: column; flex-shrink: 0; }
     .sb-logo-area { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
-    .sb-logo-area img { height: 48px; filter: drop-shadow(0 8px 12px rgba(79, 70, 229, 0.3)); }
+    .sb-logo-area img { height: 48px; filter: drop-shadow(0 8px 12px rgba(15, 118, 110, 0.3)); }
     .sb-logo-texts h2 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 18px; color: var(--primary); margin:0; line-height: 1.2; }
     .sb-logo-texts p { font-size: 12px; color: var(--text-muted); font-weight: 600; margin:0; }
     
@@ -27,7 +26,7 @@
     .nav-btn { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 16px; color: var(--text-muted); font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-family: 'Plus Jakarta Sans', sans-serif;}
     .nav-btn svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2.5; fill: none; }
     .nav-btn:hover { background: #f8fafc; color: var(--primary); transform: translateX(4px); }
-    .nav-btn.active { background: var(--primary); color: #fff; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25); }
+    .nav-btn.active { background: var(--primary); color: #fff; box-shadow: 0 10px 20px rgba(15, 118, 110, 0.25); }
     
     .logout-btn { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 16px 20px; border-radius: 16px; color: #ef4444; font-weight: 700; background: #fef2f2; cursor: pointer; transition: 0.3s; border: 1px solid #fee2e2; }
     .logout-btn:hover { background: #fee2e2; border-color: #fca5a5; }
@@ -45,7 +44,7 @@
     .notification-btn:hover { background: #e2e8f0; transform: translateY(-2px); }
     .badge-dot { position: absolute; top: 12px; right: 14px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; border: 2px solid #fff; }
     .user-profile { display: flex; align-items: center; gap: 12px; background: #fff; padding: 8px 16px 8px 8px; border-radius: 99px; border: 1px solid var(--border); cursor: pointer; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02);}
-    .user-profile:hover { border-color: var(--primary-light); box-shadow: 0 8px 16px rgba(79, 70, 229, 0.1); }
+    .user-profile:hover { border-color: var(--primary-light); box-shadow: 0 8px 16px rgba(15, 118, 110, 0.1); }
     .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--primary-light); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-family: 'Outfit'; font-size: 16px; }
     .user-info .u-name { font-weight: 700; color: var(--primary); font-size: 14px; margin: 0; }
     .user-info .u-role { font-size: 12px; color: var(--accent); font-weight: 600; margin: 0; }
@@ -76,7 +75,7 @@
     /* Task Tracker */
     .task-list { display: flex; flex-direction: column; gap: 16px; }
     .task-item { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 16px; background: #f8fafc; border: 1px solid #e2e8f0; transition: 0.3s; cursor: pointer; }
-    .task-item:hover { border-color: var(--primary-light); background: #fff; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1); transform: translateX(4px); }
+    .task-item:hover { border-color: var(--primary-light); background: #fff; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1); transform: translateX(4px); }
     .task-left { display: flex; align-items: center; gap: 16px; }
     .task-check { width: 24px; height: 24px; border: 2px solid #cbd5e1; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
     .task-item.done .task-check { background: #10b981; border-color: #10b981; color: #fff; }
@@ -90,7 +89,7 @@
     /* App Drawer (Services) */
     .app-drawer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .app-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 12px; cursor: pointer; transition: 0.3s; text-decoration: none; color: var(--primary); }
-    .app-card:hover { transform: translateY(-4px) scale(1.05); background: #fff; border-color: var(--primary-light); box-shadow: 0 10px 20px rgba(79, 70, 229, 0.15); }
+    .app-card:hover { transform: translateY(-4px) scale(1.05); background: #fff; border-color: var(--primary-light); box-shadow: 0 10px 20px rgba(15, 118, 110, 0.15); }
     .app-card img { width: 40px; height: 40px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05)); }
     .app-card span { font-weight: 700; font-size: 12px; line-height: 1.2; font-family: 'Outfit'; }
 
@@ -109,47 +108,95 @@
   </style>
 </head>
 <body class="dl-page" style="background-image: none;">
-
-  <!-- MOBILE HAMBURGER OR TOP NAV (Optional for later) -->
-
-  <div class="dashboard-wrapper">
-    
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
-      <div class="sb-logo-area">
-        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="Logo">
-        <div class="sb-logo-texts">
-          <h2>PRD Smart<br>Space</h2>
-          <p>Panchayat Sahayak</p>
+  <header class="nic-header">
+    <div class="nic-header-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+      <a href="index.html" class="nic-logo-left" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो" style="height: 52px; margin-right: 12px;">
+        <div class="nic-titles">
+          <div style="font-size: 24px; line-height: 1.2; font-weight: 800; color: var(--primary); font-family: 'Poppins', sans-serif;">Panchayat Sahayak Portal</div>
+          <h2 style="font-size: 12px; font-weight: normal; color: var(--text-muted); margin-top: 3px; text-transform: none; letter-spacing: normal;">Independent Informational & Tool Portal</h2>
+        </div>
+      </a>
+      <div class="header-utils" style="display: flex; gap: 18px; align-items: center;">
+        <div id="google_translate_element"></div>
+        <div class="theme-switch" onclick="document.body.classList.toggle('dark-theme')" style="cursor:pointer; display:flex; align-items:center;">
+          <button title="Toggle Dark/Light Mode" style="border:1px solid var(--border); background:var(--white); cursor:pointer; color:var(--text-main); font-weight:700; padding: 6px 12px; border-radius: 6px; font-size:12px; font-family:'Poppins',sans-serif; display:flex; align-items:center; gap:6px; box-shadow: var(--shadow-sm); transition: var(--transition);">🌓 Night Mode</button>
         </div>
       </div>
-      
-      <nav class="nav-menu">
-        <a href="#" class="nav-btn active">
-          <svg><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-          <span>Dashboard Overview</span>
-        </a>
-        <a href="panchayat-sahayak-salary-calculator.html" class="nav-btn">
-          <svg><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-          <span>Salary Tracker</span>
-        </a>
-        <a href="panchayat-sahayak-work-register.html" class="nav-btn">
-          <svg><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          <span>Daily Work Log</span>
-        </a>
-        <a href="panchayat-list-builder.html" class="nav-btn">
-          <svg><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line></svg>
-          <span>Quick List Builder</span>
-        </a>
-        <a href="panchayat-sahayak-all-portals.html" class="nav-btn">
-          <svg><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-          <span>All Portals (Apps)</span>
-        </a>
-        <a href="index.html" class="nav-btn">
-          <svg><circle cx="12" cy="12" r="10"></circle><path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z"></path></svg>
-          <span>Explore Website</span>
-        </a>
-      </nav>
+    </div>
+  </header>
+  <nav class="main-nav">
+    <div class="nav-inner" role="navigation" aria-label="Main navigation">
+      <!-- HOME -->
+      <div class="nav-item">
+        <span class="nav-link">होम ▾</span>
+        <div class="dropdown">
+          <a href="index.html">होम (Home)</a>
+          <a href="about.html">About Portal</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <div class="nav-item">
+        <span class="nav-link">सेवाएँ ▾</span>
+        <div class="dropdown">
+          <a href="index.html#services">सभी सेवाएँ</a>
+          <a href="panchayat-sahayak-software-download.html">Software Drive</a>
+          <a href="panchayat-sahayak-all-portals.html">सभी वेबसाइट</a>
+          <a href="forum.html">पंचायत फोरम (Forum)</a>
+        </div>
+      </div>
+
+      <!-- ORDERS -->
+      <div class="nav-item">
+        <span class="nav-link">आदेश ▾</span>
+        <div class="dropdown">
+          <a href="panchayat-sahayak-notices.html">सभी शासनादेश</a>
+          <a href="panchayat-sahayak-forms-pdfs.html">सभी फ़ॉर्म व PDF</a>
+        </div>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="nav-item">
+        <span class="nav-link">टूल्स ▾</span>
+        <div class="dropdown">
+          <a href="panchayat-sahayak-salary-calculator.html">सैलरी कैलकुलेटर</a>
+          <a href="panchayat-sahayak-csc-calculator.html">CSC शुल्क कैलकुलेटर</a>
+          <a href="panchayat-sahayak-image-tools.html">इमेज टूल्स</a>
+          <a href="panchayat-sahayak-pdf-tools.html">पीडीऍफ़ टूल्स</a>
+          <a href="panchayat-sahayak-work-register.html">कार्य रजिस्टर</a>
+          <a href="panchayat-sahayak-letter-generator.html">Auto-Letter</a>
+          <a href="panchayat-sahayak-letterhead-generator.html">Notice Pad</a>
+          <a href="panchayat-list-builder.html">List Builder</a>
+          <a href="panchayat-sahayak-village-profile.html">Village Profile</a>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="nav-item">
+        <span class="nav-link">संपर्क ▾</span>
+        <div class="dropdown">
+          <a href="contact.html">Helpdesk & Support</a>
+          <a href="panchayat-sahayak-salary-status.html">Salary Status Check</a>
+        </div>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="nav-item">
+        <span class="nav-link" style="color:#facc15; font-weight:700; cursor:pointer;">Login ▾</span>
+        <div class="dropdown" style="padding: 16px; width: 260px; right: 0; left: auto; color:var(--text-main); text-align:left; max-width:90vw;">
+          <form id="globalNavLoginForm" style="display:flex; flex-direction:column; gap:10px; margin:0;" action="panchayat-sahayak-dashboard.html" method="GET">
+            <div style="font-size:13px; color:var(--text-muted); font-weight:600; margin-bottom:5px;">LOGIN</div>
+            <input type="email" id="gNavEmail" placeholder="Email Address" required style="padding:8px; border:1px solid var(--border); border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <input type="password" id="gNavPass" placeholder="Password" required style="padding:8px; border:1px solid var(--border); border-radius:4px; font-size:13px; outline:none; font-family:'Poppins', sans-serif;">
+            <button type="submit" id="gNavBtn" style="background:var(--accent); color:white; border:none; padding:8px; border-radius:4px; font-weight:600; cursor:pointer; font-family:'Poppins', sans-serif;">Sign In</button>
+            <div id="gNavErr" style="color:#ef4444; font-size:12px; display:none; background:#fee2e2; padding:6px; border-radius:4px;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
       
       <div class="logout-btn">
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="width:20px; height:20px;"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
