@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3320237271717237"
+    crossorigin="anonymous"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1T48Y2LMSJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1T48Y2LMSJ');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard | Panchayat Sahayak Portal</title>
@@ -80,6 +91,9 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <link rel="canonical" href="https://gpsahayak.in/admin-dashboard.html">
+  <meta name="description" content="Panchayat Sahayak Portal Admin Dashboard — Manage notices, PDF forms, software downloads and registered union members.">
+  <meta name="keywords" content="Panchayat Sahayak Admin Dashboard, up panchayat sahayak portal admin, panchayat sahayak admin login">
 </head>
 <body>
 
@@ -102,6 +116,7 @@
       <li id="tab-blogs" onclick="switchTab('blogs')">📚 Manage Blogs</li>
       <li id="tab-ticker" onclick="switchTab('ticker')">📢 News Ticker (पट्टी)</li>
       <li id="tab-members" onclick="switchTab('members')">👥 Union Members</li>
+      <li id="tab-festival" onclick="switchTab('festival')">🎉 Festival Greetings (त्यौहार)</li>
     </ul>
     <div class="s-footer">
       <a href="index.html" target="_blank" style="display:block; width:100%; padding:11px; background:#dcfce7; color:#16a34a; border-radius:8px; text-align:center; font-weight:700; font-size:14px; text-decoration:none; margin-bottom:10px; transition:0.2s;" onmouseover="this.style.background='#bbf7d0'" onmouseout="this.style.background='#dcfce7'">🌐 Website देखें</a>
@@ -418,6 +433,91 @@
       </div>
     </section>
 
+    <!-- ================= FESTIVAL & GREETINGS CONTROL PANEL ================= -->
+    <section id="panel-festival" class="panel-section">
+      <div class="top-bar">
+        <h1>🎉 Festival Greetings & Wishes Manager</h1>
+        <div class="badge bg-green" id="status-fest-badge">Live Enabled</div>
+      </div>
+
+      <div class="admin-card" style="border-left: 4px solid #ea580c;">
+        <h3>ℹ️ त्यौहार एवं बधाई विजेट मैनेजर क्या है?</h3>
+        <p style="margin:0; font-size:14px; color:#475569; line-height:1.7;">
+          यहाँ से आप अपनी वेबसाइट के होमपेज पर दिखने वाले **त्यौहार बधाई विजेट (Festival Greetings Pill)** को आसानी से बदल सकते हैं।
+          आप कोई भी **इमोजी (Emoji)**, **टाइटिल**, और **बधाई संदेश** लिख सकते हैं — 1 क्लिक में लाइव वेबसाइट पर तुरंत अपडेट होगा!
+        </p>
+      </div>
+
+      <div class="admin-card">
+        <h3>⚙️ Update Live Festival & Greeting Settings</h3>
+        <form id="festivalAdminForm">
+          <div class="form-grid">
+
+            <div class="f-group">
+              <label>🔴/🟢 Status (विजेट ऑन / ऑफ)</label>
+              <select id="fest_status" onchange="updateFestPreview()">
+                <option value="active">🟢 Active / Show Banner (वेबसाइट पर दिखाएँ)</option>
+                <option value="disabled">🔴 Disabled / Hide Banner (छुपाएँ)</option>
+              </select>
+            </div>
+
+            <div class="f-group">
+              <label>⚡ Quick Festival Preset (त्वरित त्यौहार चुनें)</label>
+              <select id="fest_preset" onchange="loadFestPreset()">
+                <option value="custom">-- ✏️ Custom (खुद का मैसेज व इमोजी लिखें) --</option>
+                <option value="15_august">🇮🇳 15th August (स्वतंत्रता दिवस)</option>
+                <option value="rakshabandhan">🧵✨ Raksha Bandhan (रक्षाबंधन)</option>
+                <option value="diwali">🪔✨ Diwali / Deepawali (दीपावली)</option>
+                <option value="holi">🎨✨ Holi (होली)</option>
+                <option value="26_january">🇮🇳 26th January (गणतंत्र दिवस)</option>
+                <option value="new_year">🎆✨ New Year (नव वर्ष)</option>
+              </select>
+            </div>
+
+            <div class="f-group">
+              <label>😀 Custom Emoji / Icon (कोई भी इमोजी लगाएँ)</label>
+              <input type="text" id="fest_icon" placeholder="उदा: 🇮🇳, 🪔✨, 🧵✨, 🎨✨, 🎆✨, 🚩, 💐, 🌸" value="🇮🇳" oninput="updateFestPreview()">
+            </div>
+
+            <div class="f-group">
+              <label>🏷️ Badge Tag Text (विशेषांक टैग)</label>
+              <input type="text" id="fest_badge" placeholder="उदा: 🎉 स्वतंत्रता दिवस विशेषांक" value="🎉 स्वतंत्रता दिवस विशेषांक" oninput="updateFestPreview()">
+            </div>
+
+            <div class="f-group">
+              <label>✨ Animation Effect (एनीमेशन प्रभाव चुनें)</label>
+              <select id="fest_anim" onchange="updateFestPreview()">
+                <option value="confetti">🌟 Confetti & Sparkles (पार्टिकल्स व सितारे एनीमेशन)</option>
+                <option value="glow">🪔 Festive Light Glow (रोशनी व पल्सिंग ग्लो)</option>
+                <option value="bounce">🎈 3D Bounce & Rotate (3D बाउंस व रोटेशन)</option>
+                <option value="none">⏹️ Simple (बिना एनीमेशन)</option>
+              </select>
+            </div>
+
+            <div class="f-group full">
+              <label>💬 Greeting Text / Message (मुख्य बधाई संदेश)</label>
+              <textarea id="fest_text" rows="2" placeholder="उदा: 15 अगस्त स्वतंत्रता दिवस की हार्दिक शुभकामनाएँ! जय हिंद! 🇮🇳✨" oninput="updateFestPreview()">15 अगस्त स्वतंत्रता दिवस की हार्दिक शुभकामनाएँ! जय हिंद! 🇮🇳✨</textarea>
+            </div>
+
+          </div>
+
+          <!-- Live Preview Box -->
+          <div style="margin-top: 20px; padding: 16px; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px;">
+            <div style="font-size: 12px; font-weight: 700; color: #ea580c; text-transform: uppercase; margin-bottom: 8px;">👀 Real-time Live Preview (वेबसाइट पर ऐसा दिखेगा):</div>
+            <div style="display: flex; align-items: center; gap: 10px; background: #fff; padding: 10px 14px; border-radius: 8px; border: 1px solid #e2e8f0; max-width: 340px;">
+              <div id="prev_icon" style="font-size: 26px;">🇮🇳</div>
+              <div>
+                <div id="prev_badge" style="font-size: 10px; font-weight: 800; color: #ea580c; text-transform: uppercase;">🎉 स्वतंत्रता दिवस विशेषांक</div>
+                <div id="prev_text" style="font-size: 12.5px; font-weight: 600; color: #0f172a;">15 अगस्त स्वतंत्रता दिवस की हार्दिक शुभकामनाएँ! जय हिंद! 🇮🇳✨</div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit" id="btn-submit-festival" style="background: linear-gradient(135deg, #ea580c, #c2410c);">🚀 Save & Publish Festival Greeting Live</button>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <script>
@@ -459,6 +559,7 @@
         fetchCollection("blogs", "table-blogs", "count-blogs", renderBlogRow);
         fetchCollection("ticker", "table-ticker", "count-ticker", renderTickerRow);
         fetchCollection("members", "table-members", "count-members", renderMemberRow);
+        loadFestivalConfigAdmin();
       }
     });
 
@@ -476,6 +577,128 @@
       document.getElementById('tab-' + tabId).classList.add('active');
       document.getElementById('panel-' + tabId).classList.add('active');
     }
+
+    // ================= FESTIVAL SETTINGS ADMIN LOGIC =================
+    const FEST_PRESETS_ADMIN = {
+      "15_august": {
+        icon: "🇮🇳",
+        badge: "🎉 स्वतंत्रता दिवस विशेषांक",
+        text: "15 अगस्त स्वतंत्रता दिवस की हार्दिक शुभकामनाएँ! जय हिंद! 🇮🇳✨"
+      },
+      "rakshabandhan": {
+        icon: "🧵✨",
+        badge: "🎉 रक्षाबंधन पर्व",
+        text: "समस्त पंचायत सहायकों को रक्षाबंधन की हार्दिक शुभकामनाएँ! 🧵✨"
+      },
+      "diwali": {
+        icon: "🪔✨",
+        badge: "🎉 दीपावली पर्व",
+        text: "शुभ दीपावली! आपके जीवन में सुख-समृद्धि एवं प्रकाश आए 🪔✨"
+      },
+      "holi": {
+        icon: "🎨✨",
+        badge: "🎉 होली उत्सव",
+        text: "रंगों के पावन पर्व होली की हार्दिक शुभकामनाएँ! 🎨✨"
+      },
+      "26_january": {
+        icon: "🇮🇳",
+        badge: "🎉 गणतंत्र दिवस",
+        text: "गणतंत्र दिवस की हार्दिक शुभकामनाएँ! वंदे मातरम्! 🇮🇳✨"
+      },
+      "new_year": {
+        icon: "🎆✨",
+        badge: "🎉 नव वर्ष",
+        text: "नव वर्ष की हार्दिक शुभकामनाएँ एवं मंगलकामनाएँ! 🎆✨"
+      }
+    };
+
+    function loadFestPreset() {
+      const presetKey = document.getElementById('fest_preset').value;
+      if (presetKey !== "custom" && FEST_PRESETS_ADMIN[presetKey]) {
+        const p = FEST_PRESETS_ADMIN[presetKey];
+        document.getElementById('fest_icon').value = p.icon;
+        document.getElementById('fest_badge').value = p.badge;
+        document.getElementById('fest_text').value = p.text;
+        updateFestPreview();
+      }
+    }
+
+    function updateFestPreview() {
+      const icon = document.getElementById('fest_icon').value || "🎉";
+      const badge = document.getElementById('fest_badge').value || "🎉 विशेषांक";
+      const text = document.getElementById('fest_text').value || "हार्दिक शुभकामनाएँ!";
+      const status = document.getElementById('fest_status').value;
+
+      document.getElementById('prev_icon').innerText = icon;
+      document.getElementById('prev_badge').innerText = badge;
+      document.getElementById('prev_text').innerText = text;
+
+      const badgeEl = document.getElementById('status-fest-badge');
+      if (status === 'active') {
+        badgeEl.className = "badge bg-green";
+        badgeEl.innerText = "Live Enabled";
+      } else {
+        badgeEl.className = "badge bg-red";
+        badgeEl.innerText = "Disabled";
+      }
+    }
+
+    async function loadFestivalConfigAdmin() {
+      try {
+        const doc = await db.collection('settings').doc('festival').get();
+        if (doc.exists) {
+          const data = doc.data();
+          if (data.status) document.getElementById('fest_status').value = data.status;
+          if (data.icon) document.getElementById('fest_icon').value = data.icon;
+          if (data.badge) document.getElementById('fest_badge').value = data.badge;
+          if (data.text) document.getElementById('fest_text').value = data.text;
+          if (data.anim) document.getElementById('fest_anim').value = data.anim;
+          updateFestPreview();
+        }
+      } catch (err) {
+        console.log("Festival config load check:", err.message);
+        const local = localStorage.getItem('festivalConfig');
+        if (local) {
+          try {
+            const data = JSON.parse(local);
+            if (data.status) document.getElementById('fest_status').value = data.status;
+            if (data.icon) document.getElementById('fest_icon').value = data.icon;
+            if (data.badge) document.getElementById('fest_badge').value = data.badge;
+            if (data.text) document.getElementById('fest_text').value = data.text;
+            if (data.anim) document.getElementById('fest_anim').value = data.anim;
+            updateFestPreview();
+          } catch(e){}
+        }
+      }
+    }
+
+    document.getElementById('festivalAdminForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('btn-submit-festival');
+      btn.innerText = "Publishing to Live Website...";
+      btn.disabled = true;
+
+      const config = {
+        status: document.getElementById('fest_status').value,
+        icon: document.getElementById('fest_icon').value.trim() || "🎉",
+        badge: document.getElementById('fest_badge').value.trim() || "🎉 विशेषांक",
+        text: document.getElementById('fest_text').value.trim() || "हार्दिक शुभकामनाएँ!",
+        anim: document.getElementById('fest_anim').value || "confetti",
+        updatedAt: new Date().toISOString()
+      };
+
+      localStorage.setItem('festivalConfig', JSON.stringify(config));
+
+      try {
+        await db.collection('settings').doc('festival').set(config, { merge: true });
+        alert("✅ Festival Greeting published successfully! Live website updated for all visitors.");
+      } catch (err) {
+        alert("Saved locally! (Note: Ensure Firestore rules allow settings collection writes): " + err.message);
+      } finally {
+        btn.innerText = "🚀 Save & Publish Festival Greeting Live";
+        btn.disabled = false;
+      }
+    });
 
     // Toggle District Input in Notices
     function toggleDist() {

@@ -2,6 +2,9 @@
 <html lang="hi">
 
 <head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3320237271717237"
+    crossorigin="anonymous"></script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1T48Y2LMSJ"></script>
   <script>
@@ -196,7 +199,7 @@
       <a href="index.html" class="nic-logo-left" style="display: flex; align-items: center; text-decoration: none;">
         <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो" style="height: 52px; margin-right: 12px;">
         <div class="nic-titles">
-          <div style="font-size: 24px; line-height: 1.2; font-weight: 800; color: var(--primary); font-family: 'Poppins', sans-serif;">Panchayat Sahayak Portal</div>
+          <h1 style="font-size: 24px; line-height: 1.2; font-weight: 800; color: var(--primary); font-family: 'Poppins', sans-serif;">Panchayat Sahayak Portal</h1>
           <h2 style="font-size: 12px; font-weight: 600; color: var(--primary); margin-top: 3px; text-transform: none; letter-spacing: normal;">उत्तर प्रदेश ग्राम सचिवालय एवं पंचायत सहायक पोर्टल</h2>
         </div>
       </a>
@@ -257,6 +260,7 @@
           <a href="panchayat-sahayak-village-profile.html">Village Profile</a>
           <a href="panchayat-sahayak-letter-generator.html">Auto-Letter</a>
           <a href="farmer-id-card-generator.html">Farmer ID Card</a>
+          <a href="document-book-maker.html" style="color:#0284c7; font-weight:700;">📘 Document Book (8-Slot A4)</a>
         </div>
       </div>
 
@@ -318,9 +322,10 @@
         <span class="search-icon">🔍</span>
         <input type="text" id="site-search" placeholder="सेवाएँ, टूल्स, फॉर्म या ब्लॉग खोजें (जैसे- e-District, Salary)..." autocomplete="off">
         <button id="search-clear" style="display: none;">✕</button>
-        <div id="search-suggestions" class="search-suggestions-dropdown"></div>
+        <div class="search-suggestions-dropdown" id="search-suggestions"></div>
       </div>
     </section>
+
     <section class="hero seo-hero">
       <div class="hero-left">
         <h2>UP Panchayat Sahayak Portal 2026 | पंचायत सहायक भर्ती, सैलरी, लॉगिन व डिजिटल सेवाएँ</h2>
@@ -691,6 +696,16 @@
             <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Village Profile" class="ptool-img"></div>
             <div class="ptool-label">Village Profile</div>
             <div class="ptool-sub">ग्राम प्रोफाइल</div>
+          </div>
+        </a>
+
+        <!-- 12. Document Book Maker -->
+        <a href="document-book-maker.html" style="text-decoration:none;">
+          <div class="ptool-card" style="--tc:#0284c7; --tl:#38bdf8; --bg:#f0f9ff; border: 2px solid #0284c7;">
+            <div class="ptool-bar"></div>
+            <div class="ptool-icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Document Book Maker" class="ptool-img"></div>
+            <div class="ptool-label" style="color:#0284c7; font-weight:800;">Document Book</div>
+            <div class="ptool-sub">8-Slot A4 प्रिंटर</div>
           </div>
         </a>
 
@@ -1436,6 +1451,135 @@
       });
     }
   </script>
+  <!-- ==========================================================================
+       SMART FESTIVAL GREETING BADGE (FLOATING & ZERO PAGE LAYOUT SHIFT)
+       यह विजेट पेज का 1px स्थान भी नहीं लेता (Position Fixed)।
+       ========================================================================== -->
+  <div id="smart-festival-widget" class="smart-fest-widget" aria-label="Festival Wishes">
+    <button class="smart-fest-close" onclick="document.getElementById('smart-festival-widget').style.display='none'" title="बंद करें">✕</button>
+    <div class="smart-fest-inner">
+      <div class="smart-fest-icon" id="sf-icon">🇮🇳</div>
+      <div class="smart-fest-content">
+        <span class="smart-fest-badge" id="sf-badge">🎉 स्वतंत्रता दिवस</span>
+        <div class="smart-fest-text" id="sf-text"><strong>स्वतंत्रता दिवस की हार्दिक शुभकामनाएँ! 🇮🇳✨</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SMART FESTIVAL CONTROLLER (त्यौहार अपडेट करने के लिए)
+       👉 त्यौहार बदलने के लिए नीचे ACTIVE_FESTIVAL का नाम बदलें:
+       - "15_august"     -> 🇮🇳 15 अगस्त स्वतंत्रता दिवस
+       - "rakshabandhan" -> 🧵✨ रक्षाबंधन
+       - "diwali"        -> 🪔✨ दीपावली
+       - "holi"          -> 🎨✨ होली
+       - "26_january"    -> 🇮🇳 26 जनवरी गणतंत्र दिवस
+       - "new_year"      -> 🎆✨ नया साल
+       - "none"          -> छुपाएँ (कोई त्यौहार नहीं)
+       ========================================================================== -->
+  <script>
+    const ACTIVE_FESTIVAL = "15_august"; // <-- त्यौहार का नाम यहाँ बदलें!
+
+    const FESTIVAL_PRESETS = {
+      "15_august": {
+        icon: "🇮🇳",
+        badge: "🎉 स्वतंत्रता दिवस विशेषांक",
+        text: "15 अगस्त स्वतंत्रता दिवस की हार्दिक शुभकामनाएँ! जय हिंद! 🇮🇳✨"
+      },
+      "rakshabandhan": {
+        icon: "🧵✨",
+        badge: "🎉 रक्षाबंधन पर्व",
+        text: "समस्त पंचायत सहायकों को रक्षाबंधन की हार्दिक शुभकामनाएँ! 🧵✨"
+      },
+      "diwali": {
+        icon: "🪔✨",
+        badge: "🎉 दीपावली पर्व",
+        text: "शुभ दीपावली! आपके जीवन में सुख-समृद्धि एवं प्रकाश आए 🪔✨"
+      },
+      "holi": {
+        icon: "🎨✨",
+        badge: "🎉 होली उत्सव",
+        text: "रंगों के पावन पर्व होली की हार्दिक शुभकामनाएँ! 🎨✨"
+      },
+      "26_january": {
+        icon: "🇮🇳",
+        badge: "🎉 गणतंत्र दिवस",
+        text: "गणतंत्र दिवस की हार्दिक शुभकामनाएँ! वंदे मातरम्! 🇮🇳✨"
+      },
+      "new_year": {
+        icon: "🎆✨",
+        badge: "🎉 नव वर्ष",
+        text: "नव वर्ष की हार्दिक शुभकामनाएँ एवं मंगलकामनाएँ! 🎆✨"
+      }
+    };
+
+    (function initFestivalWidget() {
+      const widget = document.getElementById('smart-festival-widget');
+      if (!widget) return;
+
+      function renderFest(data) {
+        if (!data || data.status === 'disabled') {
+          widget.style.display = "none";
+          return;
+        }
+        const iconEl = document.getElementById('sf-icon');
+        const badgeEl = document.getElementById('sf-badge');
+        const textEl = document.getElementById('sf-text');
+
+        if (iconEl) iconEl.innerText = data.icon || "🇮🇳";
+        if (badgeEl) badgeEl.innerText = data.badge || "🎉 विशेषांक";
+        if (textEl) textEl.innerHTML = `<strong>${data.text || "हार्दिक शुभकामनाएँ!"}</strong>`;
+
+        // Apply selected animation class (confetti, glow, bounce, none)
+        const animType = data.anim || "confetti";
+        widget.className = "smart-fest-widget " + (animType !== "none" ? "anim-" + animType : "");
+
+        // Add Floating Sparkle Overlay Particles
+        if (!widget.querySelector('.fest-sparkle-box') && animType !== "none") {
+          const sparkleBox = document.createElement('div');
+          sparkleBox.className = 'fest-sparkle-box';
+          sparkleBox.innerHTML = `
+            <span class="fest-sparkle">✨</span>
+            <span class="fest-sparkle">🌟</span>
+            <span class="fest-sparkle">🌸</span>
+            <span class="fest-sparkle">✨</span>
+          `;
+          widget.appendChild(sparkleBox);
+        }
+
+        widget.style.display = "flex";
+      }
+
+      // 1. Render default code preset
+      if (ACTIVE_FESTIVAL && ACTIVE_FESTIVAL !== "none" && FESTIVAL_PRESETS[ACTIVE_FESTIVAL]) {
+        renderFest({ status: 'active', ...FESTIVAL_PRESETS[ACTIVE_FESTIVAL] });
+      }
+
+      // 2. Override with saved LocalStorage if exists
+      const local = localStorage.getItem('festivalConfig');
+      if (local) {
+        try { renderFest(JSON.parse(local)); } catch(e){}
+      }
+
+      // 3. Sync live with Firebase Firestore if available
+      const checkDb = setInterval(() => {
+        if (window.firebase && window.firebase.firestore) {
+          clearInterval(checkDb);
+          try {
+            window.firebase.firestore().collection('settings').doc('festival').onSnapshot(doc => {
+              if (doc.exists) {
+                const liveData = doc.data();
+                localStorage.setItem('festivalConfig', JSON.stringify(liveData));
+                renderFest(liveData);
+              }
+            });
+          } catch(e) {}
+        }
+      }, 500);
+      setTimeout(() => clearInterval(checkDb), 5000);
+    })();
+  </script>
+
   <script src="notifications.js?v=2" defer></script>
   <script src="script.js?v=21" defer></script>
 </body>

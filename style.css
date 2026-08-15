@@ -3049,3 +3049,174 @@ img, svg, video, canvas, iframe {
   }
   .nic-titles h1 { font-size: 16px !important; }
 }
+
+/* ==========================================================================
+   SMART FESTIVAL FLOATING BADGE (ZERO PAGE LAYOUT SHIFT)
+   ========================================================================== */
+.smart-fest-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #fed7aa;
+  border-left: 4px solid #ea580c;
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 320px;
+  animation: festSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--transition);
+}
+
+body.dark-theme .smart-fest-widget {
+  background: rgba(15, 23, 42, 0.95);
+  border-color: #334155;
+  border-left-color: #f97316;
+  color: #f8fafc;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes festSlideIn {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.smart-fest-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.smart-fest-icon {
+  font-size: 26px;
+  line-height: 1;
+  user-select: none;
+  animation: festIconBounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes festIconBounce {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-4px) scale(1.1); }
+}
+
+.smart-fest-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.smart-fest-badge {
+  font-size: 10px;
+  font-weight: 800;
+  color: #ea580c;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+body.dark-theme .smart-fest-badge {
+  color: #fb923c;
+}
+
+.smart-fest-text {
+  font-size: 12.5px;
+  color: var(--text-main);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.smart-fest-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: auto;
+  transition: var(--transition);
+}
+
+.smart-fest-close:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+@media (max-width: 480px) {
+  .smart-fest-widget {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    max-width: calc(100% - 32px);
+  }
+}
+
+/* ==========================================================================
+   FESTIVAL ANIMATION EFFECTS (CONFETTI, GLOW, BOUNCE & SPARKLES)
+   ========================================================================== */
+.smart-fest-widget.anim-confetti {
+  animation: festSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1), festBorderPulse 3s infinite linear;
+}
+
+.smart-fest-widget.anim-glow {
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.4), 0 10px 30px rgba(0, 0, 0, 0.12);
+  animation: festSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1), festGlowPulse 2s ease-in-out infinite alternate;
+}
+
+.smart-fest-widget.anim-bounce .smart-fest-icon {
+  animation: festIcon3DBounce 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite alternate !important;
+}
+
+@keyframes festBorderPulse {
+  0% { border-color: #fed7aa; }
+  50% { border-color: #ea580c; box-shadow: 0 0 20px rgba(234, 88, 12, 0.35); }
+  100% { border-color: #fed7aa; }
+}
+
+@keyframes festGlowPulse {
+  0% { box-shadow: 0 0 10px rgba(249, 115, 22, 0.2); }
+  100% { box-shadow: 0 0 25px rgba(249, 115, 22, 0.5), 0 0 40px rgba(251, 146, 60, 0.3); }
+}
+
+@keyframes festIcon3DBounce {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  100% { transform: translateY(-8px) scale(1.25) rotate(12deg); }
+}
+
+/* Floating Sparkle Particles Overlay */
+.fest-sparkle-box {
+  position: absolute;
+  inset: -8px;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.fest-sparkle {
+  position: absolute;
+  font-size: 13px;
+  user-select: none;
+  animation: floatSparkle 3s ease-in-out infinite;
+  opacity: 0.85;
+}
+
+.fest-sparkle:nth-child(1) { top: -2px; left: 15%; animation-delay: 0s; }
+.fest-sparkle:nth-child(2) { top: -4px; right: 20%; animation-delay: 0.8s; }
+.fest-sparkle:nth-child(3) { bottom: -2px; left: 35%; animation-delay: 1.5s; }
+.fest-sparkle:nth-child(4) { bottom: -4px; right: 10%; animation-delay: 2.2s; }
+
+@keyframes floatSparkle {
+  0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-6px) scale(1.2) rotate(180deg); opacity: 1; }
+  100% { transform: translateY(-12px) scale(0.6) rotate(360deg); opacity: 0; }
+}
+
+
+

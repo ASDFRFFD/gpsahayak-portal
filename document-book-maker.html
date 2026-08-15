@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1T48Y2LMSJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1T48Y2LMSJ');
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3320237271717237"
+    crossorigin="anonymous"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Book Maker 2026 | 8-Slot A4 Page Organizer & PDF Generator</title>
+  <meta name="description"
+    content="पंचायत सहायकों एवं नागरिकों के लिए ऑनलाइन Document Book Maker टूल — एक A4 शीट पर 8 दस्तावेज़ (आधार, पैन, वोटर ID, DL, निवास, जाति प्रमाण पत्र) व्यवस्थित करें और 1-क्लिक में PDF/प्रिंट निकालें।">
+  <meta name="keywords"
+    content="Document Book Maker, A4 8 Slot Document Print, Panchayat Sahayak Document Book, Aadhaar PAN A4 Print Generator, Multiple Documents on One A4 Sheet, Document Organizer Tool">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Document Book Maker | 8-Slot A4 Page Organizer & PDF Generator">
+  <meta property="og:description"
+    content="एक A4 शीट पर 8 दस्तावेज़ (आधार, पैन, वोटर ID, RC) व्यवस्थित करें और डायरेक्ट PDF प्रिंट निकालें। 100% सुरक्षित स्थानीय ब्राउज़र टूल।">
+  <meta property="og:url" content="https://gpsahayak.in/document-book-maker.html">
+
+  <link rel="canonical" href="https://gpsahayak.in/document-book-maker.html">
+  <link rel="icon" type="image/png" href="images/panchayat_favicon.png">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jsPDF & html2canvas for Client-side PDF Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       DOCUMENT BOOK MAKER DTP UTILITY STYLES
+       ========================================================================== */
+    .doc-maker-app {
+      background-color: #f1f5f9;
+      min-height: calc(100vh - 120px);
+      padding: 20px 16px 60px 16px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body.dark-theme .doc-maker-app {
+      background-color: #0f172a;
+    }
+
+    .doc-app-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Top Control Bar */
+    .ctrl-bar {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    body.dark-theme .ctrl-bar {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    .ctrl-title h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0 0 2px 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    body.dark-theme .ctrl-title h1 {
+      color: #38bdf8;
+    }
+
+    .ctrl-title p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .ctrl-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-tool {
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary-pdf {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff !important;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary-pdf:hover {
+      background: #1e40af;
+      transform: translateY(-1px);
+    }
+
+    .btn-success-print {
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      color: #ffffff !important;
+      box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+    }
+
+    .btn-success-print:hover {
+      background: #166534;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary-act {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+    }
+
+    body.dark-theme .btn-secondary-act {
+      background: #334155;
+      border-color: #475569;
+      color: #f8fafc;
+    }
+
+    .btn-secondary-act:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-danger-reset {
+      background: #fee2e2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    .btn-danger-reset:hover {
+      background: #fecaca;
+    }
+
+    /* Document Preset Quick Selector Bar */
+    .doc-selector-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    body.dark-theme .doc-selector-box {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    .doc-sel-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .doc-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .doc-chip {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.dark-theme .doc-chip {
+      background: #0f172a;
+      border-color: #475569;
+      color: #cbd5e1;
+    }
+
+    .doc-chip:hover {
+      background: #eff6ff;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    /* Page Switcher Navigation Bar */
+    .page-nav-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .page-tab-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    body.dark-theme .page-tab-btn {
+      background: #1e293b;
+      border-color: #334155;
+      color: #94a3b8;
+    }
+
+    .page-tab-btn.active {
+      background: #0f766e;
+      border-color: #0f766e;
+      color: #ffffff !important;
+      box-shadow: 0 2px 6px rgba(15, 118, 110, 0.3);
+    }
+
+    .btn-add-page {
+      background: #ecfdf5;
+      border: 1px dashed #10b981;
+      color: #047857;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .btn-add-page:hover {
+      background: #d1fae5;
+    }
+
+    /* Main Layout Grid: Canvas Preview + Side Guide */
+    .workspace-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .workspace-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* A4 Sheet Container Wrapper */
+    .a4-viewport {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    /* Physical A4 Sheet Aspect Ratio (210mm x 297mm) */
+    .a4-sheet {
+      width: 210mm;
+      height: 297mm;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0,0,0,0.06);
+      border-radius: 2px;
+      position: relative;
+      padding: 10mm;
+      box-sizing: border-box;
+      transform-origin: top center;
+      transition: transform 0.2s ease;
+    }
+
+    /* A4 Grid 4 Rows x 2 Columns = 8 Fixed Slots */
+    .a4-grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 92mm);
+      grid-template-rows: repeat(4, 65.5mm);
+      gap: 5mm 6mm;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Individual Fixed Slot Box */
+    .doc-slot-card {
+      border: 1px dashed #94a3b8;
+      border-radius: 4px;
+      background: #fafafa;
+      position: relative;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s;
+    }
+
+    .doc-slot-card.has-doc {
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+    }
+
+    .doc-slot-card.drag-over {
+      border-color: #2563eb;
+      background: #eff6ff;
+    }
+
+    /* Empty Slot UI */
+    .slot-empty-view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 8px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .slot-num-badge {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 9px;
+      font-weight: 800;
+      color: #94a3b8;
+      background: rgba(0, 0, 0, 0.04);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .slot-empty-icon {
+      font-size: 22px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+
+    .slot-empty-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    .slot-empty-sub {
+      font-size: 9px;
+      color: #94a3b8;
+    }
+
+    /* Filled Slot Image View */
+    .slot-filled-view {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slot-header-tag {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      z-index: 5;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 8.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+      letter-spacing: 0.3px;
+      pointer-events: none;
+    }
+
+    .slot-img-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #f8fafc;
+      position: relative;
+    }
+
+    .slot-img-render {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.1s ease;
+    }
+
+    /* Front + Back 2 Image Layout inside Slot */
+    .slot-dual-img-wrap {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      gap: 2px;
+      padding: 2px;
+      box-sizing: border-box;
+    }
+
+    .slot-dual-box {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #e2e8f0;
+      border-radius: 2px;
+      background: #fff;
+    }
+
+    .slot-dual-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .dual-sub-tag {
+      position: absolute;
+      bottom: 2px;
+      left: 2px;
+      font-size: 7px;
+      font-weight: 800;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 1px 3px;
+      border-radius: 2px;
+    }
+
+    /* Slot Hover Action Controls Overlay (Screen Only) */
+    .slot-overlay-ctrls {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 10;
+    }
+
+    .doc-slot-card:hover .slot-overlay-ctrls {
+      opacity: 1;
+    }
+
+    .slot-ctrl-btn {
+      background: #ffffff;
+      border: none;
+      color: #0f172a;
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s;
+    }
+
+    .slot-ctrl-btn:hover {
+      transform: scale(1.1);
+      background: #38bdf8;
+      color: #ffffff;
+    }
+
+    .slot-ctrl-btn.btn-del-slot:hover {
+      background: #ef4444;
+      color: #ffffff;
+    }
+
+    /* Right Side Info & Instructions Panel */
+    .side-info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .info-card-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    body.dark-theme .info-card-box {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    .info-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    body.dark-theme .info-card-title {
+      color: #f8fafc;
+    }
+
+    .info-list {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    body.dark-theme .info-list {
+      color: #cbd5e1;
+    }
+
+    .privacy-notice-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 11.5px;
+      color: #166534;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    body.dark-theme .privacy-notice-box {
+      background: rgba(22, 101, 52, 0.2);
+      border-color: #15803d;
+      color: #86efac;
+    }
+
+    .disclaimer-box {
+      background: #fffbebfb;
+      border: 1px solid #fde68a;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 11px;
+      color: #92400e;
+      line-height: 1.5;
+    }
+
+    body.dark-theme .disclaimer-box {
+      background: rgba(146, 64, 14, 0.2);
+      border-color: #b45309;
+      color: #fde68a;
+    }
+
+    /* Modal Image Editor Dialog */
+    .edit-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .edit-modal-backdrop.active {
+      display: flex;
+    }
+
+    .edit-modal-card {
+      background: #ffffff;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body.dark-theme .edit-modal-card {
+      background: #1e293b;
+      color: #f8fafc;
+    }
+
+    .edit-modal-header {
+      padding: 14px 18px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    body.dark-theme .edit-modal-header {
+      background: #0f172a;
+      border-color: #334155;
+    }
+
+    .edit-modal-header h3 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .edit-modal-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .edit-preview-canvas-box {
+      width: 100%;
+      height: 220px;
+      background: #0f172a;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .edit-preview-canvas-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.1s ease;
+    }
+
+    .edit-tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .edit-tool-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .edit-tool-group label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .edit-modal-footer {
+      padding: 12px 18px;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    body.dark-theme .edit-modal-footer {
+      background: #0f172a;
+      border-color: #334155;
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA STYLES (PURE A4 8-SLOT OUTPUT ONLY)
+       ========================================================================== */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Hide all website elements except active A4 sheet */
+      .nic-top-bar,
+      .nic-header,
+      .main-nav,
+      .site-footer,
+      .ctrl-bar,
+      .doc-selector-box,
+      .page-nav-bar,
+      .side-info-panel,
+      .slot-overlay-ctrls,
+      .edit-modal-backdrop,
+      .smart-fest-widget,
+      .no-print {
+        display: none !important;
+      }
+
+      .doc-maker-app {
+        padding: 0 !important;
+        background: transparent !important;
+      }
+
+      .doc-app-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+
+      .workspace-layout {
+        display: block !important;
+      }
+
+      .a4-viewport {
+        padding: 0 !important;
+        overflow: visible !important;
+      }
+
+      .a4-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 auto !important;
+        page-break-after: always;
+        transform: none !important;
+      }
+
+      .a4-sheet:last-child {
+        page-break-after: avoid;
+      }
+
+      .doc-slot-card {
+        border: 1px solid #64748b !important;
+        background: #ffffff !important;
+      }
+
+      .slot-empty-view {
+        opacity: 0.3 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR & HEADER NAV -->
+  <div class="nic-top-bar">
+    <div class="nic-top-container">
+      <div class="nic-top-left">
+        <a href="index.html" style="color:var(--gray-300); text-decoration:none; font-weight:700;">🏛️ पंचायत सहायक पोर्टल</a>
+      </div>
+      <div class="nic-top-right">
+        <div class="theme-switch" onclick="document.body.classList.toggle('dark-theme')">
+          <button title="Toggle Dark/Light Mode" style="border:none; background:none; cursor:pointer; color:#fbbf24; font-weight:700;">🌓 Night Mode</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="nic-header">
+    <div class="nic-header-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+      <a href="index.html" class="nic-logo-left" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो" style="height: 52px; margin-right: 12px;">
+        <div class="nic-titles">
+          <h1 style="font-size: 24px; line-height: 1.2; font-weight: 800; color: var(--primary); font-family: 'Poppins', sans-serif;">Panchayat Sahayak Portal</h1>
+          <h2 style="font-size: 12px; font-weight: 600; color: var(--primary); margin-top: 3px; text-transform: none; letter-spacing: normal;">उत्तर प्रदेश ग्राम सचिवालय एवं पंचायत सहायक पोर्टल</h2>
+        </div>
+      </a>
+      <div class="header-utils" style="display: flex; gap: 18px; align-items: center;">
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="nav-inner" role="navigation" aria-label="Main navigation">
+      <div class="nav-item"><a href="index.html" class="nav-link">होम</a></div>
+      <div class="nav-item"><a href="panchayat-sahayak-forms-pdfs.html" class="nav-link">फ़ॉर्म व PDF</a></div>
+      <div class="nav-item"><a href="panchayat-sahayak-pdf-tools.html" class="nav-link">पीडीऍफ़ टूल्स</a></div>
+      <div class="nav-item"><a href="panchayat-sahayak-image-tools.html" class="nav-link">इमेज टूल्स</a></div>
+      <div class="nav-item"><a href="document-book-maker.html" class="nav-link" style="color:var(--accent); font-weight:700;">Document Book</a></div>
+    </div>
+  </nav>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="doc-maker-app" role="main">
+    <div class="doc-app-container">
+
+      <!-- CONTROL HEADER BAR -->
+      <div class="ctrl-bar">
+        <div class="ctrl-title">
+          <h1>📘 Document Book Maker</h1>
+          <p>अपने दस्तावेज़ (आधार, पैन, वोटर ID, निवास) एक ही A4 शीट पर व्यवस्थित करें (4 × 2 ग्रिड - 8 स्लॉट)</p>
+        </div>
+
+        <div class="ctrl-actions">
+          <button class="btn-tool btn-primary-pdf" onclick="generatePDF()">
+            📄 Generate PDF
+          </button>
+          <button class="btn-tool btn-success-print" onclick="triggerPrint()">
+            🖨️ Print Sheet
+          </button>
+          <button class="btn-tool btn-danger-reset" onclick="resetActivePage()">
+            🔄 Reset Page
+          </button>
+        </div>
+      </div>
+
+      <!-- DOCUMENT TYPE SELECTOR CHIPS -->
+      <div class="doc-selector-box">
+        <div class="doc-sel-label">
+          <span>⚡ 1-Click Document Assign (अगले खाली स्लॉट में जोड़ें):</span>
+        </div>
+        <div class="doc-chips-grid">
+          <button class="doc-chip" onclick="quickAssignDoc('Aadhaar Card', '🪪')">🪪 Aadhaar Card</button>
+          <button class="doc-chip" onclick="quickAssignDoc('PAN Card', '💳')">💳 PAN Card</button>
+          <button class="doc-chip" onclick="quickAssignDoc('Voter ID', '🗳️')">🗳️ Voter ID</button>
+          <button class="doc-chip" onclick="quickAssignDoc('Driving Licence', '🚗')">🚗 Driving Licence</button>
+          <button class="doc-chip" onclick="quickAssignDoc('RC (Vehicle)', '📄')">📄 RC Book</button>
+          <button class="doc-chip" onclick="quickAssignDoc('Passport', '🛂')">🛂 Passport</button>
+          <button class="doc-chip" onclick="quickAssignDoc('Income Certificate', '📜')">📜 आय प्रमाण पत्र</button>
+          <button class="doc-chip" onclick="quickAssignDoc('Caste Certificate', '📜')">📜 जाति प्रमाण पत्र</button>
+          <button class="doc-chip" onclick="quickAssignDoc('Domicile Certificate', '📜')">📜 निवास प्रमाण पत्र</button>
+          <button class="doc-chip" onclick="quickAssignDoc('Other Document', '📑')">📑 अन्य दस्तावेज़</button>
+        </div>
+      </div>
+
+      <!-- MULTI-PAGE NAVIGATION TABS -->
+      <div class="page-nav-bar" id="page-tabs-container">
+        <!-- Dynamic Page Tabs Injected Here -->
+      </div>
+
+      <!-- WORKSPACE GRID: A4 SHEET PREVIEW + SIDEBAR GUIDE -->
+      <div class="workspace-layout">
+
+        <!-- A4 VIEWPORT CANVAS -->
+        <div class="a4-viewport">
+          <div class="a4-sheet" id="a4-preview-sheet">
+            <div class="a4-grid-container" id="a4-slots-grid">
+              <!-- 8 Fixed Slots Injected Here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDEBAR INFO & PRIVACY PANEL -->
+        <div class="side-info-panel">
+
+          <div class="privacy-notice-box">
+            🔒 <strong>100% स्थानीय व सुरक्षित:</strong> आपके दस्तावेज़ केवल इस ब्राउज़र में अस्थायी रूप से प्रोसेस किए जाते हैं। कोई भी इमेज किसी सर्वर पर अपलोड नहीं होती।
+          </div>
+
+          <div class="info-card-box">
+            <h4 class="info-card-title">💡 इस्तेमाल करने के निर्देश:</h4>
+            <ol class="info-list">
+              <li>ऊपर दी गई लिस्ट से दस्तावेज़ प्रकार चुनें या स्लॉट पर डायरेक्ट <strong>Upload</strong> पर क्लिक करें।</li>
+              <li>फोटो लोड होने के बाद माउस ले जाकर <strong>Edit / Rotate / Crop</strong> का प्रयोग करें।</li>
+              <li>फ्रंट + बैक कार्ड के लिए <strong>Front / Back</strong> अपलोड कर सकते हैं।</li>
+              <li>जरूरत पड़ने पर <strong>+ Add A4 Page</strong> दबाकर दूसरा A4 पेज जोड़ें।</li>
+              <li>काम पूरा होने पर <strong>Generate PDF</strong> या <strong>Print</strong> बटन दबाएं।</li>
+            </ol>
+          </div>
+
+          <div class="disclaimer-box">
+            ⚠️ <strong>अस्वीकरण (Disclaimer):</strong> यह सुविधा केवल व्यक्तिगत दस्तावेज़ों की कॉपी/संदर्भ पुस्तिका (Document Reference Book) तैयार करने के लिए है। यह किसी भी सरकारी दस्तावेज़ को जारी, संशोधित या पुनःनिर्मित नहीं करती।
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MODAL IMAGE EDITOR & CROPPER -->
+  <div class="edit-modal-backdrop" id="imageEditorModal">
+    <div class="edit-modal-card">
+      <div class="edit-modal-header">
+        <h3 id="modal-doc-title">✏️ Adjust Document Image</h3>
+        <button class="slot-ctrl-btn" onclick="closeEditorModal()">✕</button>
+      </div>
+      <div class="edit-modal-body">
+        <div class="edit-preview-canvas-box">
+          <img id="modal-img-preview" src="" alt="Crop Preview">
+        </div>
+
+        <div class="edit-tools-grid">
+          <div class="edit-tool-group">
+            <label>🔄 Rotate (घूमाएँ):</label>
+            <button class="btn-tool btn-secondary-act" onclick="rotateModalImage()">Rotate 90° ↻</button>
+          </div>
+          <div class="edit-tool-group">
+            <label>🔍 Zoom (ज़ूम):</label>
+            <input type="range" id="modal-zoom-slider" min="1" max="2.5" step="0.05" value="1" oninput="updateModalTransform()">
+          </div>
+          <div class="edit-tool-group">
+            <label>🖼️ Side (कार्ड साइड):</label>
+            <select id="modal-side-select" onchange="toggleModalSide()">
+              <option value="single">Single Side (एक तरफ)</option>
+              <option value="dual">Front + Back (दोनों तरफ)</option>
+            </select>
+          </div>
+          <div class="edit-tool-group" id="modal-back-upload-group" style="display:none;">
+            <label>📸 Upload Back Side Image:</label>
+            <input type="file" id="modal-back-file-in" accept="image/*" onchange="handleModalBackUpload(this)">
+          </div>
+        </div>
+      </div>
+      <div class="edit-modal-footer">
+        <button class="btn-tool btn-secondary-act" onclick="closeEditorModal()">Cancel</button>
+        <button class="btn-tool btn-primary-pdf" onclick="saveEditorChanges()">Save & Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIDDEN DUMMY FILE INPUT FOR QUICK ASSIGN -->
+  <input type="file" id="global-file-input" accept="image/*" style="display: none;" onchange="handleGlobalFileUpload(this)">
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    /* ==========================================================================
+       DOCUMENT BOOK MAKER APPLICATION STATE & LOGIC
+       ========================================================================== */
+    
+    // Default 8-Slot Specification (4 rows x 2 columns = 8 slots)
+    const SLOT_COUNT = 8;
+    
+    // Document Book State
+    let bookPages = [
+      createEmptyPage(1)
+    ];
+    let activePageIndex = 0;
+    let activeEditSlotId = null;
+    
+    // Quick assign tracking
+    let pendingAssignType = "";
+
+    function createEmptyPage(pageNumber) {
+      const slots = [];
+      for (let i = 1; i <= SLOT_COUNT; i++) {
+        slots.push({
+          id: i,
+          docType: "",
+          icon: "📄",
+          imgSrc: "",       // Single / Front image data URL
+          imgBackSrc: "",   // Optional Back image data URL
+          isDual: false,    // Front + Back mode
+          rotation: 0,
+          scale: 1,
+          offsetX: 0,
+          offsetY: 0
+        });
+      }
+      return { pageNumber, slots };
+    }
+
+    // Initialize Application on Page Load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPageTabs();
+      renderA4Slots();
+    });
+
+    // Render Page Switcher Tabs
+    function renderPageTabs() {
+      const container = document.getElementById('page-tabs-container');
+      if (!container) return;
+
+      let html = "";
+      bookPages.forEach((page, index) => {
+        const isActive = index === activePageIndex ? "active" : "";
+        html += `
+          <button class="page-tab-btn ${isActive}" onclick="switchPage(${index})">
+            📄 Page ${page.pageNumber} (${countPageDocs(page)}/8)
+            ${bookPages.length > 1 ? `<span onclick="deletePage(event, ${index})" title="Delete Page" style="margin-left:4px; opacity:0.7;">✕</span>` : ''}
+          </button>
+        `;
+      });
+
+      html += `
+        <button class="btn-add-page" onclick="addNewPage()">
+          + Add New A4 Page
+        </button>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    function countPageDocs(page) {
+      return page.slots.filter(s => s.imgSrc).length;
+    }
+
+    function switchPage(index) {
+      activePageIndex = index;
+      renderPageTabs();
+      renderA4Slots();
+    }
+
+    function addNewPage() {
+      const newNum = bookPages.length + 1;
+      bookPages.push(createEmptyPage(newNum));
+      activePageIndex = bookPages.length - 1;
+      renderPageTabs();
+      renderA4Slots();
+    }
+
+    function deletePage(event, index) {
+      event.stopPropagation();
+      if (bookPages.length <= 1) return;
+      if (confirm(`क्या आप Page ${bookPages[index].pageNumber} को हटाना चाहते हैं?`)) {
+        bookPages.splice(index, 1);
+        // Re-number
+        bookPages.forEach((p, idx) => p.pageNumber = idx + 1);
+        activePageIndex = Math.min(activePageIndex, bookPages.length - 1);
+        renderPageTabs();
+        renderA4Slots();
+      }
+    }
+
+    // Render A4 8-Slot Grid
+    function renderA4Slots() {
+      const grid = document.getElementById('a4-slots-grid');
+      if (!grid) return;
+
+      const currentPage = bookPages[activePageIndex];
+      let html = "";
+
+      currentPage.slots.forEach(slot => {
+        const hasDoc = Boolean(slot.imgSrc);
+        const slotCardClass = hasDoc ? "doc-slot-card has-doc" : "doc-slot-card";
+
+        html += `
+          <div class="${slotCardClass}" id="slot-card-${slot.id}"
+               ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, ${slot.id})">
+            <span class="slot-num-badge">Slot ${slot.id}</span>
+        `;
+
+        if (!hasDoc) {
+          // Empty Slot State
+          html += `
+            <div class="slot-empty-view" onclick="triggerSlotUpload(${slot.id})">
+              <div class="slot-empty-icon">${slot.icon || '📄'}</div>
+              <div class="slot-empty-label">${slot.docType || 'Upload Document'}</div>
+              <div class="slot-empty-sub">+ Click to Select File</div>
+            </div>
+          `;
+        } else {
+          // Filled Slot State
+          html += `
+            <div class="slot-filled-view">
+              <span class="slot-header-tag">${slot.docType || 'Document'}</span>
+
+              <div class="slot-img-container">
+          `;
+
+          if (slot.isDual && slot.imgBackSrc) {
+            // Front + Back Dual Display
+            html += `
+              <div class="slot-dual-img-wrap">
+                <div class="slot-dual-box">
+                  <img src="${slot.imgSrc}" style="transform: rotate(${slot.rotation}deg) scale(${slot.scale});" alt="Front">
+                  <span class="dual-sub-tag">Front</span>
+                </div>
+                <div class="slot-dual-box">
+                  <img src="${slot.imgBackSrc}" style="transform: rotate(${slot.rotation}deg) scale(${slot.scale});" alt="Back">
+                  <span class="dual-sub-tag">Back</span>
+                </div>
+              </div>
+            `;
+          } else {
+            // Single Image Display
+            html += `
+              <img class="slot-img-render" src="${slot.imgSrc}"
+                   style="transform: rotate(${slot.rotation}deg) scale(${slot.scale});" alt="${slot.docType}">
+            `;
+          }
+
+          html += `
+              </div>
+
+              <!-- Overlay Action Controls -->
+              <div class="slot-overlay-ctrls">
+                <button class="slot-ctrl-btn" onclick="openEditorModal(${slot.id})" title="Crop / Adjust Image">✏️</button>
+                <button class="slot-ctrl-btn" onclick="rotateSlotQuick(${slot.id})" title="Rotate 90°">↻</button>
+                <button class="slot-ctrl-btn" onclick="triggerSlotUpload(${slot.id})" title="Replace Image">🔄</button>
+                <button class="slot-ctrl-btn btn-del-slot" onclick="deleteSlotDoc(${slot.id})" title="Remove Document">🗑️</button>
+              </div>
+            </div>
+          `;
+        }
+
+        html += `</div>`;
+      });
+
+      grid.innerHTML = html;
+      renderPageTabs();
+    }
+
+    // Quick Assign via Top Document Chips
+    function quickAssignDoc(docType, icon) {
+      pendingAssignType = docType;
+      const currentPage = bookPages[activePageIndex];
+      
+      // Find first empty slot
+      let targetSlot = currentPage.slots.find(s => !s.imgSrc);
+      if (!targetSlot) {
+        // If current page is full, add new page and target slot 1
+        addNewPage();
+        targetSlot = bookPages[activePageIndex].slots[0];
+      }
+
+      targetSlot.docType = docType;
+      targetSlot.icon = icon;
+      triggerSlotUpload(targetSlot.id);
+    }
+
+    // Trigger File Upload for specific slot
+    function triggerSlotUpload(slotId) {
+      activeEditSlotId = slotId;
+      const fileInput = document.getElementById('global-file-input');
+      fileInput.value = "";
+      fileInput.click();
+    }
+
+    // Handle File Upload Callback
+    function handleGlobalFileUpload(input) {
+      if (!input.files || !input.files[0]) return;
+      const file = input.files[0];
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const dataUrl = e.target.result;
+        const currentPage = bookPages[activePageIndex];
+        const slot = currentPage.slots.find(s => s.id === activeEditSlotId);
+
+        if (slot) {
+          slot.imgSrc = dataUrl;
+          if (pendingAssignType && !slot.docType) {
+            slot.docType = pendingAssignType;
+          }
+          if (!slot.docType) {
+            slot.docType = "Document " + slot.id;
+          }
+          pendingAssignType = "";
+          renderA4Slots();
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Quick Rotate Button
+    function rotateSlotQuick(slotId) {
+      const slot = bookPages[activePageIndex].slots.find(s => s.id === slotId);
+      if (slot) {
+        slot.rotation = (slot.rotation + 90) % 360;
+        renderA4Slots();
+      }
+    }
+
+    // Delete Document from Slot
+    function deleteSlotDoc(slotId) {
+      const slot = bookPages[activePageIndex].slots.find(s => s.id === slotId);
+      if (slot) {
+        slot.imgSrc = "";
+        slot.imgBackSrc = "";
+        slot.isDual = false;
+        slot.docType = "";
+        slot.rotation = 0;
+        slot.scale = 1;
+        renderA4Slots();
+      }
+    }
+
+    // Drag & Drop File Handlers
+    function handleDragOver(e) {
+      e.preventDefault();
+      e.currentTarget.classList.add('drag-over');
+    }
+
+    function handleDragLeave(e) {
+      e.currentTarget.classList.remove('drag-over');
+    }
+
+    function handleDrop(e, slotId) {
+      e.preventDefault();
+      e.currentTarget.classList.remove('drag-over');
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        activeEditSlotId = slotId;
+        const file = e.dataTransfer.files[0];
+        const reader = new FileReader();
+        reader.onload = function (evt) {
+          const slot = bookPages[activePageIndex].slots.find(s => s.id === slotId);
+          if (slot) {
+            slot.imgSrc = evt.target.result;
+            if (!slot.docType) slot.docType = "Document " + slot.id;
+            renderA4Slots();
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    /* ==========================================================================
+       MODAL IMAGE EDITOR FUNCTIONS
+       ========================================================================== */
+    function openEditorModal(slotId) {
+      activeEditSlotId = slotId;
+      const slot = bookPages[activePageIndex].slots.find(s => s.id === slotId);
+      if (!slot || !slot.imgSrc) return;
+
+      document.getElementById('modal-doc-title').innerText = `✏️ Edit ${slot.docType || 'Document'}`;
+      const previewImg = document.getElementById('modal-img-preview');
+      previewImg.src = slot.imgSrc;
+      
+      document.getElementById('modal-zoom-slider').value = slot.scale || 1;
+      document.getElementById('modal-side-select').value = slot.isDual ? 'dual' : 'single';
+      document.getElementById('modal-back-upload-group').style.display = slot.isDual ? 'flex' : 'none';
+
+      updateModalTransform();
+      document.getElementById('imageEditorModal').classList.add('active');
+    }
+
+    function closeEditorModal() {
+      document.getElementById('imageEditorModal').classList.remove('active');
+    }
+
+    function rotateModalImage() {
+      const slot = bookPages[activePageIndex].slots.find(s => s.id === activeEditSlotId);
+      if (slot) {
+        slot.rotation = (slot.rotation + 90) % 360;
+        updateModalTransform();
+      }
+    }
+
+    function updateModalTransform() {
+      const slot = bookPages[activePageIndex].slots.find(s => s.id === activeEditSlotId);
+      const previewImg = document.getElementById('modal-img-preview');
+      const zoom = document.getElementById('modal-zoom-slider').value;
+      if (slot && previewImg) {
+        slot.scale = parseFloat(zoom);
+        previewImg.style.transform = `rotate(${slot.rotation}deg) scale(${slot.scale})`;
+      }
+    }
+
+    function toggleModalSide() {
+      const isDual = document.getElementById('modal-side-select').value === 'dual';
+      document.getElementById('modal-back-upload-group').style.display = isDual ? 'flex' : 'none';
+      const slot = bookPages[activePageIndex].slots.find(s => s.id === activeEditSlotId);
+      if (slot) {
+        slot.isDual = isDual;
+      }
+    }
+
+    function handleModalBackUpload(input) {
+      if (!input.files || !input.files[0]) return;
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const slot = bookPages[activePageIndex].slots.find(s => s.id === activeEditSlotId);
+        if (slot) {
+          slot.imgBackSrc = e.target.result;
+          slot.isDual = true;
+          alert("Back side image loaded!");
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function saveEditorChanges() {
+      renderA4Slots();
+      closeEditorModal();
+    }
+
+    /* ==========================================================================
+       RESET ACTIVE PAGE
+       ========================================================================== */
+    function resetActivePage() {
+      if (confirm("क्या आप इस A4 शीट के सभी 8 दस्तावेज़ हटाकर इसे खाली करना चाहते हैं?")) {
+        bookPages[activePageIndex] = createEmptyPage(activePageIndex + 1);
+        renderPageTabs();
+        renderA4Slots();
+      }
+    }
+
+    /* ==========================================================================
+       PRINT ACCURATE FUNCTION
+       ========================================================================== */
+    function triggerPrint() {
+      window.print();
+    }
+
+    /* ==========================================================================
+       REAL PDF GENERATION USING jsPDF (210mm x 297mm Exact Coordinates)
+       ========================================================================== */
+    async function generatePDF() {
+      if (typeof window.jspdf === 'undefined') {
+        alert("PDF Library loading... Please try again in 2 seconds.");
+        return;
+      }
+
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      // Fixed Millimeter Layout Coordinates
+      // A4 = 210mm x 297mm
+      // Grid: 2 cols x 4 rows = 8 slots
+      const colWidth = 92;      // 92mm slot width
+      const rowHeight = 65.5;   // 65.5mm slot height
+      const gapX = 6;           // 6mm gap
+      const gapY = 5;           // 5mm gap
+      const marginX = 10;       // 10mm margin left/right
+      const marginY = 10;       // 10mm margin top/bottom
+
+      const getSlotPosition = (slotId) => {
+        const index = slotId - 1;
+        const col = index % 2;        // 0 or 1
+        const row = Math.floor(index / 2); // 0, 1, 2, 3
+
+        const x = marginX + col * (colWidth + gapX);
+        const y = marginY + row * (rowHeight + gapY);
+
+        return { x, y, width: colWidth, height: rowHeight };
+      };
+
+      // Process each page
+      for (let pIdx = 0; pIdx < bookPages.length; pIdx++) {
+        if (pIdx > 0) {
+          pdf.addPage('a4', 'portrait');
+        }
+
+        const page = bookPages[pIdx];
+
+        // Draw 8 slot borders and content
+        for (let sIdx = 0; sIdx < page.slots.length; sIdx++) {
+          const slot = page.slots[sIdx];
+          const pos = getSlotPosition(slot.id);
+
+          // Draw slot dashed/thin border rectangle
+          pdf.setDrawColor(180, 180, 180);
+          pdf.setLineWidth(0.3);
+          pdf.rect(pos.x, pos.y, pos.width, pos.height);
+
+          // Draw Slot Number & Doc Type Label
+          pdf.setFontSize(8);
+          pdf.setTextColor(100, 100, 100);
+          const labelText = slot.docType ? `${slot.id}. ${slot.docType}` : `Slot ${slot.id}`;
+          pdf.text(labelText, pos.x + 2, pos.y + 4);
+
+          if (slot.imgSrc) {
+            try {
+              if (slot.isDual && slot.imgBackSrc) {
+                // Draw Front & Back Side-by-Side in Slot
+                const halfW = (pos.width - 4) / 2;
+                const innerY = pos.y + 6;
+                const innerH = pos.height - 8;
+
+                pdf.addImage(slot.imgSrc, 'JPEG', pos.x + 2, innerY, halfW, innerH, undefined, 'FAST');
+                pdf.addImage(slot.imgBackSrc, 'JPEG', pos.x + 2 + halfW + 1, innerY, halfW, innerH, undefined, 'FAST');
+
+                pdf.setFontSize(6);
+                pdf.text("Front", pos.x + 3, pos.y + pos.height - 2);
+                pdf.text("Back", pos.x + 3 + halfW, pos.y + pos.height - 2);
+
+              } else {
+                // Draw Single Front Image in Slot
+                const innerX = pos.x + 2;
+                const innerY = pos.y + 6;
+                const innerW = pos.width - 4;
+                const innerH = pos.height - 8;
+
+                pdf.addImage(slot.imgSrc, 'JPEG', innerX, innerY, innerW, innerH, undefined, 'FAST');
+              }
+            } catch (err) {
+              console.error("Error adding image to PDF:", err);
+            }
+          }
+        }
+      }
+
+      // Save PDF Download directly
+      pdf.save(`Document_Book_Sheet_Page1-${bookPages.length}.pdf`);
+    }
+  </script>
+</body>
+
+</html>
