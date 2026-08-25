@@ -1,14 +1,14 @@
 User-agent: *
 Allow: /
 
-# Prevent crawling of admin pages
+# Prevent crawling of admin pages only
 Disallow: /admin-login.html
 Disallow: /admin-dashboard.html
 Disallow: /admin-setup.html
 Disallow: /panchayat-sahayak-dashboard.html
-Disallow: /blog-post.html
-Disallow: /download.html
 Disallow: /images/private/
+
+# NOTE: blog-post.html and download.html are intentionally allowed for Google indexing
 
 # Sitemap location for Googlebot & Bing & all crawlers
 Sitemap: https://gpsahayak.in/sitemap.xml

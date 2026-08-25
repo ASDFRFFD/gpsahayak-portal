@@ -1,0 +1,1640 @@
+<!doctype html>
+<html lang="hi">
+
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3320237271717237"
+    crossorigin="anonymous"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1T48Y2LMSJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1T48Y2LMSJ');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="NjKEys-M3hLrTEfVqG4QfLA7qd05KJSEf3mo6aYD0gs" />
+
+  <title>e-District Helper Tool | स्वप्रमाणित घोषणा-पत्र जनरेटर, रिसाइज़र & आधार जॉइनर</title>
+  <meta name="description" content="e-District Helper Tool: उत्तर प्रदेश e-District आय, जाति, निवास के लिए स्वप्रमाणित घोषणा-पत्र ऑनलाइन बनाएं, प्रिंट करें, 100 KB JPG/200 KB PDF रिसाइज़ करें, आधार कार्ड जॉइन करें और पासपोर्ट फोटो 50 KB में क्रॉप करें।">
+  <meta name="keywords" content="edistrict helper tool, swaghoshna patra generator, edistrict self declaration form, स्वप्रमाणित घोषणा-पत्र, aadhar card front back joiner, aadhar merger 100kb, edistrict form resizer, up edistrict declaration form">
+  <meta name="author" content="Panchayat Sahayak Portal Team">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0284c7">
+
+  <link rel="canonical" href="https://gpsahayak.in/edistrict-swaghoshna-patra.html">
+  <link rel="icon" type="image/png" href="images/panchayat_favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PDF, Canvas & Cropper Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+
+  <style>
+    :root {
+      --tool-primary: #0284c7;
+      --tool-primary-dark: #0369a1;
+      --tool-primary-light: #38bdf8;
+      --tool-accent: #f97316;
+      --tool-bg: #f8fafc;
+    }
+
+    body {
+      background-color: #f8fafc;
+      background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', 'Hind', sans-serif;
+    }
+
+    .tool-hero {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      padding: 32px 16px;
+      text-align: center;
+      border-bottom: 4px solid #f97316;
+    }
+
+    .tool-hero h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0 0 8px 0;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .tool-hero p {
+      font-size: 14px;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    /* Sidebar + Workspace Flex Layout */
+    .app-container-wrap {
+      max-width: 1320px;
+      margin: 20px auto 40px auto;
+      padding: 0 16px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    /* Left Sidebar Sticky Styling */
+    .edistrict-sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      position: sticky;
+      top: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar-title-badge {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .sidebar-heading {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 16px 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tool-tab-btn {
+      width: 100%;
+      text-align: left;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      color: #334155;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .tool-tab-btn:hover {
+      background: #ffffff;
+      border-color: var(--tool-primary);
+      color: var(--tool-primary);
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.12);
+    }
+
+    .tool-tab-btn.active {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      border-color: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.25);
+      transform: translateX(4px);
+    }
+
+    .sidebar-future-slot {
+      margin-top: 16px;
+      padding: 12px;
+      background: #f1f5f9;
+      border: 1.5px dashed #cbd5e1;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Right Workspace Container */
+    .edistrict-workspace {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .tool-section {
+      display: none;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      animation: tabFade 0.3s ease-out;
+    }
+
+    .tool-section.active {
+      display: block;
+    }
+
+    @keyframes tabFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Layout for Mobile & Tablets */
+    @media (max-width: 992px) {
+      .app-container-wrap {
+        flex-direction: column;
+        gap: 16px;
+        margin: 12px auto 30px auto;
+        padding: 0 12px;
+      }
+
+      .edistrict-sidebar {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        padding: 12px 14px;
+        border-radius: 14px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      }
+
+      .sidebar-heading, .sidebar-title-badge, .sidebar-future-slot {
+        display: none;
+      }
+
+      .sidebar-nav-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        gap: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .sidebar-nav-list::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tool-tab-btn {
+        white-space: nowrap;
+        width: auto;
+        flex-shrink: 0;
+        padding: 10px 16px;
+        font-size: 13px;
+        border-radius: 10px;
+      }
+
+      .tool-tab-btn:hover, .tool-tab-btn.active {
+        transform: none;
+      }
+
+      .card-panel {
+        padding: 16px;
+        border-radius: 14px;
+      }
+
+      .card-panel h2 {
+        font-size: 17px;
+      }
+
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .row-2col {
+        flex-direction: column;
+        gap: 12px !important;
+      }
+
+      .row-2col > div {
+        width: 100% !important;
+        flex: none !important;
+      }
+
+      .btn-action-primary, .btn-action-secondary {
+        width: 100% !important;
+        justify-content: center !important;
+        box-sizing: border-box;
+      }
+
+      .declaration-paper-wrapper {
+        padding: 8px;
+      }
+    }
+
+    /* Screen-specific scaling for mobile phones */
+    @media (max-width: 600px) {
+      .declaration-paper {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 20px 14px !important;
+        font-size: 15px !important;
+        line-height: 2.15 !important;
+      }
+      .dec-title {
+        font-size: 20px !important;
+        margin-bottom: 25px !important;
+      }
+      .dec-header-top {
+        font-size: 13px !important;
+        margin-bottom: 15px !important;
+      }
+      .dec-body-text {
+        font-size: 15px !important;
+        line-height: 2.15 !important;
+        margin-bottom: 35px !important;
+      }
+      .dec-footer-table td {
+        font-size: 14px !important;
+        line-height: 2.0 !important;
+      }
+      .dec-bottom-watermark-wrap {
+        left: 14px !important;
+        right: 14px !important;
+        bottom: 10px !important;
+      }
+      .dec-gram-sachivalay-wm {
+        font-size: 13.5px !important;
+      }
+      .dec-gpsahayak-wm {
+        font-size: 9px !important;
+      }
+    }
+
+    .card-panel {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      margin-bottom: 24px;
+    }
+
+    .card-panel h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--tool-primary);
+      margin: 0 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 12px;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 868px) {
+      .grid-2col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group-custom {
+      margin-bottom: 16px;
+    }
+
+    .form-group-custom label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+
+    .form-control-custom {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.2s;
+      box-sizing: border-box;
+      background: #f8fafc;
+    }
+
+    .form-control-custom:focus {
+      border-color: var(--tool-primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+    }
+
+    /* Print Preview Paper Format (Compact on-screen preview) */
+    .declaration-paper-wrapper {
+      background: #525659;
+      padding: 16px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      overflow-x: auto;
+    }
+
+    .declaration-paper {
+      width: 100%;
+      max-width: 640px;
+      min-height: 720px;
+      background: #ffffff;
+      padding: 24px 20px 60px 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      box-sizing: border-box;
+      color: #000000;
+      font-family: 'Noto Serif Devanagari', 'Hind', serif;
+      position: relative;
+      font-size: 15px;
+      line-height: 2.15;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .dec-bottom-watermark-wrap {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 12px;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 8px;
+      text-align: center;
+    }
+
+    .dec-header-top {
+      text-align: center;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: underline;
+      margin-bottom: 20px;
+      font-family: 'Noto Serif Devanagari', serif;
+      letter-spacing: 0.2px;
+    }
+
+    .dec-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 800;
+      text-decoration: underline;
+      margin-bottom: 30px;
+      letter-spacing: 0.5px;
+      font-family: 'Noto Serif Devanagari', serif;
+    }
+
+    .dec-body-text {
+      text-align: justify;
+      text-justify: inter-word;
+      font-size: 15px;
+      line-height: 2.2;
+      margin-bottom: 40px;
+      font-family: 'Noto Serif Devanagari', serif;
+    }
+
+    .dec-fill-value {
+      font-weight: 700;
+      border-bottom: 1.5px dotted #000;
+      padding: 0 4px;
+      display: inline-block;
+      min-width: 40px;
+      text-align: center;
+      color: #000000;
+      font-family: 'Noto Serif Devanagari', serif;
+    }
+
+    .dec-footer-table {
+      width: 100%;
+      margin-top: 30px;
+      border-collapse: collapse;
+    }
+
+    .dec-footer-table td {
+      vertical-align: top;
+      font-size: 14.5px;
+      line-height: 2.1;
+      font-family: 'Noto Serif Devanagari', serif;
+    }
+
+    .btn-action-primary {
+      background: var(--tool-primary);
+      color: #ffffff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+
+    .btn-action-primary:hover {
+      background: var(--tool-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
+    }
+
+    .btn-action-secondary {
+      background: #ffffff;
+      color: #0f172a;
+      border: 2px solid #cbd5e1;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-action-secondary:hover {
+      border-color: #0f172a;
+      background: #f8fafc;
+    }
+
+    /* File Dropzones */
+    .custom-dropzone {
+      border: 2px dashed #cbd5e1;
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 30px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .custom-dropzone:hover {
+      border-color: var(--tool-primary-light);
+      background: #f0f9ff;
+    }
+
+    .custom-dropzone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .preview-box-container {
+      max-width: 100%;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .preview-img-frame {
+      max-width: 100%;
+      max-height: 350px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background: #ffffff;
+    }
+
+    .file-size-badge {
+      display: inline-block;
+      background: var(--tool-primary);
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    /* Page Setup for Guaranteed 1-Page Printing */
+    @page {
+      size: A4 portrait;
+      margin: 0mm;
+    }
+
+    /* Print Styles (Strict Single-Page A4 Output & Margin Lock) */
+    @media print {
+      html, body {
+        width: 210mm !important;
+        height: 297mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+      }
+
+      /* Hide all UI elements except printable declaration paper */
+      header,
+      footer,
+      .nic-header,
+      .tool-hero,
+      .edistrict-sidebar,
+      .card-panel:has(#declarationForm),
+      #tab-resizer,
+      #tab-aadhar,
+      #tab-passport,
+      .sidebar-heading,
+      .sidebar-title-badge,
+      h2 {
+        display: none !important;
+      }
+
+      /* Flatten parent layouts to prevent flex/grid height calculations */
+      .app-container-wrap,
+      .edistrict-workspace,
+      #tab-generator,
+      .grid-2col,
+      .card-panel,
+      .declaration-paper-wrapper {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        background: #ffffff !important;
+        box-shadow: none !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        max-width: 210mm !important;
+        max-height: 297mm !important;
+        overflow: hidden !important;
+      }
+
+      #declarationPrintArea {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        max-width: 210mm !important;
+        max-height: 297mm !important;
+        margin: 0 !important;
+        padding: 22mm 20mm 35mm 20mm !important;
+        box-sizing: border-box !important;
+        background: #ffffff !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        font-family: 'Noto Serif Devanagari', 'Hind', serif !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: avoid !important;
+        page-break-before: avoid !important;
+        page-break-inside: avoid !important;
+        break-after: avoid !important;
+        break-inside: avoid !important;
+        overflow: hidden !important;
+      }
+
+      .dec-header-top {
+        text-align: center !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        text-decoration: underline !important;
+        margin-bottom: 20px !important;
+      }
+
+      .dec-title {
+        text-align: center !important;
+        font-size: 24px !important;
+        font-weight: 800 !important;
+        text-decoration: underline !important;
+        margin-bottom: 30px !important;
+        letter-spacing: 0.5px !important;
+      }
+
+      .dec-body-text {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        font-size: 17.5px !important;
+        line-height: 2.3 !important;
+        margin-bottom: 35px !important;
+      }
+
+      .dec-fill-value {
+        font-weight: 700 !important;
+        border-bottom: 1.5px dotted #000 !important;
+        padding: 0 4px !important;
+        display: inline-block !important;
+      }
+
+      .dec-footer-table {
+        display: table !important;
+        width: 100% !important;
+        margin-top: 30px !important;
+        border-collapse: collapse !important;
+      }
+
+      .dec-footer-table td {
+        font-size: 16px !important;
+        line-height: 2.2 !important;
+      }
+
+      .dec-bottom-watermark-wrap {
+        position: absolute !important;
+        left: 20mm !important;
+        right: 20mm !important;
+        bottom: 10mm !important;
+        margin: 0 !important;
+        border-top: 1px dashed #94a3b8 !important;
+        padding-top: 8px !important;
+        text-align: center !important;
+      }
+
+      .dec-gram-sachivalay-wm {
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #334155 !important;
+        letter-spacing: 0.5px !important;
+        font-family: 'Noto Serif Devanagari', serif !important;
+      }
+
+      .dec-gpsahayak-wm {
+        position: absolute !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        font-size: 10px !important;
+        color: #64748b !important;
+        font-family: 'Outfit', sans-serif !important;
+        font-weight: 600 !important;
+        opacity: 0.8 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="nic-header">
+    <div class="nic-header-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+      <a href="index.html" class="nic-logo-left" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="images/panchayat_logo.png" alt="पंचायत सहायक पोर्टल लोगो" style="height: 52px; margin-right: 12px;">
+        <div class="nic-titles">
+          <h1 style="font-size: 22px; line-height: 1.2; font-weight: 800; color: #0f172a;">Panchayat Sahayak Portal</h1>
+          <h2 style="font-size: 12.5px; font-weight: 700; color: #0284c7;">उत्तर प्रदेश e-District डिजिटल हेल्पर्स — <span style="color: #0284c7; background: #e0f2fe; padding: 2px 8px; border-radius: 6px; border: 1px solid #bae6fd;">e-District Helper Tool</span></h2>
+        </div>
+      </a>
+      <div class="header-utils" style="display: flex; gap: 14px; align-items: center;">
+        <a href="index.html" class="btn-action-secondary" style="padding: 6px 12px; font-size: 12px;">🏠 होम पर जाएं</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <div class="tool-hero">
+    <h1><span style="color: #fef08a;">📄 e-District</span> <span style="color: #ffffff;">Helper Tool</span></h1>
+    <p>आय, जाति, निवास फॉर्म के लिए स्वप्रमाणित घोषणा-पत्र बनाएं, प्रिंट करें, 100 KB JPG / 200 KB PDF रिसाइज़ करें, आधार कार्ड (Front + Back) जॉइन करें और पासपोर्ट फोटो 50 KB में क्रॉप करें।</p>
+  </div>
+
+  <!-- Main App Layout: Left Sidebar + Right Workspace -->
+  <div class="app-container-wrap">
+    
+    <!-- Left Sidebar Menu -->
+    <aside class="edistrict-sidebar">
+      <span class="sidebar-title-badge" style="color: #0284c7; background: #e0f2fe; border: 1px solid #bae6fd; font-size: 11.5px; font-weight: 800;">⚡ e-District Helper Tool</span>
+      <h3 class="sidebar-heading">🛠️ टूल मेनू (Tools Menu)</h3>
+      
+      <div class="sidebar-nav-list">
+        <button class="tool-tab-btn active" onclick="switchToolTab('tab-generator')">
+          ✍️ 1. स्वप्रमाणित घोषणा-पत्र जनरेटर
+        </button>
+        <button class="tool-tab-btn" onclick="switchToolTab('tab-resizer')">
+          📐 2. IMAGE RESIZER (< 100KB / 200KB)
+        </button>
+        <button class="tool-tab-btn" onclick="switchToolTab('tab-aadhar')">
+          🪪 3. आधार (Front+Back) जॉइनर
+        </button>
+        <button class="tool-tab-btn" onclick="switchToolTab('tab-passport')">
+          📷 4. पासपोर्ट फोटो क्रॉप (< 50KB)
+        </button>
+      </div>
+
+      <div class="sidebar-future-slot">
+        ✨ भविष्य में नए टूल्स यहाँ जुड़ेंगे!
+      </div>
+    </aside>
+
+    <!-- Right Workspace Area -->
+    <main class="edistrict-workspace">
+      <!-- ================= TAB 1: FORM GENERATOR ================= -->
+      <div id="tab-generator" class="tool-section active">
+    <div class="grid-2col">
+      <!-- Input Panel -->
+      <div class="card-panel">
+        <h2>📝 विवरण दर्ज करें (Fill Details)</h2>
+        <form id="declarationForm" onsubmit="event.preventDefault();">
+          <div class="form-group-custom">
+            <label>आवेदक / आवेदिका का नाम (Applicant Name) *</label>
+            <input type="text" id="inp_name" class="form-control-custom" placeholder="उदा: राम कुमार" required oninput="updateDeclarationPreview()">
+          </div>
+
+          <div class="row-2col" style="display: flex; gap: 12px;">
+            <div class="form-group-custom" style="flex: 1;">
+              <label>संबंध / नाता (Relation Option) *</label>
+              <select id="inp_rel" class="form-control-custom" onchange="updateDeclarationPreview()">
+                <option value="पुत्र / पुत्री / पत्नी / श्री">पुत्र / पुत्री / पत्नी / श्री (सभी - Legal Standard)</option>
+                <option value="पुत्र">पुत्र (Son of)</option>
+                <option value="पुत्री">पुत्री (Daughter of)</option>
+                <option value="पत्नी">पत्नी (Wife of)</option>
+                <option value="श्री">श्री (Ward of)</option>
+              </select>
+            </div>
+
+            <div class="form-group-custom" style="flex: 1.2;">
+              <label>पिता / पति का नाम (Father / Husband Name) *</label>
+              <input type="text" id="inp_guardian" class="form-control-custom" placeholder="उदा: श्री श्याम लाल" required oninput="updateDeclarationPreview()">
+            </div>
+          </div>
+
+          <div class="row-2col" style="display: flex; gap: 12px;">
+            <div class="form-group-custom" style="flex: 1;">
+              <label>जन्म का वर्ष (Birth Year Select) *</label>
+              <select id="inp_birth_year" class="form-control-custom" onchange="handleYearChange()">
+                <option value="">-- जन्म वर्ष चुनें --</option>
+              </select>
+              <div id="div_age_custom" style="display: none; margin-top: 6px;">
+                <input type="number" id="inp_age_manual" class="form-control-custom" placeholder="उदा: 25" oninput="updateDeclarationPreview()">
+              </div>
+              <div id="lbl_calc_age" style="font-size: 13px; font-weight: 700; color: #1b365d; background: #f0f9ff; padding: 6px 10px; border-radius: 6px; border: 1px solid #bae6fd; margin-top: 6px; display: none;">
+                ✅ वर्ष: <span id="val_calc_yr" style="color:#0066cc;">----</span> | उम्र: <span id="val_calc_age" style="color:#1b365d; font-size:15px; font-weight:800;">--</span> वर्ष
+              </div>
+            </div>
+            <div class="form-group-custom" style="flex: 1.2;">
+              <label>व्यवसाय (Occupation Dropdown) *</label>
+              <select id="inp_occ_select" class="form-control-custom" onchange="handleOccChange()">
+                <option value="कृषि">कृषि (Agriculture)</option>
+                <option value="मजदूरी">मजदूरी (Labor)</option>
+                <option value="व्यापार / व्यवसाय">व्यापार / व्यवसाय (Business)</option>
+                <option value="गृहणी">गृहणी (Housewife)</option>
+                <option value="छात्र">छात्र / छात्रा (Student)</option>
+                <option value="अन्य">अन्य (अन्य व्यवसाय लिखें...)</option>
+              </select>
+              <div id="div_occ_custom" style="display: none; margin-top: 8px;">
+                <input type="text" id="inp_occ_custom" class="form-control-custom" placeholder="यहाँ व्यवसाय का नाम लिखें..." oninput="updateDeclarationPreview()">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group-custom" style="background: #f0f9ff; padding: 12px; border-radius: 10px; border: 1.5px solid #bae6fd; margin-bottom: 16px;">
+            <label style="color: #0369a1; font-weight: 700; display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span>🏛️ गाँव का नाम (ग्राम सचिवालय वाटरमार्क हेतु)</span>
+              <span style="font-size: 11px; background: #0284c7; color: #ffffff; padding: 2px 8px; border-radius: 999px; font-weight: 700;">💾 स्वतः डिफॉल्ट सेव रहेगा</span>
+            </label>
+            <input type="text" id="inp_village" class="form-control-custom" placeholder="उदा: रामपुर (गाँव का नाम यहाँ लिखें, स्वतः डिफॉल्ट सेव रहेगा)" oninput="updateDeclarationPreview()">
+          </div>
+
+          <div class="form-group-custom">
+            <label>निवासी (पूरा पता / ग्राम व पोस्ट, जिला) *</label>
+            <textarea id="inp_address" class="form-control-custom" rows="2" placeholder="उदा: ग्राम व पोस्ट- रामपुर, तहसील- सदर, जनपद- लखनऊ" required oninput="updateDeclarationPreview()"></textarea>
+          </div>
+
+          <div class="row-2col" style="display: flex; gap: 12px;">
+            <div class="form-group-custom" style="flex: 1;">
+              <label>स्थान (Place / City) *</label>
+              <input type="text" id="inp_place" class="form-control-custom" placeholder="उदा: लखनऊ" required oninput="updateDeclarationPreview()">
+            </div>
+            <div class="form-group-custom" style="flex: 1;">
+              <label>दिनांक (Date) *</label>
+              <input type="text" id="inp_date" class="form-control-custom" required oninput="updateDeclarationPreview()">
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap;">
+            <button type="button" class="btn-action-primary" onclick="printDeclarationForm()">
+              🖨️ A4 स्वप्रमाणित घोषणा-पत्र प्रिंट करें
+            </button>
+            <button type="button" class="btn-action-secondary" onclick="downloadDeclarationPDF()">
+              📄 PDF डाउनलोड करें
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Live Printable Preview -->
+      <div class="card-panel" style="padding: 16px;">
+        <h2 style="font-size: 16px; margin-bottom: 12px;">👁️ A4 लाइव प्रिंट प्रिव्यू (Live Preview)</h2>
+        <div class="declaration-paper-wrapper">
+          <div class="declaration-paper" id="declarationPrintArea">
+            <div class="dec-header-top">
+              संख्या- 874/एक-9-2014-रा-9, दिनांक 16 जून, 2014 का संलग्नक
+            </div>
+
+            <div class="dec-title">
+              स्वप्रमाणित घोषणा-पत्र
+            </div>
+
+            <div class="dec-body-text">
+              मैं <span class="dec-fill-value" id="pv_name">......................................................</span> <span class="dec-fill-value" id="pv_rel">पुत्र / पुत्री / पत्नी / श्री</span> <span class="dec-fill-value" id="pv_guardian">......................................................</span> उम्र <span class="dec-fill-value" id="pv_age">.......</span> वर्ष <span class="dec-fill-value" id="pv_birth_yr">..........</span>, व्यवसाय <span class="dec-fill-value" id="pv_occ">कृषि</span> निवासी <span class="dec-fill-value" id="pv_address">........................................................................................................................</span> प्रमाणित करते हुए घोषणा करता/करती हूँ कि आवेदन पत्र में दिये गये विवरण/तथ्य मेरी व्यक्तिगत जानकारी एवं विश्वास में शुद्ध एवं सत्य हैं। मैं मिथ्या विवरणों/तथ्यों को देने के परिणामों से भली-भाँति अवगत हूँ। यदि आवेदन पत्र में दिये गये कोई विवरण/तथ्य मिथ्या पाये जाते हैं, तो मैं, मेरे विरुद्ध भा०द०वि० 1960 की धारा-199 व 200 एवं प्रभावी किसी अन्य विधि के अंतर्गत अभियोजन एवं दण्ड के लिये, स्वयं उत्तरदायी होऊँगा/होऊँगी।
+            </div>
+
+            <table class="dec-footer-table">
+              <tr>
+                <td style="width: 50%;">
+                  स्थान: <span id="pv_place" style="font-weight: 700;">........................</span><br>
+                  दिनांक: <span id="pv_date" style="font-weight: 700;">........................</span>
+                </td>
+                <td style="width: 50%; text-align: right;">
+                  आवेदक / आवेदिका के हस्ताक्षर: ....................................<br>
+                  आवेदक / आवेदिका का नाम: <span id="pv_name_bottom" style="font-weight: 700;">....................................</span>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Bottom Watermark Footer (Pinned at Page Bottom) -->
+            <div class="dec-bottom-watermark-wrap">
+              <div class="dec-gram-sachivalay-wm">
+                ग्राम सचिवालय <span id="pv_village">........................</span>
+              </div>
+              <div class="dec-gpsahayak-wm">
+                gpsahayak portal
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TAB 2: IMAGE RESIZER ================= -->
+  <div id="tab-resizer" class="tool-section">
+    <div class="card-panel">
+      <h2>📐 IMAGE RESIZER (< 100 KB JPG / < 200 KB PDF)</h2>
+      <p style="font-size: 13.5px; color: #64748b; margin-top: -10px; margin-bottom: 20px;">
+        यहाँ फ़ोटो, घोषणा-पत्र या कोई भी दस्तावेज़ अपलोड करें। यह स्वतः 100 KB से कम JPG या 200 KB से कम PDF में बदल देगा।
+      </p>
+
+      <div class="grid-2col">
+        <div>
+          <div class="custom-dropzone">
+            <div style="font-size: 40px; margin-bottom: 8px;">📤</div>
+            <h3 style="margin: 0 0 4px 0; font-size: 18px; color: var(--tool-primary);">Upload (अपलोड करें)</h3>
+            <p style="margin: 0; font-size: 13px; color: #64748b;">(JPG, PNG या PDF फ़ाइल चुनें)</p>
+            <input type="file" id="resizerInput" accept="image/*,.pdf" onchange="handleResizerUpload(event)">
+          </div>
+
+          <div id="resizerPreviewArea" class="preview-box-container" style="display: none;">
+            <img id="resizerImgPreview" class="preview-img-frame" alt="Scanned Form Preview">
+            <div>
+              <span class="file-size-badge" id="resizerOriginalSize">मूल साइज: 0 KB</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <h3 style="margin-top: 0; font-size: 16px; color: #0f172a;">⚡ e-District रिसाइज़ ऑप्शन्स</h3>
+
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+              <button type="button" class="btn-action-primary" onclick="processResizer('jpg', 100)" style="width: 100%; justify-content: center; background: #16a34a;">
+                🖼️ e-District JPG डाउनलोड करें (&lt; 100 KB)
+              </button>
+
+              <button type="button" class="btn-action-primary" onclick="processResizer('pdf', 200)" style="width: 100%; justify-content: center; background: #2563eb;">
+                📄 e-District PDF डाउनलोड करें (&lt; 200 KB)
+              </button>
+            </div>
+
+            <div id="resizerResultBox" style="display: none; margin-top: 20px; padding: 16px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 10px; text-align: center;">
+              <div style="font-size: 14px; font-weight: 700; color: #166534; margin-bottom: 6px;">✅ सफलतापूर्वक रिसाइज़ हो गया!</div>
+              <div style="font-size: 20px; font-weight: 800; color: #15803d;" id="resizerOutputSize">साइज: 84 KB</div>
+              <a id="resizerDownloadBtn" download="Swaghoshna_Patra_Resized.jpg" class="btn-action-primary" style="margin-top: 12px; width: 100%; justify-content: center; background: #16a34a; text-decoration: none; box-sizing: border-box;">
+                ⬇️ फ़ाइल डाउनलोड करें
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TAB 3: AADHAR MERGER & AUTO COMPRESSOR ================= -->
+  <div id="tab-aadhar" class="tool-section">
+    <div class="card-panel">
+      <h2>🪪 आधार कार्ड (Front + Back) जॉइनर व ऑटो-कंप्रेसर</h2>
+      <p style="font-size: 13.5px; color: #64748b; margin-top: -10px; margin-bottom: 20px;">
+        आधार कार्ड के सामने (Front) और पीछे (Back) के भाग को एक ही पेज पर जोड़ें। यह टूल फोटो की धुंधलापन दूर करके शार्पनेस बढ़ाता है और 100 KB JPG व 200 KB PDF में ऑटो-कंप्रेस करता है।
+      </p>
+
+      <div class="grid-2col">
+        <!-- Dual Upload Area -->
+        <div>
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <label style="font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px; display: block;">1. आधार कार्ड फ्रंट भाग (Front Photo) *</label>
+              <div class="custom-dropzone" style="padding: 20px;">
+                <div style="font-size: 24px;">🪪 Front</div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--tool-primary);" id="lbl_front">सामने वाला भाग चुनें</div>
+                <input type="file" id="aadharFrontInput" accept="image/*" onchange="handleAadharUpload(event, 'front')">
+              </div>
+            </div>
+
+            <div>
+              <label style="font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px; display: block;">2. आधार कार्ड बैक भाग (Back Photo) *</label>
+              <div class="custom-dropzone" style="padding: 20px;">
+                <div style="font-size: 24px;">🏠 Back</div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--tool-primary);" id="lbl_back">पीछे वाला भाग चुनें</div>
+                <input type="file" id="aadharBackInput" accept="image/*" onchange="handleAadharUpload(event, 'back')">
+              </div>
+            </div>
+
+            <div style="background: #eff6ff; padding: 14px; border-radius: 8px; border: 1px solid #bfdbfe;">
+              <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: #1e40af; cursor: pointer;">
+                <input type="checkbox" id="chk_sharp" checked style="width: 18px; height: 18px;" onchange="mergeAadharCards()">
+                <span>✨ फोटो की शार्पनेस एवं क्लेरिटी ऑटो-बूस्ट करें (Enhance & Sharpen Photo)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Merged Preview & Compression Export -->
+        <div>
+          <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center;">
+            <h3 style="margin-top: 0; font-size: 16px; color: #0f172a;">🖼️ जॉइंट आधार कार्ड प्रिव्यू</h3>
+            
+            <div id="aadharCanvasWrapper" style="display: flex; justify-content: center; margin: 12px 0;">
+              <canvas id="aadharCanvas" style="max-width: 100%; height: auto; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); background: #ffffff;"></canvas>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px;">
+              <button type="button" class="btn-action-primary" onclick="exportAadharMerged('jpg', 100)" style="justify-content: center; background: #16a34a;">
+                🖼️ Merged Aadhar JPG डाउनलोड करें (&lt; 100 KB)
+              </button>
+
+              <button type="button" class="btn-action-primary" onclick="exportAadharMerged('pdf', 200)" style="justify-content: center; background: #2563eb;">
+                📄 Merged Aadhar PDF डाउनलोड करें (&lt; 200 KB)
+              </button>
+            </div>
+
+            <div id="aadharResultBadge" style="display: none; margin-top: 14px; padding: 10px; background: #dcfce7; color: #15803d; border-radius: 8px; font-weight: 800; font-size: 15px;">
+              साइज: <span id="aadharResultSize">85.2 KB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TAB 4: PASSPORT PHOTO CROPPER & RESIZER ================= -->
+  <div id="tab-passport" class="tool-section">
+    <div class="card-panel">
+      <h2>📷 पासपोर्ट फोटो क्रॉप & ऑटो-रिसाइज़र (< 50 KB)</h2>
+      <p style="font-size: 13.5px; color: #64748b; margin-top: -10px; margin-bottom: 20px;">
+        आय, जाति, निवास फॉर्म के लिए फ़ोटो अपलोड करें, पासपोर्ट साइज (3.5cm x 4.5cm) में क्रॉप करें। यह स्वतः हल्के बॉर्डर के साथ 50 KB के अंदर कंप्रेस करके JPG फ़ाइल डाउनलोड कराएगा।
+      </p>
+
+      <div class="grid-2col">
+        <!-- Upload & Cropper Area -->
+        <div>
+          <div class="custom-dropzone">
+            <div style="font-size: 40px; margin-bottom: 8px;">📸</div>
+            <h3 style="margin: 0 0 4px 0; font-size: 18px; color: var(--tool-primary);">फोटो अपलोड करें</h3>
+            <p style="margin: 0; font-size: 13px; color: #64748b;">(JPG, PNG फ़ाइल चुनें)</p>
+            <input type="file" id="passportFileInput" accept="image/*" onchange="handlePassportUpload(event)">
+          </div>
+
+          <!-- Cropper Container -->
+          <div id="passportCropperWrapper" style="display: none; margin-top: 16px; background: #0f172a; border-radius: 12px; padding: 12px; text-align: center;">
+            <div style="max-height: 380px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+              <img id="passportCropperImg" style="max-width: 100%; display: block;" alt="Passport Photo Cropper">
+            </div>
+            <div style="margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+              <button type="button" class="btn-action-secondary" onclick="rotatePassportCropper(-90)" style="padding: 6px 12px; font-size: 12px;">🔄 बाएँ घुमाएँ</button>
+              <button type="button" class="btn-action-secondary" onclick="rotatePassportCropper(90)" style="padding: 6px 12px; font-size: 12px;">🔄 दाएँ घुमाएँ</button>
+              <button type="button" class="btn-action-primary" onclick="generatePassportPreview()" style="padding: 6px 16px; font-size: 13px; background: #0284c7;">✂️ क्रॉप प्रिव्यू देखें</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview & Download Section -->
+        <div>
+          <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center;">
+            <h3 style="margin-top: 0; font-size: 16px; color: #0f172a;">🖼️ पासपोर्ट फोटो प्रिव्यू (बॉर्डर सहित)</h3>
+
+            <div id="passportPreviewContainer" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 16px 0; min-height: 200px;">
+              <div id="passportPlaceholderText" style="color: #94a3b8; font-size: 14px;">
+                पहले बाईं ओर फोटो अपलोड करके "क्रॉप प्रिव्यू देखें" बटन दबाएं।
+              </div>
+              <img id="passportFinalResultImg" style="display: none; width: 140px; height: 180px; object-fit: cover; border-radius: 2px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Passport Preview">
+              <div id="passportSizeBadge" style="display: none; margin-top: 10px; font-weight: 800; font-size: 13px; color: #16a34a; background: #dcfce7; padding: 4px 12px; border-radius: 999px;">
+                साइज: <span id="passportKBVal">0</span> KB (बॉर्डर सहित)
+              </div>
+            </div>
+
+            <div style="margin-top: 16px;">
+              <button type="button" id="btnDownloadPassport" class="btn-action-primary" onclick="downloadPassportPhoto()" style="width: 100%; justify-content: center; background: var(--tool-primary); font-size: 15px; display: none;">
+                📥 e-District पासपोर्ट फोटो डाउनलोड करें (&lt; 50 KB JPG)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background: #0f172a; color: #94a3b8; text-align: center; padding: 24px 16px; margin-top: 40px; font-size: 13px;">
+    <p style="margin: 0;">© 2026 Panchayat Sahayak Portal | UP e-District Helper Tools | gpsahayak.in</p>
+  </footer>
+
+  <!-- Script Logic -->
+  <script>
+    // Tab Switcher
+    function switchToolTab(tabId) {
+      document.querySelectorAll('.tool-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tool-section').forEach(sec => sec.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    // Initialize Defaults
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Date auto-fill
+      const today = new Date();
+      const dd = String(today.getDate()).padStart(2, '0');
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const yyyy = today.getFullYear();
+      const formattedDate = `${dd}/${mm}/${yyyy}`;
+      
+      const dateInput = document.getElementById('inp_date');
+      if (dateInput) dateInput.value = formattedDate;
+
+      // 2. Load stored Place & Village from localStorage
+      const storedPlace = localStorage.getItem('gp_default_place') || '';
+      const placeInput = document.getElementById('inp_place');
+      if (placeInput) placeInput.value = storedPlace;
+
+      const storedVillage = localStorage.getItem('gp_default_village') || '';
+      const villageInput = document.getElementById('inp_village');
+      if (villageInput) villageInput.value = storedVillage;
+
+      // 3. Initialize Birth Year Select Dropdown
+      initBirthYearSelect();
+
+      updateDeclarationPreview();
+    });
+
+    function initBirthYearSelect() {
+      const yearSelect = document.getElementById('inp_birth_year');
+      if (!yearSelect) return;
+
+      const currentYear = 2026;
+      let html = '<option value="">-- जन्म वर्ष चुनें (Birth Year) --</option>';
+      for (let yr = 2010; yr >= 1940; yr--) {
+        const ageVal = currentYear - yr;
+        const formattedAge = String(ageVal).padStart(2, '0');
+        html += `<option value="${yr}">${yr} (उम्र: ${formattedAge} वर्ष)</option>`;
+      }
+      html += '<option value="custom">अन्य / डायरेक्ट उम्र लिखें...</option>';
+      yearSelect.innerHTML = html;
+    }
+
+    function handleYearChange() {
+      const yrVal = document.getElementById('inp_birth_year').value;
+      const customDiv = document.getElementById('div_age_custom');
+      const calcLabel = document.getElementById('lbl_calc_age');
+
+      if (yrVal === 'custom') {
+        customDiv.style.display = 'block';
+        calcLabel.style.display = 'none';
+      } else {
+        customDiv.style.display = 'none';
+        if (yrVal) {
+          const calcAge = 2026 - parseInt(yrVal, 10);
+          document.getElementById('val_calc_yr').innerText = yrVal;
+          document.getElementById('val_calc_age').innerText = String(calcAge).padStart(2, '0');
+          calcLabel.style.display = 'block';
+        } else {
+          calcLabel.style.display = 'none';
+        }
+      }
+      updateDeclarationPreview();
+    }
+
+    function handleOccChange() {
+      const selectVal = document.getElementById('inp_occ_select').value;
+      const customDiv = document.getElementById('div_occ_custom');
+      if (selectVal === 'अन्य') {
+        customDiv.style.display = 'block';
+      } else {
+        customDiv.style.display = 'none';
+      }
+      updateDeclarationPreview();
+    }
+
+    // Update Declaration Preview Live
+    function updateDeclarationPreview() {
+      const name = document.getElementById('inp_name').value.trim() || "......................................................";
+      const rel = document.getElementById('inp_rel').value || "पुत्र / पुत्री / पत्नी / श्री";
+      const guardian = document.getElementById('inp_guardian').value.trim() || "......................................................";
+      
+      const yrVal = document.getElementById('inp_birth_year') ? document.getElementById('inp_birth_year').value : '';
+      let age = ".......";
+
+      if (yrVal === 'custom') {
+        const manualAge = document.getElementById('inp_age_manual') ? document.getElementById('inp_age_manual').value.trim() : '';
+        if (manualAge) {
+          const num = parseInt(manualAge, 10);
+          if (!isNaN(num)) {
+            if (num >= 1930 && num <= 2026) {
+              age = String(2026 - num).padStart(2, '0');
+            } else {
+              age = String(num).padStart(2, '0');
+            }
+          } else {
+            age = manualAge;
+          }
+        }
+      } else if (yrVal) {
+        const calculatedAge = 2026 - parseInt(yrVal, 10);
+        age = String(calculatedAge).padStart(2, '0'); // Ensures 2-digit age format!
+      }
+      
+      const occSelect = document.getElementById('inp_occ_select').value;
+      let occ = occSelect;
+      if (occSelect === 'अन्य') {
+        occ = document.getElementById('inp_occ_custom').value.trim() || "..........................";
+      }
+
+      const address = document.getElementById('inp_address').value.trim() || "........................................................................................................................";
+      const place = document.getElementById('inp_place').value.trim() || "........................";
+      const date = document.getElementById('inp_date').value.trim() || "........................";
+
+      document.getElementById('pv_name').innerText = name;
+      document.getElementById('pv_rel').innerText = rel;
+      document.getElementById('pv_guardian').innerText = guardian;
+      document.getElementById('pv_age').innerText = age;
+      
+      const birthYrElem = document.getElementById('pv_birth_yr');
+      if (birthYrElem) {
+        let bYr = "..........";
+        if (yrVal && yrVal !== 'custom') {
+          bYr = yrVal;
+        }
+        birthYrElem.innerText = bYr;
+      }
+
+      document.getElementById('pv_occ').innerText = occ;
+      document.getElementById('pv_address').innerText = address;
+      document.getElementById('pv_place').innerText = place;
+      document.getElementById('pv_date').innerText = date;
+      document.getElementById('pv_name_bottom').innerText = name !== "......................................................" ? name : "....................................";
+
+      const villageInput = document.getElementById('inp_village');
+      const village = villageInput ? villageInput.value.trim() : '';
+      const villageElem = document.getElementById('pv_village');
+      if (villageElem) {
+        villageElem.innerText = village ? village : "........................";
+      }
+
+      // Save Place & Village in localStorage if modified
+      const currentPlace = document.getElementById('inp_place').value.trim();
+      if (currentPlace) {
+        localStorage.setItem('gp_default_place', currentPlace);
+      }
+      if (villageInput && village) {
+        localStorage.setItem('gp_default_village', village);
+      }
+    }
+
+    // Print A4 Declaration Form
+    function printDeclarationForm() {
+      window.print();
+    }
+
+    // Download A4 Declaration Form as PDF
+    async function downloadDeclarationPDF() {
+      const element = document.getElementById('declarationPrintArea');
+      if (!element) return;
+
+      try {
+        const canvas = await html2canvas(element, {
+          scale: 3,
+          useCORS: true,
+          backgroundColor: '#ffffff',
+          logging: false
+        });
+
+        const imgData = canvas.toDataURL('image/jpeg', 0.98);
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+        const yOffset = pdfHeight < 297 ? (297 - pdfHeight) / 2 : 0;
+        pdf.addImage(imgData, 'JPEG', 0, yOffset, pdfWidth, Math.min(pdfHeight, 297));
+        
+        const applicantName = document.getElementById('inp_name').value.trim() || 'eDistrict';
+        pdf.save(`Swaghoshna_Patra_${applicantName}.pdf`);
+      } catch (err) {
+        alert("PDF Generate एरर: " + err.message);
+      }
+    }
+
+    // ================= 2. SIGNED FORM RESIZER LOGIC =================
+    let uploadedFormImg = null;
+
+    function handleResizerUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      document.getElementById('resizerOriginalSize').innerText = `मूल साइज: ${(file.size / 1024).toFixed(1)} KB`;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        uploadedFormImg = new Image();
+        uploadedFormImg.onload = function() {
+          document.getElementById('resizerImgPreview').src = evt.target.result;
+          document.getElementById('resizerPreviewArea').style.display = 'block';
+        };
+        uploadedFormImg.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function processResizer(format, maxKB) {
+      if (!uploadedFormImg) {
+        alert("कृपया पहले साइन किया हुआ घोषणा-पत्र फॉर्म अपलोड करें!");
+        return;
+      }
+
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      let width = uploadedFormImg.width;
+      let height = uploadedFormImg.height;
+
+      // Scale down if huge
+      const maxDim = 1200;
+      if (width > maxDim || height > maxDim) {
+        if (width > height) {
+          height = Math.round((height * maxDim) / width);
+          width = maxDim;
+        } else {
+          width = Math.round((width * maxDim) / height);
+          height = maxDim;
+        }
+      }
+
+      canvas.width = width;
+      canvas.height = height;
+      ctx.drawImage(uploadedFormImg, 0, 0, width, height);
+
+      if (format === 'jpg') {
+        let quality = 0.85;
+        let dataUrl = canvas.toDataURL('image/jpeg', quality);
+
+        // Iteratively compress to meet maxKB
+        while ((dataUrl.length * 0.75) / 1024 > maxKB && quality > 0.15) {
+          quality -= 0.08;
+          dataUrl = canvas.toDataURL('image/jpeg', quality);
+        }
+
+        const kb = ((dataUrl.length * 0.75) / 1024).toFixed(1);
+        document.getElementById('resizerOutputSize').innerText = `साइज: ${kb} KB`;
+        
+        const downloadBtn = document.getElementById('resizerDownloadBtn');
+        downloadBtn.href = dataUrl;
+        downloadBtn.download = `Swaghoshna_Patra_${kb}KB.jpg`;
+        document.getElementById('resizerResultBox').style.display = 'block';
+      } else if (format === 'pdf') {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+        let quality = 0.8;
+        let imgData = canvas.toDataURL('image/jpeg', quality);
+        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+
+        const pdfBlob = pdf.output('blob');
+        const kb = (pdfBlob.size / 1024).toFixed(1);
+
+        document.getElementById('resizerOutputSize').innerText = `साइज: ${kb} KB`;
+        
+        const downloadBtn = document.getElementById('resizerDownloadBtn');
+        downloadBtn.href = URL.createObjectURL(pdfBlob);
+        downloadBtn.download = `Swaghoshna_Patra_${kb}KB.pdf`;
+        document.getElementById('resizerResultBox').style.display = 'block';
+      }
+    }
+
+    // ================= 3. AADHAR MERGER & AUTO COMPRESSOR LOGIC =================
+    let aadharFrontImg = null;
+    let aadharBackImg = null;
+
+    function handleAadharUpload(e, side) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const img = new Image();
+        img.onload = function() {
+          if (side === 'front') {
+            aadharFrontImg = img;
+            document.getElementById('lbl_front').innerText = `✅ सामने वाला भाग अपलोडेड (${(file.size/1024).toFixed(0)} KB)`;
+          } else {
+            aadharBackImg = img;
+            document.getElementById('lbl_back').innerText = `✅ पीछे वाला भाग अपलोडेड (${(file.size/1024).toFixed(0)} KB)`;
+          }
+          mergeAadharCards();
+        };
+        img.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function mergeAadharCards() {
+      const canvas = document.getElementById('aadharCanvas');
+      const ctx = canvas.getContext('2d');
+
+      const cardW = 600;
+      const cardH = 380;
+      const padding = 20;
+
+      canvas.width = cardW + (padding * 2);
+      canvas.height = (cardH * 2) + (padding * 3); // Clean padding without header banner
+
+      // Clear Canvas with pure white background
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw Front Card Frame
+      const frontY = padding;
+      ctx.strokeStyle = "#cbd5e1";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(padding, frontY, cardW, cardH);
+
+      if (aadharFrontImg) {
+        ctx.drawImage(aadharFrontImg, padding + 2, frontY + 2, cardW - 4, cardH - 4);
+      } else {
+        ctx.fillStyle = "#f8fafc";
+        ctx.fillRect(padding + 2, frontY + 2, cardW - 4, cardH - 4);
+        ctx.fillStyle = "#94a3b8";
+        ctx.font = "bold 18px sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("1. Front Side Image (सामने वाला भाग)", canvas.width / 2, frontY + (cardH / 2));
+      }
+
+      // Draw Back Card Frame
+      const backY = frontY + cardH + padding;
+      ctx.strokeStyle = "#cbd5e1";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(padding, backY, cardW, cardH);
+
+      if (aadharBackImg) {
+        ctx.drawImage(aadharBackImg, padding + 2, backY + 2, cardW - 4, cardH - 4);
+      } else {
+        ctx.fillStyle = "#f8fafc";
+        ctx.fillRect(padding + 2, backY + 2, cardW - 4, cardH - 4);
+        ctx.fillStyle = "#94a3b8";
+        ctx.font = "bold 18px sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("2. Back Side Image (पीछे वाला भाग)", canvas.width / 2, backY + (cardH / 2));
+      }
+
+      // Apply Sharpness & Contrast Boost if checked
+      if (document.getElementById('chk_sharp').checked && (aadharFrontImg || aadharBackImg)) {
+        enhanceCanvasClarity(ctx, canvas.width, canvas.height);
+      }
+    }
+
+    // Simple Contrast & Sharpness Boost Filter algorithm
+    function enhanceCanvasClarity(ctx, w, h) {
+      try {
+        const imgData = ctx.getImageData(0, 0, w, h);
+        const data = imgData.data;
+        const contrast = 1.15; // 15% Contrast boost
+        const factor = (259 * (contrast + 255)) / (255 * (259 - contrast));
+
+        for (let i = 0; i < data.length; i += 4) {
+          data[i] = factor * (data[i] - 128) + 128;     // R
+          data[i+1] = factor * (data[i+1] - 128) + 128; // G
+          data[i+2] = factor * (data[i+2] - 128) + 128; // B
+        }
+        ctx.putImageData(imgData, 0, 0);
+      } catch (e) {
+        console.warn("Canvas image enhance skipped:", e);
+      }
+    }
+
+    // Export Merged Aadhar with target KB enforcement (< 100 KB JPG or < 200 KB PDF)
+    function exportAadharMerged(format, maxKB) {
+      if (!aadharFrontImg && !aadharBackImg) {
+        alert("कृपया आधार कार्ड के सामने (Front) या पीछे (Back) का फोटो अपलोड करें!");
+        return;
+      }
+
+      const canvas = document.getElementById('aadharCanvas');
+
+      if (format === 'jpg') {
+        let quality = 0.85;
+        let dataUrl = canvas.toDataURL('image/jpeg', quality);
+
+        // Iteratively compress to keep size < maxKB
+        while ((dataUrl.length * 0.75) / 1024 > maxKB && quality > 0.15) {
+          quality -= 0.07;
+          dataUrl = canvas.toDataURL('image/jpeg', quality);
+        }
+
+        const kb = ((dataUrl.length * 0.75) / 1024).toFixed(1);
+        document.getElementById('aadharResultSize').innerText = `${kb} KB`;
+        document.getElementById('aadharResultBadge').style.display = 'block';
+
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = `Aadhar_Merged_${kb}KB.jpg`;
+        link.click();
+      } else if (format === 'pdf') {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+        let quality = 0.75;
+        let imgData = canvas.toDataURL('image/jpeg', quality);
+        pdf.addImage(imgData, 'JPEG', 10, 10, pdfWidth - 20, pdfHeight - 20);
+
+        const pdfBlob = pdf.output('blob');
+        const kb = (pdfBlob.size / 1024).toFixed(1);
+
+        document.getElementById('aadharResultSize').innerText = `${kb} KB`;
+        document.getElementById('aadharResultBadge').style.display = 'block';
+
+        pdf.save(`Aadhar_Merged_${kb}KB.pdf`);
+      }
+    }
+
+    // ================= 4. PASSPORT PHOTO CROPPER LOGIC =================
+    let passportCropperInstance = null;
+    let passportFinalDataUrl = null;
+
+    function handlePassportUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const imgEl = document.getElementById('passportCropperImg');
+        imgEl.src = evt.target.result;
+
+        document.getElementById('passportCropperWrapper').style.display = 'block';
+
+        if (passportCropperInstance) {
+          passportCropperInstance.destroy();
+        }
+
+        passportCropperInstance = new Cropper(imgEl, {
+          aspectRatio: 3.5 / 4.5,
+          viewMode: 1,
+          autoCropArea: 0.9,
+          responsive: true
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function rotatePassportCropper(degree) {
+      if (passportCropperInstance) {
+        passportCropperInstance.rotate(degree);
+      }
+    }
+
+    function generatePassportPreview() {
+      if (!passportCropperInstance) {
+        alert("कृपया पहले फ़ोटो अपलोड करें!");
+        return;
+      }
+
+      // 1. Get Cropped Canvas at standard 350x450 px
+      const croppedCanvas = passportCropperInstance.getCroppedCanvas({
+        width: 350,
+        height: 450,
+        imageSmoothingEnabled: true,
+        imageSmoothingQuality: 'high'
+      });
+
+      // 2. Draw subtle dark border around passport photo
+      const borderCanvas = document.createElement('canvas');
+      borderCanvas.width = croppedCanvas.width;
+      borderCanvas.height = croppedCanvas.height;
+      const ctx = borderCanvas.getContext('2d');
+
+      ctx.drawImage(croppedCanvas, 0, 0);
+
+      // Crisp solid border around edges
+      ctx.strokeStyle = "#0f172a";
+      ctx.lineWidth = 8;
+      ctx.strokeRect(0, 0, borderCanvas.width, borderCanvas.height);
+
+      // 3. Iteratively compress JPG to guarantee < 50 KB
+      let quality = 0.92;
+      let dataUrl = borderCanvas.toDataURL('image/jpeg', quality);
+
+      while ((dataUrl.length * 0.75) / 1024 > 48 && quality > 0.15) {
+        quality -= 0.05;
+        dataUrl = borderCanvas.toDataURL('image/jpeg', quality);
+      }
+
+      const kbSize = ((dataUrl.length * 0.75) / 1024).toFixed(1);
+
+      passportFinalDataUrl = dataUrl;
+      document.getElementById('passportPlaceholderText').style.display = 'none';
+      const resultImg = document.getElementById('passportFinalResultImg');
+      resultImg.src = dataUrl;
+      resultImg.style.display = 'block';
+
+      document.getElementById('passportKBVal').innerText = kbSize;
+      document.getElementById('passportSizeBadge').style.display = 'inline-block';
+      document.getElementById('btnDownloadPassport').style.display = 'inline-flex';
+    }
+
+    function downloadPassportPhoto() {
+      if (!passportFinalDataUrl) {
+        alert("कृपया पहले फ़ोटो क्रॉप करके प्रिव्यू देखें!");
+        return;
+      }
+
+      const a = document.createElement('a');
+      a.href = passportFinalDataUrl;
+      a.download = `Passport_Photo_50KB_${Date.now()}.jpg`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+  <script src="auth-nav.js" defer></script>
+</body>
+
+</html>

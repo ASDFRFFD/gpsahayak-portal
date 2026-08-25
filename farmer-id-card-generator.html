@@ -290,48 +290,56 @@
     }
 
     .id-card-front, .id-card-back {
-      width: 100%;
-      max-width: 380px;
-      height: 240px; /* FIXED EQUAL HEIGHT FOR BOTH FRONT & BACK CARDS */
-      margin: 0 auto 16px;
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1.5px solid #0d5c48;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      position: relative;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      width: 380px !important;
+      min-width: 380px !important;
+      max-width: 380px !important;
+      height: 240px !important; /* EXACT EQUAL FIXED HEIGHT FOR BOTH FRONT & BACK */
+      min-height: 240px !important;
+      max-height: 240px !important;
+      margin: 0 auto 16px !important;
+      background: #fff !important;
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      border: 1.5px solid #0d5c48 !important;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1) !important;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      position: relative !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      flex-shrink: 0 !important;
     }
 
     /* ----------- FRONT SIDE ------------ */
     .card-front-header {
-      background: linear-gradient(90deg, #07382c 0%, #0d5c48 35%, #15803d 70%, #16a34a 100%);
-      padding: 5px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #fff;
+      background: linear-gradient(90deg, #07382c 0%, #0d5c48 35%, #15803d 70%, #16a34a 100%) !important;
+      padding: 5px 10px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      color: #fff !important;
+      min-height: 34px !important;
+      max-height: 34px !important;
+      box-sizing: border-box !important;
     }
-    .cfh-left { display: flex; align-items: center; gap: 6px; }
-    .cfh-logo-icon { width: 26px; height: 26px; background: #fff; border-radius: 50%; padding: 2px; display: flex; align-items: center; justify-content: center; }
-    .cfh-logo-icon img { width: 18px; height: 18px; }
-    .cfh-title { font-size: 13.5px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.1; }
-    .cfh-title span { color: #facc15; font-size: 13px; }
-    .cfh-subtitle { font-size: 9.5px; opacity: 0.9; font-weight: 600; margin-top: 1px; }
+    .cfh-left { display: flex !important; align-items: center !important; gap: 6px !important; }
+    .cfh-logo-icon { width: 24px !important; height: 24px !important; background: #fff !important; border-radius: 50% !important; padding: 2px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+    .cfh-logo-icon img { width: 16px !important; height: 16px !important; }
+    .cfh-title { font-size: 13px !important; font-weight: 800 !important; letter-spacing: -0.3px !important; line-height: 1.1 !important; }
+    .cfh-title span { color: #facc15 !important; font-size: 12.5px !important; }
+    .cfh-subtitle { font-size: 9px !important; opacity: 0.9 !important; font-weight: 600 !important; margin-top: 1px !important; }
 
     .card-front-body {
-      padding: 6px 10px 4px;
-      display: grid;
-      grid-template-columns: 82px 1fr 68px;
-      gap: 8px;
-      align-items: center;
-      background: #ffffff;
-      position: relative;
-      flex: 1;
+      padding: 4px 8px !important;
+      display: grid !important;
+      grid-template-columns: 78px 1fr 64px !important;
+      gap: 6px !important;
+      align-items: center !important;
+      background: #ffffff !important;
+      position: relative !important;
+      flex: 1 !important;
+      overflow: hidden !important;
     }
 
     .card-front-body::before, .card-back-body::before {
@@ -352,15 +360,16 @@
     }
 
     .cf-photo-box {
-      width: 82px;
-      height: 100px;
-      border: 1.5px solid #15803d;
-      background: #f0fdf4;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      width: 78px !important;
+      height: 94px !important;
+      border: 1.5px solid #15803d !important;
+      background: #f0fdf4 !important;
+      overflow: hidden !important;
+      position: relative !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+      flex-shrink: 0 !important;
     }
-    .cf-photo-box img { width: 100%; height: 100%; object-fit: cover; }
+    .cf-photo-box img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
     .cf-photo-name {
       position: absolute;
       bottom: 0; left: 0; right: 0;
@@ -373,106 +382,155 @@
       text-transform: uppercase;
     }
 
-    .cf-details { font-size: 9.5px; color: #000; line-height: 1.35; }
-    .cf-row { font-weight: 700; margin-bottom: 1px; }
-    .cf-row span.val { font-weight: 800; color: #000; }
-    .cf-row.hindi { font-size: 9px; color: #1e293b; font-weight: 700; margin-bottom: 1.5px; }
+    .cf-details { font-size: 8.8px !important; color: #000 !important; line-height: 1.28 !important; overflow: hidden !important; }
+    .cf-row { font-weight: 700 !important; margin-bottom: 0.5px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+    .cf-row span.val { font-weight: 800 !important; color: #000 !important; }
+    .cf-row.hindi { font-size: 8.4px !important; color: #1e293b !important; font-weight: 700 !important; margin-bottom: 1px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
 
-    .cf-qr-box { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    #qrcodeCanvas { width: 64px; height: 64px; }
+    .cf-qr-box {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 64px !important;
+      height: 64px !important;
+      flex-shrink: 0 !important;
+    }
+    #qrcodeCanvas { width: 64px !important; height: 64px !important; }
+    #qrcodeCanvas canvas, #qrcodeCanvas img { width: 64px !important; height: 64px !important; }
 
     .card-front-bottom-id {
-      text-align: center;
-      padding: 2px 0 1px;
-      background: #fff;
+      text-align: center !important;
+      padding: 2px 0 1px !important;
+      background: #fff !important;
+      min-height: 22px !important;
+      max-height: 22px !important;
+      box-sizing: border-box !important;
     }
-    .cf-id-label { font-size: 14.5px; font-weight: 900; color: #0f583e; letter-spacing: 1px; }
+    .cf-id-label { font-size: 13.5px !important; font-weight: 900 !important; color: #0f583e !important; letter-spacing: 0.5px !important; }
 
     .card-front-footer {
-      background: #0d5c48;
-      color: #fff;
-      padding: 3px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      background: #0d5c48 !important;
+      color: #fff !important;
+      padding: 3px 10px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      min-height: 24px !important;
+      max-height: 24px !important;
+      box-sizing: border-box !important;
     }
-    .cff-left { font-size: 8.5px; font-style: italic; font-weight: 500; opacity: 0.95; }
+    .cff-left { font-size: 8px !important; font-style: italic !important; font-weight: 500 !important; opacity: 0.95 !important; }
     .cff-right-badge {
-      background: linear-gradient(135deg, #15803d 0%, #22c55e 100%);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 900;
-      padding: 1.5px 8px 1.5px 12px;
-      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #15803d 0%, #22c55e 100%) !important;
+      color: #fff !important;
+      font-size: 10px !important;
+      font-weight: 900 !important;
+      padding: 1px 7px 1px 10px !important;
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%) !important;
+      letter-spacing: 0.5px !important;
     }
 
     /* ----------- BACK SIDE ------------ */
     .card-back-header {
-      background: #07382c;
-      color: #fff;
-      padding: 4px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      background: #07382c !important;
+      color: #fff !important;
+      padding: 4px 10px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      min-height: 28px !important;
+      max-height: 28px !important;
+      box-sizing: border-box !important;
     }
-    .cbh-title { font-size: 10.5px; font-weight: 700; letter-spacing: 0.3px; }
-    .cbh-id { font-size: 12px; font-weight: 900; color: #4ade80; letter-spacing: 0.5px; }
-    .cbh-page-badge { background: #15803d; color: #fff; font-size: 8.5px; font-weight: 800; padding: 1px 5px; border-radius: 3px; }
+    .cbh-title { font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.3px !important; }
+    .cbh-id { font-size: 11.5px !important; font-weight: 900 !important; color: #4ade80 !important; letter-spacing: 0.5px !important; }
+    .cbh-page-badge { background: #15803d !important; color: #fff !important; font-size: 8px !important; font-weight: 800 !important; padding: 1px 5px !important; border-radius: 3px !important; }
 
     .card-back-body {
-      padding: 5px 8px;
-      background: #fff;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 3px 6px !important;
+      background: #fff !important;
+      flex: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important; /* STARTS FROM THE VERY TOP! */
+      gap: 2px !important;
+      overflow: hidden !important;
     }
-    .cb-address { font-size: 9px; font-weight: 700; color: #1e293b; margin-bottom: 3px; padding-bottom: 2px; border-bottom: 1px solid #cbd5e1; line-height: 1.25; }
-    .cb-land-heading { font-size: 9.5px; font-weight: 800; color: #0d5c48; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: center; }
+    .cb-address {
+      font-size: 8px !important;
+      font-weight: 700 !important;
+      color: #1e293b !important;
+      margin-bottom: 2px !important;
+      padding-bottom: 1px !important;
+      border-bottom: 1px solid #cbd5e1 !important;
+      line-height: 1.15 !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+    .cb-land-heading {
+      font-size: 8.5px !important;
+      font-weight: 800 !important;
+      color: #0d5c48 !important;
+      margin-bottom: 1px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
 
     .cb-land-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 7px;
-      text-align: center;
-      line-height: 1.0;
+      width: 100% !important;
+      border-collapse: collapse !important;
+      font-size: 7px !important;
+      text-align: center !important;
+      line-height: 1.1 !important;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
     }
     .cb-land-table th {
-      background: #f8fafc;
-      color: #334155;
-      font-weight: 800;
-      padding: 1.5px 1px;
-      border: 1px solid #94a3b8;
-      font-size: 6.5px;
+      background: #e2e8f0 !important;
+      color: #0f172a !important;
+      font-weight: 800 !important;
+      padding: 1.5px 0.5px !important;
+      border: 1px solid #475569 !important;
+      font-size: 6.5px !important;
+      letter-spacing: 0.1px !important;
     }
     .cb-land-table td {
-      padding: 1px 1px;
-      border: 1px solid #cbd5e1;
-      color: #0f172a;
-      font-weight: 700;
-      font-size: 7px;
-      height: 13px;
+      padding: 1px 0.5px !important;
+      border: 1px solid #64748b !important;
+      color: #000000 !important;
+      font-weight: 800 !important;
+      font-size: 7px !important;
+      height: 11px !important;
     }
 
     .cb-annexure {
-      margin-top: 3px;
-      font-size: 5.5px;
-      color: #64748b;
-      line-height: 1.1;
-      text-align: justify;
+      margin-top: auto !important; /* PINS ANNEXURE TO BOTTOM */
+      font-size: 4.8px !important;
+      color: #64748b !important;
+      line-height: 1.05 !important;
+      text-align: justify !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 3 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
     }
 
     .card-back-footer {
-      background: #f0fdf4;
-      border-top: 1px solid #86efac;
-      padding: 3px 8px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 7.5px;
-      font-weight: 700;
-      color: #166534;
+      background: #f0fdf4 !important;
+      border-top: 1px solid #86efac !important;
+      padding: 3px 8px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      font-size: 7.2px !important;
+      font-weight: 700 !important;
+      color: #166534 !important;
+      min-height: 22px !important;
+      max-height: 22px !important;
+      box-sizing: border-box !important;
     }
 
     /* ACTION BUTTONS */
@@ -509,62 +567,725 @@
     .btn-print { background: #e0f2fe; color: #0369a1; }
     .btn-pdf { background: #fee2e2; color: #dc2626; }
 
-    /* PRINT STYLES (GUARANTEED NO-BLANK 1-PAGE A4 & PVC FRIENDLY) */
+    /* ======================================================== */
+    /* A4 BATCH PRINT SYSTEM & MODAL CSS                         */
+    /* ======================================================== */
+    .a4-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(6px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+    .a4-modal-overlay.active {
+      display: flex;
+    }
+    .a4-modal-dialog {
+      background: #ffffff;
+      width: 100%;
+      max-width: 1120px;
+      max-height: 94vh;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+    }
+    .a4-modal-header {
+      background: linear-gradient(135deg, #064e3b 0%, #0d5c48 45%, #15803d 100%);
+      color: #ffffff;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+    }
+    .a4-modal-header h3 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .a4-modal-close-btn {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+    .a4-modal-close-btn:hover {
+      background: rgba(255,255,255,0.35);
+      transform: rotate(90deg);
+    }
+    .a4-modal-body {
+      display: grid;
+      grid-template-columns: 390px 1fr;
+      gap: 20px;
+      padding: 20px;
+      overflow-y: auto;
+      background: #f8fafc;
+      flex: 1;
+    }
+    @media (max-width: 960px) {
+      .a4-modal-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Print mode switcher */
+    .print-mode-group {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px;
+      border: 1.5px solid #e2e8f0;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .print-mode-toggle {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 10px;
+    }
+    .mode-btn {
+      flex: 1;
+      padding: 10px 12px;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .mode-btn.active {
+      background: #15803d;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(21,128,61,0.25);
+    }
+
+    /* Batch list cards */
+    .batch-list-box {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .batch-item-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: 0.2s;
+    }
+    .batch-item-card.selected {
+      border-color: #22c55e;
+      background: #f0fdf4;
+    }
+    .batch-item-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      flex: 1;
+      min-width: 0;
+    }
+    .batch-checkbox {
+      width: 18px;
+      height: 18px;
+      accent-color: #15803d;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .batch-item-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .batch-item-sub {
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 600;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .batch-item-actions {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .btn-sm-icon {
+      padding: 5px 8px;
+      font-size: 11px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-sm-icon:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* A4 Visual Canvas Preview in Modal */
+    .a4-preview-pane {
+      background: #1e293b;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-y: auto;
+      max-height: 68vh;
+    }
+    .a4-preview-paper {
+      width: 100%;
+      max-width: 560px;
+      min-height: 792px;
+      background: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      padding: 16px 14px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* ALWAYS TOP-ALIGNED! */
+      gap: 10px;
+      position: relative;
+    }
+    .a4-preview-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 4px;
+      border-radius: 8px;
+      background: #fafafa;
+      border: 1px dashed #cbd5e1;
+      position: relative;
+    }
+    .a4-preview-row-label {
+      position: absolute;
+      top: -8px;
+      left: 10px;
+      background: #0d5c48;
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    /* ======================================================== */
+    /* EXACT EQUAL SIZE (240px x 152px) FOR A4 PREVIEW MODAL   */
+    /* ======================================================== */
+    .a4-modal-preview-card {
+      width: 240px !important;
+      min-width: 240px !important;
+      max-width: 240px !important;
+      height: 152px !important; /* CR80 aspect ratio: 240 / 1.589 = 151px */
+      min-height: 152px !important;
+      max-height: 152px !important;
+      box-sizing: border-box !important;
+      border: 1.2px solid #0d5c48 !important;
+      border-radius: 5px !important;
+      overflow: hidden !important;
+      background: #ffffff !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+      position: relative !important;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      flex-shrink: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* Scoped Front Internals */
+    .ampc-front-header {
+      background: linear-gradient(90deg, #07382c 0%, #0d5c48 35%, #15803d 70%, #16a34a 100%) !important;
+      padding: 2px 6px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      color: #fff !important;
+      min-height: 20px !important;
+      max-height: 20px !important;
+      box-sizing: border-box !important;
+    }
+    .ampc-logo-icon { width: 15px !important; height: 15px !important; background: #fff !important; border-radius: 50% !important; padding: 1px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+    .ampc-logo-icon img { width: 10px !important; height: 10px !important; }
+    .ampc-title { font-size: 8px !important; font-weight: 800 !important; line-height: 1.0 !important; }
+    .ampc-title span { color: #facc15 !important; }
+    .ampc-subtitle { font-size: 5.5px !important; opacity: 0.9 !important; font-weight: 600 !important; }
+
+    .ampc-front-body {
+      padding: 2px 5px !important;
+      display: grid !important;
+      grid-template-columns: 44px 1fr 38px !important;
+      gap: 4px !important;
+      flex: 1 !important;
+      align-items: center !important;
+      overflow: hidden !important;
+      background: #ffffff !important;
+    }
+    .ampc-photo-box {
+      width: 44px !important;
+      height: 54px !important;
+      border: 1px solid #15803d !important;
+      background: #f0fdf4 !important;
+      overflow: hidden !important;
+      position: relative !important;
+      flex-shrink: 0 !important;
+    }
+    .ampc-photo-box img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+    .ampc-photo-name {
+      position: absolute !important;
+      bottom: 0 !important; left: 0 !important; right: 0 !important;
+      background: rgba(13, 92, 72, 0.9) !important;
+      color: #fff !important;
+      font-size: 4.2px !important;
+      font-weight: 800 !important;
+      text-align: center !important;
+      padding: 0.5px !important;
+      text-transform: uppercase !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+    }
+
+    .ampc-details { font-size: 5.4px !important; color: #000 !important; line-height: 1.2 !important; overflow: hidden !important; }
+    .ampc-row { font-weight: 700 !important; margin-bottom: 0px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+    .ampc-row span.val { font-weight: 800 !important; color: #000 !important; }
+    .ampc-row.hindi { font-size: 5px !important; color: #1e293b !important; margin-bottom: 0.5px !important; }
+
+    .ampc-qr-box {
+      width: 38px !important;
+      height: 38px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+    .ampc-qr-box canvas, .ampc-qr-box img { width: 38px !important; height: 38px !important; }
+
+    .ampc-bottom-id {
+      text-align: center !important;
+      padding: 1px 0 !important;
+      background: #fff !important;
+      min-height: 14px !important;
+      max-height: 14px !important;
+      box-sizing: border-box !important;
+    }
+    .ampc-id-label { font-size: 8px !important; font-weight: 900 !important; color: #0f583e !important; }
+
+    .ampc-footer {
+      background: #0d5c48 !important;
+      color: #fff !important;
+      padding: 1.5px 5px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      min-height: 14px !important;
+      max-height: 14px !important;
+      box-sizing: border-box !important;
+    }
+    .ampc-footer-left { font-size: 4.8px !important; font-style: italic !important; }
+    .ampc-footer-badge {
+      background: linear-gradient(135deg, #15803d 0%, #22c55e 100%) !important;
+      color: #fff !important;
+      font-size: 6.2px !important;
+      font-weight: 900 !important;
+      padding: 0.5px 4px !important;
+      border-radius: 2px !important;
+    }
+
+    /* Scoped Back Internals */
+    .ampc-back-header {
+      background: #07382c !important;
+      color: #fff !important;
+      padding: 2px 5px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      min-height: 19px !important;
+      max-height: 19px !important;
+      box-sizing: border-box !important;
+    }
+    .ampc-back-header .cbh-title { font-size: 6.5px !important; font-weight: 700 !important; }
+    .ampc-back-header .cbh-id { font-size: 7.2px !important; font-weight: 900 !important; color: #4ade80 !important; }
+
+    .ampc-back-body {
+      padding: 2px 4px !important;
+      background: #fff !important;
+      flex: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      gap: 1.5px !important;
+      overflow: hidden !important;
+    }
+    .ampc-address {
+      font-size: 5.2px !important;
+      font-weight: 700 !important;
+      color: #1e293b !important;
+      margin-bottom: 0.5px !important;
+      padding-bottom: 0.5px !important;
+      border-bottom: 0.5px solid #cbd5e1 !important;
+      line-height: 1.1 !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+    .ampc-land-heading {
+      font-size: 5.5px !important;
+      font-weight: 800 !important;
+      color: #0d5c48 !important;
+      margin-bottom: 0.5px !important;
+    }
+    .ampc-land-table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      font-size: 4.8px !important;
+      text-align: center !important;
+      line-height: 1.0 !important;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+    .ampc-land-table th {
+      background: #e2e8f0 !important;
+      color: #0f172a !important;
+      font-weight: 800 !important;
+      padding: 0.5px 0.2px !important;
+      border: 0.5px solid #475569 !important;
+      font-size: 4.4px !important;
+    }
+    .ampc-land-table td {
+      padding: 0.4px 0.2px !important;
+      border: 0.5px solid #64748b !important;
+      color: #000000 !important;
+      font-weight: 800 !important;
+      font-size: 4.8px !important;
+      height: 7.5px !important;
+    }
+    .ampc-annexure {
+      margin-top: auto !important;
+      font-size: 3.2px !important;
+      color: #64748b !important;
+      line-height: 0.95 !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+    }
+    .ampc-back-footer {
+      background: #f0fdf4 !important;
+      border-top: 0.5px solid #86efac !important;
+      padding: 1.5px 5px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      font-size: 4.5px !important;
+      font-weight: 700 !important;
+      color: #166534 !important;
+      min-height: 14px !important;
+      max-height: 14px !important;
+      box-sizing: border-box !important;
+    }
+
+    .a4-empty-slot {
+      border: 2px dashed #cbd5e1;
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 700;
+      flex: 1;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+    }
+
+    /* ======================================================== */
+    /* PERFECT 1-PAGE A4 PRINT SYSTEM (89.0mm x 56.0mm CARDS)   */
+    /* GUARANTEED ZERO OVERFLOW & EXACT 1-PAGE PHYSICAL OUTPUT  */
+    /* ======================================================== */
     @media print {
       @page {
         size: A4 portrait;
-        margin: 5mm;
+        margin: 0mm !important;
       }
-      header, nav, footer, .nic-header, .main-nav, .farmer-hero, .breadcrumb, .farmer-disclaimer, .farmer-form-section, .preview-tabs, .preview-header, .btn-action-main, .btn-row-flex, .premium-footer, section, div[style*="background:#f0fdf4"] {
-        display: none !important;
+
+      *, *::before, *::after {
+        box-sizing: border-box !important;
       }
+
+      body * {
+        visibility: hidden !important;
+      }
+
+      #a4PrintSheet,
+      #a4PrintSheet * {
+        visibility: visible !important;
+      }
+
       html, body {
-        background: #fff !important;
         margin: 0 !important;
         padding: 0 !important;
-        width: 100% !important;
-        height: auto !important;
-        overflow: visible !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
-      .page, .farmer-main, .farmer-preview-section, .card-container-wrapper {
-        background: transparent !important;
-        box-shadow: none !important;
-        border: none !important;
-        padding: 0 !important;
+
+      #a4PrintSheet {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        max-width: 210mm !important;
+        max-height: 297mm !important;
         margin: 0 !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        display: block !important;
-      }
-      #printContainer {
+        padding: 14mm 13.5mm 10mm 13.5mm !important; /* Perfect left/right center & safe bottom */
+        box-sizing: border-box !important;
+        background: #ffffff !important;
         display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        gap: 6mm !important;
-        align-items: flex-start !important;
+        flex-direction: column !important;
         justify-content: flex-start !important;
-        width: 100% !important;
-        padding: 4mm !important;
-        margin: 0 !important;
-        position: relative !important;
-      }
-      #cardFrontView, .id-card-back {
-        display: flex !important;
-        width: 86mm !important;
-        max-width: 86mm !important;
-        min-width: 86mm !important;
-        height: 54mm !important;
-        border: 1.5px solid #0d5c48 !important;
-        box-shadow: none !important;
-        margin: 0 !important;
+        align-items: center !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
+        overflow: hidden !important;
+        z-index: 999999 !important;
       }
-      #backCardsContainer {
+
+      .a4-farmer-row {
         display: flex !important;
         flex-direction: row !important;
-        flex-wrap: wrap !important;
-        gap: 6mm !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 5mm !important; /* Cutting gap */
+        margin-bottom: 4.5mm !important; /* Row cutting gap */
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        width: 100% !important;
+      }
+
+      .a4-farmer-row:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* Standard Scaled Card Physical Size in Print (89.0mm x 56.0mm) */
+      .a4-print-card {
+        width: 89.0mm !important;
+        min-width: 89.0mm !important;
+        max-width: 89.0mm !important;
+        height: 56.0mm !important;
+        min-height: 56.0mm !important;
+        max-height: 56.0mm !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        border: 1.2px solid #0d5c48 !important;
+        border-radius: 5px !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        box-shadow: none !important;
+        position: relative !important;
+        flex-shrink: 0 !important;
+      }
+
+      .a4-print-card .card-front-header {
+        padding: 2mm 3mm !important;
+        min-height: 7mm !important;
+        max-height: 7mm !important;
+        box-sizing: border-box !important;
+      }
+      .a4-print-card .cfh-logo-icon {
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .a4-print-card .cfh-logo-icon img {
+        width: 12px !important;
+        height: 12px !important;
+      }
+      .a4-print-card .cfh-title {
+        font-size: 11px !important;
+      }
+      .a4-print-card .cfh-title span {
+        font-size: 11px !important;
+      }
+      .a4-print-card .cfh-subtitle {
+        font-size: 7.2px !important;
+      }
+      .a4-print-card .card-front-body {
+        padding: 1.5mm 2.5mm !important;
+        grid-template-columns: 58px 1fr 48px !important;
+        gap: 6px !important;
+        flex: 1 !important;
+      }
+      .a4-print-card .cf-photo-box {
+        width: 58px !important;
+        height: 70px !important;
+      }
+      .a4-print-card .cf-photo-name {
+        font-size: 5.5px !important;
+      }
+      .a4-print-card .cf-details {
+        font-size: 7.2px !important;
+        line-height: 1.25 !important;
+      }
+      .a4-print-card .cf-row.hindi {
+        font-size: 6.8px !important;
+      }
+      .a4-print-card .cf-qr-box {
+        width: 48px !important;
+        height: 48px !important;
+      }
+      .a4-print-card .qrcode-container {
+        width: 48px !important;
+        height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .a4-print-card .qrcode-container canvas,
+      .a4-print-card .qrcode-container img {
+        width: 48px !important;
+        height: 48px !important;
+      }
+      .a4-print-card .card-front-bottom-id {
+        padding: 0.8mm 0 !important;
+        min-height: 5.2mm !important;
+        max-height: 5.2mm !important;
+        box-sizing: border-box !important;
+      }
+      .a4-print-card .cf-id-label {
+        font-size: 10.5px !important;
+      }
+      .a4-print-card .card-front-footer {
+        padding: 1.2mm 2.5mm !important;
+        min-height: 4.8mm !important;
+        max-height: 4.8mm !important;
+        box-sizing: border-box !important;
+      }
+      .a4-print-card .cff-left {
+        font-size: 6.5px !important;
+      }
+      .a4-print-card .cff-right-badge {
+        font-size: 8.2px !important;
+        padding: 1px 6px 1px 8px !important;
+      }
+
+      /* Back card internals */
+      .a4-print-card .card-back-header {
+        padding: 2mm 2.5mm !important;
+        min-height: 7mm !important;
+        max-height: 7mm !important;
+        box-sizing: border-box !important;
+      }
+      .a4-print-card .cbh-title {
+        font-size: 8.2px !important;
+      }
+      .a4-print-card .cbh-id {
+        font-size: 9.5px !important;
+      }
+      .a4-print-card .card-back-body {
+        padding: 1.5mm 2mm !important;
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        gap: 0.8mm !important;
+        overflow: hidden !important;
+      }
+      .a4-print-card .cb-address {
+        font-size: 6.8px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 1px !important;
+        padding-bottom: 1px !important;
+      }
+      .a4-print-card .cb-land-heading {
+        font-size: 7.2px !important;
+        margin-bottom: 0.8px !important;
+      }
+      .a4-print-card .cb-land-table {
+        font-size: 6.2px !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        line-height: 1.1 !important;
+      }
+      .a4-print-card .cb-land-table th {
+        background: #e2e8f0 !important;
+        color: #0f172a !important;
+        font-weight: 800 !important;
+        padding: 0.8px 0.4px !important;
+        border: 0.5px solid #475569 !important;
+        font-size: 5.6px !important;
+        letter-spacing: 0.1px !important;
+      }
+      .a4-print-card .cb-land-table td {
+        font-size: 6.2px !important;
+        color: #000000 !important;
+        font-weight: 800 !important;
+        padding: 0.8px 0.4px !important;
+        border: 0.5px solid #64748b !important;
+        height: 10px !important;
+      }
+      .a4-print-card .cb-annexure {
+        margin-top: auto !important;
+        font-size: 4.2px !important;
+        line-height: 1.05 !important;
+      }
+      .a4-print-card .card-back-footer {
+        font-size: 5.8px !important;
+        padding: 1.2mm 2.5mm !important;
+        min-height: 4.8mm !important;
+        max-height: 4.8mm !important;
+        box-sizing: border-box !important;
       }
     }
   </style>
@@ -888,9 +1609,14 @@
           </div>
         </div>
 
-        <button class="btn-action-main" onclick="generateAndScroll()">
-          <span>⚡ Live Card अपडेट करें व देखें</span>
-        </button>
+        <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+          <button class="btn-action-main" onclick="generateAndScroll()" style="flex: 1.2;">
+            <span>⚡ Live Card अपडेट करें व देखें</span>
+          </button>
+          <button type="button" onclick="saveCurrentFarmerToBatch()" style="flex: 1; background: #064e3b; color: #fff; border: none; padding: 14px; border-radius: 10px; font-weight: 700; font-size: 13.5px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 12px rgba(6,78,59,0.2);">
+            <span>💾 वर्तमान किसान बैच में जोड़ें</span>
+          </button>
+        </div>
 
       </div><!-- /form section -->
 
@@ -977,29 +1703,42 @@
 
           </div><!-- /printContainer -->
 
-          <!-- ACTION BUTTONS -->
-          <div style="margin-top: 14px;">
-            <button class="btn-action-main" onclick="window.print()">
+          <!-- ACTION BUTTONS & A4 BATCH PRINT SYSTEM -->
+          <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 10px;">
+            <!-- PRIMARY A4 PRINT BUTTON -->
+            <button type="button" class="btn-action-main" onclick="openA4PrintModal('4farmers')" style="background: linear-gradient(135deg, #064e3b 0%, #0d5c48 40%, #15803d 100%); font-size: 15.5px; padding: 14px 18px; box-shadow: 0 4px 18px rgba(13,92,72,0.35);">
               <span>🖨️</span>
-              <span>HD Print Card (आगे व पीछे)</span>
+              <span>A4 पर Print करें (A4 Print System)</span>
             </button>
-            <div class="btn-row-flex">
+
+            <!-- PRINT MODE SHORTCUT BUTTONS -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <button type="button" class="btn-flex-child" onclick="openA4PrintModal('single')" style="background: #e0f2fe; color: #0369a1; border: 1.5px solid #bae6fd; font-weight: 700; padding: 9px 8px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px;">
+                <span>👤</span> Single Farmer (Top Slot)
+              </button>
+              <button type="button" class="btn-flex-child" onclick="openA4PrintModal('4farmers')" style="background: #f0fdf4; color: #166534; border: 1.5px solid #86efac; font-weight: 700; padding: 9px 8px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px;">
+                <span>👥</span> 4 Farmers A4 Sheet
+              </button>
+            </div>
+
+            <!-- DOWNLOAD OPTIONS -->
+            <div class="btn-row-flex" style="margin-top: 0;">
               <button class="btn-flex-child btn-pdf" onclick="downloadPDF()">📄 PDF डाउनलोड</button>
-              <button class="btn-flex-child" style="background:#f59e0b; color:#fff;" onclick="downloadJPG()">🖼️ JPG फोटो डाउनलोड</button>
-              <button class="btn-flex-child btn-print" onclick="window.print()">🖨️ Fast Print</button>
+              <button class="btn-flex-child" style="background:#f59e0b; color:#fff;" onclick="downloadJPG()">🖼️ JPG फोटो</button>
+              <button class="btn-flex-child" style="background:#0284c7; color:#fff;" onclick="printCurrentFarmerDirect()">🖨️ Direct Print</button>
             </div>
           </div>
 
           <!-- EASY PRINT GUIDE (NO PHOTOSHOP NEEDED) -->
           <div style="margin-top:16px; background:#f0fdf4; border:1.5px solid #86efac; border-radius:12px; padding:14px; color:#166534;">
             <h4 style="margin:0 0 8px; font-size:13.5px; font-weight:800; display:flex; align-items:center; gap:6px;">
-              <span>💡</span> बिना Photoshop के 1-Click प्रिंट कैसे करें?
+              <span>💡</span> बिना Photoshop के A4 प्रिंट कैसे करें?
             </h4>
             <ol style="margin:0; padding-left:18px; font-size:12px; line-height:1.6; font-weight:600; color:#374151;">
               <li><strong>Photoshop की कोई जरूरत नहीं है!</strong></li>
-              <li>बस <strong>"🖨️ HD Print Card"</strong> बटन दबाएं।</li>
-              <li>कार्ड स्वतः कोने में 86mm x 54mm (PVC साइज) में प्रिंट होगा।</li>
-              <li>प्रिंट होने के बाद कोने से कार्ड काट लें, बाकी का A4 पेज दोबारा काम में लें!</li>
+              <li><strong>"A4 पर Print करें"</strong> दबाएं और <strong>Single</strong> या <strong>4 Farmers</strong> चुनें।</li>
+              <li>Single Farmer चुनने पर कार्ड A4 के सबसे ऊपर प्रिंट होगा, बाकी पेज खाली रहेगा।</li>
+              <li>4 Farmers चुनने पर 1 A4 शीट पर 4 कार्ड (आगे+पीछे) 4 पंक्तियों में प्रिंट होंगे।</li>
             </ol>
           </div>
 
@@ -1007,20 +1746,212 @@
       </div><!-- /preview section -->
 
     </div><!-- /farmer-main -->
+
+    <!-- A4 BATCH PRINT & PREVIEW MODAL -->
+    <div id="a4PrintModal" class="a4-modal-overlay">
+      <div class="a4-modal-dialog">
+        <!-- Modal Header -->
+        <div class="a4-modal-header">
+          <h3>
+            <span>🌾</span>
+            <span>A4 Print System — Farmer Registry Cards (85.60 × 53.98 mm)</span>
+          </h3>
+          <button type="button" class="a4-modal-close-btn" onclick="closeA4PrintModal()">✕</button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="a4-modal-body">
+          <!-- Left: Controls & Farmer Selector -->
+          <div>
+            <!-- Print Mode Switcher -->
+            <div class="print-mode-group">
+              <label style="font-size: 13px; font-weight: 800; color: #0f172a; display: block;">🖨️ प्रिंट मोड चुनें (Print Mode):</label>
+              <div class="print-mode-toggle">
+                <button type="button" class="mode-btn" id="modeBtnSingle" onclick="setA4PrintMode('single')">
+                  👤 Single Farmer
+                </button>
+                <button type="button" class="mode-btn active" id="modeBtn4Farmers" onclick="setA4PrintMode('4farmers')">
+                  👥 4 Farmers A4
+                </button>
+              </div>
+              <div id="modeDescText" style="font-size: 11.5px; color: #64748b; font-weight: 600; margin-top: 8px; line-height: 1.4;">
+                💡 एक A4 शीट पर 4 किसानों के कार्ड (Front + Back) 4 rows में साइड-बाई-साइड प्रिंट होंगे।
+              </div>
+            </div>
+
+            <!-- Batch List Selector -->
+            <div class="batch-list-box">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1.5px solid #f1f5f9; padding-bottom: 8px;">
+                <span style="font-size: 13.5px; font-weight: 800; color: #0d5c48;">📋 किसान सूची (Batch List)</span>
+                <span id="selectedCountBadge" style="font-size: 11px; background: #15803d; color: #fff; padding: 2px 8px; border-radius: 999px; font-weight: 800;">
+                  Selected: 4 / 4
+                </span>
+              </div>
+
+              <!-- List items container -->
+              <div id="batchItemsContainer">
+                <!-- Dynamically populated -->
+              </div>
+
+              <!-- Batch Action Buttons -->
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
+                <button type="button" onclick="saveCurrentFarmerToBatch()" style="background: #e0f2fe; color: #0369a1; border: 1px dashed #0284c7; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                  <span>➕</span> वर्तमान फॉर्म डेटा को बैच में जोड़ें
+                </button>
+                <button type="button" onclick="resetDefaultBatch()" style="background: transparent; color: #64748b; border: none; font-size: 11.5px; font-weight: 600; cursor: pointer; text-decoration: underline;">
+                  🔄 4 सैंपल किसानों की डिफ़ॉल्ट सूची रीसेट करें
+                </button>
+              </div>
+            </div>
+
+            <!-- Print Trigger Button -->
+            <div style="margin-top: 16px;">
+              <button type="button" class="btn-action-main" onclick="triggerA4Print()" style="background: linear-gradient(135deg, #15803d 0%, #22c55e 100%); font-size: 16px; padding: 14px;">
+                <span>🖨️</span>
+                <span>A4 शीट प्रिंट करें (Print A4 Now)</span>
+              </button>
+              <div style="font-size: 11px; color: #64748b; text-align: center; margin-top: 6px;">
+                ⚙️ Portrait Orientation • Margins: None • Scale: 100%
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Visual A4 Canvas Preview -->
+          <div>
+            <div class="a4-preview-pane">
+              <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; color: #e2e8f0; font-size: 13px; font-weight: 700; margin-bottom: 12px; padding: 0 4px;">
+                <span id="a4PreviewTitle">📄 A4 Print Preview — 4 Farmers</span>
+                <span id="a4PreviewMeta" style="font-size: 11.5px; background: rgba(255,255,255,0.15); padding: 3px 8px; border-radius: 6px;">Selected: 4 / 4</span>
+              </div>
+
+              <!-- A4 Canvas Paper -->
+              <div class="a4-preview-paper" id="a4VisualPaper">
+                <!-- Dynamically populated with rows -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIDDEN PURE A4 PRINT SHEET CONTAINER (Visible only in @media print) -->
+    <div id="a4PrintSheet">
+      <!-- Dynamically filled on print trigger -->
+    </div>
+
   </main>
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
     let photoDataURL = null;
     let qrCodeObj = null;
+    let currentA4Mode = '4farmers'; // 'single' | '4farmers'
+    let selectedFarmerIndexes = [0, 1, 2, 3];
+
+    // Default 4-Farmer Sample Batch
+    const DEFAULT_BATCH = [
+      {
+        nameEng: "Ramnaresh Chaudhari",
+        nameHindi: "रामनरेश चौधरी",
+        fatherEng: "Suresh Chaudhari",
+        fatherHindi: "सुरेश चौधरी",
+        dob: "1981-01-01",
+        gender: "Male",
+        caste: "General",
+        mobile: "7070393730",
+        aadhar: "5095 0342 7099",
+        farmerId: "36565207294",
+        enrollmentId: "10_217_1284_236194_005001",
+        village: "yadu paran, ward no. 14",
+        tehsil: "Kalyanpur",
+        district: "Samastipur",
+        state: "Bihar",
+        pincode: "848302",
+        photo: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        landRecords: [
+          { st: "BIHAR", dt: "SAMASTIPUR", sdt: "Kalyanpur", vl: "Jadu Paran", sno: "215", ssno: "*", own: "राम नरेश", idn: "परीक्षण", typ: "Joint", ara: "1.333 Hec" }
+        ]
+      },
+      {
+        nameEng: "Suresh Chandra Verma",
+        nameHindi: "सुरेश चंद्र वर्मा",
+        fatherEng: "Ramesh Chandra",
+        fatherHindi: "रमेश चंद्र",
+        dob: "1984-05-12",
+        gender: "Male",
+        caste: "OBC",
+        mobile: "9839123456",
+        aadhar: "6542 8901 4521",
+        farmerId: "36565207295",
+        enrollmentId: "10_217_1284_236194_005002",
+        village: "Rampur, Ward 03",
+        tehsil: "Sadar",
+        district: "Lucknow",
+        state: "Uttar Pradesh",
+        pincode: "226001",
+        photo: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        landRecords: [
+          { st: "UP", dt: "LUCKNOW", sdt: "Sadar", vl: "Rampur", sno: "104", ssno: "1", own: "सुरेश वर्मा", idn: "खाता 45", typ: "Single", ara: "0.850 Hec" }
+        ]
+      },
+      {
+        nameEng: "Dinesh Kumar Yadav",
+        nameHindi: "दिनेश कुमार यादव",
+        fatherEng: "Jagdish Prasad Yadav",
+        fatherHindi: "जगदीश प्रसाद यादव",
+        dob: "1978-08-20",
+        gender: "Male",
+        caste: "OBC",
+        mobile: "9450123789",
+        aadhar: "7821 4532 8912",
+        farmerId: "36565207296",
+        enrollmentId: "10_217_1284_236194_005003",
+        village: "Mohanpur, Ward 08",
+        tehsil: "Bikram",
+        district: "Patna",
+        state: "Bihar",
+        pincode: "801104",
+        photo: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        landRecords: [
+          { st: "BIHAR", dt: "PATNA", sdt: "Bikram", vl: "Mohanpur", sno: "312", ssno: "*", own: "दिनेश यादव", idn: "खाता 89", typ: "Joint", ara: "1.120 Hec" }
+        ]
+      },
+      {
+        nameEng: "Rajeshwar Singh",
+        nameHindi: "राजेश्वर सिंह",
+        fatherEng: "Harishankar Singh",
+        fatherHindi: "हरिशंकर सिंह",
+        dob: "1989-11-15",
+        gender: "Male",
+        caste: "General",
+        mobile: "9123456780",
+        aadhar: "9012 3456 6340",
+        farmerId: "36565207297",
+        enrollmentId: "10_217_1284_236194_005004",
+        village: "Gopalpur, Ward 02",
+        tehsil: "Sadar",
+        district: "Varanasi",
+        state: "Uttar Pradesh",
+        pincode: "221001",
+        photo: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        landRecords: [
+          { st: "UP", dt: "VARANASI", sdt: "Sadar", vl: "Gopalpur", sno: "58", ssno: "2", own: "राजेश्वर सिंह", idn: "खाता 12", typ: "Single", ara: "0.940 Hec" }
+        ]
+      }
+    ];
 
     window.addEventListener('DOMContentLoaded', () => {
       initQRCode();
       updateLiveCard();
+      // Ensure batch storage initialized
+      if (!localStorage.getItem('agri_batch_farmers')) {
+        localStorage.setItem('agri_batch_farmers', JSON.stringify(DEFAULT_BATCH));
+      }
     });
 
     function initQRCode() {
       const el = document.getElementById("qrcodeCanvas");
+      if (!el) return;
       el.innerHTML = "";
       qrCodeObj = new QRCode(el, {
         text: "36565207294",
@@ -1068,13 +1999,14 @@
         <td><input type="text" class="l-ident" value="परीक्षण" oninput="updateLiveCard()"></td>
         <td><input type="text" class="l-type" value="Joint" oninput="updateLiveCard()"></td>
         <td><input type="text" class="l-area" value="0.500 Hec" oninput="updateLiveCard()"></td>
-        <td><button onclick="this.closest('tr').remove(); updateLiveCard();" style="color:red; background:none; border:none; cursor:pointer;">✕</button></td>
+        <td><button type="button" onclick="this.closest('tr').remove(); updateLiveCard();" style="color:red; background:none; border:none; cursor:pointer;">✕</button></td>
       `;
       tbody.appendChild(tr);
       updateLiveCard();
     }
 
-    function updateLiveCard() {
+    // Extract current form values into a Farmer object
+    function getCurrentFormData() {
       const nameEng = document.getElementById('nameEng').value.trim() || 'Ramnaresh Chaudhari';
       const nameHindi = document.getElementById('nameHindi').value.trim() || 'रामनरेश चौधरी';
       const fatherEng = document.getElementById('fatherEng').value.trim() || 'Suresh Chaudhari';
@@ -1084,7 +2016,7 @@
       const gender = document.getElementById('gender').value;
       const caste = document.getElementById('caste').value;
       const mobile = document.getElementById('mobile').value.trim() || '7070393730';
-      const rawAadhar = document.getElementById('aadhar').value.replace(/\s+/g, '');
+      const rawAadhar = document.getElementById('aadhar').value.trim() || '5095 0342 7099';
       const farmerId = document.getElementById('farmerId').value.trim() || '36565207294';
       const enrollmentId = document.getElementById('enrollmentId').value.trim() || '10_217_1284_236194_005001';
 
@@ -1094,29 +2026,71 @@
       const state = document.getElementById('state').value.trim() || 'Bihar';
       const pincode = document.getElementById('pincode').value.trim() || '848302';
 
-      // 1. MASKED AADHAAR (Only last 4 digits visible!)
+      const landRows = document.querySelectorAll('#landInputTbody tr');
+      const landData = [];
+      landRows.forEach(tr => {
+        landData.push({
+          st: tr.querySelector('.l-state')?.value || 'BIHAR',
+          dt: tr.querySelector('.l-dist')?.value || 'SAMASTIPUR',
+          sdt: tr.querySelector('.l-subdist')?.value || 'Kalyanpur',
+          vl: tr.querySelector('.l-vill')?.value || 'Jadu Paran',
+          sno: tr.querySelector('.l-sno')?.value || '215',
+          ssno: tr.querySelector('.l-ssno')?.value || '*',
+          own: tr.querySelector('.l-owner')?.value || nameHindi,
+          idn: tr.querySelector('.l-ident')?.value || 'परीक्षण',
+          typ: tr.querySelector('.l-type')?.value || 'Joint',
+          ara: tr.querySelector('.l-area')?.value || '1.333 Hec'
+        });
+      });
+
+      return {
+        nameEng,
+        nameHindi,
+        fatherEng,
+        fatherHindi,
+        dob,
+        gender,
+        caste,
+        mobile,
+        aadhar: rawAadhar,
+        farmerId,
+        enrollmentId,
+        village,
+        tehsil,
+        district,
+        state,
+        pincode,
+        photo: photoDataURL || document.getElementById('cardPhotoImg').src,
+        landRecords: landData.length ? landData : [{ st: "BIHAR", dt: "SAMASTIPUR", sdt: "Kalyanpur", vl: "Jadu Paran", sno: "215", ssno: "*", own: nameHindi, idn: "परीक्षण", typ: "Joint", ara: "1.333 Hec" }]
+      };
+    }
+
+    function updateLiveCard() {
+      const data = getCurrentFormData();
+
+      // Masked Aadhaar (Last 4 digits visible)
+      const rawDigits = data.aadhar.replace(/\s+/g, '');
       let maskedAadhaar = "XXXX XXXX 7099";
-      if (rawAadhar.length >= 4) {
-        const last4 = rawAadhar.slice(-4);
-        maskedAadhaar = `XXXX XXXX ${last4}`;
+      if (rawDigits.length >= 4) {
+        maskedAadhaar = `XXXX XXXX ${rawDigits.slice(-4)}`;
       }
 
       // FRONT CARD ASSIGNMENTS
-      document.getElementById('cNameEng').textContent = nameEng;
-      document.getElementById('cNameHindi').textContent = nameHindi;
-      document.getElementById('cFatherEng').textContent = fatherEng;
-      document.getElementById('cFatherHindi').textContent = fatherHindi;
+      document.getElementById('cNameEng').textContent = data.nameEng;
+      document.getElementById('cNameHindi').textContent = data.nameHindi;
+      document.getElementById('cFatherEng').textContent = data.fatherEng;
+      document.getElementById('cFatherHindi').textContent = data.fatherHindi;
 
-      document.getElementById('cardPhotoName').textContent = nameEng;
-      document.getElementById('cGender').textContent = gender;
-      document.getElementById('cCaste').textContent = caste;
-      document.getElementById('cMobile').textContent = mobile;
+      document.getElementById('cardPhotoName').textContent = data.nameEng;
+      document.getElementById('cGender').textContent = data.gender;
+      document.getElementById('cCaste').textContent = data.caste;
+      document.getElementById('cMobile').textContent = data.mobile;
       document.getElementById('cAadhar').textContent = maskedAadhaar;
-      document.getElementById('cFarmerId').textContent = farmerId;
+      document.getElementById('cFarmerId').textContent = data.farmerId;
 
       // DOB
-      if (dob) {
-        const birthDate = new Date(dob);
+      if (data.dob) {
+        const birthDate = new Date(data.dob);
         const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
         document.getElementById('cDob').textContent = birthDate.toLocaleDateString('en-GB', options);
       } else {
@@ -1126,39 +2100,20 @@
       // Update QR Code
       if (qrCodeObj) {
         qrCodeObj.clear();
-        qrCodeObj.makeCode(farmerId + "|" + rawAadhar + "|" + nameEng);
+        qrCodeObj.makeCode(data.farmerId + "|" + rawDigits + "|" + data.nameEng);
       }
 
-      // 2. MULTI-PAGE BACK CARDS JUGAD GENERATION!
-      const landRows = document.querySelectorAll('#landInputTbody tr');
-      document.getElementById('landCountBadge').textContent = `${landRows.length} खसरा जोड़ा गया`;
+      // Back Cards rendering
+      document.getElementById('landCountBadge').textContent = `${data.landRecords.length} खसरा जोड़ा गया`;
 
-      // Extract all land records into an array
-      const landData = [];
-      landRows.forEach(tr => {
-        landData.push({
-          st: tr.querySelector('.l-state')?.value || '',
-          dt: tr.querySelector('.l-dist')?.value || '',
-          sdt: tr.querySelector('.l-subdist')?.value || '',
-          vl: tr.querySelector('.l-vill')?.value || '',
-          sno: tr.querySelector('.l-sno')?.value || '',
-          ssno: tr.querySelector('.l-ssno')?.value || '',
-          own: tr.querySelector('.l-owner')?.value || '',
-          idn: tr.querySelector('.l-ident')?.value || '',
-          typ: tr.querySelector('.l-type')?.value || '',
-          ara: tr.querySelector('.l-area')?.value || ''
-        });
-      });
-
-      // Split land records into pages of minimum 7 rows per card
-      const ROWS_PER_PAGE = 7;
-      const totalPages = Math.ceil(landData.length / ROWS_PER_PAGE) || 1;
+      const ROWS_PER_PAGE = 6;
+      const totalPages = Math.ceil(data.landRecords.length / ROWS_PER_PAGE) || 1;
 
       const backContainer = document.getElementById('backCardsContainer');
       backContainer.innerHTML = '';
 
       for (let p = 0; p < totalPages; p++) {
-        const pageRecords = landData.slice(p * ROWS_PER_PAGE, (p + 1) * ROWS_PER_PAGE);
+        const pageRecords = data.landRecords.slice(p * ROWS_PER_PAGE, (p + 1) * ROWS_PER_PAGE);
         const pageBadgeText = totalPages > 1 ? `Part ${p + 1} of ${totalPages}` : '';
 
         let tableRowsHtml = '';
@@ -1180,26 +2135,19 @@
           `;
         });
 
-        // If page has less than 7 rows, fill empty rows to keep card height consistent
-        if (pageRecords.length < 7 && totalPages === 1) {
-          for (let e = pageRecords.length; e < 2; e++) {
-            tableRowsHtml += `<tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>`;
-          }
-        }
-
         const backCardHtml = `
           <div class="id-card-back" style="margin-bottom:16px;">
             <div class="card-back-header">
               <div>
                 <span class="cbh-title">Farmer Enrollment Id: </span>
-                <span class="cbh-id">${enrollmentId}</span>
+                <span class="cbh-id">${data.enrollmentId}</span>
               </div>
               ${pageBadgeText ? `<span class="cbh-page-badge">${pageBadgeText}</span>` : ''}
             </div>
 
             <div class="card-back-body">
               <div class="cb-address">
-                Address .: ${village}, ${tehsil}, ${district}, ${state}-${pincode}
+                Address .: ${data.village}, ${data.tehsil}, ${data.district}, ${data.state}-${data.pincode}
               </div>
 
               <div class="cb-land-heading">
@@ -1263,6 +2211,614 @@
       }
     }
 
+    // ========================================================
+    // A4 BATCH PRINT SYSTEM FUNCTIONS
+    // ========================================================
+
+    function getStoredBatch() {
+      try {
+        const stored = localStorage.getItem('agri_batch_farmers');
+        if (stored) {
+          const arr = JSON.parse(stored);
+          if (Array.isArray(arr) && arr.length > 0) return arr;
+        }
+      } catch (e) {
+        console.warn("Batch storage parse error:", e);
+      }
+      return DEFAULT_BATCH;
+    }
+
+    function saveBatchToStorage(batchList) {
+      localStorage.setItem('agri_batch_farmers', JSON.stringify(batchList));
+    }
+
+    function resetDefaultBatch() {
+      localStorage.setItem('agri_batch_farmers', JSON.stringify(DEFAULT_BATCH));
+      selectedFarmerIndexes = [0, 1, 2, 3];
+      renderA4ModalUI();
+      alert("✅ 4 डिफ़ॉल्ट किसानों की सूची रीसेट हो गई है!");
+    }
+
+    function saveCurrentFarmerToBatch() {
+      const current = getCurrentFormData();
+      const batch = getStoredBatch();
+      
+      // Update Slot 0 or append
+      batch[0] = current;
+      saveBatchToStorage(batch);
+
+      renderA4ModalUI();
+      alert(`✅ किसान "${current.nameEng}" को बैच सूची (स्लॉट 1) में सुरक्षित कर दिया गया है!`);
+    }
+
+    function loadFarmerFromBatch(idx) {
+      const batch = getStoredBatch();
+      const farmer = batch[idx];
+      if (!farmer) return;
+
+      document.getElementById('nameEng').value = farmer.nameEng || '';
+      document.getElementById('nameHindi').value = farmer.nameHindi || '';
+      document.getElementById('fatherEng').value = farmer.fatherEng || '';
+      document.getElementById('fatherHindi').value = farmer.fatherHindi || '';
+      document.getElementById('dob').value = farmer.dob || '';
+      document.getElementById('gender').value = farmer.gender || 'Male';
+      document.getElementById('caste').value = farmer.caste || 'General';
+      document.getElementById('mobile').value = farmer.mobile || '';
+      document.getElementById('aadhar').value = farmer.aadhar || '';
+      document.getElementById('farmerId').value = farmer.farmerId || '';
+      document.getElementById('enrollmentId').value = farmer.enrollmentId || '';
+
+      document.getElementById('village').value = farmer.village || '';
+      document.getElementById('tehsil').value = farmer.tehsil || '';
+      document.getElementById('district').value = farmer.district || '';
+      document.getElementById('state').value = farmer.state || '';
+      document.getElementById('pincode').value = farmer.pincode || '';
+
+      if (farmer.photo) {
+        photoDataURL = farmer.photo;
+        document.getElementById('photoPreviewImg').src = farmer.photo;
+        document.getElementById('photoPreviewImg').style.display = 'block';
+        document.getElementById('uploadPlaceholder').style.display = 'none';
+        document.getElementById('cardPhotoImg').src = farmer.photo;
+      }
+
+      // Populate Land Records
+      const tbody = document.getElementById('landInputTbody');
+      tbody.innerHTML = '';
+      const lands = farmer.landRecords && farmer.landRecords.length ? farmer.landRecords : [{ st: "BIHAR", dt: "SAMASTIPUR", sdt: "Kalyanpur", vl: "Jadu Paran", sno: "215", ssno: "*", own: farmer.nameHindi, idn: "परीक्षण", typ: "Joint", ara: "1.333 Hec" }];
+      lands.forEach((l, i) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${i + 1}</td>
+          <td><input type="text" class="l-state" value="${l.st || ''}" oninput="updateLiveCard()"></td>
+          <td><input type="text" class="l-dist" value="${l.dt || ''}" oninput="updateLiveCard()"></td>
+          <td><input type="text" class="l-subdist" value="${l.sdt || ''}" oninput="updateLiveCard()"></td>
+          <td><input type="text" class="l-vill" value="${l.vl || ''}" oninput="updateLiveCard()"></td>
+          <td><input type="text" class="l-sno" value="${l.sno || ''}" oninput="updateLiveCard()"></td>
+          <td><input type="text" class="l-ssno" value="${l.ssno || '*'}" oninput="updateLiveCard()"></td>
+          <td><input type="text" class="l-owner" value="${l.own || ''}" oninput="updateLiveCard()"></td>
+          <td><input type="text" class="l-ident" value="${l.idn || ''}" oninput="updateLiveCard()"></td>
+          <td><input type="text" class="l-type" value="${l.typ || 'Joint'}" oninput="updateLiveCard()"></td>
+          <td><input type="text" class="l-area" value="${l.ara || '0.500 Hec'}" oninput="updateLiveCard()"></td>
+          <td><button type="button" onclick="this.closest('tr').remove(); updateLiveCard();" style="color:red; background:none; border:none; cursor:pointer;">✕</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      updateLiveCard();
+      closeA4PrintModal();
+      alert(`✅ किसान "${farmer.nameEng}" का डेटा मुख्य फॉर्म में लोड हो गया है!`);
+    }
+
+    function deleteFarmerFromBatch(idx) {
+      const batch = getStoredBatch();
+      if (batch.length <= 1) {
+        alert("⚠️ बैच में कम से कम 1 किसान का डेटा होना आवश्यक है!");
+        return;
+      }
+      batch.splice(idx, 1);
+      saveBatchToStorage(batch);
+
+      // Re-index selection
+      selectedFarmerIndexes = selectedFarmerIndexes.filter(i => i !== idx).map(i => (i > idx ? i - 1 : i));
+      if (selectedFarmerIndexes.length === 0) selectedFarmerIndexes = [0];
+
+      renderA4ModalUI();
+    }
+
+    function openA4PrintModal(mode) {
+      // Auto-sync slot 0 with latest form data
+      const batch = getStoredBatch();
+      batch[0] = getCurrentFormData();
+      saveBatchToStorage(batch);
+
+      currentA4Mode = mode || '4farmers';
+      if (currentA4Mode === 'single') {
+        selectedFarmerIndexes = [0];
+      } else {
+        selectedFarmerIndexes = batch.map((_, i) => i).slice(0, 4);
+      }
+
+      renderA4ModalUI();
+      document.getElementById('a4PrintModal').classList.add('active');
+    }
+
+    function closeA4PrintModal() {
+      document.getElementById('a4PrintModal').classList.remove('active');
+    }
+
+    function setA4PrintMode(mode) {
+      currentA4Mode = mode;
+      document.getElementById('modeBtnSingle').classList.toggle('active', mode === 'single');
+      document.getElementById('modeBtn4Farmers').classList.toggle('active', mode === '4farmers');
+
+      const batch = getStoredBatch();
+      if (mode === 'single') {
+        selectedFarmerIndexes = [0];
+        document.getElementById('modeDescText').innerHTML = '💡 <strong>Single Farmer Mode:</strong> वर्तमान किसान का कार्ड A4 के सबसे ऊपर प्रिंट होगा, बाकी पेज खाली रहेगा।';
+      } else {
+        selectedFarmerIndexes = batch.map((_, i) => i).slice(0, 4);
+        document.getElementById('modeDescText').innerHTML = '💡 <strong>4 Farmers A4 Mode:</strong> एक A4 शीट पर 4 किसानों के कार्ड (Front + Back) 4 rows में साइड-बाई-साइड प्रिंट होंगे।';
+      }
+
+      renderA4ModalUI();
+    }
+
+    function toggleFarmerSelection(idx) {
+      if (currentA4Mode === 'single') {
+        selectedFarmerIndexes = [idx];
+      } else {
+        const pos = selectedFarmerIndexes.indexOf(idx);
+        if (pos > -1) {
+          if (selectedFarmerIndexes.length === 1) {
+            alert("⚠️ कम से कम 1 किसान का चयन आवश्यक है!");
+            return;
+          }
+          selectedFarmerIndexes.splice(pos, 1);
+        } else {
+          if (selectedFarmerIndexes.length >= 4) {
+            alert("⚠️ 1 A4 शीट पर अधिकतम 4 किसान चुने जा सकते हैं!");
+            return;
+          }
+          selectedFarmerIndexes.push(idx);
+        }
+      }
+      renderA4ModalUI();
+    }
+
+    // Render Farmer Card HTML for Preview (Modal) and Print
+    function buildCardHtml(farmer, cardType, qrContainerId, isModalPreview = false) {
+      const rawDigits = (farmer.aadhar || '').replace(/\s+/g, '');
+      const maskedAadhaar = rawDigits.length >= 4 ? `XXXX XXXX ${rawDigits.slice(-4)}` : "XXXX XXXX 7099";
+
+      let formattedDob = '01/01/1981';
+      if (farmer.dob) {
+        try {
+          const birthDate = new Date(farmer.dob);
+          formattedDob = birthDate.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        } catch (e) {}
+      }
+
+      if (isModalPreview) {
+        // EXACT PIXEL-PERFECT SCOPED MODAL PREVIEW CARD (248px x 156px)
+        if (cardType === 'front') {
+          return `
+            <div class="a4-modal-preview-card">
+              <div class="ampc-front-header">
+                <div style="display:flex; align-items:center; gap:4px;">
+                  <div class="ampc-logo-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="Logo">
+                  </div>
+                  <div>
+                    <div class="ampc-title">Agri<span>Stack</span> फार्मर आईडी कार्ड</div>
+                    <div class="ampc-subtitle">(Farmer ID Card)</div>
+                  </div>
+                </div>
+                <div style="font-size: 14px;">🚜</div>
+              </div>
+
+              <div class="ampc-front-body">
+                <div class="ampc-photo-box">
+                  <img src="${farmer.photo || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'}" alt="Photo">
+                  <div class="ampc-photo-name">${farmer.nameEng}</div>
+                </div>
+
+                <div class="ampc-details">
+                  <div class="ampc-row">Name: <span class="val">${farmer.nameEng}</span></div>
+                  <div class="ampc-row hindi">नाव: <span>${farmer.nameHindi}</span></div>
+                  <div class="ampc-row">Father: <span class="val">${farmer.fatherEng}</span></div>
+                  <div class="ampc-row hindi">पिता: <span>${farmer.fatherHindi}</span></div>
+                  <div class="ampc-row">DOB: <span class="val">${formattedDob}</span></div>
+                  <div class="ampc-row">Gender: <span class="val">${farmer.gender}</span> | Caste: <span class="val">${farmer.caste}</span></div>
+                  <div class="ampc-row">Mobile: <span class="val">${farmer.mobile}</span></div>
+                  <div class="ampc-row">Aadhaar: <span class="val">${maskedAadhaar}</span></div>
+                </div>
+
+                <div class="ampc-qr-box">
+                  <div id="${qrContainerId}"></div>
+                </div>
+              </div>
+
+              <div class="ampc-bottom-id">
+                <div class="ampc-id-label">Farmer ID : <span>${farmer.farmerId}</span></div>
+              </div>
+
+              <div class="ampc-footer">
+                <div class="ampc-footer-left">Generated by farmerid digital india services</div>
+                <div class="ampc-footer-badge">FARMER ID</div>
+              </div>
+            </div>
+          `;
+        } else {
+          // Back Card Modal Preview
+          const lands = farmer.landRecords && farmer.landRecords.length ? farmer.landRecords : [{ st: "BIHAR", dt: "SAMASTIPUR", sdt: "Kalyanpur", vl: "Jadu Paran", sno: "215", ssno: "*", own: farmer.nameHindi, idn: "परीक्षण", typ: "Joint", ara: "1.333 Hec" }];
+          let tableRowsHtml = '';
+          lands.slice(0, 4).forEach(item => {
+            tableRowsHtml += `
+              <tr>
+                <td>${item.st}</td>
+                <td>${item.dt}</td>
+                <td>${item.sdt}</td>
+                <td>${item.vl}</td>
+                <td>${item.sno}</td>
+                <td>${item.ssno}</td>
+                <td>${item.own}</td>
+                <td>${item.idn}</td>
+                <td>${item.typ}</td>
+                <td>Equal</td>
+                <td>${item.ara}</td>
+              </tr>
+            `;
+          });
+
+          return `
+            <div class="a4-modal-preview-card">
+              <div class="ampc-back-header">
+                <div>
+                  <span class="cbh-title">Farmer Enrollment Id: </span>
+                  <span class="cbh-id">${farmer.enrollmentId}</span>
+                </div>
+              </div>
+
+              <div class="ampc-back-body">
+                <div class="ampc-address">
+                  Address .: ${farmer.village}, ${farmer.tehsil}, ${farmer.district}, ${farmer.state}-${farmer.pincode}
+                </div>
+
+                <div class="ampc-land-heading">
+                  <span>Land Ownership Details</span>
+                </div>
+
+                <table class="ampc-land-table">
+                  <thead>
+                    <tr>
+                      <th>State</th>
+                      <th>Dist</th>
+                      <th>SubDist</th>
+                      <th>Village</th>
+                      <th>SNo</th>
+                      <th>SSNo</th>
+                      <th>Owner</th>
+                      <th>Id</th>
+                      <th>Type</th>
+                      <th>Share</th>
+                      <th>Area</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${tableRowsHtml}
+                  </tbody>
+                </table>
+
+                <div class="ampc-annexure">
+                  <strong>Annexure:</strong> I give my consent to State & Central Govt to use my aadhaar data for PM Kisan SammanNidhi.
+                </div>
+              </div>
+
+              <div class="ampc-back-footer">
+                <div>Personal Use Only (Not a Govt ID).</div>
+                <div>👨‍🌾</div>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      // FOR PURE A4 PRINT SHEET (85.60mm x 53.98mm)
+      if (cardType === 'front') {
+        return `
+          <div class="a4-print-card">
+            <!-- Header -->
+            <div class="card-front-header">
+              <div class="cfh-left">
+                <div class="cfh-logo-icon">
+                  <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="Logo">
+                </div>
+                <div>
+                  <div class="cfh-title">Agri<span>Stack</span> फार्मर आईडी कार्ड</div>
+                  <div class="cfh-subtitle">(Farmer ID Card)</div>
+                </div>
+              </div>
+              <div style="font-size: 20px;">🚜</div>
+            </div>
+
+            <!-- Body -->
+            <div class="card-front-body">
+              <!-- Photo -->
+              <div class="cf-photo-box">
+                <img src="${farmer.photo || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'}" alt="Photo">
+                <div class="cf-photo-name">${farmer.nameEng}</div>
+              </div>
+
+              <!-- Info -->
+              <div class="cf-details">
+                <div class="cf-row">Name: <span class="val">${farmer.nameEng}</span></div>
+                <div class="cf-row hindi">नाव: <span>${farmer.nameHindi}</span></div>
+
+                <div class="cf-row">Father: <span class="val">${farmer.fatherEng}</span></div>
+                <div class="cf-row hindi">पिता: <span>${farmer.fatherHindi}</span></div>
+
+                <div class="cf-row">DOB: <span class="val">${formattedDob}</span></div>
+                <div class="cf-row">Gender: <span class="val">${farmer.gender}</span></div>
+                <div class="cf-row">Caste Category: <span class="val">${farmer.caste}</span></div>
+                <div class="cf-row">Mobile No.: <span class="val">${farmer.mobile}</span></div>
+                <div class="cf-row">Aadhaar No.: <span class="val">${maskedAadhaar}</span></div>
+              </div>
+
+              <!-- QR Code -->
+              <div class="cf-qr-box">
+                <div id="${qrContainerId}" class="qrcode-container"></div>
+              </div>
+            </div>
+
+            <!-- Bottom Farmer ID -->
+            <div class="card-front-bottom-id">
+              <div class="cf-id-label">Farmer ID : <span>${farmer.farmerId}</span></div>
+            </div>
+
+            <!-- Footer -->
+            <div class="card-front-footer">
+              <div class="cff-left">Generated by farmerid digital india services</div>
+              <div class="cff-right-badge">FARMER ID</div>
+            </div>
+          </div>
+        `;
+      } else {
+        // Back Card Print
+        const lands = farmer.landRecords && farmer.landRecords.length ? farmer.landRecords : [{ st: "BIHAR", dt: "SAMASTIPUR", sdt: "Kalyanpur", vl: "Jadu Paran", sno: "215", ssno: "*", own: farmer.nameHindi, idn: "परीक्षण", typ: "Joint", ara: "1.333 Hec" }];
+        let tableRowsHtml = '';
+        lands.slice(0, 6).forEach(item => {
+          tableRowsHtml += `
+            <tr>
+              <td>${item.st}</td>
+              <td>${item.dt}</td>
+              <td>${item.sdt}</td>
+              <td>${item.vl}</td>
+              <td>${item.sno}</td>
+              <td>${item.ssno}</td>
+              <td>${item.own}</td>
+              <td>${item.idn}</td>
+              <td>${item.typ}</td>
+              <td>Equal</td>
+              <td>${item.ara}</td>
+            </tr>
+          `;
+        });
+
+        return `
+          <div class="a4-print-card">
+            <div class="card-back-header">
+              <div>
+                <span class="cbh-title">Farmer Enrollment Id: </span>
+                <span class="cbh-id">${farmer.enrollmentId}</span>
+              </div>
+            </div>
+
+            <div class="card-back-body">
+              <div class="cb-address">
+                Address .: ${farmer.village}, ${farmer.tehsil}, ${farmer.district}, ${farmer.state}-${farmer.pincode}
+              </div>
+
+              <div class="cb-land-heading">
+                <span>Land Ownership Details</span>
+              </div>
+
+              <table class="cb-land-table">
+                <thead>
+                  <tr>
+                    <th>State</th>
+                    <th>District</th>
+                    <th>Sub District</th>
+                    <th>Village</th>
+                    <th>SNo.</th>
+                    <th>S/Sno.</th>
+                    <th>Owner Name</th>
+                    <th>Identifier</th>
+                    <th>Type</th>
+                    <th>Share</th>
+                    <th>Area</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${tableRowsHtml}
+                </tbody>
+              </table>
+
+              <div class="cb-annexure">
+                <strong>Annexure:</strong> I also give my consent to State and Central Governments to use my aadhaar and identity data into PM Kisan SammanNidhi.
+              </div>
+            </div>
+
+            <div class="card-back-footer">
+              <div>This Card Is For Personal Use Only (Not a Govt ID).</div>
+              <div>👨‍🌾</div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // Render Modal Batch Selection List & A4 Visual Preview
+    function renderA4ModalUI() {
+      const batch = getStoredBatch();
+      const container = document.getElementById('batchItemsContainer');
+      container.innerHTML = '';
+
+      batch.forEach((farmer, idx) => {
+        const isSelected = selectedFarmerIndexes.includes(idx);
+        const itemHtml = `
+          <div class="batch-item-card ${isSelected ? 'selected' : ''}">
+            <div class="batch-item-left" onclick="toggleFarmerSelection(${idx})">
+              <input type="checkbox" class="batch-checkbox" ${isSelected ? 'checked' : ''} onclick="event.stopPropagation(); toggleFarmerSelection(${idx})">
+              <div>
+                <div class="batch-item-name">${idx + 1}. ${farmer.nameEng}</div>
+                <div class="batch-item-sub">ID: ${farmer.farmerId} • ${farmer.fatherEng || 'पिता नाम'}</div>
+              </div>
+            </div>
+            <div class="batch-item-actions">
+              <button type="button" class="btn-sm-icon" title="फॉर्म में लोड करें" onclick="loadFarmerFromBatch(${idx})">✏️</button>
+              ${batch.length > 1 ? `<button type="button" class="btn-sm-icon" title="हटाएं" onclick="deleteFarmerFromBatch(${idx})" style="color:#ef4444;">🗑️</button>` : ''}
+            </div>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', itemHtml);
+      });
+
+      // Update counters
+      const count = selectedFarmerIndexes.length;
+      document.getElementById('selectedCountBadge').textContent = `Selected: ${count} / ${currentA4Mode === 'single' ? '1' : '4'}`;
+      document.getElementById('a4PreviewTitle').textContent = `📄 A4 Print Preview — ${currentA4Mode === 'single' ? 'Single Farmer' : count + ' Farmers'}`;
+      document.getElementById('a4PreviewMeta').textContent = `Selected: ${count} / 4`;
+
+      // Render Visual A4 Paper
+      renderA4Preview();
+    }
+
+    function renderA4Preview() {
+      const paper = document.getElementById('a4VisualPaper');
+      paper.innerHTML = '';
+
+      const batch = getStoredBatch();
+      const activeFarmers = selectedFarmerIndexes.map(i => batch[i]).filter(Boolean);
+
+      const qrToGenerate = [];
+
+      activeFarmers.forEach((farmer, rowIdx) => {
+        const qrId = `qr_preview_row_${rowIdx}_${Date.now()}`;
+        const rowHtml = `
+          <div class="a4-preview-row">
+            <span class="a4-preview-row-label">Farmer ${rowIdx + 1} (Front + Back)</span>
+            ${buildCardHtml(farmer, 'front', qrId, true)}
+            ${buildCardHtml(farmer, 'back', '', true)}
+          </div>
+        `;
+        paper.insertAdjacentHTML('beforeend', rowHtml);
+
+        qrToGenerate.push({
+          id: qrId,
+          text: farmer.farmerId + "|" + (farmer.aadhar || '').replace(/\s+/g, '') + "|" + farmer.nameEng
+        });
+      });
+
+      // If fewer than 4 farmers, show empty space to illustrate paper saving
+      if (activeFarmers.length < 4) {
+        const emptySlots = 4 - activeFarmers.length;
+        const emptyHtml = `
+          <div class="a4-empty-slot">
+            <div>
+              <div style="font-size: 24px; margin-bottom: 6px;">📄</div>
+              <div><strong>शेष A4 शीट खाली रहेगी (Paper Saving Slot)</strong></div>
+              <div style="font-size: 11px; color: #64748b; margin-top: 4px;">(${emptySlots} स्लॉट रिक्त - कार्ड ऊपर से क्रम में प्रिंट होंगे)</div>
+            </div>
+          </div>
+        `;
+        paper.insertAdjacentHTML('beforeend', emptyHtml);
+      }
+
+      // Generate QR codes for preview cards
+      setTimeout(() => {
+        qrToGenerate.forEach(item => {
+          const el = document.getElementById(item.id);
+          if (el) {
+            el.innerHTML = '';
+            new QRCode(el, {
+              text: item.text,
+              width: 44,
+              height: 44,
+              colorDark: "#000000",
+              colorLight: "#ffffff",
+              correctLevel: QRCode.CorrectLevel.H
+            });
+          }
+        });
+      }, 50);
+    }
+
+    // Trigger Print Action (Enlarged 96.0mm x 64.0mm - Zero Waste Layout)
+    function triggerA4Print() {
+      const printSheet = document.getElementById('a4PrintSheet');
+      printSheet.innerHTML = '';
+
+      const batch = getStoredBatch();
+      const activeFarmers = selectedFarmerIndexes.map(i => batch[i]).filter(Boolean);
+
+      if (activeFarmers.length === 0) {
+        alert("कृपया प्रिंट करने के लिए कम से कम 1 किसान चुनें!");
+        return;
+      }
+
+      const qrToGenerate = [];
+
+      activeFarmers.forEach((farmer, rowIdx) => {
+        const qrId = `qr_print_row_${rowIdx}_${Date.now()}`;
+        const rowHtml = `
+          <div class="a4-farmer-row">
+            ${buildCardHtml(farmer, 'front', qrId)}
+            ${buildCardHtml(farmer, 'back', '')}
+          </div>
+        `;
+        printSheet.insertAdjacentHTML('beforeend', rowHtml);
+
+        qrToGenerate.push({
+          id: qrId,
+          text: farmer.farmerId + "|" + (farmer.aadhar || '').replace(/\s+/g, '') + "|" + farmer.nameEng
+        });
+      });
+
+      // Generate QR codes in printSheet
+      qrToGenerate.forEach(item => {
+        const el = document.getElementById(item.id);
+        if (el) {
+          el.innerHTML = '';
+          new QRCode(el, {
+            text: item.text,
+            width: 54,
+            height: 54,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+          });
+        }
+      });
+
+      // Wait a moment for QR codes then trigger print
+      setTimeout(() => {
+        window.print();
+      }, 200);
+    }
+
+    // Direct single farmer print shortcut
+    function printCurrentFarmerDirect() {
+      const current = getCurrentFormData();
+      const batch = getStoredBatch();
+      batch[0] = current;
+      saveBatchToStorage(batch);
+
+      selectedFarmerIndexes = [0];
+      triggerA4Print();
+    }
+
+    // Legacy PDF and JPG Download functions
     function downloadPDF() {
       if (typeof html2canvas === 'undefined') {
         const s = document.createElement('script');
@@ -1290,6 +2846,7 @@
         pdf.save('AgriStack_Farmer_ID_Card.pdf');
       });
     }
+
     function downloadJPG() {
       if (typeof html2canvas === 'undefined') {
         const s = document.createElement('script');

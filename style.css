@@ -3218,5 +3218,66 @@ body.dark-theme .smart-fest-badge {
   100% { transform: translateY(-12px) scale(0.6) rotate(360deg); opacity: 0; }
 }
 
+/* ==========================================================================
+   GLOBAL NOTIFICATION BELL & DRAWER SYSTEM
+   ========================================================================== */
+.notification-bell-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 6px;
+  z-index: 1000;
+}
+.notification-bell-btn {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: 18px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+}
+.notification-bell-btn:hover {
+  background: var(--gray-50);
+  border-color: var(--primary-light);
+  transform: translateY(-1px);
+}
+.notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  box-shadow: 0 0 0 2px #ffffff;
+  animation: pulseBadge 2s infinite;
+}
+@keyframes pulseBadge {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.08); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
 
-
+body.dark-theme .notification-bell-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+body.dark-theme .notification-bell-btn:hover {
+  background: #334155;
+}

@@ -117,6 +117,7 @@
       <li id="tab-ticker" onclick="switchTab('ticker')">📢 News Ticker (पट्टी)</li>
       <li id="tab-members" onclick="switchTab('members')">👥 Union Members</li>
       <li id="tab-festival" onclick="switchTab('festival')">🎉 Festival Greetings (त्यौहार)</li>
+      <li id="tab-announcements" onclick="switchTab('announcements')">🔔 Announcements (सूचनाएं)</li>
     </ul>
     <div class="s-footer">
       <a href="index.html" target="_blank" style="display:block; width:100%; padding:11px; background:#dcfce7; color:#16a34a; border-radius:8px; text-align:center; font-weight:700; font-size:14px; text-decoration:none; margin-bottom:10px; transition:0.2s;" onmouseover="this.style.background='#bbf7d0'" onmouseout="this.style.background='#dcfce7'">🌐 Website देखें</a>
@@ -518,6 +519,73 @@
       </div>
     </section>
 
+    <!-- ================= ANNOUNCEMENTS / NOTIFICATIONS PANEL ================= -->
+    <section id="panel-announcements" class="panel-section">
+      <div class="top-bar">
+        <h1>🔔 Live Announcements & Push Notifications</h1>
+        <div class="badge bg-green" id="count-announcements">Loading...</div>
+      </div>
+
+      <div class="admin-card">
+        <h3>🚀 Broadcast New Announcement to All Users</h3>
+        <p style="font-size:12.5px; color:#64748b; margin-top:-10px; margin-bottom:20px;">
+          यह सूचना सभी यूज़र्स के नोटिफिकेशन बेल 🔔, स्लाइड-ओवर ड्रॉअर और लाइव पॉप-अप अलर्ट टोस्ट में तुरंत दिखाई देगी।
+        </p>
+        <form id="announcementForm">
+          <div class="form-grid">
+            <div class="f-group full">
+              <label>सूचना का शीर्षक (Announcement Title)</label>
+              <input type="text" id="a_title" required placeholder="उदा: 📢 पंचायत सहायकों के लिए बड़ी खुशखबरी / नया अपडेट">
+            </div>
+            <div class="f-group full">
+              <label>पूरा विवरण / संदेश (Message Body)</label>
+              <textarea id="a_body" rows="3" required placeholder="सूचना का पूरा विवरण लिखें..."></textarea>
+            </div>
+            <div class="f-group">
+              <label>आइकन (Emoji Icon)</label>
+              <select id="a_icon">
+                <option value="📢">📢 घोषणा (Announcement)</option>
+                <option value="🚨">🚨 अति आवश्यक (Urgent Alert)</option>
+                <option value="🎁">🎁 खुशखबरी (Good News)</option>
+                <option value="📜">📜 शासनादेश (Government Order)</option>
+                <option value="⚡">⚡ ब्रेकिंग (Breaking Update)</option>
+                <option value="🔔">🔔 रिमाइंडर (Reminder)</option>
+                <option value="📌">📌 सूचना (Notice)</option>
+                <option value="💡">💡 टिप्स (Tips & Guides)</option>
+              </select>
+            </div>
+            <div class="f-group">
+              <label>बैज / कैटेगरी (Badge Tag)</label>
+              <input type="text" id="a_badge" placeholder="उदा: जरूरी सूचना, सैलरी अपडेट, नया फ़ीचर">
+            </div>
+            <div class="f-group full">
+              <label>संबंधित लिंक (Action Link URL - Optional)</label>
+              <input type="url" id="a_url" placeholder="https://gpsahayak.in/panchayat-sahayak-notices.html">
+            </div>
+          </div>
+          <button type="submit" class="btn-submit" id="btn-submit-announcements" style="background: linear-gradient(135deg, #0f766e, #0d9488);">🚀 Broadcast Announcement to All Users</button>
+        </form>
+      </div>
+
+      <div class="admin-card">
+        <h3>📋 Active Published Announcements</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Icon</th>
+              <th>Title & Message</th>
+              <th>Badge</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="table-announcements">
+            <tr><td colspan="5" style="text-align:center;">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
   </main>
 
   <script>
@@ -559,6 +627,7 @@
         fetchCollection("blogs", "table-blogs", "count-blogs", renderBlogRow);
         fetchCollection("ticker", "table-ticker", "count-ticker", renderTickerRow);
         fetchCollection("members", "table-members", "count-members", renderMemberRow);
+        fetchCollection("announcements", "table-announcements", "count-announcements", renderAnnouncementRow);
         loadFestivalConfigAdmin();
       }
     });
@@ -820,6 +889,18 @@
       });
     });
 
+    // Add Announcement
+    document.getElementById('announcementForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitToFirestore('announcements', 'announcementForm', 'btn-submit-announcements', {
+        title: document.getElementById('a_title').value.trim(),
+        body: document.getElementById('a_body').value.trim(),
+        icon: document.getElementById('a_icon').value,
+        badge: document.getElementById('a_badge').value.trim() || "सूचना",
+        url: document.getElementById('a_url').value.trim()
+      });
+    });
+
 
     // ================= DATA FETCHING LISENTERS =================
 
@@ -895,6 +976,21 @@
         <td style="font-size:12px; font-weight:600; color:#64748b;">${data.date}</td>
         <td style="font-weight:700;"><a href="${link}" target="_blank" style="color:#1e40af; text-decoration:none;">${data.title}</a><br><span style="font-size:11px; color:#475569; font-weight:500;">${data.desc}</span></td>
         <td><span class="badge bg-blue">${data.category}</span></td>
+        <td><button class="btn-del" onclick="deleteRecord('${col}', '${id}')">Delete</button></td>
+      `;
+    }
+
+    function renderAnnouncementRow(data, id, col) {
+      const linkSnippet = data.url ? `<br><a href="${data.url}" target="_blank" style="font-size:11px; color:#2563eb;">${data.url} ↗</a>` : '';
+      let dateStr = 'Recently';
+      if (data.createdAt && data.createdAt.toDate) {
+        try { dateStr = data.createdAt.toDate().toLocaleString('hi-IN'); } catch(e){}
+      }
+      return `
+        <td style="font-size:24px;">${data.icon || '📢'}</td>
+        <td style="font-weight:600;">${data.title}<br><span style="font-size:12px; color:#475569; font-weight:400;">${data.body}</span>${linkSnippet}</td>
+        <td><span class="badge bg-green">${data.badge || 'General'}</span></td>
+        <td style="font-size:11px; color:#64748b; white-space:nowrap;">${dateStr}</td>
         <td><button class="btn-del" onclick="deleteRecord('${col}', '${id}')">Delete</button></td>
       `;
     }
@@ -987,5 +1083,6 @@
     });
 
   </script>
+  <script src="notifications.js?v=3" defer></script>
 </body>
 </html>

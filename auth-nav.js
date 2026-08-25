@@ -12,6 +12,14 @@ function loadScript(src) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Auto-load notifications.js on every page if not already present
+    if (!document.querySelector('script[src*="notifications.js"]')) {
+        const notifScript = document.createElement('script');
+        notifScript.src = 'notifications.js?v=3';
+        notifScript.defer = true;
+        document.head.appendChild(notifScript);
+    }
+
     let firebaseLoaded = false;
     let isLoading = false;
     let authReady = false;
