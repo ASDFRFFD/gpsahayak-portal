@@ -130,16 +130,38 @@
     </div>
   </nav>
 
-  
-  
-
   <main class="page" id="main-content" role="main">
 
     <!-- PDF HUB HEADER -->
     <div class="pdf-hub-header">
-      <h2 class="pdf-hub-title">महत्वपूर्ण फ़ॉर्म (Forms Library)</h2>
-      <p class="pdf-hub-desc">पंचायत सहायकों के लिए सभी आवश्यक आवेदन फ़ॉर्म और प्रारूप एक ही स्थान पर उपलब्ध हैं। खोजें, फ़िल्टर करें और एक क्लिक में डाउनलोड करें।</p>
+      <h1 class="pdf-hub-title" style="font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 8px;">महत्वपूर्ण प्रपत्र एवं PDF लाइब्रेरी (Forms Library)</h1>
+      <p class="pdf-hub-desc">ग्राम सचिवालय व पंचायत सहायकों के लिए आवश्यक सभी नागरिक आवेदन प्रपत्र, परिवार रजिस्टर प्रारूप एवं पेंशन फॉर्म एक ही स्थान पर।</p>
     </div>
+
+    <!-- EXPLANATORY GUIDE & ATTESTATION RULES -->
+    <section style="max-width: 1000px; margin: 0 auto 24px auto; background: #ffffff; border-radius: 14px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.03); padding: 24px 28px; line-height: 1.8; color: #334155;">
+      <h2 style="color: var(--primary); font-size: 19px; font-weight: 700; margin: 0 0 10px 0;">
+        📑 ग्राम पंचायत प्रपत्र डाउनलोड एवं उपयोग दिशा-निर्देश
+      </h2>
+      <p style="font-size: 14px; margin-bottom: 14px;">
+        ग्राम सचिवालय में आने वाले ग्रामीणों को विभिन्न सरकारी योजनाओं और प्रमाण पत्रों हेतु निर्धारित प्रपत्र (Forms) भरने होते हैं। यहाँ पंचायत सहायकों और जनसेवा केंद्र संचालकों की सुविधा हेतु <strong>उत्तर प्रदेश शासन एवं संबंधित विभागों द्वारा मान्य मानक प्रपत्रों</strong> का संकलन दिया गया है।
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 14px;">
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; font-size: 13px;">
+          <strong style="color: #0f766e; display:block; margin-bottom:4px;">🖨️ प्रिंटिंग व भराव निर्देश:</strong>
+          सभी प्रपत्र A4 साइज पेपर पर स्पष्ट प्रिंट करें। आवेदक का नाम, पिता का नाम और आधार नंबर खतौनी/पहचान पत्र अनुसार शुद्ध भरें।
+        </div>
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; font-size: 13px;">
+          <strong style="color: #0f766e; display:block; margin-bottom:4px;">✍️ सत्यापन व सील मुहर:</strong>
+          परिवार रजिस्टर नकल या चरित्र प्रमाण पत्र जैसे प्रपत्रों पर <em>ग्राम प्रधान / ग्राम पंचायत अधिकारी (सचिव)</em> के हस्ताक्षर व मुहर अनिवार्य है।
+        </div>
+        <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 16px; font-size: 13px;">
+          <strong style="color: #b45309; display:block; margin-bottom:4px;">⚠️ वैधानिक सूचना:</strong>
+          डाउनलोड किया गया रिक्त प्रपत्र स्वयं में कोई प्रमाण पत्र नहीं है। सक्षम प्राधिकारी द्वारा प्रमाणित होने के पश्चात ही यह मान्य होगा।
+        </div>
+      </div>
+    </section>
 
     <!-- CONTROLS: SEARCH & DROPDOWN -->
     <div class="pdf-controls-row">
@@ -157,26 +179,104 @@
       </select>
     </div>
 
-    <!-- FORM LIST GRID -->
+    <!-- FORM LIST GRID (With Verified Pre-rendered Static Cards) -->
     <div class="form-list-container" id="pdfGrid">
-      <!-- Generated via JS -->
+      
+      <!-- Static Form 1 -->
+      <a class="form-list-item" href="download.html?title=Parivaar%20Register%20Nakal%20Format&type=pdf">
+        <div style="font-size:32px; flex-shrink:0;">📋</div>
+        <div class="form-list-title">
+          <div class="hi">परिवार रजिस्टर नकल आवेदन प्रपत्र</div>
+          <div class="en">Parivaar Register Nakal Application Format (UP Panchayati Raj)</div>
+        </div>
+      </a>
+
+      <!-- Static Form 2 -->
+      <a class="form-list-item" href="download.html?title=Birth%20Death%20Registration%20Form&type=pdf">
+        <div style="font-size:32px; flex-shrink:0;">📜</div>
+        <div class="form-list-title">
+          <div class="hi">जन्म / मृत्यु प्रमाण पत्र आवेदन प्रपत्र</div>
+          <div class="en">Birth / Death Registration Form (CRS Format 1 & 2)</div>
+        </div>
+      </a>
+
+      <!-- Static Form 3 -->
+      <a class="form-list-item" href="edistrict-swaghoshna-patra.html">
+        <div style="font-size:32px; flex-shrink:0;">✍️</div>
+        <div class="form-list-title">
+          <div class="hi">ई-डिस्ट्रिक्ट स्वप्रमाणित घोषणा पत्र (लाइव जनरेटर)</div>
+          <div class="en">e-District Swaghoshna Patra (Self Declaration Generator)</div>
+        </div>
+      </a>
+
+      <!-- Static Form 4 -->
+      <a class="form-list-item" href="download.html?title=Old%20Age%20Pension%20Application%20Form&type=pdf">
+        <div style="font-size:32px; flex-shrink:0;">👴</div>
+        <div class="form-list-title">
+          <div class="hi">वृद्धावस्था पेंशन ऑफलाइन आवेदन प्रपत्र</div>
+          <div class="en">Old Age (Vridhavastha) Pension Offline Format (SSP-UP)</div>
+        </div>
+      </a>
+
+      <!-- Static Form 5 -->
+      <a class="form-list-item" href="download.html?title=Divyang%20Pension%20Format&type=pdf">
+        <div style="font-size:32px; flex-shrink:0;">♿</div>
+        <div class="form-list-title">
+          <div class="hi">दिव्यांग (विकलांग) पेंशन आवेदन प्रपत्र</div>
+          <div class="en">Divyang Pension Application Format</div>
+        </div>
+      </a>
+
+      <!-- Static Form 6 -->
+      <a class="form-list-item" href="download.html?title=Widow%20Pension%20Format&type=pdf">
+        <div style="font-size:32px; flex-shrink:0;">👩</div>
+        <div class="form-list-title">
+          <div class="hi">निराश्रित महिला (विधवा) पेंशन प्रपत्र</div>
+          <div class="en">Widow Pension Application Format</div>
+        </div>
+      </a>
+
+      <!-- Static Form 7 -->
+      <a class="form-list-item" href="download.html?title=Ration%20Card%20Correction%20Form&type=pdf">
+        <div style="font-size:32px; flex-shrink:0;">🌾</div>
+        <div class="form-list-title">
+          <div class="hi">राशन कार्ड नाम संशोधन / यूनिट जोड़ना प्रपत्र</div>
+          <div class="en">Ration Card Unit Addition / Correction Form (FCS UP)</div>
+        </div>
+      </a>
+
+      <!-- Static Form 8 -->
+      <a class="form-list-item" href="download.html?title=Gram%20Panchayat%20Character%20Certificate&type=pdf">
+        <div style="font-size:32px; flex-shrink:0;">🎖️</div>
+        <div class="form-list-title">
+          <div class="hi">ग्राम प्रधान सामान्य चरित्र / निवास प्रमाण प्रारूप</div>
+          <div class="en">Gram Pradhan Character & Residence Verification Format</div>
+        </div>
+      </a>
+
     </div>
 
-</main>
+  </main>
 
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
+  <!-- RELATED LINKS SECTION -->
+  <section class="related-links-section" style="margin-top: 30px;">
+    <div style="max-width: var(--maxw); margin: 0 auto;">
+      <h3>संबंधित अनुभाग (Related Links)</h3>
+      <div class="rl-cards">
+        <a href="panchayat-sahayak-notices.html" class="rl-card"><span class="rl-card-icon">📋</span> शासनादेश व आदेश</a>
+        <a href="panchayat-sahayak-salary-status.html" class="rl-card"><span class="rl-card-icon">✅</span> सैलरी स्टेटस चेक</a>
+        <a href="edistrict-swaghoshna-patra.html" class="rl-card"><span class="rl-card-icon">✍️</span> स्वघोषणा पत्र जनरेटर</a>
+        <a href="document-book-maker.html" class="rl-card"><span class="rl-card-icon">📘</span> डॉक्यूमेंट बुक मेकर</a>
+        <a href="panchayat-sahayak-salary-calculator.html" class="rl-card"><span class="rl-card-icon">💰</span> सैलरी कैलकुलेटर</a>
+        <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> मुख्य पृष्ठ (Home)</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:960px; margin:24px auto 10px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
+    <strong>⚠️ Disclaimer:</strong> This website (Panchayat Sahayak Portal) <strong style="text-decoration:underline;">is NOT an official government website</strong>. It is not affiliated, associated, or endorsed by the Panchayati Raj Department (PRD) or the Government of Uttar Pradesh in any way. It is created solely for informational and educational purposes.
+  </div>
+
   <footer class="premium-footer">
     <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
       <div class="footer-brand">

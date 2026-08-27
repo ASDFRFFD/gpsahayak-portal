@@ -172,12 +172,74 @@
           </div>
         </div>
 
-        <!-- THREAD LIST FEED -->
+        <!-- COMMUNITY DISCLAIMER BANNER -->
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; font-size: 13px; color: #1e40af; line-height: 1.5;">
+          ℹ️ <strong>चर्चा मंच सूचना:</strong> यह फोरम पंचायत सहायकों के आपसी तकनीकी अनुभव साझा करने हेतु है। यहां दी गई जानकारियां साथी ऑपरेटरों के व्यवहारिक अनुभव पर आधारित हैं।
+        </div>
+
+        <!-- THREAD LIST FEED (Static Fallback + Firestore Hydrated) -->
         <div class="thread-list" id="threadListFeed">
-          <!-- Live Loader -->
-          <div style="text-align: center; padding: 40px; color: var(--text-muted); font-weight: 600;">
-            ⏳ चर्चा सूची लोड हो रही है...
+          
+          <!-- Static Solved Thread 1 -->
+          <div class="thread-card" style="background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:18px; margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span style="background:#fef2f2; color:#dc2626; padding:3px 8px; border-radius:4px; font-size:11px; font-weight:700;">DSC डोंगल</span>
+              <span style="font-size:12px; color:#64748b;">तकनीकी समाधान ✅</span>
+            </div>
+            <h4 style="margin:0 0 8px 0; font-size:15px; color:#1e293b; font-weight:700;">e-Gram Swaraj FTO साइनिंग में "Token Not Found / DSC Plugin Error" का समाधान</h4>
+            <p style="font-size:13px; color:#475569; margin:0 0 10px 0; line-height:1.6;">
+              यदि ई-ग्राम स्वराज पर प्रधान या सचिव का डोंगल नहीं पकड़ रहा है, तो पहले <code>DSC Signer Service</code> को Task Manager से Restart करें और सुनिश्चित करें कि सही ड्राइवर (ePass2003 / ProxKey CSP) इंस्टॉल है।
+            </p>
+            <div style="font-size:12px; color:#0f766e; font-weight:600;">
+              🔗 विवरण देखें: <a href="panchayat-sahayak-software-download.html" style="color:#0f766e; text-decoration:underline;">डोंगल ड्राइवर संदर्शिका</a>
+            </div>
           </div>
+
+          <!-- Static Solved Thread 2 -->
+          <div class="thread-card" style="background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:18px; margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span style="background:#f0fdf4; color:#16a34a; padding:3px 8px; border-radius:4px; font-size:11px; font-weight:700;">e-District</span>
+              <span style="font-size:12px; color:#64748b;">अपलोड गाइड ✅</span>
+            </div>
+            <h4 style="margin:0 0 8px 0; font-size:15px; color:#1e293b; font-weight:700;">ई-डिस्ट्रिक्ट पोर्टल पर स्वघोषणा पत्र व फोटो अपलोड में "Invalid File Size" का समाधान</h4>
+            <p style="font-size:13px; color:#475569; margin:0 0 10px 0; line-height:1.6;">
+              ई-डिस्ट्रिक्ट पर फोटो अधिकतम 50KB और स्वघोषणा पत्र अधिकतम 100KB (JPG फॉर्मेट) में होना चाहिए। यदि साइज अधिक है तो पोर्टल एरर देता है।
+            </p>
+            <div style="font-size:12px; color:#0f766e; font-weight:600;">
+              🔗 टूल उपयोग करें: <a href="panchayat-sahayak-image-tools.html" style="color:#0f766e; text-decoration:underline;">इमेज रिसाइज़र व कंप्रेसर</a>
+            </div>
+          </div>
+
+          <!-- Static Solved Thread 3 -->
+          <div class="thread-card" style="background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:18px; margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span style="background:#eff6ff; color:#2563eb; padding:3px 8px; border-radius:4px; font-size:11px; font-weight:700;">PFMS & सैलरी</span>
+              <span style="font-size:12px; color:#64748b;">वेतन गाइड ✅</span>
+            </div>
+            <h4 style="margin:0 0 8px 0; font-size:15px; color:#1e293b; font-weight:700;">मानदेय FTO पास होने के बाद बैंक खाते में क्रेडिट न होने पर DBT स्थिति कैसे जांचें?</h4>
+            <p style="font-size:13px; color:#475569; margin:0 0 10px 0; line-height:1.6;">
+              यदि FTO स्वीकृत है परंतु मानदेय नहीं आया, तो PFMS DBT पोर्टल पर आधार लिंकिंग और NPCI स्टेटस जांचें। कई बार बैंक विलय के कारण IFSC इनवैलिड हो जाता है।
+            </p>
+            <div style="font-size:12px; color:#0f766e; font-weight:600;">
+              🔗 स्टेटस चेक करें: <a href="panchayat-sahayak-salary-status.html" style="color:#0f766e; text-decoration:underline;">सैलरी स्टेटस ट्रैकर</a>
+            </div>
+          </div>
+
+          <!-- Static Solved Thread 4 -->
+          <div class="thread-card" style="background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:18px; margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span style="background:#faf5ff; color:#7c3aed; padding:3px 8px; border-radius:4px; font-size:11px; font-weight:700;">सामान्य</span>
+              <span style="font-size:12px; color:#64748b;">कार्यालय सहायता ✅</span>
+            </div>
+            <h4 style="margin:0 0 8px 0; font-size:15px; color:#1e293b; font-weight:700;">ग्राम सचिवालय में टाइपिंग व पत्र निर्माण हेतु मानक फॉन्ट</h4>
+            <p style="font-size:13px; color:#475569; margin:0 0 10px 0; line-height:1.6;">
+              शासकीय पत्राचार में Unicode (Mangal) फॉन्ट का उपयोग अनिवार्य है ताकि सभी कंप्यूटरों में टेक्स्ट सही दिखे।
+            </p>
+            <div style="font-size:12px; color:#0f766e; font-weight:600;">
+              🔗 एडिटर खोलें: <a href="hindi-office-editor.html" style="color:#0f766e; text-decoration:underline;">हिंदी ऑफिस एडिटर</a>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -206,12 +268,12 @@
         <div class="forum-sidebar-card">
           <h3>📊 मंच सांख्यिकी (Stats)</h3>
           <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; color: var(--text-main);">
-            <span>कुल सवाल (Threads):</span>
-            <span id="statTotalThreads">0</span>
+            <span>सुलझे सवाल (Guides):</span>
+            <span id="statTotalThreads">4</span>
           </div>
           <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 10px;">
-            <span>कुल उत्तर (Replies):</span>
-            <span id="statTotalReplies">0</span>
+            <span>सामुदायिक मंच:</span>
+            <span id="statTotalReplies">सक्रिय</span>
           </div>
         </div>
 

@@ -244,76 +244,98 @@
     </div>
   </nav>
 
-  
-  
+  <main class="premium-page-container" style="max-width: 900px; margin: 40px auto; padding: 0 16px;">
+    <h1 class="premium-page-title" style="text-align: center; margin-bottom: 8px;">संपर्क एवं सहायता केंद्र (Contact Us)</h1>
+    <p style="text-align: center; color: var(--text-muted); font-size: 15px; margin-bottom: 36px;">
+      यदि आपके पास कोई तकनीकी समस्या, टूल सुझाव, या सामग्री सुधार (Editorial Correction) का अनुरोध है, तो कृपया हमसे संपर्क करें।
+    </p>
 
-
-
-  
-  <main class="premium-page-container">
-    <h1 class="premium-page-title">संपर्क करें (Contact Us)</h1>
-    <div class="premium-content">
-      <p>यदि आपके पास कोई प्रतिक्रिया है, नए टूल का सुझाव है, या आप पोर्टल पर किसी समस्या का सामना कर रहे हैं, तो कृपया हमसे संपर्क करें।</p>
+    <!-- CONTACT CHANNELS CARDS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 36px;">
+      <div style="background: white; padding: 26px 20px; border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); text-align: center;">
+        <div style="font-size: 36px; margin-bottom: 10px;">📧</div>
+        <h3 style="margin-bottom: 6px; color: var(--primary); font-size: 17px;">Email Support</h3>
+        <p style="font-weight: 700; color: var(--accent); font-size: 16px; margin: 4px 0;"><a href="mailto:psportalup@gmail.com" style="color: var(--accent); text-decoration: none;">psportalup@gmail.com</a></p>
+        <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 6px;">हम 24-48 कार्य घंटों के भीतर जवाब देने का प्रयास करते हैं।</p>
+      </div>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0;">
-        <div style="background: white; padding: 30px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); text-align: center;">
-          <div style="font-size: 40px; margin-bottom: 15px;">📧</div>
-          <h3 style="margin-bottom: 10px; color: var(--primary);">Email Support</h3>
-          <p style="font-weight: 700; color: var(--accent); font-size: 18px;">psportalup@gmail.com</p>
-          <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">हम 24-48 घंटों के भीतर जवाब देने का प्रयास करते हैं।</p>
-        </div>
-        
-        <div style="background: white; padding: 30px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); text-align: center;">
-          <div style="font-size: 40px; margin-bottom: 15px;">💬</div>
-          <h3 style="margin-bottom: 10px; color: var(--primary);">Social Media</h3>
-          <p style="font-size: 14px; margin-bottom: 15px;">ताजा अपडेट के लिए हमारे टेलीग्राम और व्हाट्सएप चैनल से जुड़ें।</p>
-          <div style="display: flex; justify-content: center; gap: 15px;">
-             <a href="#" style="background: #25D366; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 13px;">WhatsApp</a>
-             <a href="#" style="background: #0088cc; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 13px;">Telegram</a>
+      <div style="background: white; padding: 26px 20px; border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); text-align: center;">
+        <div style="font-size: 36px; margin-bottom: 10px;">📍</div>
+        <h3 style="margin-bottom: 6px; color: var(--primary); font-size: 17px;">Regional Scope</h3>
+        <p style="font-weight: 700; color: #1e293b; font-size: 15px; margin: 4px 0;">उत्तर प्रदेश (Uttar Pradesh, India)</p>
+        <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 6px;">58,000+ ग्राम सचिवालयों हेतु स्वतंत्र शैक्षणिक पोर्टल।</p>
+      </div>
+    </div>
+
+    <!-- STRUCTURED FEEDBACK & CORRECTION FORM -->
+    <div style="background: white; border: 1px solid var(--border); border-radius: 16px; padding: 30px; box-shadow: var(--shadow-sm); margin-bottom: 30px;">
+      <h3 style="color: var(--primary); font-size: 18px; font-weight: 800; margin-top: 0; margin-bottom: 16px;">
+        📝 संदेश / सुझाव / सुधार अनुरोध फॉर्म
+      </h3>
+
+      <form id="contactFeedbackForm" onsubmit="handleContactSubmit(event)">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: 700; color: #475569; margin-bottom: 6px;">आपका नाम (Full Name) *</label>
+            <input type="text" id="c-name" required placeholder="उदा: अमित कुमार" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: 700; color: #475569; margin-bottom: 6px;">ईमेल पता (Email Address) *</label>
+            <input type="email" id="c-email" required placeholder="उदा: name@example.com" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
           </div>
         </div>
-      </div>
 
-      <div style="background: #fff8f1; padding: 20px; border-radius: 12px; border-left: 5px solid var(--accent); font-size: 14px; color: #854d0e;">
-        <strong>⚠️ महत्वपूर्ण सूचना:</strong> कृपया इस ईमेल पर कोई भी गोपनीय सरकारी दस्तावेज या व्यक्तिगत पहचान पत्र (आधार, पैन आदि) न भेजें। यह एक स्वतंत्र सहायता पोर्टल है।
-      </div>
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 13px; font-weight: 700; color: #475569; margin-bottom: 6px;">संपर्क का उद्देश्य (Category) *</label>
+          <select id="c-category" required style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box; background: white;">
+            <option value="Tool Feedback">🛠️ टूल सुझाव व प्रतिक्रिया (Tool Feedback)</option>
+            <option value="Content Correction">📋 सामग्री सुधार अनुरोध (Editorial / Fact Correction)</option>
+            <option value="Bug Report">🐛 तकनीकी बग / पोर्टल समस्या रिपोर्ट (Bug Report)</option>
+            <option value="General Inquiry">ℹ️ सामान्य पूछताछ (General Inquiry)</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; font-size: 13px; font-weight: 700; color: #475569; margin-bottom: 6px;">संदेश विवरण (Message Details) *</label>
+          <textarea id="c-message" required rows="4" placeholder="कृपया अपना संदेश या सुझाव विस्तार से लिखें..." style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box; resize: vertical; line-height: 1.6;"></textarea>
+        </div>
+
+        <button type="submit" id="c-submit-btn" style="background: var(--primary); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; transition: 0.2s;">
+          ✉️ संदेश भेजें (Send Message)
+        </button>
+
+        <div id="c-success-msg" style="display: none; margin-top: 16px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 12px 16px; border-radius: 8px; font-size: 14px;">
+          ✅ आपका संदेश तैयार हो गया है! यदि ईमेल क्लाइंट नहीं खुलता है, तो आप सीधे <strong>psportalup@gmail.com</strong> पर ईमेल भेज सकते हैं।
+        </div>
+      </form>
+    </div>
+
+    <!-- SENSITIVE DATA WARNING -->
+    <div style="background: #fff8f1; padding: 18px 22px; border-radius: 12px; border-left: 5px solid var(--accent); font-size: 13.5px; color: #854d0e; line-height: 1.6;">
+      <strong>⚠️ महत्वपूर्ण गोपनीयता सूचना (Privacy Notice):</strong> कृपया हमें कोई भी गोपनीय सरकारी दस्तावेज, व्यक्तिगत पहचान पत्र (आधार कार्ड, पैन कार्ड), या बैंकिंग पासवर्ड न भेजें। यह एक स्वतंत्र शैक्षणिक एवं सहायता पोर्टल है।
     </div>
   </main>
 
-  
-    <section class="related-links-section">
+  <!-- RELATED LINKS SECTION -->
+  <section class="related-links-section">
     <div style="max-width: var(--maxw); margin: 0 auto;">
       <h3>संबंधित जानकारियाँ (Related Links)</h3>
       <div class="rl-cards">
-        <a href="panchayat-sahayak-salary-calculator.html" class="rl-card"><span class="rl-card-icon">💰</span> सैलरी कैलकुलेटर</a>
-        <a href="panchayat-list-builder.html" class="rl-card"><span class="rl-card-icon">⚡</span> Quick List Builder</a>
-        <a href="gram-panchayat-yojana-list.html" class="rl-card"><span class="rl-card-icon">🏘️</span> ग्राम पंचायत योजनाएं</a>
-        <a href="panchayat-sahayak-forms-pdfs.html" class="rl-card"><span class="rl-card-icon">📄</span> PDF Forms</a>
-        <a href="panchayat-sahayak-work-register.html" class="rl-card"><span class="rl-card-icon">📋</span> Work Register</a>
-        <a href="panchayat-sahayak-salary-status.html" class="rl-card"><span class="rl-card-icon">✅</span> Salary Status</a>
-        <a href="panchayat-sahayak-image-tools.html" class="rl-card"><span class="rl-card-icon">🖼️</span> Image Tools</a>
-        <a href="panchayat-sahayak-all-portals.html" class="rl-card"><span class="rl-card-icon">🌐</span> सभी Portals</a>
-        <a href="blog.html" class="rl-card"><span class="rl-card-icon">📰</span> Blog</a>
+        <a href="about.html" class="rl-card"><span class="rl-card-icon">ℹ️</span> About Portal</a>
+        <a href="editorial-policy.html" class="rl-card"><span class="rl-card-icon">📋</span> Editorial Policy</a>
+        <a href="privacy.html" class="rl-card"><span class="rl-card-icon">🔒</span> Privacy Policy</a>
+        <a href="disclaimer.html" class="rl-card"><span class="rl-card-icon">⚠️</span> Disclaimer</a>
+        <a href="blog.html" class="rl-card"><span class="rl-card-icon">📝</span> Blog</a>
         <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> Home Page</a>
       </div>
     </div>
   </section>
+
   <div style="max-width:960px; margin:24px auto 10px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
     <strong>⚠️ Disclaimer:</strong> This website (Panchayat Sahayak Portal) <strong style="text-decoration:underline;">is NOT an official government website</strong>. It is not affiliated, associated, or endorsed by the Panchayati Raj Department (PRD) or the Government of Uttar Pradesh in any way. It is created solely for informational and educational purposes.
   </div>
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
+
+  <!-- PREMIUM FOOTER -->
   <footer class="premium-footer">
     <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
       <div class="footer-brand">
@@ -363,38 +385,22 @@
     </div>
   </footer>
 
-
-  <div id="pdfModal"
-    style="display:none;position:fixed;inset:0;background:rgba(3,6,15,0.6);z-index:9999;align-items:center;justify-content:center;padding:18px;">
-    <div
-      style="width:100%;max-width:920px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 40px 120px rgba(3,10,20,0.6);">
-      <div
-        style="display:flex;justify-content:flex-end;padding:8px;background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0));">
-        <button id="pdfModalClose"
-          style="background:transparent;border:0;font-size:20px;padding:6px 10px;cursor:pointer;color:#07203a">✕</button>
-      </div>
-      <iframe id="pdfModalIframe" src="" style="width:100%;height:70vh;border:0;background:#fff"
-        title="Document preview"></iframe>
-    </div>
-  </div>
-
   <script>
-    (function () {
-      'use strict';
-      // Native HTML anchor tags handle the Service Cards completely now.
-      // --- PDF MODAL LOGIC ---
-      window.openNotice = function (btn) {
-        // (Simple alert for demo, replace with real logic if needed)
-        alert("PDF Preview feature active!");
-      };
-      window.openForm = function (btn) {
-        window.location.href = 'panchayat-sahayak-forms-pdfs.html';
-      };
-      document.getElementById('pdfModalClose').addEventListener('click', function () {
-        document.getElementById('pdfModal').style.display = 'none';
-      });
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('c-name').value;
+      const email = document.getElementById('c-email').value;
+      const category = document.getElementById('c-category').value;
+      const message = document.getElementById('c-message').value;
 
-    })();
+      const subject = encodeURIComponent(`[Portal Contact] ${category} - ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCategory: ${category}\n\nMessage:\n${message}`);
+
+      // Open mailto link
+      window.location.href = `mailto:psportalup@gmail.com?subject=${subject}&body=${body}`;
+
+      document.getElementById('c-success-msg').style.display = 'block';
+    }
   </script>
   <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -402,7 +408,6 @@
     }
   </script>
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  
-    <script src="auth-nav.js" defer></script>
+  <script src="auth-nav.js" defer></script>
 </body>
 </html>

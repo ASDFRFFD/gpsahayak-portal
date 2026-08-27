@@ -132,78 +132,224 @@
 
 
 
-  <main class="page">
+  <main class="page" id="main-content" style="max-width:1200px; margin:0 auto; padding:20px 16px;">
 
-    <div class="dl-card">
-      <div class="dl-header-strip">
-        <div class="dl-icon" id="fileIcon">📄</div>
-        <div>
-          <div class="dl-fileName" id="fileName">फ़ाइल लोड हो रही है...</div>
-          <div style="font-size:12px; color:#666; margin-top:3px;" id="fileType">Panchayat Sahayak Portal Document</div>
-        </div>
-      </div>
-
-      <div class="dl-body">
-        <div class="captcha-box">
-          <div class="captcha-label">सत्यापन आवश्यक (Verification Required)</div>
-          <p style="font-size:12px; color:#555; margin-bottom:10px;">कृपया डाउनलोड अनलॉक करने के लिए नीचे दिए गए गणितीय प्रश्न को हल करें।</p>
-
-          <div class="captcha-row">
-            <div class="captcha-q" id="captchaQ">? + ? = ?</div>
-            <input type="number" class="captcha-ans" id="captchaAns" placeholder="उत्तर दें" autocomplete="off">
-            <button class="refresh" onclick="newCaptcha()" title="नया सवाल बदलें">🔄 Refresh</button>
-          </div>
-          <div class="captcha-feedback" id="captchaFb"></div>
-        </div>
-
-        <a class="dl-btn locked" id="dlBtn" href="#" download>
-          🔒 सुरक्षित डाउनलोड (Locked)
-        </a>
-        <div class="lock-hint" id="lockHint">कैप्चा हल करने के बाद बटन सक्रिय होगा।</div>
-
-      </div>
+    <div class="breadcrumb" style="margin-bottom:16px;">
+      <a href="index.html">होम</a> <span>»</span>
+      <span>सॉफ्टवेयर एवं ड्राइवर डायरेक्टरी (Software Drive)</span>
     </div>
 
-</main>
+    <!-- HERO HEADER -->
+    <div class="section-head" style="margin-bottom:20px; border-bottom:none;">
+      <h1 style="color:var(--primary); font-weight:800; font-size:26px; margin:0 0 10px 0; font-family:'Outfit',sans-serif;">पंचायत सहायक सॉफ्टवेयर एवं ड्राइवर हब (Software & Drivers)</h1>
+      <p style="color:var(--text-muted); font-size:14px; font-weight:500; line-height:1.6; margin:0;">उत्तर प्रदेश ग्राम सचिवालय एवं सीएससी संचालन हेतु आवश्यक प्रमाणित बायोमेट्रिक ड्राइवर्स (Mantra, Morpho), डिजिटल सिग्नेचर (DSC) टोकन सॉफ्टवेयर, हिंदी टाइपिंग टूल्स एवं इंस्टॉलेशन गाइड — आधिकारिक स्रोतों के साथ।</p>
+    </div>
 
-  
-  
-    
-  
-  
-    <section class="related-links-section">
+    <!-- SAFETY & SOURCE VERIFICATION NOTICE -->
+    <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-left:4px solid #16a34a; border-radius:10px; padding:14px 18px; margin-bottom:28px; font-size:13.5px; line-height:1.6; color:#166534;">
+      <strong>🛡️ सुरक्षा एवं प्रामाणिकता सूचना:</strong> यह पोर्टल केवल आधिकारिक डेवलपर्स एवं निर्माताओं (जैसे Mantra Softech, Idemia, UIDAI, Microsoft) की अधिकृत वेबसाइट्स के डाउनलोड लिंक्स व इंस्टॉलेशन प्रक्रिया की जानकारी प्रदान करता है। हम किसी भी थर्ड-पार्टी मॉडिफाइड या अनवेरिफाइड सॉफ्टवेयर को होस्ट नहीं करते।
+    </div>
+
+    <!-- CATEGORY 1: BIOMETRIC RD SERVICE DRIVERS -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:18px; border-bottom:2px solid #f1f5f9; padding-bottom:12px;">
+        <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin:0; display:flex; align-items:center; gap:8px;">
+          <span>👆</span> बायोमेट्रिक आरडी सर्विस एवं ड्राइवर्स (Biometric Drivers)
+        </h2>
+        <span style="font-size:12px; background:#e0f2fe; color:#0369a1; padding:4px 10px; border-radius:999px; font-weight:700;">UIDAI L0 / L1 Verified</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px;">
+        
+        <!-- Mantra MFS100 Card -->
+        <div style="border:1px solid #e2e8f0; border-radius:12px; padding:20px; background:#f8fafc; display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
+              <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:0;">Mantra MFS100 RD Service & Driver</h3>
+              <span style="font-size:11px; font-weight:700; background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:6px;">Official</span>
+            </div>
+            <p style="font-size:13px; color:#475569; line-height:1.6; margin-bottom:12px;"><strong>उपयोग:</strong> पीएम किसान ई-केवाईसी, आयुष्मान कार्ड, ई-डिस्ट्रिक्ट व सीएससी सेवाओं में फिंगरप्रिंट सत्यापन।</p>
+            <ul style="font-size:12.5px; color:#64748b; padding-left:18px; margin:0 0 16px 0; line-height:1.7;">
+              <li><strong>सपोर्टेड डिवाइस:</strong> Mantra MFS100 Optical Fingerprint Scanner</li>
+              <li><strong>ऑपरेटिंग सिस्टम:</strong> Windows 7 / 8 / 10 / 11 (32/64 bit)</li>
+              <li><strong>निर्माता/डेवलपर:</strong> Mantra Softech India Pvt. Ltd.</li>
+            </ul>
+          </div>
+          <div>
+            <a href="https://download.mantratecapp.com/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; gap:8px; background:var(--primary); color:#ffffff; text-decoration:none; padding:10px 16px; border-radius:8px; font-weight:700; font-size:13px; transition:var(--transition);">
+              🌐 आधिकारिक Mantra डाउनलोड पोर्टल पर जाएं ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Morpho MSO 1300 E Card -->
+        <div style="border:1px solid #e2e8f0; border-radius:12px; padding:20px; background:#f8fafc; display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
+              <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:0;">Morpho MSO 1300 E2/E3 RD Service</h3>
+              <span style="font-size:11px; font-weight:700; background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:6px;">Official</span>
+            </div>
+            <p style="font-size:13px; color:#475569; line-height:1.6; margin-bottom:12px;"><strong>उपयोग:</strong> आधार ऑथेंटिकेशन, बैंकिंग कॉरेस्पोंडेंट (BC) व सरकारी योजनाओं में बायोमेट्रिक पहचान।</p>
+            <ul style="font-size:12.5px; color:#64748b; padding-left:18px; margin:0 0 16px 0; line-height:1.7;">
+              <li><strong>सपोर्टेड डिवाइस:</strong> Safran Morpho MSO 1300 E, E2, E3</li>
+              <li><strong>ऑपरेटिंग सिस्टम:</strong> Windows 8.1 / 10 / 11</li>
+              <li><strong>निर्माता/डेवलपर:</strong> IDEMIA / RD Service Online</li>
+            </ul>
+          </div>
+          <div>
+            <a href="https://rdserviceonline.com/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; gap:8px; background:var(--primary); color:#ffffff; text-decoration:none; padding:10px 16px; border-radius:8px; font-weight:700; font-size:13px; transition:var(--transition);">
+              🌐 आधिकारिक Morpho RD Service पोर्टल ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Startek FM220 Card -->
+        <div style="border:1px solid #e2e8f0; border-radius:12px; padding:20px; background:#f8fafc; display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
+              <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:0;">Startek FM220 / FM220U RD Driver</h3>
+              <span style="font-size:11px; font-weight:700; background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:6px;">Official</span>
+            </div>
+            <p style="font-size:13px; color:#475569; line-height:1.6; margin-bottom:12px;"><strong>उपयोग:</strong> राशन वितरण (e-PoS), जनसेवा केंद्र व आधार आधारित ई-हस्ताक्षर सत्यापन।</p>
+            <ul style="font-size:12.5px; color:#64748b; padding-left:18px; margin:0 0 16px 0; line-height:1.7;">
+              <li><strong>सपोर्टेड डिवाइस:</strong> Startek FM220 / FM220U</li>
+              <li><strong>ऑपरेटिंग सिस्टम:</strong> Windows 7 / 10 / 11, Android</li>
+              <li><strong>निर्माता/डेवलपर:</strong> Access Computech Pvt. Ltd.</li>
+            </ul>
+          </div>
+          <div>
+            <a href="https://www.acpl.ind.in/download.html" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; gap:8px; background:var(--primary); color:#ffffff; text-decoration:none; padding:10px 16px; border-radius:8px; font-weight:700; font-size:13px; transition:var(--transition);">
+              🌐 आधिकारिक Startek सपोर्ट साइट ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CATEGORY 2: DIGITAL SIGNATURE (DSC) TOKEN SOFTWARE -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:18px; border-bottom:2px solid #f1f5f9; padding-bottom:12px;">
+        <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin:0; display:flex; align-items:center; gap:8px;">
+          <span>🔑</span> डिजिटल सिग्नेचर टोकन ड्राइवर्स (DSC Token Software)
+        </h2>
+        <span style="font-size:12px; background:#fef3c7; color:#92400e; padding:4px 10px; border-radius:999px; font-weight:700;">e-GramSwaraj & PFMS</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px;">
+        
+        <!-- ePass 2003 Card -->
+        <div style="border:1px solid #e2e8f0; border-radius:12px; padding:20px; background:#f8fafc;">
+          <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:0 0 8px 0;">ePass 2003 Auto PKI Driver</h3>
+          <p style="font-size:13px; color:#475569; line-height:1.6; margin-bottom:12px;">ग्राम प्रधान एवं पंचायत सचिव के DSC डोंगल (ePass 2003) को कंप्यूटर में एक्टिवेट करने का सॉफ्टवेयर। ई-ग्राम स्वराज पर FTO अप्रूवल के लिए अनिवार्य।</p>
+          <div style="font-size:12.5px; color:#64748b; margin-bottom:14px;"><strong>डेवलपर:</strong> Feitian Technologies / HyperPKI</div>
+          <a href="https://hyperpki.com/epass2003-download.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px; color:var(--primary); font-weight:700; font-size:13px; text-decoration:none;">
+            📥 आधिकारिक HyperPKI ePass पेज ↗
+          </a>
+        </div>
+
+        <!-- Watchdata ProxKey Card -->
+        <div style="border:1px solid #e2e8f0; border-radius:12px; padding:20px; background:#f8fafc;">
+          <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:0 0 8px 0;">ProxKey Watchdata USB Token Driver</h3>
+          <p style="font-size:13px; color:#475569; line-height:1.6; margin-bottom:12px;">Watchdata ProxKey / mToken डोंगल के लिए ऑफिशियल मिडलवेयर व ड्राइवर यूटिलिटी। PFMS व DSC Signer कंपैटिबल।</p>
+          <div style="font-size:12.5px; color:#64748b; margin-bottom:14px;"><strong>डेवलपर:</strong> Watchdata Technologies</div>
+          <a href="https://www.proxkey.com/download.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px; color:var(--primary); font-weight:700; font-size:13px; text-decoration:none;">
+            📥 आधिकारिक ProxKey डाउनलोड पोर्टल ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CATEGORY 3: OFFICE & HINDI TYPING TOOLS -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin-top:0; margin-bottom:18px; display:flex; align-items:center; gap:8px;">
+        <span>⌨️</span> हिंदी टाइपिंग एवं ऑफिस यूटिलिटी टूल्स
+      </h2>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+        <div style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:16px;">
+          <h4 style="margin:0 0 6px 0; font-size:15px; color:var(--primary); font-weight:700;">Microsoft Hindi Indic Input 3</h4>
+          <p style="margin:0 0 10px 0; font-size:13px; color:var(--text-muted); line-height:1.6;">सरकारी पोर्टल्स पर यूनिकोड मंगल फॉन्ट (Devanagari Remington GAIL / CBI) टाइपिंग के लिए Microsoft का आधिकारिक टूल।</p>
+          <a href="https://www.microsoft.com/en-in/bhashaindia/downloads.aspx" target="_blank" rel="noopener noreferrer" style="font-size:12.5px; font-weight:700; color:var(--primary); text-decoration:none;">Microsoft Bhashaindia ↗</a>
+        </div>
+
+        <div style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:16px;">
+          <h4 style="margin:0 0 6px 0; font-size:15px; color:var(--primary); font-weight:700;">Adobe Acrobat Reader DC</h4>
+          <p style="margin:0 0 10px 0; font-size:13px; color:var(--text-muted); line-height:1.6;">शासनादेश (GO) पढ़ने, डिजिटल सिग्नेचर वैलिडेट करने और सरकारी फॉर्म्स भरने हेतु मानक PDF रीडर।</p>
+          <a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer" style="font-size:12.5px; font-weight:700; color:var(--primary); text-decoration:none;">Adobe Official Site ↗</a>
+        </div>
+
+        <div style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:16px;">
+          <h4 style="margin:0 0 6px 0; font-size:15px; color:var(--primary); font-weight:700;">GPSahayak Hindi Office Editor</h4>
+          <p style="margin:0 0 10px 0; font-size:13px; color:var(--text-muted); line-height:1.6;">बिना किसी सॉफ्टवेयर इंस्टॉलेशन के सीधे ब्राउज़र में हिंदी लेटर, नोटिस एवं प्रस्ताव पत्र तैयार करें।</p>
+          <a href="hindi-office-editor.html" style="font-size:12.5px; font-weight:700; color:var(--primary); text-decoration:none;">ऑनलाइन एडिटर खोलें →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: STEP-BY-STEP INSTALLATION & TROUBLESHOOTING GUIDE -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin-top:0; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+        <span>🛠️</span> सामान्य एरर्स एवं ट्रबलशूटिंग गाइड (Troubleshooting)
+      </h2>
+
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="border-left:4px solid #ef4444; background:#fef2f2; padding:14px 18px; border-radius:0 8px 8px 0;">
+          <h4 style="margin:0 0 4px 0; font-size:14px; font-weight:700; color:#991b1b;">1. 'Device not connected' / 'RD Service Not Ready' एरर</h4>
+          <p style="margin:0; font-size:13px; color:#7f1d1d; line-height:1.6;">Windows Search में <code>services.msc</code> टाइप करें। लिस्ट में 'Mantra AVDM' या 'Morpho RD Service' ढूंढें और उस पर राइट-क्लिक करके <strong>Restart</strong> करें। इसके बाद डिवाइस को दोबारा USB पोर्ट में लगाएं।</p>
+        </div>
+
+        <div style="border-left:4px solid #f59e0b; background:#fffbeb; padding:14px 18px; border-radius:0 8px 8px 0;">
+          <h4 style="margin:0 0 4px 0; font-size:14px; font-weight:700; color:#92400e;">2. e-GramSwaraj / PFMS पर DSC डोंगल डिटेक्ट न होना</h4>
+          <p style="margin:0; font-size:13px; color:#78350f; line-height:1.6;">सत्यापित करें कि ई-पास या प्रॉक्सकी का टोकन सॉफ्टवेयर बैकग्राउंड में रन कर रहा है या नहीं। साथ ही, Java Runtime Environment (JRE) का लेटेस्ट 32-bit/64-bit वर्जन इंस्टॉल होना चाहिए और ब्राउज़र में पॉप-अप्स अलाउ होने चाहिए।</p>
+        </div>
+
+        <div style="border-left:4px solid #3b82f6; background:#eff6ff; padding:14px 18px; border-radius:0 8px 8px 0;">
+          <h4 style="margin:0 0 4px 0; font-size:14px; font-weight:700; color:#1e40af;">3. Chrome में Localhost SSL सर्टिफिकेट एरर</h4>
+          <p style="margin:0; font-size:13px; color:#1e3a8a; line-height:1.6;">Google Chrome में <code>chrome://flags/#allow-insecure-localhost</code> खोलें और इसे <strong>Enabled</strong> करके ब्राउज़र को Relaunch करें। इससे बायोमेट्रिक आरडी सर्विस के लोकल कॉल्स सुचारू रूप से कार्य करेंगे।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FAQS -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin-top:0; margin-bottom:16px;">❓ अक्सर पूछे जाने वाले प्रश्न (FAQs)</h2>
+
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="border:1px solid var(--border); border-radius:8px; padding:14px;">
+          <h4 style="margin:0 0 6px 0; font-size:14.5px; color:var(--text-main); font-weight:700;">प्र. क्या RD Service सॉफ्टवेयर का कोई वार्षिक शुल्क (Subscription) होता है?</h4>
+          <p style="margin:0; font-size:13px; color:var(--text-muted); line-height:1.6;">UIDAI सुरक्षा नियमों के तहत Morpho और Startek जैसे कई डिवाइसों में 1 वर्ष या आजीवन RD Service सब्सक्रिप्शन लेना होता है। Mantra MFS100 का ड्राइवर फ्री होता है, लेकिन RD Service वैलिडिटी डिवाइस पैकेज के अनुसार होती है।</p>
+        </div>
+        <div style="border:1px solid var(--border); border-radius:8px; padding:14px;">
+          <h4 style="margin:0 0 6px 0; font-size:14.5px; color:var(--text-main); font-weight:700;">प्र. ग्राम सचिवालय कंप्यूटर में कौन-सा एंटीवायरस या ड्राइवर इस्तेमाल करना चाहिए?</h4>
+          <p style="margin:0; font-size:13px; color:var(--text-muted); line-height:1.6;">हमेशा आधिकारिक निर्माता वेबसाइट से डाउनलोड किए गए ऑरिजिनल ड्राइवर्स का ही प्रयोग करें। पायरेटेड या क्रैक सॉफ्टवेयर इंस्टॉल करने से डेटा सुरक्षा का खतरा रहता है और DSC साइनिंग फेल हो सकती है।</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RELATED LINKS SECTION -->
+  <section class="related-links-section">
     <div style="max-width: var(--maxw); margin: 0 auto;">
-      <h3>संबंधित जानकारियाँ (Related Links)</h3>
+      <h3>संबंधित जानकारियाँ व टूल्स (Related Links)</h3>
       <div class="rl-cards">
-        <a href="panchayat-sahayak-salary-calculator.html" class="rl-card"><span class="rl-card-icon">💰</span> सैलरी कैलकुलेटर</a>
-        <a href="panchayat-list-builder.html" class="rl-card"><span class="rl-card-icon">⚡</span> Quick List Builder</a>
-        <a href="gram-panchayat-yojana-list.html" class="rl-card"><span class="rl-card-icon">🏘️</span> ग्राम पंचायत योजनाएं</a>
-        <a href="panchayat-sahayak-forms-pdfs.html" class="rl-card"><span class="rl-card-icon">📄</span> PDF Forms</a>
-        <a href="panchayat-sahayak-work-register.html" class="rl-card"><span class="rl-card-icon">📋</span> Work Register</a>
-        <a href="panchayat-sahayak-salary-status.html" class="rl-card"><span class="rl-card-icon">✅</span> Salary Status</a>
-        <a href="panchayat-sahayak-image-tools.html" class="rl-card"><span class="rl-card-icon">🖼️</span> Image Tools</a>
-        <a href="panchayat-sahayak-all-portals.html" class="rl-card"><span class="rl-card-icon">🌐</span> सभी Portals</a>
-        <a href="blog.html" class="rl-card"><span class="rl-card-icon">📰</span> Blog</a>
-        <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> Home Page</a>
+        <a href="hindi-office-editor.html" class="rl-card"><span class="rl-card-icon">⌨️</span> हिंदी ऑफिस एडिटर</a>
+        <a href="panchayat-sahayak-pdf-tools.html" class="rl-card"><span class="rl-card-icon">📄</span> PDF रिसाइज व कंप्रेस टूल</a>
+        <a href="panchayat-sahayak-image-tools.html" class="rl-card"><span class="rl-card-icon">🖼️</span> फोटो व साइन रिसाइजर</a>
+        <a href="panchayat-sahayak-forms-pdfs.html" class="rl-card"><span class="rl-card-icon">📑</span> सरकारी फॉर्म्स व फॉर्मेट</a>
+        <a href="panchayat-sahayak-all-portals.html" class="rl-card"><span class="rl-card-icon">🌐</span> सभी विभागीय पोर्टल्स</a>
+        <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> मुख्य पृष्ठ (Home)</a>
       </div>
     </div>
   </section>
+
   <div style="max-width:960px; margin:24px auto 10px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
     <strong>⚠️ Disclaimer:</strong> This website (Panchayat Sahayak Portal) <strong style="text-decoration:underline;">is NOT an official government website</strong>. It is not affiliated, associated, or endorsed by the Panchayati Raj Department (PRD) or the Government of Uttar Pradesh in any way. It is created solely for informational and educational purposes.
   </div>
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
+
+  <!-- PREMIUM FOOTER -->
   <footer class="premium-footer">
     <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
       <div class="footer-brand">
@@ -252,72 +398,6 @@
       <p style="font-size: 11px; margin:0; color: var(--gray-500);">Independent Educational Portal | Not affiliated with Govt. of UP</p>
     </div>
   </footer>
-
-
-  <script>
-    (function () {
-      const p = new URLSearchParams(location.search);
-      const file = p.get('file') || '';
-      const title = p.get('title') || 'Secure File';
-      const type = p.get('type') || 'pdf';
-
-      const icons = { pdf: '📄', software: '💾', aadesh: '📜' };
-      const labels = { pdf: 'PDF Document', software: 'Software / Driver', aadesh: 'Government Order / Notice' };
-
-      document.getElementById('fileName').textContent = decodeURIComponent(title);
-      document.getElementById('fileIcon').textContent = icons[type] || '📄';
-      document.getElementById('fileType').textContent = labels[type] || 'Secure File Download';
-      document.title = decodeURIComponent(title) + ' – Download Setup';
-
-      let correct = 0;
-
-      function newCaptcha() {
-        const a = Math.ceil(Math.random() * 9);
-        const b = Math.ceil(Math.random() * 9);
-        correct = a + b;
-        document.getElementById('captchaQ').textContent = a + ' + ' + b + ' = ?';
-        const inp = document.getElementById('captchaAns');
-        inp.value = '';
-        document.getElementById('captchaFb').textContent = '';
-        document.getElementById('captchaFb').className = 'captcha-feedback';
-        lockBtn();
-      }
-
-      document.getElementById('captchaAns').addEventListener('input', function () {
-        const v = parseInt(this.value, 10);
-        if (isNaN(v)) return;
-        const fb = document.getElementById('captchaFb');
-        if (v === correct) {
-          fb.className = 'captcha-feedback ok';
-          fb.textContent = 'सत्यापन सफल! (Verified successfully)';
-          unlockBtn();
-        } else if (this.value.length >= String(correct).length) {
-          fb.className = 'captcha-feedback err';
-          fb.textContent = 'गलत उत्तर। (Incorrect answer)';
-          lockBtn();
-        }
-      });
-
-      function lockBtn() {
-        const b = document.getElementById('dlBtn');
-        b.className = 'dl-btn locked';
-        b.innerHTML = '🔒 सुरक्षित डाउनलोड (Locked)';
-        document.getElementById('lockHint').style.display = 'block';
-      }
-
-      function unlockBtn() {
-        const b = document.getElementById('dlBtn');
-        b.className = 'dl-btn';
-        b.href = file;
-        b.setAttribute('download', decodeURIComponent(title));
-        b.innerHTML = '⬇️ डाउनलोड शुरू करें (Download Now)';
-        document.getElementById('lockHint').style.display = 'none';
-      }
-
-      newCaptcha();
-      window.newCaptcha = newCaptcha;
-    })();
-  </script>
 
   <script src="auth-nav.js" defer></script>
 </body>

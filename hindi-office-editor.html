@@ -560,6 +560,7 @@ body.dark .a4[contenteditable="true"] { caret-color: #fff; color: #f0f0f0; }
     <div class="rtab" onclick="switchTab('t-layout')">लेआउट</div>
     <div class="rtab" onclick="switchTab('t-template')">टेम्पलेट</div>
     <div class="rtab" onclick="switchTab('t-export')">निर्यात</div>
+    <div class="rtab" onclick="openModal('m-guide')" style="color:#0284c7; font-weight:700;">📖 मार्गदर्शिका (Guide)</div>
   </div>
 
   <!-- HOME TAB -->
@@ -944,6 +945,57 @@ body.dark .a4[contenteditable="true"] { caret-color: #fff; color: #f0f0f0; }
       <button class="btn-secondary" onclick="copyQuickOutput()"><i class="fa fa-copy"></i> आउटपुट कॉपी करें</button>
       <button class="btn-primary" onclick="applyQuickOutputToEditor()"><i class="fa fa-file-import"></i> मुख्य एडिटर में भेजें</button>
       <button class="btn-secondary" onclick="closeModal('m-converter')">बंद करें</button>
+    </div>
+  </div>
+</div>
+
+<!-- Guide / Documentation Modal -->
+<div class="modal-bg" id="m-guide">
+  <div class="modal" style="width: 820px; max-width: 95vw; max-height: 88vh; display: flex; flex-direction: column;">
+    <div class="modal-hdr">
+      <h3><i class="fa-solid fa-book-open"></i> हिंदी ऑफिस एडिटर — संपूर्ण उपयोग मार्गदर्शिका</h3>
+      <button class="modal-close-btn" onclick="closeModal('m-guide')">×</button>
+    </div>
+    <div class="modal-body" style="overflow-y: auto; padding: 24px; line-height: 1.8; color: #334155; font-size: 14px;">
+      
+      <h4 style="color: #1e3d6b; font-size: 17px; margin: 0 0 10px 0; font-weight: 700;">1. टूल परिचय एवं कार्यप्रणाली (Overview)</h4>
+      <p>
+        <strong>Hindi Office Editor</strong> उत्तर प्रदेश के पंचायत सहायकों, ग्राम सचिवालय डीईओ और शासकीय टंकणकर्ताओं के लिए डिज़ाइन किया गया एक लाइव <strong>यूनिकोड (Mangal) ⇄ कृतिदेव 010 (Kruti Dev 010)</strong> बाई-डायरेक्शनल वर्ड-प्रोसेसर है।
+        बाएं फलक में आप यूनिकोड हिंदी में टाइप करते हैं और दाएं फलक में यह स्वचालित रूप से लीगेसी कृतिदेव 010 फॉन्ट में रीयल-टाइम परिवर्तित होता रहता है।
+      </p>
+
+      <h4 style="color: #1e3d6b; font-size: 17px; margin: 20px 0 10px 0; font-weight: 700;">2. समर्थित हिंदी टाइपिंग विधियाँ (Supported Input Methods)</h4>
+      <ul style="padding-left: 20px; margin-bottom: 16px;">
+        <li><strong>फोनेटिक (Hinglish ➔ हिंदी):</strong> जब आप अंग्रेजी में <code>namaste</code> टाइप करते हैं, तो टूल स्वतः सुझाव बॉक्स के साथ उसे <code>नमस्ते</code> में बदल देता है (शॉर्टकट: <code>Ctrl + M</code>)।</li>
+        <li><strong>Remington GAIL / InScript कीबोर्ड:</strong> यदि आपके सिस्टम में <em>Microsoft Indic Input 3</em> या <em>Hindi Traditional Keyboard</em> सक्रिय है, तो आप सीधे रेमिंगटन गेल लेआउट में तेज टाइपिंग कर सकते हैं।</li>
+        <li><strong>डायरेक्ट पेस्ट व कन्वर्जन:</strong> किसी भी व्हाट्सएप संदेश, पीडीएफ या वेबसाइट से यूनिकोड या कृतिदेव टेक्स्ट कॉपी करके एडिटर में सीधे पेस्ट करें।</li>
+      </ul>
+
+      <h4 style="color: #1e3d6b; font-size: 17px; margin: 20px 0 10px 0; font-weight: 700;">3. शासकीय पत्र टेम्पलेट्स (Built-in Office Templates)</h4>
+      <p>टेम्पलेट टैब में ग्राम पंचायत के दैनिक कार्यों हेतु 6 उपयोगी प्रारूप उपलब्ध हैं:</p>
+      <ol style="padding-left: 20px; margin-bottom: 16px;">
+        <li><strong>आकस्मिक अवकाश प्रार्थना पत्र:</strong> सचिव/प्रधान को अवकाश आवेदन।</li>
+        <li><strong>कार्यालय सूचना / आदेश:</strong> ग्राम सचिवालय बैठक व सूचना पट्ट आदेश।</li>
+        <li><strong>बकाया मानदेय भुगतान पत्र:</strong> डीपीआरओ महोदय को मानदेय जारी करने हेतु आवेदन।</li>
+        <li><strong>सामान्य शपथ पत्र (Affidavit):</strong> स्वप्रमाणित घोषणा व सत्यापन प्रारूप।</li>
+        <li><strong>अनुभव प्रमाण पत्र:</strong> पंचायत सहायक सह डीईओ सेवा अनुभव पत्र।</li>
+        <li><strong>आपत्ति / शिकायत पत्र:</strong> विभागीय जांच व शिकायत प्रारूप।</li>
+      </ol>
+
+      <h4 style="color: #1e3d6b; font-size: 17px; margin: 20px 0 10px 0; font-weight: 700;">4. यूनिकोड बनाम कृतिदेव 010 में अंतर (Technical Distinction)</h4>
+      <p>
+        <strong>यूनिकोड (Unicode - मंगल):</strong> यह आधुनिक इंटरनेट, मोबाइल, ईमेल और सरकारी पोर्टलों (e-District, PFMS) का मानक फॉन्ट है।<br>
+        <strong>कृतिदेव 010 (Kruti Dev 010):</strong> यह एएससीआईआई (ASCII) आधारित लीगेसी फॉन्ट है जो पुराने सरकारी कार्यालयों और टाइपिंग परीक्षाओं में व्यापक रूप से प्रयुक्त होता है।
+      </p>
+
+      <h4 style="color: #1e3d6b; font-size: 17px; margin: 20px 0 10px 0; font-weight: 700;">5. डेटा प्राइवेसी एवं सुरक्षा (100% Client-Side Privacy)</h4>
+      <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 12px 16px; border-radius: 6px; font-size: 13.5px; color: #166534;">
+        🔒 <strong>गोपनीयता की पूर्ण गारंटी:</strong> आपकी टाइपिंग, ड्राफ्ट किए गए पत्र और कनवर्टेड टेक्स्ट पूरी तरह से आपके ब्राउज़र के <em>LocalStorage</em> में सुरक्षित रहते हैं। किसी भी सरकारी पत्र या गोपनीय जानकारी को हमारे सर्वर पर नहीं भेजा जाता।
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn-primary" onclick="closeModal('m-guide')">समझ गया (Got It)</button>
     </div>
   </div>
 </div>

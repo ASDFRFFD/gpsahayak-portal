@@ -22,48 +22,40 @@
   <style>
     body { background: var(--bg-main); margin:0; font-family: 'Poppins', 'Hind', sans-serif;}
     
-    .download-page { padding: 30px 16px; max-width: 1200px; margin: 0 auto; min-height: 60vh;}
-    .ad-grid { display: grid; grid-template-columns: 250px 1fr 250px; gap: 24px; align-items: start; }
+    .download-page { padding: 30px 16px 50px; max-width: 1000px; margin: 0 auto; min-height: 60vh;}
     
-    @media (max-width: 1000px) {
-       .ad-grid { grid-template-columns: 1fr; }
-       .ad-space.desktop-only { display: none; }
+    .dl-layout { display: grid; grid-template-columns: 1fr 340px; gap: 24px; align-items: start; }
+    
+    @media (max-width: 860px) {
+       .dl-layout { grid-template-columns: 1fr; }
     }
 
-    .ad-space { background: var(--card-bg); width: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg); border: 1px solid var(--border); color: var(--text-muted); font-weight: 600; font-size: 14px; text-align: center; padding: 20px; box-sizing: border-box;}
-    
-    .ad-space.mobile { display: none; min-height: 120px; margin-bottom: 24px;}
-    @media (max-width: 1000px) { .ad-space.mobile { display: flex; } }
-
-    .dl-card { background: var(--white); padding: 30px 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); text-align: center; border: 1px solid var(--border); max-width: 500px; margin: 0 auto; }
+    .dl-card { background: var(--white); padding: 32px 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); text-align: center; border: 1px solid var(--border); }
     .file-icon { font-size: 48px; margin-bottom: 12px; color: var(--primary); display: inline-block;}
     .file-name { font-size: 20px; font-weight: 700; color: var(--text-main); margin: 0 0 6px 0; word-break: break-word; font-family:'Montserrat', sans-serif; line-height: 1.3;}
     .file-meta { color: var(--text-muted); font-size: 13px; margin: 0 0 24px 0; font-weight: 500;}
 
-    .captcha-box { background: var(--bg-main); padding: 24px; border-radius: var(--radius-lg); margin-bottom: 24px; display: inline-block; width: 100%; max-width: 350px; border: 1px solid var(--border); }
-    .c-label { font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 12px; display: block; text-transform: uppercase; letter-spacing: 0.5px;}
+    .captcha-box { background: var(--bg-main); padding: 20px; border-radius: var(--radius-lg); margin-bottom: 20px; display: inline-block; width: 100%; max-width: 360px; border: 1px solid var(--border); box-sizing: border-box;}
+    .c-label { font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 10px; display: block; text-transform: uppercase; letter-spacing: 0.5px;}
     
-    .c-display-area { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px; }
-    .c-text-display { background: var(--white); border: 2px solid var(--border); padding: 10px 24px; font-size: 28px; font-weight: 800; letter-spacing: 6px; color: var(--text-main); border-radius: var(--radius-md); font-family: 'Courier New', monospace; user-select: none; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.02) 10px, rgba(0,0,0,0.02) 20px);}
-    .c-refresh { background: var(--gray-100); border: none; width: 44px; height: 44px; border-radius: var(--radius-md); font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; color: var(--text-main);}
-    .c-refresh:hover { background: var(--border); transform: rotate(90deg);}
+    .c-display-area { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 14px; }
+    .c-text-display { background: var(--white); border: 2px solid var(--border); padding: 8px 20px; font-size: 26px; font-weight: 800; letter-spacing: 6px; color: var(--text-main); border-radius: var(--radius-md); font-family: 'Courier New', monospace; user-select: none;}
+    .c-refresh { background: var(--gray-100); border: 1px solid var(--border); width: 42px; height: 42px; border-radius: var(--radius-md); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; color: var(--text-main);}
+    .c-refresh:hover { background: #e2e8f0; }
 
-    .c-input { width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: var(--radius-md); font-size: 18px; text-align: center; font-weight: 700; outline: none; transition: 0.2s; box-sizing: border-box; letter-spacing: 2px; text-transform: uppercase; color: var(--text-main); background: var(--white);}
-    .c-input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(15,118,110,0.1); }
+    .c-input { width: 100%; padding: 12px 14px; border: 2px solid var(--border); border-radius: var(--radius-md); font-size: 16px; text-align: center; font-weight: 700; outline: none; transition: 0.2s; box-sizing: border-box; letter-spacing: 2px; text-transform: uppercase; color: var(--text-main); background: var(--white);}
+    .c-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(15,118,110,0.1); }
     .c-input.valid { border-color: #10b981; background: #ecfdf5; color: #047857;}
-    
-    /* Subtle invalid state so it's not jarring on initial type */
     .c-input.invalid:not(:placeholder-shown) { border-color: #ef4444; }
 
-    .btn-dl { background: var(--border); color: var(--text-muted); border: none; padding: 16px 32px; font-size: 18px; font-weight: 700; border-radius: var(--radius-lg); width: 100%; max-width: 350px; cursor: not-allowed; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 auto; font-family: 'Poppins', sans-serif;}
-    .btn-dl.active { background: var(--accent); color: var(--white); cursor: pointer; box-shadow: 0 8px 25px rgba(249,115,22,0.3); animation: pulse 2s infinite;}
-    .btn-dl.active:hover { transform: translateY(-3px); background: #ea580c;}
+    .btn-dl { background: var(--border); color: var(--text-muted); border: none; padding: 14px 28px; font-size: 16px; font-weight: 700; border-radius: var(--radius-md); width: 100%; max-width: 360px; cursor: not-allowed; transition: all 0.25s; display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 auto; font-family: 'Poppins', sans-serif;}
+    .btn-dl.active { background: var(--accent); color: var(--white); cursor: pointer; box-shadow: 0 6px 20px rgba(249,115,22,0.25);}
+    .btn-dl.active:hover { background: #ea580c; transform: translateY(-2px);}
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(249,115,22, 0.4); }
-      70% { box-shadow: 0 0 0 15px rgba(249,115,22, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(249,115,22, 0); }
-    }
+    .sidebar-info-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 20px; }
+    .sidebar-info-card h3 { font-size: 15px; font-weight: 700; color: var(--primary); margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px; }
+    .sidebar-info-card ul { padding-left: 18px; margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+    .sidebar-info-card li { margin-bottom: 8px; }
   </style>
   <link rel="canonical" href="https://gpsahayak.in/download.html">
   <meta name="description" content="Download free Android App APK, Software Drivers, PDF Forms and Circulars for UP Panchayat Sahayak.">
@@ -162,85 +154,67 @@
   </nav>
 
   <main class="download-page">
-     <div class="ad-grid">
+     <div class="dl-layout">
          
-         <!-- Left Sidebar Info Box (Desktop Only) -->
-         <div class="ad-space desktop-only" style="border: none; background: var(--card-bg); box-shadow: var(--shadow-sm); padding: 20px; align-items: flex-start; justify-content: flex-start; flex-direction: column;">
-             <div style="width: 100%; border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-bottom: 12px;">
-                 <h3 style="font-size: 14px; font-weight: 800; color: var(--primary); margin:0; text-align: left;">💡 निर्देश (Instructions)</h3>
-             </div>
-             <p style="font-size: 12px; line-height: 1.8; color: var(--text-muted); text-align: left; margin: 0 0 12px 0;">
-                 1. नीचे दिए गए बॉक्स में 5-अक्षरों का कैप्चा कोड दर्ज करें।<br><br>
-                 2. कैप्चा सही होने पर 'Download Now' बटन सक्रिय हो जाएगा।<br><br>
-                 3. फाइल डाउनलोड करने के लिए बटन पर क्लिक करें। यदि कैप्चा स्पष्ट न हो, तो रीफ्रेश बटन (↻) दबाएं।
-             </p>
-         </div>
-
-         <!-- Center Main Content -->
+         <!-- Left / Main Card -->
          <div>
-             <!-- Top Info Alert -->
-             <div class="ad-space mobile" style="border: none; background: var(--accent-light); color: var(--primary); min-height: auto; padding: 12px; align-items: center; justify-content: center; border-radius: var(--radius-md); margin-bottom: 16px;">
-                 <p style="font-size: 11px; font-weight: 700; margin: 0; text-align: center;">ℹ️ फाइल डाउनलोड करने के लिए नीचे दिया गया सुरक्षा कोड सत्यापित करें।</p>
-             </div>
-
              <div class="dl-card">
                  <div class="file-icon" id="fileIcon">📄</div>
                  <h2 class="file-name" id="fileName">Loading File Info...</h2>
-                 <p class="file-meta" id="fileMeta">कृपया डाउनलोड करने के लिए कैप्चा (Captcha) दर्ज करें</p>
+                 <p class="file-meta" id="fileMeta">कृपया डाउनलोड अनलॉक करने के लिए सुरक्षा कोड दर्ज करें</p>
                  
                  <!-- Error state -->
-                 <p id="errorMsg" style="color:#ef4444; font-weight:600; display:none;">⚠️ Invalid Download Link. No file specified.</p>
+                 <p id="errorMsg" style="color:#ef4444; font-weight:600; display:none; background:#fef2f2; padding:12px; border-radius:8px;">⚠️ कोई वैध डाउनलोड लिंक निर्दिष्ट नहीं है। कृपया संबंधित शासनादेश या फॉर्म पेज से पुनः प्रयास करें।</p>
 
                  <div class="captcha-box" id="captchaBox" style="display:none;">
-                     <label class="c-label">Verify to Unlock Download</label>
+                     <label class="c-label">सत्यापन कोड (Security Code)</label>
                      <div class="c-display-area">
                          <div class="c-text-display" id="captchaRef">X2P8N</div>
-                         <button class="c-refresh" onclick="generateCaptcha()" title="Change Captcha">↻</button>
+                         <button class="c-refresh" onclick="generateCaptcha()" title="नया कोड बदलें">↻</button>
                      </div>
-                     <input type="text" id="captchaInput" class="c-input" placeholder="ENTER CAPTCHA HERE" autocomplete="off" onkeyup="verifyCaptcha()">
+                     <input type="text" id="captchaInput" class="c-input" placeholder="कोड यहाँ दर्ज करें" autocomplete="off" onkeyup="verifyCaptcha()">
                  </div>
 
-                 <button class="btn-dl" id="dlBtn" disabled onclick="executeDownload()">
-                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                     <span id="dlText">Captcha Required</span>
-                 </button>
+                 <div>
+                   <button class="btn-dl" id="dlBtn" disabled onclick="executeDownload()">
+                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                       <span id="dlText">कैप्चा सत्यापन आवश्यक</span>
+                   </button>
+                 </div>
                  
-                 <p style="font-size:12px; color:var(--text-muted); margin-top:16px;">SECURE DOWNLOAD PORTAL</p>
-             </div>
-             
-             <!-- Bottom Info Alert -->
-             <div class="ad-space mobile" style="border: none; background: var(--accent-light); color: var(--primary); min-height: auto; padding: 12px; align-items: center; justify-content: center; border-radius: var(--radius-md); margin-top:24px; margin-bottom:0;">
-                 <p style="font-size: 11px; font-weight: 700; margin: 0; text-align: center;">🔒 Secure SSL 256-bit encryption verified</p>
+                 <p style="font-size:12px; color:var(--text-muted); margin-top:20px;">🛡️ सुरक्षित डाउनलोड गेटवे | केवल सार्वजनिक व प्रमाणित प्रपत्र</p>
              </div>
          </div>
 
-         <!-- Right Sidebar Info Box (Desktop Only) -->
-         <div class="ad-space desktop-only" style="border: none; background: var(--card-bg); box-shadow: var(--shadow-sm); padding: 20px; align-items: flex-start; justify-content: flex-start; flex-direction: column;">
-             <div style="width: 100%; border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-bottom: 12px;">
-                 <h3 style="font-size: 14px; font-weight: 800; color: var(--primary); margin:0; text-align: left;">🔒 सुरक्षित डाउनलोड</h3>
+         <!-- Right Sidebar Guides -->
+         <div>
+             <div class="sidebar-info-card">
+                 <h3><span>💡</span> डाउनलोड निर्देश</h3>
+                 <ul>
+                     <li>दिए गए 5-अक्षरों के सुरक्षा कोड को टेक्स्ट बॉक्स में दर्ज करें।</li>
+                     <li>कोड सही सत्यापित होने पर 'डाउनलोड शुरू करें' बटन सक्रिय हो जाएगा।</li>
+                     <li>यदि कोड पढ़ने में कठिनाई हो, तो रीफ्रेश (↻) बटन दबाएं।</li>
+                 </ul>
              </div>
-             <p style="font-size: 12px; line-height: 1.8; color: var(--text-muted); text-align: left; margin: 0 0 12px 0;">
-                 इस पोर्टल पर उपलब्ध सभी फाइलें वायरस-मुक्त और सुरक्षित हैं।<br><br>
-                 सभी शासनादेश व प्रपत्र आधिकारिक सरकारी विभागों (जैसे- Panchayati Raj Department, UP) के पब्लिक डोमेन से संकलित किए गए हैं।
-             </p>
+
+             <div class="sidebar-info-card">
+                 <h3><span>🛡️</span> फाइल सुरक्षा एवं स्रोत</h3>
+                 <ul>
+                     <li>सभी उपलब्ध फाइलें मैलवेयर व वायरस-मुक्त प्रारूप में उपलब्ध कराई जाती हैं।</li>
+                     <li>शासनादेश एवं सरकारी प्रपत्र आधिकारिक स्रोतों (जैसे- upgov.nic.in, egramswaraj.gov.in) के पब्लिक डोमेन से संकलित हैं।</li>
+                     <li>पीडीएफ फाइलों को खोलने के लिए एडोब एक्रोबैट रीडर का उपयोग करें।</li>
+                 </ul>
+             </div>
          </div>
 
      </div>
   </main>
 
+  <div style="max-width:960px; margin:24px auto 10px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
+    <strong>⚠️ Disclaimer:</strong> This website (Panchayat Sahayak Portal) <strong style="text-decoration:underline;">is NOT an official government website</strong>. It is not affiliated, associated, or endorsed by the Panchayati Raj Department (PRD) or the Government of Uttar Pradesh in any way. It is created solely for informational and educational purposes.
+  </div>
+
   <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
   <footer class="premium-footer">
     <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
       <div class="footer-brand">
@@ -294,35 +268,37 @@
       let currentCaptcha = "";
       let targetFileUrl = "";
 
-      // 1. Parse URL to get file and title
       const params = new URLSearchParams(window.location.search);
       const fileUrlParam = params.get('file');
       const fileTitleParam = params.get('title');
       const fileTypeParam = params.get('type') || 'PDF Document';
 
       if(!fileUrlParam) {
-          document.getElementById('fileName').innerText = "File Not Found";
+          document.getElementById('fileName').innerText = "फाइल नहीं मिली (File Not Specified)";
           document.getElementById('fileMeta').innerText = "";
           document.getElementById('errorMsg').style.display = "block";
       } else {
-          document.getElementById('fileName').innerText = fileTitleParam || "Download File";
-          document.getElementById('fileMeta').innerText = fileTypeParam + " • Secure Download";
+          document.getElementById('fileName').innerText = decodeURIComponent(fileTitleParam) || "सुरक्षित फाइल डाउनलोड";
+          document.getElementById('fileMeta').innerText = fileTypeParam + " • सुरक्षित डाउनलोड गेटवे";
           targetFileUrl = decodeURIComponent(fileUrlParam);
           document.getElementById('captchaBox').style.display = "inline-block";
           
-          if(fileTypeParam.toLowerCase() === 'excel' || fileTypeParam.toLowerCase() === 'xls') {
+          if(fileTypeParam.toLowerCase().includes('excel') || fileTypeParam.toLowerCase().includes('xls')) {
               document.getElementById('fileIcon').innerText = "📊";
               document.getElementById('fileIcon').style.color = "#10b981";
-          } else if(fileTypeParam.toLowerCase() === 'doc' || fileTypeParam.toLowerCase() === 'word') {
+          } else if(fileTypeParam.toLowerCase().includes('doc') || fileTypeParam.toLowerCase().includes('word')) {
               document.getElementById('fileIcon').innerText = "📝";
               document.getElementById('fileIcon').style.color = "#2563eb";
+          } else if(fileTypeParam.toLowerCase().includes('apk') || fileTypeParam.toLowerCase().includes('app')) {
+              document.getElementById('fileIcon').innerText = "📱";
+              document.getElementById('fileIcon').style.color = "#10b981";
           }
           
           generateCaptcha();
       }
 
       function generateCaptcha() {
-          const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // Removed ambiguous chars like O, 0, 1, I
+          const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
           let captcha = "";
           for(let i=0; i<5; i++) {
               captcha += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -330,7 +306,6 @@
           currentCaptcha = captcha;
           document.getElementById('captchaRef').innerText = currentCaptcha;
           
-          // Reset UI
           const input = document.getElementById('captchaInput');
           input.value = "";
           input.classList.remove('valid', 'invalid');
@@ -338,7 +313,7 @@
           const btn = document.getElementById('dlBtn');
           btn.disabled = true;
           btn.classList.remove('active');
-          document.getElementById('dlText').innerText = "Captcha Required";
+          document.getElementById('dlText').innerText = "कैप्चा सत्यापन आवश्यक";
       }
 
       function verifyCaptcha() {
@@ -351,7 +326,7 @@
               inputNode.classList.add('valid');
               btn.disabled = false;
               btn.classList.add('active');
-              document.getElementById('dlText').innerText = "Download Now!";
+              document.getElementById('dlText').innerText = "⬇️ डाउनलोड शुरू करें (Download Now)";
           } else {
               inputNode.classList.remove('valid');
               if(val.length >= currentCaptcha.length) {
@@ -361,7 +336,7 @@
               }
               btn.disabled = true;
               btn.classList.remove('active');
-              document.getElementById('dlText').innerText = "Verify Captcha...";
+              document.getElementById('dlText').innerText = "कैप्चा कोड दर्ज करें...";
           }
       }
 

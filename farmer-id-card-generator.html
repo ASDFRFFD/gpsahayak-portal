@@ -1837,9 +1837,163 @@
     <!-- HIDDEN PURE A4 PRINT SHEET CONTAINER (Visible only in @media print) -->
     <div id="a4PrintSheet">
       <!-- Dynamically filled on print trigger -->
-    </div>
-
   </main>
+
+  <!-- COMPREHENSIVE TOOL GUIDE & EXPLANATORY SECTION -->
+  <section class="tool-guide-section" style="max-width: 1240px; margin: 40px auto 60px; padding: 0 16px;">
+    <div style="background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); padding: 36px 30px; line-height: 1.8; color: #334155;">
+      
+      <h2 style="color: #0d5c48; font-size: 24px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">
+        🌾 किसान रजिस्ट्री कार्ड जनरेटर (AgriStack Farmer ID Card) — संपूर्ण उपयोग मार्गदर्शिका
+      </h2>
+
+      <!-- SECTION 1: WHAT IT DOES -->
+      <h3 style="font-size: 18px; color: #0f172a; margin-top: 24px; font-weight: 700;">1. यह टूल क्या करता है और इसका उद्देश्य क्या है?</h3>
+      <p>
+        <strong>AgriStack Farmer Registry Card Generator</strong> उत्तर प्रदेश एवं अन्य राज्यों के पंचायत सहायकों, सीएससी (CSC) वीएलई, और कृषकों के लिए डिज़ाइन किया गया एक प्रिंट-फॉर्मेटिंग टूल है। केंद्र सरकार की डिजिटल कृषि योजना (AgriStack / Digital Public Infrastructure for Agriculture) के अंतर्गत किसानों को 11 अंकों की विशिष्ट 'Farmer ID' और 'Farmer Registry Enrollment ID' आवंटित की जाती है। यह टूल किसान के आधिकारिक रिकॉर्ड, भूलेख खसरा विवरण और पहचान को एक व्यवस्थित, उच्च-गुणवत्ता वाले पॉकेट-साइज कार्ड (Front + Multi-Khasra Back) में संयोजित करता है जिसे A4 शीट या पीवीसी कार्ड पर प्रिंट किया जा सकता है।
+      </p>
+
+      <!-- IMPORTANT DISTINCTION -->
+      <div style="background: #fffbeb; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 8px; margin: 18px 0; font-size: 14px; color: #92400e;">
+        ⚠️ <strong>महत्वपूर्ण स्पष्टीकरण (Important Distinction):</strong> यह टूल केवल एक <em>डिजिटल प्रिंट-फॉर्मेटिंग यूटिलिटी</em> है। यह किसी भी किसान के सरकारी रिकॉर्ड में फेरबदल नहीं करता और न ही यह कृषि मंत्रालय द्वारा सीधे जारी किया जाने वाला आधिकारिक प्लास्टिक कार्ड है। यह किसान के आधिकारिक पंजीकरण विवरण को व्यक्तिगत रिकॉर्ड और सुविधाजनक उपयोग हेतु प्रिंट-रेडी प्रारूप में प्रस्तुत करता है।
+      </div>
+
+      <!-- SECTION 2: WHO BENEFITS -->
+      <h3 style="font-size: 18px; color: #0f172a; margin-top: 28px; font-weight: 700;">2. यह किसके लिए उपयोगी है?</h3>
+      <ul style="padding-left: 20px; margin-bottom: 18px;">
+        <li><strong>पंचायत सहायक एवं ग्राम सचिवालय DEO:</strong> ग्राम पंचायत में एग्रीस्टैक किसान ई-केवाईसी और फार्मर रजिस्ट्री कैंप के दौरान किसानों को तुरंत लेमिनेटेड कार्ड प्रदान करने हेतु।</li>
+        <li><strong>CSC एवं जन सेवा केंद्र संचालक:</strong> किसानों की खाद-बीज सब्सिडी, पीएम किसान सम्मान निधि, और फसली ऋण (KCC) संबंधी रिकॉर्ड को एक कार्ड में प्रिंट करके देने हेतु।</li>
+        <li><strong>स्वयं किसान भाई:</strong> अपने सभी गाटा/खसरा नंबर, कुल क्षेत्रफल और फार्मर आईडी को पॉकेट में सुरक्षित रखने हेतु।</li>
+      </ul>
+
+      <!-- SECTION 3: STEP BY STEP GUIDE -->
+      <h3 style="font-size: 18px; color: #0f172a; margin-top: 28px; font-weight: 700;">3. कार्ड जनरेट करने की चरणबद्ध प्रक्रिया (Step-by-Step Guide)</h3>
+      <ol style="padding-left: 20px; margin-bottom: 20px;">
+        <li><strong>व्यक्तिगत विवरण दर्ज करें:</strong> किसान का नाम एवं पिता/पति का नाम (अंग्रेजी व हिंदी दोनों में), जन्मतिथि, लिंग और जाति वर्ग भरें।</li>
+        <li><strong>पहचान एवं संपर्क संख्या:</strong> मोबाइल नंबर, 12 अंकों का आधार नंबर (सुरक्षा हेतु कार्ड पर स्वतः केवल अंतिम 4 अंक प्रदर्शित होंगे), और एग्रीस्टैक पोर्टल से प्राप्त 11-अंकीय Farmer ID दर्ज करें।</li>
+        <li><strong>निवास पता भरें:</strong> ग्राम, तहसील, जनपद, राज्य और 6-अंकीय पिनकोड दर्ज करें।</li>
+        <li><strong>भूलेख/खसरा विवरण (Land Records):</strong> राज्य, जिला, तहसील, ग्राम, खसरा संख्या, खाता संख्या, हिस्सेदारी का प्रकार (Single/Joint), और क्षेत्रफल (हेक्टेयर) दर्ज करें। यदि किसान के पास एक से अधिक खसरे हैं, तो <em>"➕ नया खसरा जोड़ें"</em> बटन पर क्लिक करके अतिरिक्त पंक्तियाँ जोड़ें।</li>
+        <li><strong>पासपोर्ट फोटो अपलोड करें:</strong> किसान की स्पष्ट पासपोर्ट साइज फोटो अपलोड करें।</li>
+        <li><strong>लाइव प्रीव्यू व प्रिंट मोड:</strong> स्क्रीन पर दाएं तरफ रियल-टाइम प्रीव्यू देखें। <em>"🖨️ A4 शीट प्रिंट करें"</em> बटन पर क्लिक करके 1 या 4 किसानों के कार्ड एक साथ प्रिंट करें।</li>
+      </ol>
+
+      <!-- SECTION 4: A4 ZERO-WASTE SYSTEM -->
+      <h3 style="font-size: 18px; color: #0f172a; margin-top: 28px; font-weight: 700;">4. A4 ज़ीरो-वेस्ट बैच प्रिंटिंग सिस्टम (Paper-Saving Layout)</h3>
+      <p>
+        सामान्य प्रिंटिंग में एक A4 पेज पर केवल एक कार्ड प्रिंट करने से भारी मात्रा में फोटो पेपर बर्बाद होता है। GPSahayak ने विशेष <strong>4-Farmers A4 Zero-Waste Grid</strong> विकसित किया है:
+      </p>
+      <ul style="padding-left: 20px; margin-bottom: 18px;">
+        <li>एक A4 शीट पर कुल 4 किसानों के फ्रंट एवं बैक कार्ड्स (कुल 8 कार्ड फलक) 4 समानांतर पंक्तियों में प्रिंट होते हैं।</li>
+        <li>प्रिंटर सेटिंग्स में <strong>Margins: None / Minimum</strong> और <strong>Scale: 100% (Actual Size)</strong> चुनें।</li>
+        <li>प्रिंट के बाद बीच की गाइडलाइन से काटकर मोड़ने पर दोनों तरफ का लेमिनेशन कार्ड तैयार हो जाता है।</li>
+      </ul>
+
+      <!-- SECTION 5: PRIVACY -->
+      <h3 style="font-size: 18px; color: #0f172a; margin-top: 28px; font-weight: 700;">5. डेटा सुरक्षा एवं प्राइवेसी प्रकटीकरण (100% In-Browser Execution)</h3>
+      <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 8px; margin: 14px 0; font-size: 14px; color: #166534;">
+        🔒 <strong>डेटा सुरक्षा की गारंटी:</strong> यह टूल पूर्णतः आपके वेब ब्राउज़र (Client-Side HTML5 Canvas व JavaScript) में निष्पादित होता है। इसमें दर्ज किया गया किसान का नाम, आधार संख्या, मोबाइल नंबर या भूलेख विवरण हमारे सर्वर पर कभी अपलोड या सेव नहीं होता। आपका डेटा आपके कंप्यूटर पर शत-प्रतिशत निजी रहता है।
+      </div>
+
+      <!-- SECTION 6: COMMON MISTAKES -->
+      <h3 style="font-size: 18px; color: #0f172a; margin-top: 28px; font-weight: 700;">6. सामान्य गलतियाँ और उनसे कैसे बचें (Common Mistakes)</h3>
+      <ul style="padding-left: 20px; margin-bottom: 18px;">
+        <li><strong>हिंदी नाम में वर्तनी त्रुटि:</strong> गूगल इनपुट टूल्स या रेमिंगटन कीबोर्ड का प्रयोग करते समय मात्राओं की शुद्धता की पुष्टि करें।</li>
+        <li><strong>क्षेत्रफल की इकाई:</strong> खतौनी में दर्ज क्षेत्रफल को हेक्टेयर (Hectare) में ही दर्ज करें (जैसे- <code>0.450 Hec</code>)।</li>
+        <li><strong>प्रिंट स्केल में छेड़छाड़:</strong> ब्राउज़र प्रिंट डायलॉग में 'Fit to Page' के बजाय हमेशा '100%' या 'Actual Size' रखें ताकि कार्ड का आकार मानक 85.60 × 53.98 मिमी रहे।</li>
+      </ul>
+
+      <!-- SECTION 7: FAQS -->
+      <h3 style="font-size: 18px; color: #0f172a; margin-top: 28px; font-weight: 700;">7. अक्सर पूछे जाने वाले प्रश्न (Frequently Asked Questions)</h3>
+      <div style="margin-top: 14px;">
+        
+        <div style="margin-bottom: 14px; background: #f8fafc; padding: 14px 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a; font-size: 14.5px;">प्र. 1: क्या यह कार्ड खाद-बीज दुकान या बैंक में मान्य होगा?</strong>
+          <p style="margin: 6px 0 0; font-size: 13.5px; color: #475569;">उत्तर: यह कार्ड किसान के संदर्भ और विवरण को त्वरित रूप से प्रस्तुत करने में सहायक है। हालांकि, वित्तीय लेनदेन या सब्सिडी सत्यापन के समय बायोमेट्रिक ई-केवाईसी और मूल भूलेख खतौनी ही आधिकारिक आधार होती है।</p>
+        </div>
+
+        <div style="margin-bottom: 14px; background: #f8fafc; padding: 14px 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a; font-size: 14.5px;">प्र. 2: यदि किसी किसान के 6 से अधिक खसरे/गाटे हैं तो क्या वे कार्ड में आ सकेंगे?</strong>
+          <p style="margin: 6px 0 0; font-size: 13.5px; color: #475569;">उत्तर: जी हाँ! यह टूल ऑटोमैटिक मल्टी-पेज बैक कार्ड (Part 1, Part 2) जनरेट करता है जिससे सभी गाटा संख्याएँ स्पष्ट रूप से प्रिंट हो जाती हैं।</p>
+        </div>
+
+        <div style="margin-bottom: 14px; background: #f8fafc; padding: 14px 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a; font-size: 14.5px;">प्र. 3: क्या किसान का आधार नंबर कार्ड पर सुरक्षित है?</strong>
+          <p style="margin: 6px 0 0; font-size: 13.5px; color: #475569;">उत्तर: जी हाँ, यूआईडीएआई (UIDAI) के सुरक्षा नियमों के तहत कार्ड पर आधार के पहले 8 अंक स्वतः मास्क (XXXX XXXX) होकर केवल अंतिम 4 अंक ही प्रदर्शित होते हैं।</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RELATED LINKS SECTION -->
+  <section class="related-links-section" style="margin-top: 20px;">
+    <div style="max-width: var(--maxw); margin: 0 auto;">
+      <h3>संबंधित टूल्स एवं सेवाएँ (Related Tools & Services)</h3>
+      <div class="rl-cards">
+        <a href="edistrict-swaghoshna-patra.html" class="rl-card"><span class="rl-card-icon">📝</span> ई-डिस्ट्रिक्ट स्वघोषणा पत्र</a>
+        <a href="document-book-maker.html" class="rl-card"><span class="rl-card-icon">📘</span> Document Book Maker</a>
+        <a href="panchayat-sahayak-image-tools.html" class="rl-card"><span class="rl-card-icon">🖼️</span> इमेज टूल्स व रिसाइजर</a>
+        <a href="panchayat-sahayak-forms-pdfs.html" class="rl-card"><span class="rl-card-icon">📄</span> सरकारी प्रपत्र व PDF</a>
+        <a href="panchayat-sahayak-all-portals.html" class="rl-card"><span class="rl-card-icon">🌐</span> सभी सरकारी Portals</a>
+        <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> मुख्य पृष्ठ (Home)</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:960px; margin:24px auto 10px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
+    <strong>⚠️ Disclaimer:</strong> This website (Panchayat Sahayak Portal) <strong style="text-decoration:underline;">is NOT an official government website</strong>. It is not affiliated, associated, or endorsed by the Panchayati Raj Department (PRD) or the Government of Uttar Pradesh in any way. It is created solely for informational and educational purposes.
+  </div>
+
+  <!-- PREMIUM FOOTER -->
+  <footer class="premium-footer">
+    <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+      <div class="footer-brand">
+        <div class="f-logo-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="Logo" class="f-logo" style="height: 40px;">
+          <span class="f-title" style="font-size: 16px; font-weight: 700; color: var(--white);">Panchayat Sahayak</span>
+        </div>
+        <p class="f-desc" style="font-size: 12px; color: var(--gray-300); line-height: 1.6;">उत्तर प्रदेश के 58,000+ पंचायत सहायकों को सशक्त बनाने का प्रयास। सभी सरकारी लिंक, फॉर्म और टूल्स एक जगह।</p>
+        <div class="footer-socials" style="display: flex; gap: 8px; margin-top: 16px;">
+          <a href="https://whatsapp.com" class="social-btn" target="_blank" style="background: rgba(255,255,255,0.06); width: 34px; height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition); color: var(--white); text-decoration: none;">💬</a>
+          <a href="https://t.me" class="social-btn" target="_blank" style="background: rgba(255,255,255,0.06); width: 34px; height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition); color: var(--white); text-decoration: none;">✈️</a>
+          <a href="https://youtube.com" class="social-btn" target="_blank" style="background: rgba(255,255,255,0.06); width: 34px; height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: var(--transition); color: var(--white); text-decoration: none;">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 style="font-size: 11px; font-weight: 800; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Quick Links</h4>
+        <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="index.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🏠 Home</a>
+          <a href="blog.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📝 Blog</a>
+          <a href="panchayat-sahayak-notices.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📋 शासनादेश</a>
+          <a href="panchayat-sahayak-forms-pdfs.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📄 PDF Forms</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 style="font-size: 11px; font-weight: 800; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Tools</h4>
+        <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="panchayat-sahayak-salary-calculator.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">💰 Salary Calc</a>
+          <a href="panchayat-sahayak-csc-calculator.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🏬 CSC Calc</a>
+          <a href="panchayat-sahayak-image-tools.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🖼️ Image Tools</a>
+          <a href="panchayat-sahayak-pdf-tools.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📄 PDF Tools</a>
+          <a href="panchayat-sahayak-work-register.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📋 Work Register</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 style="font-size: 11px; font-weight: 800; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Legal & Trust</h4>
+        <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="about.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">ℹ️ About Us</a>
+          <a href="editorial-policy.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📋 Editorial Policy</a>
+          <a href="privacy.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🔒 Privacy Policy</a>
+          <a href="disclaimer.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">⚠️ Disclaimer</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; max-width: var(--maxw); margin: 20px auto 0 auto;">
+      <p style="font-size: 12px; color: var(--gray-500); margin:0;">© 2026 <strong>gpsahayak.in</strong>. All Rights Reserved.</p>
+      <p style="font-size: 11px; margin:0; color: var(--gray-500);">Independent Educational Portal | Not affiliated with Govt. of UP</p>
+    </div>
+  </footer>
 
   <!-- JAVASCRIPT LOGIC -->
   <script>

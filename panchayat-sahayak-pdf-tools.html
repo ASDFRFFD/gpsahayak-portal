@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="hi">
 <head>
   <!-- Google AdSense -->
@@ -327,44 +327,91 @@
 
 </main>
 
-  
-  
-    
-  
-  
-    <section class="related-links-section">
-    <div style="max-width: var(--maxw); margin: 0 auto;">
-      <h3>संबंधित जानकारियाँ (Related Links)</h3>
+  <!-- COMPREHENSIVE PDF TOOLS & GOVERNMENT PORTAL GUIDE -->
+  <section class="tool-guide-section" style="max-width: 1200px; margin: 40px auto 30px auto; padding: 0 16px;">
+    <div style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); padding: 36px 30px; line-height: 1.8; color: #334155;">
+      
+      <h2 style="color: #ef4444; font-size: 22px; font-weight: 800; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
+        📄 सरकारी पोर्टलों हेतु PDF संपीड़न, संयोजन एवं उपयोग संदर्शिका
+      </h2>
+
+      <!-- 1. Overview -->
+      <h3 style="font-size: 17px; color: #0f172a; font-weight: 700; margin-top: 20px;">1. टूल कार्यप्रणाली (How Client-Side PDF Tools Work)</h3>
+      <p style="font-size: 14px;">
+        ग्राम सचिवालय और सीएससी केंद्रों पर दैनिक कार्यों के दौरान नागरिकों के कई पन्नों के दस्तावेजों (जैसे- खतौनी, आधार कार्ड, बैंक पासबुक, राशन कार्ड) को एक साथ जोड़कर या निर्धारित साइज में कंप्रेस करके पोर्टल पर अपलोड करना पड़ता है। यह टूल <strong>PDF-Lib</strong> और <strong>PDF.js</strong> की सहायता से पूरी प्रक्रिया आपके ब्राउज़र में ही संपन्न करता है।
+      </p>
+
+      <!-- 2. Verified Government Portal PDF Limits Table -->
+      <h3 style="font-size: 17px; color: #0f172a; font-weight: 700; margin-top: 24px;">2. प्रमुख सरकारी पोर्टलों के PDF साइज मानक (Verified Government Portal PDF Limits)</h3>
+      <div style="overflow-x: auto; margin: 14px 0;">
+        <table style="width: 100%; border-collapse: collapse; min-width: 600px; font-size: 13.5px;">
+          <thead>
+            <tr style="background: #fef2f2; border-bottom: 2px solid #fca5a5; text-align: left;">
+              <th style="padding: 10px 14px; color: #991b1b;">पोर्टल / विभाग</th>
+              <th style="padding: 10px 14px; color: #991b1b;">दस्तावेज प्रकार</th>
+              <th style="padding: 10px 14px; color: #991b1b;">स्वीकार्य फॉर्मेट</th>
+              <th style="padding: 10px 14px; color: #991b1b;">अधिकतम फाइल साइज सीमा</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-weight: 700; color: #0f766e;">e-Gram Swaraj (ई-ग्राम स्वराज)</td>
+              <td style="padding: 10px 14px;">सामग्री बिल / वाउचर / एम-बुक संलग्नक</td>
+              <td style="padding: 10px 14px;">PDF</td>
+              <td style="padding: 10px 14px; font-weight: 700; color: #15803d;">अधिकतम 2 MB प्रति वाउचर</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
+              <td style="padding: 10px 14px; font-weight: 700; color: #0f766e;">e-District UP (ई-डिस्ट्रिक्ट)</td>
+              <td style="padding: 10px 14px;">संलग्नक प्रमाण पत्र (राशन कार्ड/वेतन पर्ची)</td>
+              <td style="padding: 10px 14px;">PDF / JPG</td>
+              <td style="padding: 10px 14px; font-weight: 700; color: #15803d;">अधिकतम 100 KB</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-weight: 700; color: #0f766e;">PFMS (सार्वजनिक वित्तीय प्रबंधन)</td>
+              <td style="padding: 10px 14px;">स्वीकृति आदेश / एफटीओ सहायक दस्तावेज</td>
+              <td style="padding: 10px 14px;">PDF</td>
+              <td style="padding: 10px 14px; font-weight: 700; color: #15803d;">अधिकतम 2 MB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 3. Guidelines: Merge, JPG to PDF & Compression -->
+      <h3 style="font-size: 17px; color: #0f172a; font-weight: 700; margin-top: 24px;">3. दस्तावेज संयोजन एवं संपीड़न के नियम (Guidelines & Best Practices)</h3>
+      <ul style="padding-left: 20px; font-size: 14px; line-height: 1.8;">
+        <li><strong>JPG से A4 PDF:</strong> मोबाइल से खींचे गए फोटो अपलोड करने से पहले सीधे <code>JPG to PDF</code> टूल से मानक A4 पोर्ट्रेट दस्तावेज में बदलें।</li>
+        <li><strong>पेज क्रम व्यवस्था (Page Ordering):</strong> कई पन्नों की खतौनी या आवेदन पत्र को मर्ज करते समय पन्नों को सही क्रम (Page 1, Page 2...) में अपलोड करें।</li>
+        <li><strong>क्वालिटी संतुलन:</strong> PDF कंप्रेस करते समय यह सुनिश्चित करें कि खाता संख्या, नाम और सील मुहर पढ़ने योग्य बनी रहे।</li>
+      </ul>
+
+      <!-- 4. Client-Side Privacy -->
+      <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 8px; margin-top: 20px; font-size: 13.5px; color: #166534;">
+        🔒 <strong>गोपनीयता एवं स्थानीय निष्पादन:</strong> यह टूल पूरी तरह से आपके ब्राउज़र के अंदर कार्य करता है। नागरिकों के निजी दस्तावेज (बैंक पासबुक, खतौनी, पहचान पत्र) किसी भी रिमोट सर्वर पर नहीं भेजे जाते।
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RELATED LINKS SECTION -->
+  <section class="related-links-section" style="max-width: 1200px; margin: 0 auto 30px auto; padding: 0 16px;">
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 24px;">
+      <h3 style="margin: 0 0 16px 0; font-size: 18px; color: var(--primary); font-weight: 800;">संबंधित टूल्स एवं सेवाएँ (Related Links)</h3>
       <div class="rl-cards">
-        <a href="panchayat-sahayak-salary-calculator.html" class="rl-card"><span class="rl-card-icon">💰</span> सैलरी कैलकुलेटर</a>
-        <a href="panchayat-list-builder.html" class="rl-card"><span class="rl-card-icon">⚡</span> Quick List Builder</a>
-        <a href="gram-panchayat-yojana-list.html" class="rl-card"><span class="rl-card-icon">🏘️</span> ग्राम पंचायत योजनाएं</a>
-        <a href="panchayat-sahayak-forms-pdfs.html" class="rl-card"><span class="rl-card-icon">📄</span> PDF Forms</a>
-        <a href="panchayat-sahayak-work-register.html" class="rl-card"><span class="rl-card-icon">📋</span> Work Register</a>
-        <a href="panchayat-sahayak-salary-status.html" class="rl-card"><span class="rl-card-icon">✅</span> Salary Status</a>
-        <a href="panchayat-sahayak-image-tools.html" class="rl-card"><span class="rl-card-icon">🖼️</span> Image Tools</a>
-        <a href="panchayat-sahayak-all-portals.html" class="rl-card"><span class="rl-card-icon">🌐</span> सभी Portals</a>
-        <a href="blog.html" class="rl-card"><span class="rl-card-icon">📰</span> Blog</a>
-        <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> Home Page</a>
+        <a href="panchayat-sahayak-image-tools.html" class="rl-card"><span class="rl-card-icon">🖼️</span> इमेज टूल्स</a>
+        <a href="panchayat-sahayak-forms-pdfs.html" class="rl-card"><span class="rl-card-icon">📄</span> सरकारी प्रपत्र व PDF</a>
+        <a href="document-book-maker.html" class="rl-card"><span class="rl-card-icon">📘</span> डॉक्यूमेंट बुक मेकर</a>
+        <a href="panchayat-sahayak-salary-status.html" class="rl-card"><span class="rl-card-icon">✅</span> सैलरी स्टेटस चेक</a>
+        <a href="panchayat-sahayak-software-download.html" class="rl-card"><span class="rl-card-icon">💾</span> सॉफ्टवेयर व ड्राइवर्स</a>
+        <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> मुख्य पृष्ठ (Home)</a>
       </div>
     </div>
   </section>
-  <div style="max-width:960px; margin:24px auto 10px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
+
+  <div style="max-width:1200px; margin:0 auto 20px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
     <strong>⚠️ Disclaimer:</strong> This website (Panchayat Sahayak Portal) <strong style="text-decoration:underline;">is NOT an official government website</strong>. It is not affiliated, associated, or endorsed by the Panchayati Raj Department (PRD) or the Government of Uttar Pradesh in any way. It is created solely for informational and educational purposes.
   </div>
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
+
+  <!-- PREMIUM FOOTER -->
   <footer class="premium-footer">
     <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
       <div class="footer-brand">

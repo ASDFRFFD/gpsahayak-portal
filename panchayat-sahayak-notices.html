@@ -322,6 +322,32 @@
   </section>
 
   <main class="container">
+    
+    <!-- STATIC EXPLANATORY CONTEXT CARD -->
+    <section style="background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); padding: 28px 24px; margin-bottom: 24px; line-height: 1.8; color: #334155;">
+      <h2 style="color: #0f766e; font-size: 20px; font-weight: 800; margin: 0 0 10px 0; font-family: 'Montserrat', sans-serif;">
+        📋 उत्तर प्रदेश पंचायत सहायक शासनादेश एवं नोटिस डायरेक्टरी
+      </h2>
+      <p style="font-size: 14px; margin-bottom: 14px;">
+        यह पृष्ठ उत्तर प्रदेश शासन, पंचायती राज निदेशालय, एवं जिला पंचायत राज अधिकारियों (DPRO) द्वारा समय-समय पर जारी किए जाने वाले <strong>आधिकारिक शासनादेशों (GOs), मानदेय दिशानिर्देशों, बायोमेट्रिक उपस्थिति आदेशों, ई-ग्राम स्वराज डेटा एंट्री सर्कुलर्स</strong> और प्रशिक्षण सूचनाओं का एक व्यवस्थित संदर्भ संग्रह है।
+      </p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 14px;">
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 14px; font-size: 13px;">
+          <strong style="color: #15803d; display:block; margin-bottom:4px;">🔍 शासनादेश कैसे खोजें?</strong>
+          सर्च बॉक्स में आदेश का विषय (उदा. <em>मानदेय, उपस्थिति, परिवार रजिस्टर</em>) या अपने जिले का नाम टाइप करें।
+        </div>
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 14px; font-size: 13px;">
+          <strong style="color: #1d4ed8; display:block; margin-bottom:4px;">✅ प्रामाणिकता की जांच कैसे करें?</strong>
+          प्रत्येक आदेश पर <em>शासनादेश संख्या (पत्रांक), निर्गमन तिथि, और सक्षम अधिकारी के डिजिटल हस्ताक्षर</em> अवश्य देखें।
+        </div>
+        <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 14px; font-size: 13px;">
+          <strong style="color: #b45309; display:block; margin-bottom:4px;">⚠️ भ्रामक सूचनाओं से सावधान:</strong>
+          सोशल मीडिया पर प्रसारित होने वाले अपुष्ट दावों (जैसे- फर्जी मानदेय वृद्धि या नियुक्ति नोटिस) से बचें। केवल आधिकारिक वेबसाइट से पुष्टि करें।
+        </div>
+      </div>
+    </section>
+
     <!-- Advanced Filter Board -->
     <div class="filter-card">
       <div class="filter-group f-search">
@@ -351,9 +377,73 @@
       </div>
     </div>
 
-    <!-- Notices Grid -->
+    <!-- Notices Grid (With Verified Pre-rendered Static Fallback Cards) -->
     <div class="notices-grid" id="n-grid">
-      <!-- Injected via JS -->
+      
+      <!-- Static Card 1 -->
+      <div class="n-card">
+        <div class="n-meta">
+          <div class="tag-state">🏛️ राज्य स्तर</div>
+          <div class="n-tag"><div class="blink-dot"></div> NEW</div>
+        </div>
+        <h3 class="n-title">पंचायत सहायक मोबाइल उपस्थिति एवं सचिवालय संचालन निर्देश</h3>
+        <p class="n-desc">ग्राम सचिवालय में पंचायत सहायकों की दैनिक उपस्थिति मोबाइल ऐप/पोर्टल के माध्यम से दर्ज करने एवं सार्वजनिक सेवाएं प्रदान करने संबंधी विस्तृत दिशा-निर्देश।</p>
+        <div style="margin-top:auto;" class="n-action">
+          <a href="download.html?title=Panchayat%20Sahayak%20Attendance%20Order&type=pdf" class="btn-read">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>PDF डाउनलोड करें</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Static Card 2 -->
+      <div class="n-card">
+        <div class="n-meta">
+          <div class="tag-state">🏛️ राज्य स्तर</div>
+          <div style="font-size:16px;">💰</div>
+        </div>
+        <h3 class="n-title">पंचायत सहायक मानदेय ₹6,000 भुगतान शासनादेश (मूल आदेश)</h3>
+        <p class="n-desc">पंचायती राज विभाग उत्तर प्रदेश द्वारा पंचायत सहायक सह डाटा एंट्री ऑपरेटर के ₹6,000 मासिक मानदेय को ग्राम निधि अनटाइड मद से नियमित भुगतान करने का मूल शासनादेश。</p>
+        <div style="margin-top:auto;" class="n-action">
+          <a href="download.html?title=Panchayat%20Sahayak%20Salary%20GO%202021&type=pdf" class="btn-read">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>PDF डाउनलोड करें</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Static Card 3 -->
+      <div class="n-card">
+        <div class="n-meta">
+          <div class="tag-state">🏛️ राज्य स्तर</div>
+          <div style="font-size:16px;">💻</div>
+        </div>
+        <h3 class="n-title">e-Gram Swaraj एवं PFMS वाउचर एंट्री व DSC FTO निर्देश</h3>
+        <p class="n-desc">ग्राम पंचायत के 15वें वित्त आयोग एवं राज्य वित्त आयोग के विकास कार्यों के ऑनलाइन वाउचर निर्माण एवं डिजिटल सिग्नेचर (DSC) प्रक्रिया संबंधी तकनीकी मार्गदर्शिका।</p>
+        <div style="margin-top:auto;" class="n-action">
+          <a href="download.html?title=eGramSwaraj%20PFMS%20Voucher%20Entry%20Guide&type=pdf" class="btn-read">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>PDF डाउनलोड करें</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Static Card 4 -->
+      <div class="n-card">
+        <div class="n-meta">
+          <div class="tag-dist">📍 राज्य / जिला</div>
+          <div style="font-size:16px;">🚨</div>
+        </div>
+        <h3 class="n-title">परिवार रजिस्टर नकल एवं जन्म-मृत्यु पंजीकरण अनिवार्य दिशा-निर्देश</h3>
+        <p class="n-desc">ग्राम पंचायत में नागरिकों को परिवार रजिस्टर की नकल जारी करने, प्रविष्टि संशोधन तथा CRS पोर्टल पर जन्म-मृत्यु पंजीकरण की समय-सीमा संबंधी आवश्यक निर्देश।</p>
+        <div style="margin-top:auto;" class="n-action">
+          <a href="download.html?title=Parivaar%20Register%20and%20CRS%20Birth%20Death%20Order&type=pdf" class="btn-read">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>PDF डाउनलोड करें</span>
+          </a>
+        </div>
+      </div>
+
     </div>
 
     <!-- Empty State -->
@@ -364,19 +454,26 @@
     </div>
   </main>
 
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
+  <!-- RELATED LINKS SECTION -->
+  <section class="related-links-section" style="margin-top: 30px;">
+    <div style="max-width: var(--maxw); margin: 0 auto;">
+      <h3>संबंधित अनुभाग (Related Links)</h3>
+      <div class="rl-cards">
+        <a href="panchayat-sahayak-forms-pdfs.html" class="rl-card"><span class="rl-card-icon">📄</span> सरकारी प्रपत्र व PDF</a>
+        <a href="panchayat-sahayak-salary-status.html" class="rl-card"><span class="rl-card-icon">✅</span> सैलरी स्टेटस चेक</a>
+        <a href="panchayat-sahayak-software-download.html" class="rl-card"><span class="rl-card-icon">💾</span> सॉफ्टवेयर व ड्राइवर्स</a>
+        <a href="panchayat-sahayak-salary-calculator.html" class="rl-card"><span class="rl-card-icon">💰</span> सैलरी कैलकुलेटर</a>
+        <a href="panchayat-sahayak-all-portals.html" class="rl-card"><span class="rl-card-icon">🌐</span> सभी Portals</a>
+        <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> मुख्य पृष्ठ (Home)</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:960px; margin:24px auto 10px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
+    <strong>⚠️ Disclaimer:</strong> This website (Panchayat Sahayak Portal) <strong style="text-decoration:underline;">is NOT an official government website</strong>. It is not affiliated, associated, or endorsed by the Panchayati Raj Department (PRD) or the Government of Uttar Pradesh in any way. It is created solely for informational and educational purposes.
+  </div>
+
+  <!-- PREMIUM FOOTER -->
   <footer class="premium-footer">
     <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
       <div class="footer-brand">

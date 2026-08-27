@@ -133,74 +133,171 @@
 
     <div class="breadcrumb">
       <a href="index.html">होम</a> <span>»</span>
-      <span>आवेदनों की स्थिति (Status Track)</span>
+      <span>मानदेय एवं आवेदन स्थिति (Salary & Status Track)</span>
     </div>
 
-    <div class="section-head" style="margin-bottom:0; border-bottom:none;">
-      <h3 style="color:var(--primary); font-weight:800; font-size:24px;">आवेदनों की स्थिति जांचें (Check Application Status)</h3>
+    <!-- HERO SECTION -->
+    <div class="section-head" style="margin-bottom:20px; border-bottom:none;">
+      <h1 style="color:var(--primary); font-weight:800; font-size:26px; margin:0 0 10px 0; font-family:'Outfit',sans-serif;">पंचायत सहायक मानदेय स्टेटस एवं आवेदन ट्रैकर 2026</h1>
+      <p style="color:var(--text-muted); font-size:14px; font-weight:500; line-height:1.6; margin:0;">उत्तर प्रदेश पंचायत सहायकों के ₹6,000 मासिक मानदेय के भुगतान का फ्लो, PFMS व e-GramSwaraj के माध्यम से स्टेटस चेक करने की पूरी प्रक्रिया, सैलरी देरी के कारण एवं समाधान, और नागरिक सेवाओं के स्टेटस ट्रैकिंग लिंक्स।</p>
     </div>
-    <p style="color:var(--text-muted); font-size:14px; font-weight:500; margin-top:8px;">ग्रामवासियों द्वारा किये गए सभी सरकारी आवेदनों (आय/जाति/निवास, राशन कार्ड, पेंशन, किसान सम्मान निधि आदि) का स्टेटस ऑनलाइन चेक करने के लिए नीचे दिए गए लिंक्स का उपयोग करें।</p>
+
+    <!-- NOTICE BADGE -->
+    <div style="background:#f0fdfa; border:1px solid #99f6e4; border-left:4px solid var(--primary); border-radius:10px; padding:14px 18px; margin-bottom:28px; font-size:13.5px; line-height:1.6; color:#0f766e;">
+      <strong>📌 आधिकारिक सूचना सारांश:</strong> उत्तर प्रदेश शासन के नियमानुसार पंचायत सहायकों का मानदेय ₹6,000 प्रति माह ग्राम पंचायत की <strong>ग्राम निधि (प्रशासनिक मद / 15वाँ वित्त व राज्य वित्त)</strong> से e-GramSwaraj एवं PFMS के माध्यम से सीधे बैंक खाते (DBT) में भेजा जाता है।
+    </div>
+
+    <!-- SECTION 1: SALARY WORKFLOW -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin-top:0; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+        <span>🔄</span> पंचायत सहायक मानदेय भुगतान की प्रक्रिया (Payment Workflow)
+      </h2>
+      <p style="font-size:14px; color:var(--text-main); line-height:1.7; margin-bottom:16px;">पंचायत सहायक के मानदेय का भुगतान किसी केंद्रीयकृत ट्रेजरी से सीधे न होकर ग्राम पंचायत स्तर से प्रोसेस होता है। इस प्रक्रिया के मुख्य चरण निम्नलिखित हैं:</p>
+      
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin-bottom:16px;">
+        <div style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:16px;">
+          <div style="font-size:12px; font-weight:800; color:var(--primary); text-transform:uppercase; margin-bottom:4px;">चरण 1: उपस्थिति सत्यापन</div>
+          <p style="font-size:13px; color:var(--text-muted); margin:0; line-height:1.5;">पंचायत सहायक मोबाइल उपस्थिति ऐप एवं कार्य रजिस्टर के आधार पर मासिक उपस्थिति दर्ज होती है।</p>
+        </div>
+        <div style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:16px;">
+          <div style="font-size:12px; font-weight:800; color:var(--primary); text-transform:uppercase; margin-bottom:4px;">चरण 2: वाउचर एंट्री (e-GramSwaraj)</div>
+          <p style="font-size:13px; color:var(--text-muted); margin:0; line-height:1.5;">पंचायत सचिव/ग्राम प्रधान द्वारा e-GramSwaraj पोर्टल पर प्रशासनिक मद से पेमेंट वाउचर जनरेट किया जाता है।</p>
+        </div>
+        <div style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:16px;">
+          <div style="font-size:12px; font-weight:800; color:var(--primary); text-transform:uppercase; margin-bottom:4px;">चरण 3: DSC डिजिटल सिग्नेचर (FTO)</div>
+          <p style="font-size:13px; color:var(--text-muted); margin:0; line-height:1.5;">ग्राम प्रधान (मेकर) और ग्राम पंचायत अधिकारी/सचिव (चेकर) के डिजिटल सिग्नेचर (DSC) से FTO अप्रूव होता है।</p>
+        </div>
+        <div style="background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:16px;">
+          <div style="font-size:12px; font-weight:800; color:var(--primary); text-transform:uppercase; margin-bottom:4px;">चरण 4: PFMS बैंक क्रेडिट (DBT)</div>
+          <p style="font-size:13px; color:var(--text-muted); margin:0; line-height:1.5;">PFMS प्रणाली बैंक खाते का सत्यापन कर राशि पंचायत सहायक के बैंक खाते में ट्रांसफर करती है।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: HOW TO CHECK SALARY STATUS -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin-top:0; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+        <span>🔍</span> मानदेय स्टेटस ऑनलाइन कैसे चेक करें (How to Track)
+      </h2>
+
+      <div style="margin-bottom:20px;">
+        <h3 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:8px;">विधि 1: PFMS (Public Financial Management System) के माध्यम से</h3>
+        <ol style="font-size:13.5px; color:var(--text-main); line-height:1.8; padding-left:20px; margin:0 0 10px 0;">
+          <li>PFMS की आधिकारिक वेबसाइट (<a href="https://pfms.nic.in" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:600;">pfms.nic.in</a>) पर जाएं।</li>
+          <li>होमपेज पर <strong>"Know Your Payments"</strong> या <strong>"Track DBT Details"</strong> लिंक पर क्लिक करें।</li>
+          <li>अपना बैंक नाम और अकाउंट नंबर (या आधार नंबर / Beneficiary Code) दर्ज करें।</li>
+          <li>कैप्चा कोड भरकर सबमिट करें — आपकी ग्राम पंचायत से भेजे गए मानदेय का स्टेटस (Pending, Under Processing, Credited) दिखाई देगा।</li>
+        </ol>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <h3 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:8px;">विधि 2: e-GramSwaraj पोर्टल पर वाउचर रिपोर्ट के माध्यम से</h3>
+        <ol style="font-size:13.5px; color:var(--text-main); line-height:1.8; padding-left:20px; margin:0 0 10px 0;">
+          <li>e-GramSwaraj (<a href="https://egramswaraj.gov.in" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:600;">egramswaraj.gov.in</a>) पर जाएं।</li>
+          <li><strong>Reports -> Accounting -> Expenditure -> Voucher Report</strong> सेक्शन में जाएं।</li>
+          <li>अपना राज्य (Uttar Pradesh), जिला, ब्लॉक और ग्राम पंचायत चुनें।</li>
+          <li>माह और वित्तीय वर्ष चुनकर देखें कि क्या पंचायत सहायक मानदेय का वाउचर बुक व DSC साइन हुआ है या नहीं।</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SECTION 3: COMMON DELAY CAUSES & REMEDIES -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin-top:0; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+        <span>⚠️</span> मानदेय में देरी के मुख्य कारण एवं समाधान
+      </h2>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px;">
+        <div style="border:1px solid #fed7aa; background:#fff7ed; border-radius:10px; padding:16px;">
+          <h4 style="color:#c2410c; margin:0 0 8px 0; font-size:14.5px; font-weight:700;">1. ग्राम निधि खाते में प्रशासनिक बजट की कमी</h4>
+          <p style="font-size:13px; color:#475569; margin:0; line-height:1.6;">यदि ग्राम पंचायत के 15वें वित्त / राज्य वित्त आयोग के खाते में प्रशासनिक मद (Administrative Component) में पर्याप्त धनराशि नहीं है, तो भुगतान रुक सकता है।</p>
+        </div>
+        <div style="border:1px solid #fed7aa; background:#fff7ed; border-radius:10px; padding:16px;">
+          <h4 style="color:#c2410c; margin:0 0 8px 0; font-size:14.5px; font-weight:700;">2. डिजिटल सिग्नेचर (DSC) की वैधता समाप्त होना</h4>
+          <p style="font-size:13px; color:#475569; margin:0; line-height:1.6;">ग्राम प्रधान या पंचायत सचिव की DSC डोंगल की वैधता समाप्त होने पर FTO अप्रूव नहीं हो पाता जब तक नया टोकन एक्टिव न हो।</p>
+        </div>
+        <div style="border:1px solid #fed7aa; background:#fff7ed; border-radius:10px; padding:16px;">
+          <h4 style="color:#c2410c; margin:0 0 8px 0; font-size:14.5px; font-weight:700;">3. बैंक अकाउंट / IFSC कोड मिसमैच</h4>
+          <p style="font-size:13px; color:#475569; margin:0; line-height:1.6;">बैंकों के विलय (Merger) के बाद नया IFSC कोड e-GramSwaraj में अपडेट न होने पर PFMS से ट्रांजैक्शन रिजेक्ट हो सकता है।</p>
+        </div>
+        <div style="border:1px solid #dcfce7; background:#f0fdf4; border-radius:10px; padding:16px;">
+          <h4 style="color:#15803d; margin:0 0 8px 0; font-size:14.5px; font-weight:700;">✅ समाधान: किस स्तर पर संपर्क करें?</h4>
+          <p style="font-size:13px; color:#475569; margin:0; line-height:1.6;">सैलरी रुकने पर सबसे पहले ग्राम सचिव/प्रधान को लिखित आवेदन दें। यदि ब्लॉक स्तर पर समस्या हो, तो ADO (Panchayat) या BDO से संपर्क करें। जिला स्तर पर DPRO कार्यालय में ग्रीवांस दर्ज कराएं।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: CITIZEN APPLICATIONS & GOVERNMENT SCHEMES DIRECTORY -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin-top:0; margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+        <span>📋</span> ग्राम पंचायत नागरिक आवेदन स्टेटस डायरेक्टरी (Official Links)
+      </h2>
+      <p style="color:var(--text-muted); font-size:13.5px; margin-top:0; margin-bottom:18px;">ग्राम सचिवालय में नागरिकों द्वारा किए गए सरकारी आवेदनों का स्टेटस चेक करने के आधिकारिक पोर्टल्स:</p>
+      
       <div class="scheme-directory">
-      <a href="https://edistrict.up.gov.in/edistrictup/" target="_blank" class="scheme-link"><span class="s-icon">📄</span> 1. आय / जाति / निवास प्रमाण पत्र स्टेटस</a>
-      <a href="https://nfsa.up.gov.in/Food/TrackingRationCard/TrackApplication.aspx" target="_blank" class="scheme-link"><span class="s-icon">💳</span> 2. राशन कार्ड आवेदन की स्थिति (FCS)</a>
-      <a href="https://pmkisan.gov.in/beneficiarystatus_new.aspx" target="_blank" class="scheme-link"><span class="s-icon">🌾</span> 3. पीएम किसान बेनिफिशियरी स्टेटस</a>
-      <a href="https://sspy-up.gov.in/oap/public_new/UserLogin.aspx" target="_blank" class="scheme-link"><span class="s-icon">👵</span> 4. पेंशन स्थिति (वृद्धावस्था/विधवा/दिव्यांग)</a>
-      <a href="https://jansunwai.up.nic.in/ComplaintTracker" target="_blank" class="scheme-link"><span class="s-icon">⚖️</span> 5. जनसुनवाई (IGRS) शिकायत स्टेटस</a>
-      <a href="https://myaadhaar.uidai.gov.in/CheckAadhaarStatus/en" target="_blank" class="scheme-link"><span class="s-icon">🆔</span> 6. आधार कार्ड अपडेट / इनरोलमेंट स्टेटस</a>
-      <a href="https://tin.tin.nsdl.com/pantan/StatusTrack.html" target="_blank" class="scheme-link"><span class="s-icon">🪪</span> 7. पैन कार्ड (PAN Card) स्टेटस (NSDL/UTIITSL)</a>
-      <a href="https://voters.eci.gov.in" target="_blank" class="scheme-link"><span class="s-icon">🗳️</span> 8. वोटर आईडी (Voter ID) आवेदन स्टेटस</a>
-      <a href="https://scholarship.up.gov.in/students.aspx" target="_blank" class="scheme-link"><span class="s-icon">🎓</span> 9. यूपी स्कॉलरशिप स्टेटस (UP Scholarship)</a>
-      <a href="https://pmayg.nic.in/netiay/benificiary/beneficiary_status.aspx" target="_blank" class="scheme-link"><span class="s-icon">🏠</span> 10. पीएम आवास योजना (PMAY-G) स्टेटस</a>
-      <a href="https://mksy.up.gov.in/women_welfare/track_application.php" target="_blank" class="scheme-link"><span class="s-icon">👧</span> 11. कन्या सुमंगला योजना स्टेटस</a>
-      <a href="https://upbocw.in" target="_blank" class="scheme-link"><span class="s-icon">👷</span> 12. श्रमिक / लेबर कार्ड स्टेटस</a>
-      <a href="https://nrega.nic.in" target="_blank" class="scheme-link"><span class="s-icon">⛏️</span> 13. नरेगा जॉब कार्ड स्टेटस (MGNREGA)</a>
-      <a href="https://pmjay.gov.in" target="_blank" class="scheme-link"><span class="s-icon">⚕️</span> 14. आयुष्मान कार्ड (Ayushman) लिस्ट/स्टेटस</a>
-      <a href="https://sbm.gov.in" target="_blank" class="scheme-link"><span class="s-icon">🚽</span> 15. स्वच्छ भारत (शौचालय निर्माण) स्टेटस</a>
-      <a href="https://pmsvanidhi.mohua.gov.in" target="_blank" class="scheme-link"><span class="s-icon">🏙️</span> 16. पीएम स्वनिधि (स्ट्रीट वेंडर लोन) स्टेटस</a>
-      <a href="https://nfbs.upsdc.gov.in" target="_blank" class="scheme-link"><span class="s-icon">👨‍👩‍👧</span> 17. राष्ट्रीय पारिवारिक लाभ आवेदन स्थिति</a>
-      <a href="https://parivahan.gov.in/rcdlstatus/" target="_blank" class="scheme-link"><span class="s-icon">🚘</span> 18. ड्राइविंग लाइसेंस (DL) स्टेटस</a>
-    </div>
+        <a href="https://edistrict.up.gov.in/edistrictup/" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">📄</span> 1. आय / जाति / निवास प्रमाण पत्र स्टेटस (e-District)</a>
+        <a href="https://nfsa.up.gov.in/Food/TrackingRationCard/TrackApplication.aspx" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">💳</span> 2. राशन कार्ड आवेदन की स्थिति (FCS UP)</a>
+        <a href="https://pmkisan.gov.in/beneficiarystatus_new.aspx" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">🌾</span> 3. पीएम किसान बेनिफिशियरी स्टेटस (PM Kisan)</a>
+        <a href="https://sspy-up.gov.in/oap/public_new/UserLogin.aspx" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">👵</span> 4. पेंशन स्थिति — वृद्धावस्था/विधवा/दिव्यांग (SSPY)</a>
+        <a href="https://jansunwai.up.nic.in/ComplaintTracker" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">⚖️</span> 5. जनसुनवाई (IGRS UP) शिकायत स्टेटस</a>
+        <a href="https://myaadhaar.uidai.gov.in/CheckAadhaarStatus/en" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">🆔</span> 6. आधार कार्ड अपडेट / इनरोलमेंट स्टेटस (UIDAI)</a>
+        <a href="https://tin.tin.nsdl.com/pantan/StatusTrack.html" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">🪪</span> 7. पैन कार्ड (PAN Card) स्टेटस (NSDL/Protean)</a>
+        <a href="https://voters.eci.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">🗳️</span> 8. वोटर आईडी आवेदन स्थिति (ECI Voters Portal)</a>
+        <a href="https://scholarship.up.gov.in/students.aspx" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">🎓</span> 9. यूपी स्कॉलरशिप स्टेटस (UP Scholarship)</a>
+        <a href="https://pmayg.nic.in/netiay/benificiary/beneficiary_status.aspx" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">🏠</span> 10. पीएम आवास योजना ग्रामीण (PMAY-G) स्टेटस</a>
+        <a href="https://mksy.up.gov.in/women_welfare/track_application.php" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">👧</span> 11. मुख्यमंत्री कन्या सुमंगला योजना स्टेटस</a>
+        <a href="https://upbocw.in" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">👷</span> 12. श्रमिक / लेबर कार्ड पंजीयन स्थिति (UPBOCW)</a>
+        <a href="https://nrega.nic.in" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">⛏️</span> 13. नरेगा जॉब कार्ड व मस्टरोल स्टेटस (MGNREGA)</a>
+        <a href="https://pmjay.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">⚕️</span> 14. आयुष्मान कार्ड (Ayushman PMJAY) लिस्ट/स्टेटस</a>
+        <a href="https://sbm.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">🚽</span> 15. स्वच्छ भारत मिशन (शौचालय निर्माण प्रोत्साहन राशि)</a>
+        <a href="https://pmsvanidhi.mohua.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">🏙️</span> 16. पीएम स्वनिधि (स्ट्रीट वेंडर लोन) स्टेटस</a>
+        <a href="https://nfbs.upsdc.gov.in" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">👨‍👩‍👧</span> 17. राष्ट्रीय पारिवारिक लाभ योजना आवेदन स्थिति</a>
+        <a href="https://parivahan.gov.in/rcdlstatus/" target="_blank" rel="noopener noreferrer" class="scheme-link"><span class="s-icon">🚘</span> 18. ड्राइविंग लाइसेंस (DL/RC) स्टेटस (Parivahan)</a>
+      </div>
+    </section>
 
-</main>
+    <!-- SECTION 5: FAQS -->
+    <section style="background:#ffffff; border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow-sm);">
+      <h2 style="color:var(--primary); font-size:19px; font-weight:800; margin-top:0; margin-bottom:16px;">❓ अक्सर पूछे जाने वाले प्रश्न (FAQs)</h2>
+      
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div style="border:1px solid var(--border); border-radius:8px; padding:14px;">
+          <h4 style="margin:0 0 6px 0; font-size:14.5px; color:var(--text-main); font-weight:700;">प्र. पंचायत सहायक का मानदेय कितना है और कौन देता है?</h4>
+          <p style="margin:0; font-size:13px; color:var(--text-muted); line-height:1.6;">उत्तर प्रदेश में पंचायत सहायक का मानदेय ₹6,000 प्रति माह है। इसका भुगतान संबंधित ग्राम पंचायत की ग्राम निधि खाते से e-GramSwaraj के माध्यम से किया जाता है।</p>
+        </div>
+        <div style="border:1px solid var(--border); border-radius:8px; padding:14px;">
+          <h4 style="margin:0 0 6px 0; font-size:14.5px; color:var(--text-main); font-weight:700;">प्र. यदि मानदेय कई महीनों से नहीं आया है तो क्या करें?</h4>
+          <p style="margin:0; font-size:13px; color:var(--text-muted); line-height:1.6;">सबसे पहले ग्राम पंचायत सचिव व प्रधान से मिलकर ई-ग्राम स्वराज पर वाउचर स्टेटस चेक कराएं। यदि कोई समाधान न निकले तो ADO (पंचायत) एवं जिला पंचायत राज अधिकारी (DPRO) को लिखित प्रार्थना पत्र प्रस्तुत करें।</p>
+        </div>
+        <div style="border:1px solid var(--border); border-radius:8px; padding:14px;">
+          <h4 style="margin:0 0 6px 0; font-size:14.5px; color:var(--text-main); font-weight:700;">प्र. क्या पंचायत सहायक का मानदेय सीधे शासन (ट्रेजरी) से आता है?</h4>
+          <p style="margin:0; font-size:13px; color:var(--text-muted); line-height:1.6;">नहीं, वर्तमान शासनादेश के अनुसार यह मानदेय राज्य ट्रेजरी से सीधे कर्मचारियों की तरह नहीं आता, बल्कि ग्राम पंचायत की निधि (प्रशासनिक व्यय) से डेबिट होता है।</p>
+        </div>
+      </div>
+    </section>
 
-  
-  
-    
-  
-  
-    <section class="related-links-section">
+  </main>
+
+  <!-- RELATED LINKS SECTION -->
+  <section class="related-links-section">
     <div style="max-width: var(--maxw); margin: 0 auto;">
-      <h3>संबंधित जानकारियाँ (Related Links)</h3>
+      <h3>संबंधित जानकारियाँ व टूल्स (Related Links)</h3>
       <div class="rl-cards">
-        <a href="panchayat-sahayak-salary-calculator.html" class="rl-card"><span class="rl-card-icon">💰</span> सैलरी कैलकुलेटर</a>
-        <a href="panchayat-list-builder.html" class="rl-card"><span class="rl-card-icon">⚡</span> Quick List Builder</a>
-        <a href="gram-panchayat-yojana-list.html" class="rl-card"><span class="rl-card-icon">🏘️</span> ग्राम पंचायत योजनाएं</a>
-        <a href="panchayat-sahayak-forms-pdfs.html" class="rl-card"><span class="rl-card-icon">📄</span> PDF Forms</a>
-        <a href="panchayat-sahayak-work-register.html" class="rl-card"><span class="rl-card-icon">📋</span> Work Register</a>
-        <a href="panchayat-sahayak-salary-status.html" class="rl-card"><span class="rl-card-icon">✅</span> Salary Status</a>
-        <a href="panchayat-sahayak-image-tools.html" class="rl-card"><span class="rl-card-icon">🖼️</span> Image Tools</a>
-        <a href="panchayat-sahayak-all-portals.html" class="rl-card"><span class="rl-card-icon">🌐</span> सभी Portals</a>
-        <a href="blog.html" class="rl-card"><span class="rl-card-icon">📰</span> Blog</a>
-        <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> Home Page</a>
+        <a href="panchayat-sahayak-salary-calculator.html" class="rl-card"><span class="rl-card-icon">💰</span> सैलरी व मानदेय कैलकुलेटर</a>
+        <a href="blog-panchayat-sahayak-salary-2026.html" class="rl-card"><span class="rl-card-icon">📖</span> मानदेय नियमावली एवं गाइड</a>
+        <a href="panchayat-sahayak-letter-generator.html" class="rl-card"><span class="rl-card-icon">✉️</span> मानदेय आवेदन पत्र जनरेटर</a>
+        <a href="panchayat-sahayak-notices.html" class="rl-card"><span class="rl-card-icon">📜</span> शासनादेश एवं परिपत्र</a>
+        <a href="panchayat-sahayak-all-portals.html" class="rl-card"><span class="rl-card-icon">🌐</span> सभी सरकारी पोर्टल</a>
+        <a href="index.html" class="rl-card rl-card-home"><span class="rl-card-icon">🏠</span> मुख्य पृष्ठ (Home)</a>
       </div>
     </div>
   </section>
+
   <div style="max-width:960px; margin:24px auto 10px auto; padding:16px 24px; background:#fff3cd; border:1px solid #ffc107; border-radius:10px; color:#856404; text-align:center; font-size:14px; line-height:1.6;">
     <strong>⚠️ Disclaimer:</strong> This website (Panchayat Sahayak Portal) <strong style="text-decoration:underline;">is NOT an official government website</strong>. It is not affiliated, associated, or endorsed by the Panchayati Raj Department (PRD) or the Government of Uttar Pradesh in any way. It is created solely for informational and educational purposes.
   </div>
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
-    <!-- PREMIUM FOOTER -->
+
+  <!-- PREMIUM FOOTER -->
   <footer class="premium-footer">
     <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
       <div class="footer-brand">
