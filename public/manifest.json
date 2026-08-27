@@ -1,0 +1,89 @@
+{
+  "name": "GPS Sahayak - पंचायत सहायक डिजिटल पोर्टल",
+  "short_name": "GPSahayak",
+  "description": "उत्तर प्रदेश के ग्राम पंचायत सहायकों के लिए डिजिटल टूल्स, मानदेय हिसाब, शासनादेश व मार्गदर्शिका।",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#0f766e",
+  "categories": [
+    "productivity",
+    "utilities",
+    "government"
+  ],
+  "lang": "hi",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/images/panchayat_favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/panchayat_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "फार्मर आईडी कार्ड जनरेटर",
+      "short_name": "ID कार्ड",
+      "description": "किसान रजिस्ट्री PVC आईडी कार्ड बनाएं",
+      "url": "/tools/farmer-id-card-generator",
+      "icons": [
+        {
+          "src": "/images/panchayat_favicon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "हिंदी ऑफिस एडिटर",
+      "short_name": "हिंदी एडिटर",
+      "description": "पत्र व प्रस्ताव टाइपिंग",
+      "url": "/tools/hindi-office-editor",
+      "icons": [
+        {
+          "src": "/images/panchayat_favicon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "दैनिक कार्य रजिस्टर",
+      "short_name": "कार्य रजिस्टर",
+      "description": "नागरिक सेवाओं का डिजिटल रिकॉर्ड",
+      "url": "/tools/work-register",
+      "icons": [
+        {
+          "src": "/images/panchayat_favicon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "मानदेय कैलकुलेटर",
+      "short_name": "सैलरी हिसाब",
+      "description": "मासिक मानदेय व एरियर कैलकुलेशन",
+      "url": "/tools/salary-calculator",
+      "icons": [
+        {
+          "src": "/images/panchayat_favicon.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
