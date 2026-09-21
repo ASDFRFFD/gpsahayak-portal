@@ -65,6 +65,8 @@
       { name: "PFMS Portal (पीएफएमएस सैलरी स्टेटस)", type: "Website", url: "https://pfms.nic.in" },
       { name: "Birth & Death Registration (जन्म मृत्यु प्रमाण पत्र)", type: "Website", url: "https://crsorgi.gov.in" },
       
+      { name: "PM Kisan Paisa Check (पीएम किसान सम्मान निधि किस्त स्टेटस)", type: "Tool", url: "check-pmkisan-pension-status.html#pmkisan" },
+      { name: "UP Pension Paisa Check (वृद्धा, विधवा, दिव्यांग पेंशन स्टेटस)", type: "Tool", url: "check-pmkisan-pension-status.html#pension" },
       { name: "Salary Calculator (सैलरी कैलकुलेटर)", type: "Tool", url: "panchayat-sahayak-salary-calculator.html" },
       { name: "Image Compressor & Resizer (इमेज टूल्स)", type: "Tool", url: "panchayat-sahayak-image-tools.html" },
       { name: "PDF Merge & Compress (पीडीऍफ़ टूल्स)", type: "Tool", url: "panchayat-sahayak-pdf-tools.html" },

@@ -260,6 +260,7 @@
           <a href="panchayat-sahayak-village-profile.html">Village Profile</a>
           <a href="panchayat-sahayak-letter-generator.html">Auto-Letter</a>
           <a href="farmer-id-card-generator.html">Farmer ID Card</a>
+          <a href="check-pmkisan-pension-status.html" style="color:#0284c7; font-weight:800;">🧓 UP पेंशन व 🌾 PM किसान स्टेटस चेक</a>
           <a href="document-book-maker.html" style="color:#0284c7; font-weight:700;">📘 Document Book (8-Slot A4)</a>
           <a href="edistrict-swaghoshna-patra.html" style="color:#0f766e; font-weight:700;">📄 स्वप्रमाणित घोषणा-पत्र व आधार जॉइनर</a>
         </div>
@@ -346,14 +347,16 @@
           <a href="edistrict-swaghoshna-patra.html" style="background: linear-gradient(135deg, #0284c7, #0369a1); color: #fff; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);">
             📄 e-District Helper Tool ↗
           </a>
+          <a href="check-pmkisan-pension-status.html#pension" style="background: linear-gradient(135deg, #15803d, #166534); color: #fff; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);">
+            🧓 पेंशन व 🌾 PM किसान पैसा चेक ↗
+          </a>
         </div>
       </div>
     </section>
 
-
-    <div style="text-align: center; margin-bottom: 20px;">
+    <div style="text-align: center; margin: 24px 0 16px 0;">
       <h2
-        style="display:inline-block; background:#fff; padding:8px 16px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1); border: 1px solid var(--border); margin:0; font-size:16px; font-weight:700; color:var(--accent); font-family:'Montserrat', sans-serif;">
+        style="display:inline-block; background:#fff; padding:8px 18px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.08); border: 1px solid var(--border); margin:0; font-size:16px; font-weight:700; color:var(--accent); font-family:'Montserrat', sans-serif;">
         पंचायत सहायकों के लिए उपयोगी गवर्नमेंट वेबसाइट्स
       </h2>
     </div>
@@ -1594,6 +1597,123 @@
       }, 500);
       setTimeout(() => clearInterval(checkDb), 5000);
     })();
+  </script>
+
+  <!-- ==========================================================================
+       LEFT-SIDE FLOATING TOGGLE POPUP (PENSION FIRST, THEN PM KISAN)
+       ========================================================================== -->
+  <!-- Left Side Floating Trigger Button -->
+  <div class="left-dbt-floating-tab" id="leftDbtFloatingTab" onclick="toggleLeftDbtDrawer(true)" title="पेंशन व PM किसान पैसा चेक करें" aria-label="Open Pension and PM Kisan Status Check">
+    <span class="left-tab-badge"><span class="live-blink-dot"></span> LIVE पैसा चेक</span>
+    <span class="left-tab-title">🧓 पेंशन | 🌾 किसान</span>
+    <span class="left-tab-hint">क्लिक करें <span>▶</span></span>
+  </div>
+
+  <!-- Overlay for clicking outside to close -->
+  <div class="left-dbt-drawer-overlay" id="leftDbtDrawerOverlay" onclick="toggleLeftDbtDrawer(false)"></div>
+
+  <!-- Slide-out Drawer Panel -->
+  <aside class="left-dbt-drawer" id="leftDbtDrawer" aria-label="DBT Payment Status Quick Checker">
+    <div class="ld-header">
+      <div class="ld-header-title">
+        <span><span class="live-blink-dot" style="background:#ef4444; box-shadow:0 0 8px #ef4444;"></span> LIVE DBT पैसा चेक</span>
+      </div>
+      <button type="button" class="ld-close-btn" onclick="toggleLeftDbtDrawer(false)" title="बंद करें (Close)" aria-label="Close">✕</button>
+    </div>
+
+    <div class="ld-body">
+      <!-- Tabs: Pension First, PM Kisan Second -->
+      <div class="ld-tab-buttons" role="tablist">
+        <button type="button" class="ld-tab-btn active-pension" id="ld-btn-pension" onclick="switchLeftDrawerTab('pension')">
+          🧓 UP पेंशन
+        </button>
+        <button type="button" class="ld-tab-btn" id="ld-btn-kisan" onclick="switchLeftDrawerTab('pmkisan')">
+          🌾 PM किसान
+        </button>
+      </div>
+
+      <!-- Quick Info Card -->
+      <div class="ld-card-box">
+        <div class="ld-field-row">
+          <span class="label">योजना:</span>
+          <span class="val" id="ld-scheme-name">UP पेंशन (वृद्धा/विधवा/दिव्यांग)</span>
+        </div>
+        <div class="ld-field-row">
+          <span class="label">Category:</span>
+          <span class="val" id="ld-scheme-cat" style="color:#0284c7;">Any Other External System</span>
+        </div>
+        <div class="ld-field-row">
+          <span class="label">Application Id:</span>
+          <span class="val" id="ld-scheme-id">पेंशन रजिस्ट्रेशन नंबर</span>
+        </div>
+        <div class="ld-field-row">
+          <span class="label">DBT Status:</span>
+          <span class="val" style="color:#16a34a;">Payment</span>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <a id="ld-action-link" href="check-pmkisan-pension-status.html#pension" class="ld-action-btn pension-btn">
+        <span id="ld-action-text">🧓 पेंशन स्टेटस चेक गाइड व लिंक खोलें →</span>
+      </a>
+
+      <div class="ld-footer-note">
+        आधिकारिक पोर्टल: <strong>pfms.nic.in</strong> (DBT Status)
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    function toggleLeftDbtDrawer(open) {
+      const drawer = document.getElementById('leftDbtDrawer');
+      const overlay = document.getElementById('leftDbtDrawerOverlay');
+      if (open) {
+        drawer.classList.add('open');
+        overlay.classList.add('active');
+      } else {
+        drawer.classList.remove('open');
+        overlay.classList.remove('active');
+      }
+    }
+
+    function switchLeftDrawerTab(type) {
+      const btnPension = document.getElementById('ld-btn-pension');
+      const btnKisan = document.getElementById('ld-btn-kisan');
+      const schemeName = document.getElementById('ld-scheme-name');
+      const schemeCat = document.getElementById('ld-scheme-cat');
+      const schemeId = document.getElementById('ld-scheme-id');
+      const actionLink = document.getElementById('ld-action-link');
+      const actionText = document.getElementById('ld-action-text');
+
+      if (type === 'pmkisan') {
+        btnPension.classList.remove('active-pension');
+        btnKisan.classList.add('active-kisan');
+        schemeName.innerText = 'PM किसान सम्मान निधि (₹2,000)';
+        schemeCat.innerText = 'PMKISAN';
+        schemeCat.style.color = '#15803d';
+        schemeId.innerText = 'किसान रजिस्ट्रेशन नंबर';
+        actionLink.href = 'check-pmkisan-pension-status.html#pmkisan';
+        actionLink.className = 'ld-action-btn kisan-btn';
+        actionText.innerText = '🌾 PM किसान स्टेटस चेक गाइड व लिंक →';
+      } else {
+        btnKisan.classList.remove('active-kisan');
+        btnPension.classList.add('active-pension');
+        schemeName.innerText = 'UP पेंशन (वृद्धा/विधवा/दिव्यांग)';
+        schemeCat.innerText = 'Any Other External System';
+        schemeCat.style.color = '#0284c7';
+        schemeId.innerText = 'पेंशन रजिस्ट्रेशन नंबर';
+        actionLink.href = 'check-pmkisan-pension-status.html#pension';
+        actionLink.className = 'ld-action-btn pension-btn';
+        actionText.innerText = '🧓 पेंशन स्टेटस चेक गाइड व लिंक खोलें →';
+      }
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        toggleLeftDbtDrawer(false);
+      }
+    });
   </script>
 
   <script src="notifications.js?v=2" defer></script>
