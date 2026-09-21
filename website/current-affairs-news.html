@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3320237271717237"
+    crossorigin="anonymous"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1T48Y2LMSJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1T48Y2LMSJ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Current Affairs - Panchayat Sahayak Portal</title>
+  <meta name="description" content="Stay updated with the latest current affairs and news in a fast, swipeable format.">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0f766e;
+      --accent: #f97316;
+      --text-main: #ffffff;
+      --text-muted: #94a3b8;
+      --bg-dark: #020617;
+      --bg-card: #0f172a;
+      --glass-bg: rgba(15, 23, 42, 0.75);
+      --glass-blur: blur(20px);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      background-color: var(--bg-dark);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      color: var(--text-main);
+      overflow: hidden; /* Prevent body scroll */
+      overscroll-behavior-y: none; /* Prevent pull-to-refresh on mobile */
+    }
+
+    /* TOP NAVIGATION */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(2,6,23,0.9) 0%, rgba(2,6,23,0) 100%);
+      z-index: 100;
+      pointer-events: none; /* Let clicks pass through except on buttons */
+    }
+
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      pointer-events: auto;
+      transition: 0.3s;
+    }
+    
+    .nav-btn:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
+
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      pointer-events: auto;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .brand-title span { color: var(--accent); }
+
+    /* NEWS CONTAINER - SNAP SCROLLING */
+    #news-container {
+      height: 100vh;
+      height: 100dvh; /* For mobile browsers with dynamic UI */
+      width: 100%;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      /* Hide scrollbar */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    #news-container::-webkit-scrollbar { display: none; }
+
+    /* INDIVIDUAL NEWS CARD */
+    .news-card {
+      height: 100vh;
+      height: 100dvh;
+      width: 100%;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-card);
+    }
+
+    /* IMAGE SECTION (TOP 45%) */
+    .news-image {
+      height: 45%;
+      width: 100%;
+      position: relative;
+      background-color: #1e293b;
+    }
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to top, var(--bg-card) 0%, rgba(15,23,42,0) 100%);
+    }
+
+    /* CONTENT SECTION (BOTTOM 55%) */
+    .news-content {
+      height: 55%;
+      padding: 24px 20px 80px 20px; /* Extra bottom padding for footer */
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .news-meta {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .news-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      color: #f8fafc;
+    }
+
+    .news-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #cbd5e1;
+      font-weight: 400;
+      flex-grow: 1;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+    }
+
+    .news-source {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 16px;
+      font-weight: 500;
+    }
+    .news-source a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    /* BOTTOM ACTION BAR */
+    .action-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 20px;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .swipe-hint {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 600;
+      animation: pulse 2s infinite;
+    }
+    .swipe-hint svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    @keyframes pulse {
+      0% { transform: translateY(0); opacity: 0.7; }
+      50% { transform: translateY(-4px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.7; }
+    }
+
+    .action-btns {
+      display: flex;
+      gap: 16px;
+    }
+    .action-btn {
+      background: none;
+      border: none;
+      color: #cbd5e1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+    .action-btn:hover { color: var(--accent); transform: scale(1.1); }
+    .action-btn svg { width: 22px; height: 22px; fill: currentColor; }
+
+    /* LOADING SPINNER */
+    .loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255,255,255,0.1);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      z-index: 1000;
+    }
+    @keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    @media (min-width: 768px) {
+      body {
+        background: #020617;
+        background-image: radial-gradient(#1e293b 1px, transparent 1px);
+        background-size: 20px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #news-container {
+        width: 400px;
+        height: 800px;
+        max-height: 90vh;
+        border-radius: 24px;
+        box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        border: 4px solid #1e293b;
+        position: relative;
+        overflow-y: scroll;
+      }
+      .top-nav {
+        position: absolute;
+        border-radius: 20px 20px 0 0;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://gpsahayak.in/current-affairs-news.html">
+  <meta name="keywords" content="Panchayat Sahayak News, Current Affairs 2026, Gram Panchayat News, Rural India Updates">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="top-nav">
+    <a href="index.html" class="nav-btn" aria-label="Back to Home">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </a>
+    <h1 class="brand-title" style="margin:0; font-size: inherit;">Panchayat <span>News</span></h1>
+    <div style="width:40px;"></div> <!-- Spacer -->
+  </div>
+
+  <div id="loader" class="loader" style="display: none;"></div>
+
+  <!-- News Container (Scroll Snapping with Pre-rendered Static Fallback) -->
+  <div id="news-container">
+    
+    <!-- Card 1: UPI & Rural Digital Payments -->
+    <div class="news-card">
+      <div class="news-image">
+        <img src="https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&q=80&w=800" alt="UPI and Rural Digital Payments" loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="news-content">
+        <div class="news-meta">
+          <span>डिजिटल अवसंरचना</span>
+          <span>•</span>
+          <span>राष्ट्रीय पहल</span>
+        </div>
+        <h2 class="news-title">Digital Public Infrastructure: ग्रामीण क्षेत्रों में UPI व डिजिटल भुगतान</h2>
+        <p class="news-desc">भारतीय राष्ट्रीय भुगतान निगम (NPCI) द्वारा विकसित एकीकृत भुगतान इंटरफेस (UPI) भारत के ग्रामीण क्षेत्रों और ग्राम पंचायतों में वित्तीय समावेशन का मुख्य आधार बन चुका है। ग्राम सचिवालयों में नागरिक सेवाओं और शुल्क भुगतान में डिजिटल माध्यमों से पारदर्शिता सुनिश्चित हो रही है।</p>
+        <div class="news-source">
+          स्रोत: <strong>डिजिटल भारत पहल</strong> / <a href="panchayat-sahayak-all-portals.html">पोर्टल विवरण</a>
+        </div>
+        <div class="action-bar">
+          <div class="swipe-hint"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg> Swipe up for next</div>
+          <div class="action-btns">
+            <button class="action-btn" aria-label="Share" onclick="shareNews('Digital Public Infrastructure')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg></button>
+            <button class="action-btn" aria-label="Bookmark" onclick="toggleBookmark(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: SVAMITVA Scheme -->
+    <div class="news-card">
+      <div class="news-image">
+        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800" alt="SVAMITVA Scheme Drone Survey" loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="news-content">
+        <div class="news-meta">
+          <span>पंचायती राज</span>
+          <span>•</span>
+          <span>स्वामित्व योजना</span>
+        </div>
+        <h2 class="news-title">SVAMITVA Scheme: ग्रामीण आबादी क्षेत्रों में ड्रोन आधारित संपत्ति सर्वेक्षण</h2>
+        <p class="news-desc">पंचायती राज मंत्रालय द्वारा संचालित स्वामित्व (SVAMITVA) योजना के तहत देश के ग्रामीण आबादी क्षेत्रों का आधुनिक ड्रोन तकनीक से सर्वेक्षण किया जा रहा है। इससे ग्रामीणों को कानूनी स्वामित्व कार्ड (घरौनी) प्राप्त हो रहे हैं, जिनका उपयोग वित्तीय ऋण एवं संपदा सुरक्षा हेतु किया जाता है।</p>
+        <div class="news-source">
+          स्रोत: <strong>Ministry of Panchayati Raj</strong> / <a href="gram-panchayat-yojana-list.html">योजना विवरण</a>
+        </div>
+        <div class="action-bar">
+          <div class="swipe-hint"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg> Swipe up for next</div>
+          <div class="action-btns">
+            <button class="action-btn" aria-label="Share" onclick="shareNews('SVAMITVA Scheme')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg></button>
+            <button class="action-btn" aria-label="Bookmark" onclick="toggleBookmark(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: e-Gram Swaraj & PFMS -->
+    <div class="news-card">
+      <div class="news-image">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" alt="eGramSwaraj and PFMS Integration" loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="news-content">
+        <div class="news-meta">
+          <span>वित्तीय प्रबंधन</span>
+          <span>•</span>
+          <span>e-Gram Swaraj</span>
+        </div>
+        <h2 class="news-title">e-Gram Swaraj & PFMS: ग्राम पंचायत निधि व्यय का डिजिटल एकीकरण</h2>
+        <p class="news-desc">ई-ग्राम स्वराज पोर्टल और सार्वजनिक वित्तीय प्रबंधन प्रणाली (PFMS) के माध्यम से पंचायतों की विकास योजनाओं (GPDP) और 15वें वित्त आयोग अनुदानों का डिजिटल लेखांकन होता है। प्रधान एवं सचिव के डिजिटल हस्ताक्षर (DSC) से शत-प्रतिशत ऑनलाइन भुगतान सुनिश्चित किया जाता है।</p>
+        <div class="news-source">
+          स्रोत: <strong>eGramSwaraj Portal</strong> / <a href="panchayat-sahayak-salary-status.html">गाइड देखें</a>
+        </div>
+        <div class="action-bar">
+          <div class="swipe-hint"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg> Swipe up for next</div>
+          <div class="action-btns">
+            <button class="action-btn" aria-label="Share" onclick="shareNews('e-Gram Swaraj and PFMS')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg></button>
+            <button class="action-btn" aria-label="Bookmark" onclick="toggleBookmark(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: BharatNet -->
+    <div class="news-card">
+      <div class="news-image">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800" alt="BharatNet Rural Connectivity" loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="news-content">
+        <div class="news-meta">
+          <span>डिजिटल कनेक्टिविटी</span>
+          <span>•</span>
+          <span>भारतनेट</span>
+        </div>
+        <h2 class="news-title">BharatNet: ग्राम पंचायतों में हाई-स्पीड ऑप्टिकल फाइबर नेटवर्क</h2>
+        <p class="news-desc">दूरसंचार विभाग की भारतनेट परियोजना का उद्देश्य देश की सभी ग्राम पंचायतों को हाई-स्पीड ब्रॉडबैंड कनेक्टिविटी से जोड़ना है। इसके माध्यम से ग्राम सचिवालयों में ई-डिस्ट्रिक्ट, आधार प्रमाणीकरण और जनसेवा केंद्र सुचारु रूप से संचालित होते हैं।</p>
+        <div class="news-source">
+          स्रोत: <strong>Department of Telecommunications</strong> / <a href="panchayat-sahayak-all-portals.html">पोर्टल सूची</a>
+        </div>
+        <div class="action-bar">
+          <div class="swipe-hint"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg> Swipe up for next</div>
+          <div class="action-btns">
+            <button class="action-btn" aria-label="Share" onclick="shareNews('BharatNet Project')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg></button>
+            <button class="action-btn" aria-label="Bookmark" onclick="toggleBookmark(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: AgriStack & PM-Kisan -->
+    <div class="news-card">
+      <div class="news-image">
+        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800" alt="AgriStack Digital Agriculture" loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="news-content">
+        <div class="news-meta">
+          <span>कृषि समावेशन</span>
+          <span>•</span>
+          <span>डिजिटल किसान रजिस्ट्री</span>
+        </div>
+        <h2 class="news-title">AgriStack: किसानों की डिजिटल पहचान एवं फसल सत्यापन प्रणाली</h2>
+        <p class="news-desc">कृषि एवं किसान कल्याण मंत्रालय द्वारा एग्रीस्टैक (AgriStack) के तहत डिजिटल किसान रजिस्ट्री तैयार की जा रही है। इससे पीएम-किसान सम्मान निधि, किसान क्रेडिट कार्ड और फसल बीमा का सत्यापन पारदर्शी एवं त्वरित बनता है।</p>
+        <div class="news-source">
+          स्रोत: <strong>Ministry of Agriculture</strong> / <a href="farmer-id-card-generator.html">फार्मर आईडी टूल</a>
+        </div>
+        <div class="action-bar">
+          <div class="swipe-hint"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg> Swipe up for next</div>
+          <div class="action-btns">
+            <button class="action-btn" aria-label="Share" onclick="shareNews('AgriStack Farmer Registry')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg></button>
+            <button class="action-btn" aria-label="Bookmark" onclick="toggleBookmark(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Ayushman Bharat Digital Mission (ABDM) -->
+    <div class="news-card">
+      <div class="news-image">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" alt="Ayushman Bharat Digital Health" loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="news-content">
+        <div class="news-meta">
+          <span>डिजिटल स्वास्थ्य</span>
+          <span>•</span>
+          <span>ABDM</span>
+        </div>
+        <h2 class="news-title">Ayushman Bharat Digital Mission: आभा (ABHA) हेल्थ आईडी व डिजिटल रिकॉर्ड</h2>
+        <p class="news-desc">राष्ट्रीय स्वास्थ्य प्राधिकरण (NHA) द्वारा संचालित आयुष्मान भारत डिजिटल मिशन के तहत प्रत्येक नागरिक की 14-अंकीय आभा (ABHA) हेल्थ आईडी बनाई जा रही है। ग्राम सचिवालयों में नागरिक अपने डिजिटल स्वास्थ्य खाते से विभिन्न अस्पतालों की जांच रिपोर्ट सुरक्षित जोड़ सकते हैं।</p>
+        <div class="news-source">
+          स्रोत: <strong>National Health Authority</strong> / <a href="document-book-maker.html">स्मार्ट कार्ड टूल</a>
+        </div>
+        <div class="action-bar">
+          <div class="swipe-hint" style="animation:none; opacity:0.6;">संसाधन संदर्शिका का अंत</div>
+          <div class="action-btns">
+            <button class="action-btn" aria-label="Share" onclick="shareNews('Ayushman Bharat Digital Mission')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg></button>
+            <button class="action-btn" aria-label="Bookmark" onclick="toggleBookmark(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Share Functionality (using Web Share API if available)
+    function shareNews(title) {
+      if (navigator.share) {
+        navigator.share({
+          title: title,
+          text: 'Panchayat Sahayak Portal - Digital Initiative Guide:',
+          url: window.location.href
+        }).catch(console.error);
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert("संसाधन लिंक क्लिपबोर्ड पर कॉपी हो गया!");
+      }
+    }
+
+    // Toggle Bookmark
+    function toggleBookmark(btn) {
+      const isBookmarked = btn.style.color === 'var(--accent)';
+      btn.style.color = isBookmarked ? '#cbd5e1' : 'var(--accent)';
+      
+      // Bump animation
+      btn.style.transform = 'scale(1.2)';
+      setTimeout(() => btn.style.transform = 'scale(1)', 200);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,942 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3320237271717237" crossorigin="anonymous"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1T48Y2LMSJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1T48Y2LMSJ');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PFMS DBT स्टेटस से UP पेंशन व PM किसान का पैसा कैसे चेक करें | PFMS DBT Status Tracker</title>
+  <meta name="description" content="PFMS DBT Status Tracker से UP पेंशन (वृद्धा/विधवा/दिव्यांग) और PM किसान ₹2,000 का पैसा कैसे चेक करें। Category में Any Other External System चुनना, Application Id दर्ज करना और पेमेंट स्टेटस देखने का पूरा तरीका।">
+  <meta name="keywords" content="UP Pension payment status, PFMS DBT Status Tracker, PM kisan payment status, Category Any Other External System, Application Id, pfms nic in DBT_StatusTracker aspx, gpsahayak">
+  
+  <link rel="canonical" href="https://gpsahayak.in/check-pmkisan-pension-status.html">
+  <link rel="icon" type="image/png" href="images/panchayat_favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gpsahayak.in/"},
+      {"@type": "ListItem", "position": 2, "name": "PFMS DBT स्टेटस ट्रैकर गाइड", "item": "https://gpsahayak.in/check-pmkisan-pension-status.html"}
+    ]
+  }
+  </script>
+
+  <style>
+    .status-guide-page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 16px 16px 60px 16px;
+    }
+
+    /* Custom Page Header & Nav (Non-Green Royal Navy Theme) */
+    .nic-titles span:first-child {
+      color: #1e3a8a !important;
+    }
+    .nic-titles span:last-child {
+      color: #0369a1 !important;
+    }
+    .main-nav {
+      background: linear-gradient(90deg, #0f172a 0%, #1e3a8a 60%, #0284c7 100%) !important;
+    }
+
+    /* Hero Banner (Royal Navy Blue / Sapphire) */
+    .status-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%) !important;
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 26px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px -4px rgba(30, 58, 138, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .status-hero h1 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0 0 8px 0;
+      font-family: 'Outfit', sans-serif;
+    }
+    .status-hero p {
+      font-size: 14px;
+      line-height: 1.6;
+      opacity: 0.95;
+      margin: 0;
+      max-width: 840px;
+    }
+
+    /* Main Scheme Switcher */
+    .scheme-switcher {
+      display: flex;
+      background: #e2e8f0;
+      padding: 5px;
+      border-radius: 14px;
+      gap: 6px;
+      margin-bottom: 24px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .scheme-tab-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      font-size: 14.5px;
+      font-weight: 700;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      color: #475569;
+      transition: all 0.25s ease;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .scheme-tab-btn.active-kisan {
+      background: #ffffff;
+      color: #15803d;
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.2);
+    }
+    .scheme-tab-btn.active-pension {
+      background: #ffffff;
+      color: #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    }
+
+    /* PFMS Visual Form Simulator Mockup (Based on actual portal screenshot) */
+    .pfms-mockup-card {
+      background: #ffffff;
+      border: 2px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+    .pfms-mock-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #b91c1c;
+      border-bottom: 2px solid #fee2e2;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      font-family: 'Outfit', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pfms-notice-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12.5px;
+      color: #166534;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .pfms-form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .mock-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+    }
+    .mock-field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .mock-field label span.req {
+      color: #ef4444;
+    }
+    .mock-input {
+      padding: 9px 12px;
+      border: 1.5px solid #94a3b8;
+      border-radius: 8px;
+      background: #f8fafc;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mock-input.highlighted-field {
+      border: 2px solid #ea580c;
+      background: #fff7ed;
+      color: #c2410c;
+      animation: pulseBorder 2.5s infinite;
+    }
+    @keyframes pulseBorder {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.4); }
+      50% { box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.2); }
+    }
+    .mock-helper-arrow {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #c2410c;
+      background: #ffedd5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    /* Radio Group Mockup */
+    .mock-radio-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 9px 12px;
+      border: 1.5px solid #94a3b8;
+      border-radius: 8px;
+      background: #f8fafc;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Steps */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .step-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease;
+    }
+    .step-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 17px;
+      font-family: 'Outfit', sans-serif;
+    }
+    .step-num-kisan {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+    }
+    .step-num-pension {
+      background: #e0f2fe;
+      color: #0284c7;
+      border: 1px solid #7dd3fc;
+    }
+    .step-body {
+      flex: 1;
+    }
+    .step-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0 0 6px 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .step-desc {
+      font-size: 13.5px;
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Action CTA Box */
+    .redirect-action-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+      border: 2px solid #86efac;
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      margin: 24px 0;
+    }
+    .redirect-action-box.pension-theme {
+      background: linear-gradient(135deg, #f0f9ff 0%, #fdf4ff 100%);
+      border-color: #7dd3fc;
+    }
+    .action-main-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+      color: #ffffff !important;
+      padding: 15px 32px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(21, 128, 61, 0.35);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      margin: 10px 0;
+      font-family: 'Outfit', sans-serif;
+    }
+    .action-main-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(21, 128, 61, 0.45);
+    }
+    .action-main-btn.pension-btn {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+    }
+    .action-main-btn.pension-btn:hover {
+      box-shadow: 0 8px 22px rgba(2, 132, 199, 0.45);
+    }
+
+    /* Tab Panes */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .status-hero h1 { font-size: 20px; }
+      .scheme-tab-btn { font-size: 13px; padding: 10px 8px; }
+      .step-card { flex-direction: column; gap: 10px; padding: 14px; }
+      .action-main-btn { width: 100%; font-size: 14.5px; padding: 13px 16px; }
+    }
+  </style>
+</head>
+
+<body class="dl-page">
+
+  <!-- ==========================================================================
+       CONFIG SCRIPT: SHORT LINKS & PFMS DIRECT URL
+       ========================================================================== -->
+  <script>
+    /*
+     * 👉 अपना शॉर्ट लिंक यहाँ बदलें (PASTE YOUR SHORT LINK HERE):
+     * यदि आप कोई छोटा लिंक (जैसे bit.ly, tinyurl आदि) लगाना चाहते हैं,
+     * तो नीचे दिए गए URL की जगह अपना लिंक पेस्ट कर दें:
+     */
+    const CONFIG_LINKS = {
+      // Direct PFMS DBT Status Tracker URL:
+      pfmsTrackerUrl: "https://pfms.nic.in/SitePages/DBT_StatusTracker.aspx"
+    };
+  </script>
+
+  <!-- NIC HEADER -->
+  <header class="nic-header">
+    <div class="nic-header-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+      <a href="index.html" class="nic-logo-left" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="पंचायत सहायक पोर्टल लोगो" style="height: 52px; margin-right: 12px;">
+        <div class="nic-titles">
+          <span style="font-size: 24px; line-height: 1.2; font-weight: 800; color: var(--primary); font-family: 'Poppins', sans-serif; display:block;">Panchayat Sahayak Portal</span>
+          <span style="font-size: 12px; font-weight: 600; color: var(--primary); margin-top: 3px; display:block;">उत्तर प्रदेश ग्राम सचिवालय एवं पंचायत सहायक पोर्टल</span>
+        </div>
+      </a>
+      <div class="header-utils" style="display: flex; gap: 18px; align-items: center;">
+        <div id="google_translate_element"></div>
+        <div class="theme-switch" onclick="document.body.classList.toggle('dark-theme')" style="cursor:pointer; display:flex; align-items:center;">
+          <button title="Toggle Dark/Light Mode" style="border:1px solid var(--border); background:var(--white); cursor:pointer; color:var(--text-main); font-weight:700; padding: 6px 12px; border-radius: 6px; font-size:12px; font-family:'Poppins',sans-serif; display:flex; align-items:center; gap:6px; box-shadow: var(--shadow-sm); transition: var(--transition);">🌓 Night Mode</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN NAVIGATION -->
+  <nav class="main-nav">
+    <div class="nav-inner" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <span class="nav-link">होम ▾</span>
+        <div class="dropdown">
+          <a href="index.html">होम (Home)</a>
+          <a href="about.html">About Portal</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-link">सेवाएँ ▾</span>
+        <div class="dropdown">
+          <a href="index.html#services">सभी सेवाएँ</a>
+          <a href="panchayat-sahayak-software-download.html">Software Drive</a>
+          <a href="panchayat-sahayak-all-portals.html">सभी वेबसाइट</a>
+          <a href="forum.html">पंचायत फोरम (Forum)</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-link">आदेश ▾</span>
+        <div class="dropdown">
+          <a href="panchayat-sahayak-notices.html">सभी शासनादेश</a>
+          <a href="panchayat-sahayak-forms-pdfs.html">सभी फ़ॉर्म व PDF</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-link">टूल्स ▾</span>
+        <div class="dropdown">
+          <a href="check-pmkisan-pension-status.html" style="color:var(--accent); font-weight:800;">🔥 PFMS पेमेंट स्टेटस ट्रैकर</a>
+          <a href="panchayat-sahayak-salary-status.html">सैलरी स्टेटस चेक</a>
+          <a href="panchayat-sahayak-csc-calculator.html">CSC शुल्क कैलकुलेटर</a>
+          <a href="panchayat-sahayak-work-register.html">कार्य रजिस्टर</a>
+          <a href="farmer-id-card-generator.html">Farmer ID Card</a>
+          <a href="edistrict-swaghoshna-patra.html">स्वप्रमाणित घोषणा-पत्र</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <span class="nav-link">संपर्क ▾</span>
+        <div class="dropdown">
+          <a href="contact.html">Helpdesk & Support</a>
+          <a href="panchayat-sahayak-salary-status.html">Salary Status Check</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN PAGE CONTENT -->
+  <main class="page status-guide-page" id="main-content">
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb" style="margin-bottom: 14px;">
+      <a href="index.html">होम</a> <span>»</span>
+      <a href="index.html#services">सेवाएँ</a> <span>»</span>
+      <span>PFMS DBT पेमेंट स्टेटस चेक</span>
+    </div>
+
+    <!-- HERO SECTION -->
+    <!-- HERO SECTION -->
+    <section class="status-hero">
+      <div class="status-badge">⚡ PFMS DBT Status Tracker 2026</div>
+      <h1>UP पेंशन एवं PM किसान का पेमेंट स्टेटस कैसे चेक करें?</h1>
+      <p>
+        PFMS की आधिकारिक वेबसाइट (<strong>pfms.nic.in</strong>) पर जाकर UP पेंशन (वृद्धा, विधवा, दिव्यांग) और PM किसान ₹2,000 किस्त का बैंक क्रेडिट विवरण चेक करने का सटीक तरीका यहाँ देखें।
+      </p>
+    </section>
+
+    <!-- SCHEME SWITCHER TABS: PENSION FIRST, THEN PM KISAN -->
+    <div class="scheme-switcher" role="tablist">
+      <button id="tab-btn-pension" class="scheme-tab-btn active-pension" onclick="switchTab('pension')" role="tab" aria-selected="true">
+        <span style="font-size: 18px;">🧓</span> UP पेंशन (वृद्धा/विधवा/दिव्यांग)
+      </button>
+      <button id="tab-btn-kisan" class="scheme-tab-btn" onclick="switchTab('pmkisan')" role="tab" aria-selected="false">
+        <span style="font-size: 18px;">🌾</span> PM किसान सम्मान निधि (₹2,000)
+      </button>
+    </div>
+
+    <!-- ======================================================================
+         TAB 1: UP PENSION PFMS GUIDE (FIRST)
+         ====================================================================== -->
+    <div id="tab-pension" class="tab-pane active" role="tabpanel">
+
+      <!-- DIRECT ACTION BOX PENSION -->
+      <div class="redirect-action-box pension-theme">
+        <span style="display: inline-block; background: #e0f2fe; color: #0284c7; font-weight: 800; font-size: 12px; padding: 4px 12px; border-radius: 20px; margin-bottom: 6px;">
+          🚀 डायरेक्ट PFMS पोर्टल लिंक
+        </span>
+        <h3 style="color: #0c4a6e; font-size: 20px; font-weight: 800; margin: 6px 0;">
+          UP पेंशन DBT पेमेंट स्टेटस ट्रैकर खोलें
+        </h3>
+        <p style="color: #4b5563; font-size: 13.5px; margin: 0 0 10px 0;">
+          नीचे दिए गए बटन पर क्लिक करके सीधे PFMS पोर्टल खोलें और अपनी वृद्धा, विधवा या दिव्यांग पेंशन का भुगतान स्टेटस देखें।
+        </p>
+        <a id="btn-redirect-pension" href="https://pfms.nic.in/SitePages/DBT_StatusTracker.aspx" target="_blank" rel="noopener noreferrer" class="action-main-btn pension-btn">
+          <span>🧓 PFMS पेंशन DBT स्टेटस पेज खोलें ↗</span>
+        </a>
+        <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">
+          आधिकारिक लिंक: <strong>pfms.nic.in/SitePages/DBT_StatusTracker.aspx</strong>
+        </div>
+      </div>
+
+      <!-- ACTUAL PORTAL SCREENSHOT GUIDE (As requested by user) -->
+      <div class="pfms-screenshot-card">
+        <div class="screenshot-header">
+          <span style="font-weight: 800; font-size: 15px; color: #0c4a6e;">📸 PFMS पोर्टल का असली स्क्रीनशॉट (ठीक ऐसे ही भरें)</span>
+          <span class="screenshot-badge">आधिकारिक पोर्टल दृश्य</span>
+        </div>
+        <div class="screenshot-wrapper">
+          <img src="images/pfms-dbt-status-screenshot.png" alt="PFMS DBT Status Tracker Portal Screenshot - Pension" loading="lazy">
+        </div>
+        <div class="screenshot-legend">
+          <div class="legend-item"><span class="legend-num">1</span> <span><strong>Category:</strong> <em>"Any Other External System"</em> चुनें</span></div>
+          <div class="legend-item"><span class="legend-num">2</span> <span><strong>DBT Status:</strong> <em>"Payment"</em> सेलेक्ट करें</span></div>
+          <div class="legend-item"><span class="legend-num">3</span> <span><strong>Enter Application Id:</strong> अपना 12 अंकों का पेंशन रजिस्ट्रेशन नंबर डालें</span></div>
+          <div class="legend-item"><span class="legend-num">4</span> <span><strong>Word Verification:</strong> इमेज का Captcha भरकर <strong>Search</strong> दबाएं</span></div>
+        </div>
+      </div>
+
+      <!-- VISUAL FORM SIMULATOR FOR PENSION -->
+      <div class="pfms-mockup-card">
+        <div class="pfms-mock-title">
+          <span style="color: #0284c7;">🖥️ PFMS पोर्टल पर क्या भरना है (UP पेंशन)</span>
+          <span style="font-size: 12px; color: #0284c7; background: #e0f2fe; padding: 3px 8px; border-radius: 4px;">पेंशन गाइड</span>
+        </div>
+        <div class="pfms-notice-box" style="background: #f0f9ff; border-color: #bae6fd; color: #0369a1;">
+          📌 <strong>पेंशन धारकों के लिए:</strong> PFMS पोर्टल पर पेंशन का विकल्प <strong>"Any Other External System"</strong> के नाम से रहता है।
+        </div>
+
+        <div class="pfms-form-grid">
+          <!-- 1. Category -->
+          <div class="mock-field">
+            <label>Category: <span class="req">*</span></label>
+            <div class="mock-input highlighted-field" style="border-color: #0284c7; background: #f0f9ff; color: #0369a1;">
+              <span>Any Other External System</span>
+              <span>▼</span>
+            </div>
+            <div class="mock-helper-arrow" style="background: #e0f2fe; color: #0284c7;">👉 Category में "Any Other External System" चुनें</div>
+          </div>
+
+          <!-- 2. DBT Status -->
+          <div class="mock-field">
+            <label>DBT Status: <span class="req">*</span></label>
+            <div class="mock-radio-group">
+              <span style="color: #64748b;">○ Beneficiary Validation</span>
+              <span style="color: #0284c7; font-weight: 800;">🔘 Payment</span>
+            </div>
+            <div class="mock-helper-arrow" style="background: #e0f2fe; color: #0284c7;">👉 "Payment" विकल्प सेलेक्ट रखें</div>
+          </div>
+
+          <!-- 3. Enter Application Id -->
+          <div class="mock-field">
+            <label>Enter Application Id: <span class="req">*</span></label>
+            <div class="mock-input highlighted-field" style="border-color: #0284c7; background: #f0f9ff; color: #0369a1;">
+              <span style="color: #475569;">अपना 12 अंकों का पेंशन रजिस्ट्रेशन नंबर</span>
+              <span>✏️</span>
+            </div>
+            <div class="mock-helper-arrow" style="background: #e0f2fe; color: #0284c7;">👉 यहाँ अपना Pension Registration No. डालें</div>
+          </div>
+
+          <!-- 4. Word Verification -->
+          <div class="mock-field">
+            <label>Word Verification (Captcha): <span class="req">*</span></label>
+            <div class="mock-input">
+              <span style="color: #94a3b8;">स्क्रीन पर दिख रहा कोड डालें...</span>
+            </div>
+            <div class="mock-helper-arrow" style="background: #e0f2fe; color: #0284c7;">👉 इमेज में दिया गया Captcha भरें</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 10px;">
+          <span style="background: #1e3a8a; color: #fff; padding: 8px 24px; border-radius: 6px; font-weight: 700; font-size: 13.5px; display: inline-block;">
+            🔍 Search (सर्च बटन दबाएं)
+          </span>
+        </div>
+      </div>
+
+      <!-- STEP-BY-STEP PENSION BREAKDOWN -->
+      <h2 style="font-size: 19px; font-weight: 800; color: #0f172a; margin: 24px 0 14px 0; display: flex; align-items: center; gap: 8px;">
+        <span>📋</span> पेंशन पैसा चेक करने के चरण
+      </h2>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-num step-num-pension">1</div>
+          <div class="step-body">
+            <h3 class="step-title">PFMS पोर्टल खोलें</h3>
+            <p class="step-desc">
+              ऊपर दिए गए नीले बटन <strong>"PFMS पेंशन DBT स्टेटस पेज खोलें"</strong> पर क्लिक करें।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card" style="border: 2px solid #7dd3fc; background: #f8fbff;">
+          <div class="step-num step-num-pension">2</div>
+          <div class="step-body">
+            <h3 class="step-title">
+              Category में "Any Other External System" चुनें
+              <span style="background: #0284c7; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px;">पेंशन के लिए जरूरी</span>
+            </h3>
+            <p class="step-desc">
+              <strong>Category</strong> ड्रॉपडाउन पर क्लिक करें और पेंशन के लिए <strong>"Any Other External System"</strong> विकल्प चुनें।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num step-num-pension">3</div>
+          <div class="step-body">
+            <h3 class="step-title">DBT Status में "Payment" सेलेक्ट करें</h3>
+            <p class="step-desc">
+              <strong>"Payment"</strong> वाले रेडियो बटन को सेलेक्ट करें।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card" style="border: 2px solid #7dd3fc; background: #f8fbff;">
+          <div class="step-num step-num-pension">4</div>
+          <div class="step-body">
+            <h3 class="step-title">Enter Application Id में 12 अंकों का पेंशन नंबर डालें</h3>
+            <p class="step-desc">
+              <strong>Enter Application Id</strong> में अपनी वृद्धावस्था, विधवा या दिव्यांग पेंशन का <strong>12 अंकों का रजिस्ट्रेशन नंबर</strong> भरें।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num step-num-pension">5</div>
+          <div class="step-body">
+            <h3 class="step-title">Captcha कोड डालकर "Search" दबाएं</h3>
+            <p class="step-desc">
+              Word Verification बॉक्स में Captcha कोड दर्ज करें और <strong>Search</strong> बटन पर क्लिक करें।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num step-num-pension">6</div>
+          <div class="step-body">
+            <h3 class="step-title">पेंशन किस्त क्रेडिट विवरण देखें</h3>
+            <p class="step-desc">
+              सर्च करने पर पेंशनर का नाम, तिमाही किस्त (₹3,000) या मासिक राशि (₹1,000), PFMS अप्रूवल डेट और बैंक क्रेडिट स्थिति (Success) तुरंत दिखाई देगी।
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ======================================================================
+         TAB 2: PM KISAN PFMS GUIDE (SECOND)
+         ====================================================================== -->
+    <div id="tab-pmkisan" class="tab-pane" role="tabpanel">
+
+      <!-- DIRECT ACTION BOX TOP -->
+      <div class="redirect-action-box">
+        <span style="display: inline-block; background: #dcfce7; color: #15803d; font-weight: 800; font-size: 12px; padding: 4px 12px; border-radius: 20px; margin-bottom: 6px;">
+          🚀 डायरेक्ट PFMS पोर्टल लिंक
+        </span>
+        <h3 style="color: #14532d; font-size: 20px; font-weight: 800; margin: 6px 0;">
+          PM किसान DBT स्टेटस ट्रैकर खोलें
+        </h3>
+        <p style="color: #4b5563; font-size: 13.5px; margin: 0 0 10px 0;">
+          नीचे दिए गए बटन पर क्लिक करके सीधे आधिकारिक PFMS DBT Tracker पेज पर जाएं और नीचे दिए गए स्टेप्स फॉलो करें।
+        </p>
+        <a id="btn-redirect-kisan" href="https://pfms.nic.in/SitePages/DBT_StatusTracker.aspx" target="_blank" rel="noopener noreferrer" class="action-main-btn">
+          <span>🌾 PFMS DBT स्टेटस पेज खोलें ↗</span>
+        </a>
+        <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">
+          आधिकारिक लिंक: <strong>pfms.nic.in/SitePages/DBT_StatusTracker.aspx</strong>
+        </div>
+      </div>
+
+      <!-- ACTUAL PORTAL SCREENSHOT GUIDE (As requested by user) -->
+      <div class="pfms-screenshot-card" style="border-color: #86efac;">
+        <div class="screenshot-header">
+          <span style="font-weight: 800; font-size: 15px; color: #166534;">📸 PFMS पोर्टल का असली स्क्रीनशॉट (PM किसान के लिए)</span>
+          <span class="screenshot-badge" style="background:#dcfce7; color:#15803d;">आधिकारिक पोर्टल दृश्य</span>
+        </div>
+        <div class="screenshot-wrapper">
+          <img src="images/pfms-dbt-status-screenshot.png" alt="PFMS DBT Status Tracker Portal Screenshot - PM Kisan" loading="lazy">
+        </div>
+        <div class="screenshot-legend">
+          <div class="legend-item"><span class="legend-num" style="background:#15803d;">1</span> <span><strong>Category:</strong> <em>"PMKISAN"</em> चुनें</span></div>
+          <div class="legend-item"><span class="legend-num" style="background:#15803d;">2</span> <span><strong>DBT Status:</strong> <em>"Payment"</em> सेलेक्ट करें</span></div>
+          <div class="legend-item"><span class="legend-num" style="background:#15803d;">3</span> <span><strong>Enter Application Id:</strong> अपना किसान रजिस्ट्रेशन नंबर डालें</span></div>
+          <div class="legend-item"><span class="legend-num" style="background:#15803d;">4</span> <span><strong>Word Verification:</strong> इमेज का Captcha भरकर <strong>Search</strong> दबाएं</span></div>
+        </div>
+      </div>
+
+      <!-- VISUAL FORM SIMULATOR FOR PM KISAN -->
+      <div class="pfms-mockup-card">
+        <div class="pfms-mock-title">
+          <span>🖥️ PFMS पोर्टल पर क्या भरना है (PM किसान)</span>
+          <span style="font-size: 12px; color: #15803d; background: #dcfce7; padding: 3px 8px; border-radius: 4px;">Live Guide</span>
+        </div>
+        <div class="pfms-notice-box">
+          📌 <strong>DBT Status of Beneficiary and Payment Details</strong> पेज खुलने पर नीचे दिखाए अनुसार विकल्प चुनें:
+        </div>
+
+        <div class="pfms-form-grid">
+          <!-- 1. Category -->
+          <div class="mock-field">
+            <label>Category: <span class="req">*</span></label>
+            <div class="mock-input highlighted-field">
+              <span>PMKISAN</span>
+              <span>▼</span>
+            </div>
+            <div class="mock-helper-arrow">👉 Category में "PMKISAN" चुनें</div>
+          </div>
+
+          <!-- 2. DBT Status -->
+          <div class="mock-field">
+            <label>DBT Status: <span class="req">*</span></label>
+            <div class="mock-radio-group">
+              <span style="color: #64748b;">○ Beneficiary Validation</span>
+              <span style="color: #15803d; font-weight: 800;">🔘 Payment</span>
+            </div>
+            <div class="mock-helper-arrow">👉 "Payment" विकल्प सेलेक्ट रखें</div>
+          </div>
+
+          <!-- 3. Enter Application Id -->
+          <div class="mock-field">
+            <label>Enter Application Id: <span class="req">*</span></label>
+            <div class="mock-input highlighted-field">
+              <span style="color: #475569;">जैसे: UP123456789 (रजिस्ट्रेशन नंबर)</span>
+              <span>✏️</span>
+            </div>
+            <div class="mock-helper-arrow">👉 यहाँ अपना PM किसान Registration Number डालें</div>
+          </div>
+
+          <!-- 4. Word Verification -->
+          <div class="mock-field">
+            <label>Word Verification (Captcha): <span class="req">*</span></label>
+            <div class="mock-input">
+              <span style="color: #94a3b8;">स्क्रीन पर दिख रहा कोड डालें...</span>
+            </div>
+            <div class="mock-helper-arrow">👉 इमेज में दिया गया Captcha भरें</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 10px;">
+          <span style="background: #1e3a8a; color: #fff; padding: 8px 24px; border-radius: 6px; font-weight: 700; font-size: 13.5px; display: inline-block;">
+            🔍 Search (सर्च बटन दबाएं)
+          </span>
+        </div>
+      </div>
+
+      <!-- STEP-BY-STEP BREAKDOWN -->
+      <h2 style="font-size: 19px; font-weight: 800; color: #0f172a; margin: 24px 0 14px 0; display: flex; align-items: center; gap: 8px;">
+        <span>📋</span> स्टेप-बाय-स्टेप चेक करने की पूरी प्रक्रिया
+      </h2>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-num step-num-kisan">1</div>
+          <div class="step-body">
+            <h3 class="step-title">PFMS DBT स्टेटस पेज खोलें</h3>
+            <p class="step-desc">
+              ऊपर दिए गए हरे बटन <strong>"PFMS DBT स्टेटस पेज खोलें"</strong> पर क्लिक करें। आपके सामने <strong>DBT Status of Beneficiary and Payment Details</strong> का पेज खुलेगा।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card" style="border: 2px solid #86efac; background: #fafdfb;">
+          <div class="step-num step-num-kisan">2</div>
+          <div class="step-body">
+            <h3 class="step-title">
+              Category में "PMKISAN" चुनें
+              <span style="background: #15803d; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px;">महत्वपूर्ण</span>
+            </h3>
+            <p class="step-desc">
+              सबसे पहले <strong>Category</strong> वाले ड्रॉपडाउन मेन्यू पर क्लिक करें और सूची में से <strong>"PMKISAN"</strong> विकल्प का चयन करें।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num step-num-kisan">3</div>
+          <div class="step-body">
+            <h3 class="step-title">DBT Status में "Payment" सेलेक्ट करें</h3>
+            <p class="step-desc">
+              DBT Status में दो विकल्प होंगे। आपको <strong>"Payment"</strong> वाले रेडियो बटन पर टिक (Select) करना है।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card" style="border: 2px solid #86efac; background: #fafdfb;">
+          <div class="step-num step-num-kisan">4</div>
+          <div class="step-body">
+            <h3 class="step-title">Enter Application Id में रजिस्ट्रेशन नंबर डालें</h3>
+            <p class="step-desc">
+              <strong>Enter Application Id</strong> बॉक्स में अपना PM किसान का <strong>Registration Number</strong> (जैसे UPXXXXXXXXX) सही-सही दर्ज करें। (Bank या Beneficiary Code भरने की आवश्यकता नहीं है)।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num step-num-kisan">5</div>
+          <div class="step-body">
+            <h3 class="step-title">Word Verification (Captcha) भरकर Search करें</h3>
+            <p class="step-desc">
+              इमेज में दिख रहा Captcha कोड भरें और नीचे नीले रंग के <strong>"Search"</strong> बटन पर क्लिक कर दें।
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num step-num-kisan">6</div>
+          <div class="step-body">
+            <h3 class="step-title">पूरा पेमेंट विवरण व स्टेटस देखें</h3>
+            <p class="step-desc">
+              सर्च करते ही नीचे किसान का पूरा विवरण खुल जाएगा जिसमें:
+              <br>• <strong>Beneficiary Name:</strong> किसान का नाम
+              <br>• <strong>Amount:</strong> ₹2,000
+              <br>• <strong>Payment Status:</strong> Success / Under Processing
+              <br>• <strong>Credit Date & UTR No.:</strong> खाते में पैसा पहुँचने की तारीख और बैंक यूटीआर नंबर।
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- WHATSAPP SHARE -->
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 14px 20px; gap: 12px; margin-top: 24px;">
+      <div>
+        <div style="font-size: 14.5px; font-weight: 700; color: #0f172a;">📢 यह आसान तरीका साथियों व ग्रामीणों के साथ शेयर करें</div>
+        <div style="font-size: 12.5px; color: #64748b;">PFMS DBT से PM किसान व पेंशन का पैसा चेक करना अब बेहद आसान है।</div>
+      </div>
+      <button onclick="shareWhatsApp()" style="background: #25d366; color: #fff; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 13.5px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);">
+        <span>💬 WhatsApp पर भेजें</span>
+      </button>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div style="margin-top: 20px; padding: 12px; background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; font-size: 12px; color: #92400e; text-align: center;">
+      <strong>⚠️ अस्वीकरण:</strong> यह पोर्टल केवल जन-जागरूकता एवं सहायता हेतु बनाया गया है। आधिकारिक डेटा PFMS (pfms.nic.in) द्वारा सीधे प्रबंधित होता है।
+    </div>
+
+  </main>
+
+  <!-- PREMIUM FOOTER -->
+  <footer class="premium-footer">
+    <div class="premium-footer-grid" style="max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+      <div class="footer-brand">
+        <div class="f-logo-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+          <img src="https://cdn-icons-png.flaticon.com/512/8145/8145028.png" alt="Logo" class="f-logo" style="height: 40px;">
+          <span class="f-title" style="font-size: 16px; font-weight: 700; color: var(--white);">Panchayat Sahayak</span>
+        </div>
+        <p class="f-desc" style="font-size: 12px; color: var(--gray-300); line-height: 1.6;">उत्तर प्रदेश के 58,000+ पंचायत सहायकों एवं ग्रामवासियों के लिए स्वतंत्र सूचना एवं डिजिटल सहायता पोर्टल।</p>
+      </div>
+      <div class="footer-col">
+        <h4 style="font-size: 11px; font-weight: 800; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Quick Links</h4>
+        <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="index.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🏠 Home</a>
+          <a href="check-pmkisan-pension-status.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🌾 PFMS DBT स्टेटस</a>
+          <a href="panchayat-sahayak-salary-status.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">💰 मानदेय स्टेटस</a>
+          <a href="panchayat-sahayak-all-portals.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🌐 सभी वेबसाइट</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 style="font-size: 11px; font-weight: 800; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Popular Tools</h4>
+        <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="edistrict-swaghoshna-patra.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📄 स्वप्रमाणित घोषणा-पत्र</a>
+          <a href="farmer-id-card-generator.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🪪 Farmer ID Card</a>
+          <a href="panchayat-sahayak-csc-calculator.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🏬 CSC शुल्क कैलकुलेटर</a>
+          <a href="panchayat-sahayak-salary-calculator.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">💵 सैलरी कैलकुलेटर</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 style="font-size: 11px; font-weight: 800; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Legal</h4>
+        <div class="footer-links" style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="about.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">ℹ️ About Portal</a>
+          <a href="privacy.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">🔒 Privacy Policy</a>
+          <a href="disclaimer.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">⚠️ Disclaimer</a>
+          <a href="contact.html" style="color: var(--gray-300); font-size: 13px; font-weight: 600; text-decoration: none;">📞 Helpdesk</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; max-width: var(--maxw); margin: 20px auto 0 auto;">
+      <p style="font-size: 12px; color: var(--gray-500); margin:0;">© 2026 <strong>gpsahayak.in</strong>. All Rights Reserved.</p>
+      <p style="font-size: 11px; margin:0; color: var(--gray-500);">Independent Educational & Assistance Portal</p>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Set short / direct links
+    document.addEventListener('DOMContentLoaded', () => {
+      const kisanBtn = document.getElementById('btn-redirect-kisan');
+      const pensionBtn = document.getElementById('btn-redirect-pension');
+      const link = CONFIG_LINKS.pfmsTrackerUrl || "https://pfms.nic.in/SitePages/DBT_StatusTracker.aspx";
+      
+      if (kisanBtn) kisanBtn.href = link;
+      if (pensionBtn) pensionBtn.href = link;
+
+      if (window.location.hash === '#pmkisan') {
+        switchTab('pmkisan');
+      } else {
+        switchTab('pension');
+      }
+    });
+
+    function switchTab(type) {
+      const kTab = document.getElementById('tab-pmkisan');
+      const pTab = document.getElementById('tab-pension');
+      const kBtn = document.getElementById('tab-btn-kisan');
+      const pBtn = document.getElementById('tab-btn-pension');
+
+      if (type === 'pension') {
+        kTab.classList.remove('active');
+        pTab.classList.add('active');
+        kBtn.classList.remove('active-kisan');
+        pBtn.classList.add('active-pension');
+        kBtn.setAttribute('aria-selected', 'false');
+        pBtn.setAttribute('aria-selected', 'true');
+        history.replaceState(null, null, '#pension');
+      } else {
+        pTab.classList.remove('active');
+        kTab.classList.add('active');
+        pBtn.classList.remove('active-pension');
+        kBtn.classList.add('active-kisan');
+        pBtn.setAttribute('aria-selected', 'false');
+        kBtn.setAttribute('aria-selected', 'true');
+        history.replaceState(null, null, '#pmkisan');
+      }
+    }
+
+    function shareWhatsApp() {
+      const isPension = document.getElementById('tab-pension').classList.contains('active');
+      let text = "🌾 PFMS DBT स्टेटस से PM किसान सम्मान निधि (₹2000) का पैसा कैसे चेक करें?\nCategory में PMKISAN चुनें और Application Id में रजिस्ट्रेशन नंबर डालें। पूरी गाइड व डायरेक्ट लिंक यहाँ देखें:\n" + window.location.href;
+      if (isPension) {
+        text = "🧓 PFMS DBT पोर्टल से UP वृद्धा, विधवा व दिव्यांग पेंशन का पैसा कैसे चेक करें?\nCategory में 'Any Other External System' चुनें और Application Id डालें। पूरी गाइड व डायरेक्ट लिंक देखें:\n" + window.location.href;
+      }
+      window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(text), '_blank');
+    }
+  </script>
+
+  <script src="auth-nav.js" defer></script>
+</body>
+</html>
