@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Calculator, IndianRupee, Clock, CheckCircle2, AlertTriangle, Download, Printer } from "lucide-react";
 
 export default function SalaryCalculator() {
-  const [monthlySalary, setMonthlySalary] = useState(6000);
+  const [monthlySalary, setMonthlySalary] = useState(9000);
   const [pendingMonths, setPendingMonths] = useState(3);
   const [arrearAmount, setArrearAmount] = useState(0);
   const [deductions, setDeductions] = useState(0);
@@ -15,18 +15,18 @@ export default function SalaryCalculator() {
   return (
     <div className="space-y-8">
       {/* Banner */}
-      <div className="bg-gradient-to-r from-amber-900/60 to-orange-900/40 border border-amber-500/30 rounded-2xl p-6 text-white backdrop-blur-sm">
+      <div className="bg-gradient-to-r from-emerald-900/60 to-teal-900/40 border border-emerald-500/30 rounded-2xl p-6 text-white backdrop-blur-sm">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold mb-2">
               <Calculator className="w-3.5 h-3.5" />
-              <span>उत्तर प्रदेश पंचायत सहायक मानदेय 2026</span>
+              <span>उत्तर प्रदेश पंचायत सहायक मानदेय 2026 (सितंबर 2026 से ₹9,000 लागू)</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
               पंचायत सहायक मानदेय व एरियर कैलकुलेटर
             </h1>
-            <p className="text-sm text-amber-100/80 mt-1">
-              अपने लंबित महीनों के मानदेय, एरियर और कुल देय भुगतान का तुरंत सटीक हिसाब लगाएं।
+            <p className="text-sm text-emerald-100/80 mt-1">
+              अपने नए मानदेय (₹9,000), लंबित महीनों और एरियर का तुरंत सटीक हिसाब लगाएं।
             </p>
           </div>
         </div>
@@ -43,16 +43,42 @@ export default function SalaryCalculator() {
 
           <div className="space-y-4">
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                मासिक मानदेय (Monthly Honorarium in ₹)
-              </label>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="block text-xs font-medium text-slate-300">
+                  मासिक मानदेय (Monthly Honorarium in ₹)
+                </label>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setMonthlySalary(9000)}
+                    className={`text-[11px] px-2.5 py-0.5 rounded-full font-bold transition ${
+                      monthlySalary === 9000
+                        ? "bg-emerald-500 text-slate-950"
+                        : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                    }`}
+                  >
+                    ✨ ₹9,000 (नया)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setMonthlySalary(6000)}
+                    className={`text-[11px] px-2.5 py-0.5 rounded-full font-bold transition ${
+                      monthlySalary === 6000
+                        ? "bg-amber-500 text-slate-950"
+                        : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                    }`}
+                  >
+                    ₹6,000 (पुराना)
+                  </button>
+                </div>
+              </div>
               <input
                 type="number"
                 value={monthlySalary}
                 onChange={(e) => setMonthlySalary(Number(e.target.value))}
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white font-bold focus:outline-none focus:border-amber-500"
+                className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white font-bold focus:outline-none focus:border-emerald-500"
               />
-              <span className="text-[11px] text-slate-400">उत्तर प्रदेश में निर्धारित दर: ₹6,000 प्रति माह</span>
+              <span className="text-[11px] text-emerald-400">उत्तर प्रदेश में नया मानदेय: ₹9,000 प्रति माह (सितंबर 2026 से प्रभावी)</span>
             </div>
 
             <div>
